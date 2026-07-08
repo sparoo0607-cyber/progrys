@@ -23,7 +23,7 @@ export function AffiliateCard({ product }: { product: AffiliateProduct }) {
       </div>
       
       <div className="p-6 flex flex-col flex-1 relative z-10 bg-[var(--card)]">
-        <h3 className="font-heading font-semibold text-lg text-[var(--foreground)] mb-1 group-hover:text-[var(--text-secondary)] transition-colors">{product.name}</h3>
+        <h3 className="font-heading font-semibold text-lg text-[var(--foreground)] mb-1 group-hover:text-[var(--text-secondary)] transition-colors">{product.title}</h3>
         <p className="text-sm text-[var(--text-secondary)] line-clamp-2 mb-4 leading-relaxed flex-grow">
           {product.description}
         </p>

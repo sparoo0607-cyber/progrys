@@ -10,6 +10,10 @@ export interface BlogPost {
   likes: number;
   rating: number;
   publishedAt: string;
+  tags?: string[];
+  readTime?: number;
+  author?: { name: string; avatar: string };
+  coverImage?: string;
 }
 
 export const MOCK_BLOGS: BlogPost[] = [

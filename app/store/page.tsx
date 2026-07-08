@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { ProductCard } from "@/components/ui/product-card";
@@ -12,6 +13,14 @@ import { Filter, SlidersHorizontal, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 export default function StorePage() {
+  return (
+    <Suspense fallback={null}>
+      <StorePageContent />
+    </Suspense>
+  );
+}
+
+function StorePageContent() {
   const searchParams = useSearchParams();
   const initialTab = searchParams.get("tab") === "curated" ? "curated" : "digital";
   const [activeTab, setActiveTab] = React.useState<"digital" | "curated">(initialTab);

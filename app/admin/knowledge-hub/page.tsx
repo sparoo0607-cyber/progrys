@@ -171,7 +171,9 @@ export default function KnowledgeHubAdminPage() {
                             <p className="text-xs text-[var(--text-muted)]">/{lesson.slug}</p>
                           </div>
                           {lesson.codeExample && (
-                            <Code2 size={14} className="text-[var(--text-muted)] shrink-0" title="Has code example" />
+                            <span title="Has code example" className="shrink-0 flex">
+                              <Code2 size={14} className="text-[var(--text-muted)]" />
+                            </span>
                           )}
                           <div className="flex gap-2 opacity-0 group-hover/lesson:opacity-100 transition-opacity">
                             <button onClick={() => openEditLesson(topic, lesson)} className="p-1.5 text-[var(--text-secondary)] hover:text-[#2563EB] bg-[var(--card)] rounded-md border border-[var(--border-color)]">

@@ -2,7 +2,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: "category" | "new" | "free" | "trending" | "beginner" | "intermediate" | "advanced";
+  variant?: "category" | "new" | "free" | "trending" | "beginner" | "intermediate" | "advanced" | "secondary";
 }
 
 export function Badge({ className, variant = "category", ...props }: BadgeProps) {
@@ -14,6 +14,7 @@ export function Badge({ className, variant = "category", ...props }: BadgeProps)
     beginner: "bg-[#F0FDF4] text-[#16A34A]",
     intermediate: "bg-[#FFF7ED] text-[#EA580C]",
     advanced: "bg-[#FFF1F2] text-[#E11D48]",
+    secondary: "bg-[var(--alt-section)] text-[var(--foreground)]",
   };
 
   return (

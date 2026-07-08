@@ -20,6 +20,7 @@ export interface Product {
   category: "ebooks" | "templates" | "notes" | "kits";
   fileFormats: string[];
   updatedAt: string;
+  createdAt?: string;
   previewImages?: string[];
   features?: string[];
   likes?: number;

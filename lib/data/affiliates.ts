@@ -10,6 +10,7 @@ export interface AffiliateProduct {
   category: "gear" | "courses" | "books";
   rating: number;
   reviewCount: number;
+  updatedAt?: string;
 }
 
 export const MOCK_AFFILIATES: AffiliateProduct[] = [
