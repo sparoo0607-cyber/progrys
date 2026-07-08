@@ -31,7 +31,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col relative bg-[var(--background)] text-[var(--foreground)] transition-colors duration-200">
         <ThemeProvider>
           <Navbar />
-          <main className="flex-1">
+          <main className="flex-1 pb-16 md:pb-0">
             {children}
           </main>
           <Footer />

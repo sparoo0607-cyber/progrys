@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Bookmark, Star, Download } from "lucide-react";
+import { Bookmark, Star, Download, BookOpen, LayoutTemplate, FileText, Package } from "lucide-react";
 import { Product } from "@/lib/data/products";
 import { useWishlistStore } from "@/lib/store/useWishlistStore";
 import { useAuthStore } from "@/lib/store/useAuthStore";
@@ -11,8 +11,16 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useCartStore } from "@/lib/store/useCartStore";
 
+const CATEGORY_ICON = {
+  ebooks: BookOpen,
+  templates: LayoutTemplate,
+  notes: FileText,
+  kits: Package,
+} as const;
+
 export function ProductCard({ product }: { product: Product }) {
   const { hasProduct, toggleProduct } = useWishlistStore();
+  const CategoryIcon = CATEGORY_ICON[product.category] ?? Package;
   const { addItem } = useCartStore();
   const { isLoggedIn } = useAuthStore();
   const router = useRouter();
@@ -49,8 +57,8 @@ export function ProductCard({ product }: { product: Product }) {
            {product.coverImage ? (
              <img src={product.coverImage} alt={product.title} className="w-full h-full object-cover" />
            ) : (
-             <div className="w-full h-full flex items-center justify-center">
-               <span className="text-[var(--text-muted)] opacity-50 font-medium text-sm">No cover image</span>
+             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[var(--alt-section)] to-[var(--border-color)]/20">
+               <CategoryIcon size={40} strokeWidth={1.5} className="text-[var(--text-muted)] opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all" />
              </div>
            )}
         </Link>

@@ -36,7 +36,7 @@ export default function KnowledgeHubPage() {
               </p>
 
               <div className="flex items-center text-sm font-medium text-[var(--text-muted)] mt-auto pt-4 border-t border-[var(--border-color)] w-full">
-                {topic.lessons.length} Lessons
+                {topic.lessons.length} {topic.lessons.length === 1 ? "Lesson" : "Lessons"}
                 <ArrowRight size={16} className="ml-auto group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>

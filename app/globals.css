@@ -43,6 +43,7 @@
 }
 
 .dark {
+  --color-brand: #F9FAFB;
   --background: #0F172A;
   --foreground: #F9FAFB;
   --card: #1E293B;

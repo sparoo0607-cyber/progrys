@@ -30,20 +30,20 @@ export function BottomBanner() {
           animate={{ y: 0 }}
           exit={{ y: "100%" }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed bottom-0 left-0 right-0 z-50 p-3 bg-[#FFFFFF] border-t border-[#E4E4E7] shadow-[0_-4px_24px_rgba(0,0,0,0.06)]"
+          className="fixed bottom-16 md:bottom-0 left-0 right-0 z-30 p-3 bg-[#FFFFFF] border-t border-[#E4E4E7] shadow-[0_-4px_24px_rgba(0,0,0,0.06)]"
         >
-          <div className="container mx-auto flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span className="flex items-center gap-1 text-[10px] uppercase font-bold tracking-wider text-[#A1A1AA] bg-[#F4F4F5] px-2 py-1 rounded">
+          <div className="container mx-auto flex items-center justify-between gap-3">
+            <div className="flex items-center gap-3 min-w-0">
+              <span className="hidden sm:flex items-center gap-1 text-[10px] uppercase font-bold tracking-wider text-[#A1A1AA] bg-[#F4F4F5] px-2 py-1 rounded shrink-0">
                 <Megaphone size={12} /> Sponsored
               </span>
-              <p className="text-sm font-medium text-[#0A0A0A]">
+              <p className="text-sm font-medium text-[#0A0A0A] truncate">
                 Get 50% off the Ultimate Developer Roadmap bundle this week only!
               </p>
             </div>
             <button
               onClick={handleDismiss}
-              className="p-1.5 text-[#A1A1AA] hover:text-[#0A0A0A] hover:bg-[#F4F4F5] rounded-full transition-colors"
+              className="p-1.5 text-[#A1A1AA] hover:text-[#0A0A0A] hover:bg-[#F4F4F5] rounded-full transition-colors shrink-0"
               aria-label="Dismiss banner"
             >
               <X size={16} />

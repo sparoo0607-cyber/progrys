@@ -1,19 +1,25 @@
 "use client";
 
-import { ExternalLink, Star } from "lucide-react";
+import { ExternalLink, Star, Headphones, GraduationCap, BookMarked } from "lucide-react";
 import { AffiliateProduct } from "@/lib/data/affiliates";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
+const CATEGORY_ICON = {
+  gear: Headphones,
+  courses: GraduationCap,
+  books: BookMarked,
+} as const;
+
 export function AffiliateCard({ product }: { product: AffiliateProduct }) {
+  const CategoryIcon = CATEGORY_ICON[product.category] ?? BookMarked;
   return (
     <div className="group flex flex-col bg-[var(--card)] border border-[var(--border-color)] rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-white/5 hover:-translate-y-1.5 hover:border-[var(--foreground)]/30 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]">
-      <div className="aspect-square bg-[var(--alt-section)] relative p-4 flex items-center justify-center overflow-hidden">
+      <div className="aspect-square bg-gradient-to-br from-[var(--alt-section)] to-[var(--border-color)]/20 relative p-4 flex items-center justify-center overflow-hidden">
         <Badge className="absolute top-4 left-4 bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--text-secondary)] backdrop-blur-md px-3 py-1 font-medium shadow-sm z-10 border border-transparent">
           {product.platform}
         </Badge>
-        {/* Mock Image Placeholder */}
-        <span className="text-[var(--text-muted)] opacity-50 font-medium">Product Image</span>
+        <CategoryIcon size={48} strokeWidth={1.5} className="text-[var(--text-muted)] opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all" />
       </div>
       
       <div className="p-6 flex flex-col flex-1 relative z-10 bg-[var(--card)]">

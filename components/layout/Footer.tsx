@@ -3,8 +3,7 @@ import { MessageCircle, Camera, Briefcase, Globe } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-[#0A0A0A] text-[#A1A1AA] pt-16 pb-24 md:pb-8">
-      {/* pb-24 on mobile to account for the bottom nav bar we will add */}
+    <footer className="bg-[#0A0A0A] text-[#A1A1AA] pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-1">

@@ -1,20 +1,32 @@
 "use client";
 
 import Link from "next/link";
-import { Target, Clock, ArrowRight } from "lucide-react";
+import { Target, Clock, ArrowRight, Code2, Server, Palette, Smartphone, Database, Cloud } from "lucide-react";
 import { Roadmap } from "@/lib/data/roadmaps";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
+function getRoadmapIcon(title: string) {
+  const t = title.toLowerCase();
+  if (t.includes("frontend") || t.includes("web")) return Code2;
+  if (t.includes("backend") || t.includes("api")) return Server;
+  if (t.includes("design") || t.includes("ui/ux") || t.includes("ux")) return Palette;
+  if (t.includes("mobile") || t.includes("ios") || t.includes("android")) return Smartphone;
+  if (t.includes("data") || t.includes("sql") || t.includes("database")) return Database;
+  if (t.includes("devops") || t.includes("cloud")) return Cloud;
+  return Target;
+}
+
 export function RoadmapCard({ roadmap }: { roadmap: Roadmap }) {
+  const Icon = getRoadmapIcon(roadmap.title);
   return (
-    <Link 
+    <Link
       href={`/roadmaps/${roadmap.slug}`}
       className="group flex flex-col bg-[var(--card)] border border-[var(--card-border)] rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all p-6"
     >
       <div className="flex justify-between items-start mb-4">
-        <div className="w-12 h-12 bg-[var(--alt-section)] rounded-lg flex items-center justify-center">
-          <Target size={24} className="text-[var(--foreground)]" />
+        <div className="w-12 h-12 bg-[var(--alt-section)] rounded-lg flex items-center justify-center group-hover:bg-[#2563EB] transition-colors">
+          <Icon size={24} className="text-[var(--foreground)] group-hover:text-white transition-colors" />
         </div>
         <Badge 
           className={
