@@ -8,7 +8,7 @@ export async function sendVerificationEmail(
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { data, error } = await resend.emails.send({
-      from: "PROGRYS <onboarding@resend.dev>",
+      from: "PROGRYS <noreply@progrys.in>",
       to: [email],
       subject: "Verify your PROGRYS account",
       html: `

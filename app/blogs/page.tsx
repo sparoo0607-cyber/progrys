@@ -10,12 +10,16 @@ import { Input } from "@/components/ui/input";
 import { PenTool } from "lucide-react";
 import { toast } from "sonner";
 import { useAuthStore } from "@/lib/store/useAuthStore";
+import { useRouter } from "next/navigation";
 
 export default function BlogsPage() {
   const { blogs, submitBlog } = useBlogModerationStore();
   const { user } = useAuthStore();
+  const router = useRouter();
   
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isUploading, setIsUploading] = React.useState(false);
+  const [uploadProgress, setUploadProgress] = React.useState(0);
   const [formData, setFormData] = React.useState({
     title: "",
     excerpt: "",
@@ -28,25 +32,41 @@ export default function BlogsPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsUploading(true);
+    setUploadProgress(0);
+
+    const interval = setInterval(() => {
+      setUploadProgress(prev => {
+        if (prev >= 90) return 90;
+        return prev + 15;
+      });
+    }, 200);
     
-    submitBlog({
-      title: formData.title,
-      slug: formData.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, ""),
-      excerpt: formData.excerpt,
-      content: formData.content,
-      authorName: user ? `${user.firstName} ${user.lastName}` : "Anonymous Student",
-      category: formData.tags.split(",")[0] || "General", // Use first tag as category
-      rating: 0,
-      tags: formData.tags.split(",").map(t => t.trim()).filter(Boolean),
-      readTime: Number(formData.readTime),
-      // Keep these for the mock compatibility
-      author: { name: user ? `${user.firstName} ${user.lastName}` : "Anonymous", avatar: "" },
-      coverImage: "",
-    });
-    
-    toast.success("Article submitted for review!");
-    setIsModalOpen(false);
-    setFormData({ title: "", excerpt: "", content: "", tags: "", readTime: 5 });
+    setTimeout(() => {
+      clearInterval(interval);
+      setUploadProgress(100);
+      
+      submitBlog({
+        title: formData.title,
+        slug: formData.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, ""),
+        excerpt: formData.excerpt,
+        content: formData.content,
+        authorName: user ? `${user.firstName} ${user.lastName}` : "Anonymous Student",
+        category: formData.tags.split(",")[0] || "General", // Use first tag as category
+        rating: 0,
+        tags: formData.tags.split(",").map(t => t.trim()).filter(Boolean),
+        readTime: Number(formData.readTime),
+        // Keep these for the mock compatibility
+        author: { name: user ? `${user.firstName} ${user.lastName}` : "Anonymous", avatar: "" },
+        coverImage: "",
+      });
+      
+      toast.success("Article submitted for review!");
+      setIsModalOpen(false);
+      setIsUploading(false);
+      setUploadProgress(0);
+      setFormData({ title: "", excerpt: "", content: "", tags: "", readTime: 5 });
+    }, 1500);
   };
 
   return (
@@ -59,7 +79,14 @@ export default function BlogsPage() {
               Read stories, tutorials, and insights written by students and industry professionals.
             </p>
           </div>
-          <Button onClick={() => setIsModalOpen(true)} variant="primary" className="gap-2 shrink-0">
+          <Button onClick={() => {
+            if (!user) {
+              toast.error("Please login to submit an article.");
+              router.push("/auth/login");
+              return;
+            }
+            setIsModalOpen(true);
+          }} variant="primary" className="gap-2 shrink-0">
             <PenTool size={16} /> Submit Article
           </Button>
         </div>
@@ -113,9 +140,18 @@ export default function BlogsPage() {
                 className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[#2563EB] resize-y" placeholder="# Introduction&#10;&#10;Write your article here..." />
             </div>
 
-            <div className="flex justify-end gap-3 pt-4 border-t border-[var(--border-color)]">
-              <Button type="button" variant="ghost" onClick={() => setIsModalOpen(false)}>Cancel</Button>
-              <Button type="submit" variant="primary">Submit for Review</Button>
+            <div className="flex flex-col gap-3 pt-4 border-t border-[var(--border-color)]">
+              {isUploading && (
+                <div className="w-full bg-[var(--alt-section)] rounded-full h-1.5 overflow-hidden border border-[var(--border-color)]">
+                  <div className="bg-[var(--foreground)] h-full transition-all duration-200 ease-out" style={{ width: `${uploadProgress}%` }}></div>
+                </div>
+              )}
+              <div className="flex justify-end gap-3">
+                <Button type="button" variant="ghost" onClick={() => setIsModalOpen(false)} disabled={isUploading}>Cancel</Button>
+                <Button type="submit" variant="primary" disabled={isUploading}>
+                  {isUploading ? "Uploading..." : "Submit for Review"}
+                </Button>
+              </div>
             </div>
           </form>
         </div>

@@ -1,64 +1,106 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
-import { Product, MOCK_PRODUCTS } from "@/lib/data/products";
+import { Product } from "@/lib/data/products";
 
 interface ProductStore {
   products: Product[];
-  addProduct: (product: Omit<Product, "id" | "createdAt" | "updatedAt">) => void;
-  updateProduct: (id: string, product: Partial<Product>) => void;
-  deleteProduct: (id: string) => void;
+  isLoading: boolean;
+  setProducts: (products: Product[]) => void;
+  fetchProducts: () => Promise<void>;
+  addProduct: (product: Omit<Product, "id" | "createdAt" | "updatedAt">) => Promise<void>;
+  updateProduct: (id: string, product: Partial<Product>) => Promise<void>;
+  deleteProduct: (id: string) => Promise<void>;
   getProductBySlug: (slug: string) => Product | undefined;
 }
 
-export const useProductStore = create<ProductStore>()(
-  persist(
-    (set, get) => ({
-      products: MOCK_PRODUCTS,
+export const useProductStore = create<ProductStore>((set, get) => ({
+  products: [],
+  isLoading: false,
 
-      addProduct: (newProduct) => {
-        const product: Product = {
-          ...newProduct,
-          id: `p${Date.now()}`,
-          createdAt: new Date().toISOString(),
-          updatedAt: new Date().toISOString(),
+  setProducts: (products) => set({ products }),
+
+  fetchProducts: async () => {
+    set({ isLoading: true });
+    try {
+      const res = await fetch("/api/products");
+      if (res.ok) {
+        const data = await res.json();
+        set({ products: data });
+      }
+    } catch (err) {
+      console.error("Failed to fetch products", err);
+    } finally {
+      set({ isLoading: false });
+    }
+  },
+
+  addProduct: async (newProduct) => {
+    try {
+      const res = await fetch("/api/products", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newProduct),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        const createdProduct = {
+          ...data.product,
+          images: JSON.parse(data.product.images),
+          tags: JSON.parse(data.product.tags),
+          fileFormats: JSON.parse(data.product.fileFormats),
+          features: data.product.features ? JSON.parse(data.product.features) : [],
         };
-        set((state) => ({ products: [product, ...state.products] }));
-      },
+        set((state) => ({ products: [createdProduct, ...state.products] }));
+      } else {
+        throw new Error("Failed to add product");
+      }
+    } catch (err) {
+      console.error(err);
+      throw err;
+    }
+  },
 
-      updateProduct: (id, updatedFields) => {
+  updateProduct: async (id, updatedFields) => {
+    try {
+      const res = await fetch(`/api/products/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedFields),
+      });
+      if (res.ok) {
+        const data = await res.json();
         set((state) => ({
           products: state.products.map((p) =>
-            p.id === id
-              ? { ...p, ...updatedFields, updatedAt: new Date().toISOString() }
-              : p
+            p.id === id ? { ...p, ...updatedFields, updatedAt: new Date().toISOString() } : p
           ),
         }));
-      },
+      } else {
+        throw new Error("Failed to update product");
+      }
+    } catch (err) {
+      console.error(err);
+      throw err;
+    }
+  },
 
-      deleteProduct: (id) => {
+  deleteProduct: async (id) => {
+    try {
+      const res = await fetch(`/api/products/${id}`, {
+        method: "DELETE",
+      });
+      if (res.ok) {
         set((state) => ({
           products: state.products.filter((p) => p.id !== id),
         }));
-      },
-
-      getProductBySlug: (slug) => {
-        return get().products.find((p) => p.slug === slug);
-      },
-    }),
-    {
-      name: "progrys-products",
-      // ⚠️  Strip the large base64 dataUrl before writing to localStorage.
-      //     Only keep file metadata (name, size, type).
-      //     The actual binary data lives in IndexedDB via fileStorage.ts.
-      partialize: (state) => ({
-        products: state.products.map((p) => ({
-          ...p,
-          // Remove dataUrl but keep the rest of downloadFile for display
-          downloadFile: p.downloadFile
-            ? { name: p.downloadFile.name, size: p.downloadFile.size, type: p.downloadFile.type, dataUrl: "" }
-            : undefined,
-        })),
-      }),
+      } else {
+        throw new Error("Failed to delete product");
+      }
+    } catch (err) {
+      console.error(err);
+      throw err;
     }
-  )
-);
+  },
+
+  getProductBySlug: (slug) => {
+    return get().products.find((p) => p.slug === slug);
+  },
+}));

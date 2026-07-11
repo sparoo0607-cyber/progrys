@@ -61,6 +61,23 @@ export default function SignupPage() {
     if (password.length < 8) { toast.error("Password must be at least 8 characters."); return; }
     setIsLoading(true);
     try {
+      // 1. Register the user in the database
+      const regRes = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password, firstName, lastName }),
+      });
+      const regData = await regRes.json();
+      if (!regRes.ok) {
+        if (regData.error === "Email already in use") {
+           // We can just proceed to send OTP if they are registering again?
+           // Actually, throw the error
+           throw new Error(regData.error);
+        }
+        throw new Error(regData.error || "Failed to register.");
+      }
+
+      // 2. Send OTP
       const res = await fetch("/api/auth/send-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -85,6 +102,7 @@ export default function SignupPage() {
     if (code.length < 6) { toast.error("Please enter all 6 digits."); return; }
     setIsLoading(true);
     try {
+      // 1. Verify OTP
       const res = await fetch("/api/auth/verify-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -93,15 +111,17 @@ export default function SignupPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Verification failed.");
 
-      // ── Account created — log the user in ──
-      login({
-        id: `u_${Date.now()}`,
-        firstName,
-        lastName,
-        email,
-        role: "user",
-        createdAt: new Date().toISOString(),
+      // 2. Login the user to get the DB user object
+      const loginRes = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
       });
+      const loginData = await loginRes.json();
+      if (!loginRes.ok) throw new Error(loginData.error || "Failed to login after verification.");
+
+      // ── Account created — log the user in ──
+      login(loginData.user);
       toast.success(`Welcome to PROGRYS, ${firstName}! 🎉`);
       router.push("/library");
     } catch (err: any) {

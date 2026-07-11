@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String?
+  firstName    String
+  lastName     String
+  avatar       String?
+  role         String   @default("user")
+  isVerified   Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Product {
+  id                 String   @id @default(cuid())
+  slug               String   @unique
+  title              String
+  description        String
+  price              Float
+  originalPrice      Float?
+  images             String   // JSON string of String[]
+  coverImage         String?
+  tags               String   // JSON string of String[]
+  rating             Float    @default(0)
+  reviewCount        Int      @default(0)
+  isFree             Boolean  @default(false)
+  category           String
+  fileFormats        String   // JSON string of String[]
+  downloadFileName   String?
+  downloadFileUrl    String?  // URL or path to the file
+  downloadFileSize   Int?
+  downloadFileType   String?
+  features           String?  // JSON string of String[]
+  likes              Int      @default(0)
+  dislikes           Int      @default(0)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}

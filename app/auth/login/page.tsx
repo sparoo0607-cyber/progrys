@@ -12,30 +12,43 @@ import { toast } from "sonner";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = React.useState(false);
-  const [email, setEmail] = React.useState("alex@example.com"); // Pre-filled for demo
-  const [password, setPassword] = React.useState("password");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
   
   const { login } = useAuthStore();
   const router = useRouter();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Mock login delay
-    setTimeout(() => {
-      if (email.includes("admin")) {
-        login(MOCK_USERS.admin);
-        toast.success("Welcome back, Admin!");
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await res.json();
+      
+      if (!res.ok) {
+        throw new Error(data.error || "Login failed");
+      }
+      
+      login(data.user);
+      
+      if (data.user.role === "admin") {
+        toast.success(`Welcome back, ${data.user.firstName}!`);
         router.push("/admin");
       } else {
-        login(MOCK_USERS.user);
-        toast.success("Welcome back!");
+        toast.success(`Welcome back, ${data.user.firstName}!`);
         router.push("/library");
       }
+    } catch (err: any) {
+      toast.error(err.message || "Something went wrong.");
+    } finally {
       setIsLoading(false);
-    }, 800);
+    }
   };
 
   return (
@@ -109,11 +122,6 @@ export default function LoginPage() {
             <Link href="/auth/signup" className="font-medium text-[#2563EB] hover:underline">
               Sign up
             </Link>
-          </div>
-          
-          <div className="mt-8 pt-6 border-t border-[var(--border-color)] text-center text-xs text-[var(--text-muted)]">
-            <p>Demo accounts provided:</p>
-            <p>User: alex@example.com | Admin: admin@example.com</p>
           </div>
         </div>
       </AnimatedSection>

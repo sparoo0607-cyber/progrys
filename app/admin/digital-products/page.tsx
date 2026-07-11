@@ -13,10 +13,15 @@ import { toast } from "sonner";
 import { saveFile, deleteFile } from "@/lib/utils/fileStorage";
 
 export default function DigitalProductsAdminPage() {
-  const { products, addProduct, updateProduct, deleteProduct } = useProductStore();
+  const { products, addProduct, updateProduct, deleteProduct, fetchProducts } = useProductStore();
   const [searchQuery, setSearchQuery] = React.useState("");
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [editingProduct, setEditingProduct] = React.useState<Product | null>(null);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+
+  React.useEffect(() => {
+    fetchProducts();
+  }, [fetchProducts]);
 
   // Separate refs for each hidden file input
   const coverImageRef = React.useRef<HTMLInputElement>(null);
@@ -139,6 +144,7 @@ export default function DigitalProductsAdminPage() {
       return;
     }
 
+    setIsSubmitting(true);
     const productId = editingProduct?.id ?? `p${Date.now()}`;
 
     // Save file to IndexedDB if a new file was picked (dataUrl is present)
@@ -156,7 +162,7 @@ export default function DigitalProductsAdminPage() {
       isFree: formData.isFree,
       fileFormats: formData.fileFormats.split(",").map((s) => s.trim()),
       coverImage: formData.coverImage || undefined,
-      // Store only metadata in Zustand/localStorage — NOT the dataUrl (that's in IndexedDB)
+      // Store only metadata in DB for large files — NOT the dataUrl (that's in IndexedDB)
       downloadFile: formData.downloadFile
         ? { name: formData.downloadFile.name, size: formData.downloadFile.size, type: formData.downloadFile.type, dataUrl: "" }
         : undefined,
@@ -166,9 +172,20 @@ export default function DigitalProductsAdminPage() {
       reviewCount: editingProduct?.reviewCount || 0,
     };
 
-    if (editingProduct) { updateProduct(editingProduct.id, productData); toast.success("Product updated!"); }
-    else { addProduct({ ...productData, id: productId } as any); toast.success("Product created!"); }
-    setIsModalOpen(false);
+    try {
+      if (editingProduct) { 
+        await updateProduct(editingProduct.id, productData); 
+        toast.success("Product updated!"); 
+      } else { 
+        await addProduct({ ...productData, id: productId } as any); 
+        toast.success("Product created!"); 
+      }
+      setIsModalOpen(false);
+    } catch (error) {
+      toast.error("Failed to save product.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Format bytes to human-readable

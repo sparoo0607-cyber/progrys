@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { otpStore } from "@/lib/email/otpStore";
+import { prisma } from "@/lib/prisma";
 // POST /api/auth/verify-otp — verifies the submitted OTP
 export async function POST(req: Request) {
   try {
@@ -26,6 +27,17 @@ export async function POST(req: Request) {
 
     // OTP valid — clean up and confirm
     otpStore.delete(email.toLowerCase());
+
+    try {
+      // Update the user to verified in the database
+      await prisma.user.update({
+        where: { email: email.toLowerCase() },
+        data: { isVerified: true },
+      });
+    } catch (e) {
+      console.error("[verify-otp] User not found in DB or error updating", e);
+    }
+
     return NextResponse.json({ success: true, firstName: record.firstName });
   } catch (err) {
     console.error("[verify-otp]", err);
