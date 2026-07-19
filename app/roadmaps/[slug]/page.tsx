@@ -11,9 +11,17 @@ import { useRoadmapStore } from "@/lib/store/useRoadmapStore";
 export default function RoadmapDetailPage(props: { params: Promise<{ slug: string }> }) {
   const params = React.use(props.params);
   const router = useRouter();
-  const { getRoadmapBySlug } = useRoadmapStore();
+  const { getRoadmapBySlug, fetchRoadmaps } = useRoadmapStore();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    fetchRoadmaps();
+    setMounted(true);
+  }, [fetchRoadmaps]);
   
   const roadmap = getRoadmapBySlug(params.slug);
+
+  if (!mounted) return null;
 
   if (!roadmap) {
     return (

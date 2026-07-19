@@ -25,17 +25,16 @@ function StorePageContent() {
   const initialTab = searchParams.get("tab") === "curated" ? "curated" : "digital";
   const [activeTab, setActiveTab] = React.useState<"digital" | "curated">(initialTab);
   const [searchQuery, setSearchQuery] = React.useState("");
-  const { products, fetchProducts } = useProductStore();
-  const { products: affiliates } = useAffiliateStore();
+  const { products: digitalProducts, fetchProducts: fetchDigitalProducts } = useProductStore();
+  const { products: affiliates, fetchProducts: fetchAffiliates } = useAffiliateStore();
 
   React.useEffect(() => {
-    if (products.length === 0) {
-      fetchProducts();
-    }
-  }, [products.length, fetchProducts]);
+    fetchDigitalProducts();
+    fetchAffiliates();
+  }, [fetchDigitalProducts, fetchAffiliates]);
 
   // Simple filtering for mock data
-  const filteredProducts = products.filter(p => 
+  const filteredProducts = digitalProducts.filter(p => 
     p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
     p.description.toLowerCase().includes(searchQuery.toLowerCase())
   );

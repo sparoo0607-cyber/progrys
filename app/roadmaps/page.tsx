@@ -6,7 +6,13 @@ import { RoadmapCard } from "@/components/ui/roadmap-card";
 import { useRoadmapStore } from "@/lib/store/useRoadmapStore";
 
 export default function RoadmapsPage() {
-  const { roadmaps } = useRoadmapStore();
+  const { roadmaps, fetchRoadmaps } = useRoadmapStore();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    fetchRoadmaps();
+    setMounted(true);
+  }, [fetchRoadmaps]);
 
   return (
     <div className="container mx-auto px-4 py-12 md:py-16">

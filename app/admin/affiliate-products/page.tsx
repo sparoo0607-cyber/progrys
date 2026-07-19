@@ -12,7 +12,14 @@ import { AffiliateProduct } from "@/lib/data/affiliates";
 import { toast } from "sonner";
 
 export default function AffiliateProductsAdminPage() {
-  const { products, addProduct, updateProduct, deleteProduct } = useAffiliateStore();
+  const { products, addProduct, updateProduct, deleteProduct, fetchProducts } = useAffiliateStore();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    fetchProducts();
+    setMounted(true);
+  }, [fetchProducts]);
+
   const [searchQuery, setSearchQuery] = React.useState("");
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [editingProduct, setEditingProduct] = React.useState<AffiliateProduct | null>(null);

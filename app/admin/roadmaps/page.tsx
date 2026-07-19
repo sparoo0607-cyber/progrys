@@ -12,7 +12,14 @@ import { useRoadmapStore } from "@/lib/store/useRoadmapStore";
 import { toast } from "sonner";
 
 export default function RoadmapsAdminPage() {
-  const { roadmaps, addRoadmap, updateRoadmap, deleteRoadmap } = useRoadmapStore();
+  const { roadmaps, addRoadmap, updateRoadmap, deleteRoadmap, fetchRoadmaps } = useRoadmapStore();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    fetchRoadmaps();
+    setMounted(true);
+  }, [fetchRoadmaps]);
+
   const [search, setSearch] = React.useState("");
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [editingRoadmap, setEditingRoadmap] = React.useState<Roadmap | null>(null);

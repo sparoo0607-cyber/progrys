@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/animated-section";
@@ -7,7 +8,13 @@ import { Badge } from "@/components/ui/badge";
 import { useKnowledgeStore } from "@/lib/store/useKnowledgeStore";
 
 export default function KnowledgeHubPage() {
-  const { topics } = useKnowledgeStore();
+  const { topics, fetchTopics } = useKnowledgeStore();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    fetchTopics();
+    setMounted(true);
+  }, [fetchTopics]);
 
   return (
     <div className="container mx-auto px-4 py-12 md:py-16">

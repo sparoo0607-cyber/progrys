@@ -12,8 +12,17 @@ import { useKnowledgeStore } from "@/lib/store/useKnowledgeStore";
 export default function TopicPage(props: { params: Promise<{ topicSlug: string }> }) {
   const params = React.use(props.params);
   const router = useRouter();
-  const { getTopicBySlug } = useKnowledgeStore();
+  const { getTopicBySlug, fetchTopics } = useKnowledgeStore();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    fetchTopics();
+    setMounted(true);
+  }, [fetchTopics]);
+
   const topic = getTopicBySlug(params.topicSlug);
+
+  if (!mounted) return null;
 
   if (!topic) {
     return (

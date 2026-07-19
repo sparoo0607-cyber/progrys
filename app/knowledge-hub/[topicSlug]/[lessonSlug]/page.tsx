@@ -34,10 +34,18 @@ function CodeBlock({ code }: { code: string }) {
 export default function LessonPage(props: { params: Promise<{ topicSlug: string; lessonSlug: string }> }) {
   const params = React.use(props.params);
   const router = useRouter();
-  const { getTopicBySlug, getLessonBySlug } = useKnowledgeStore();
+  const { getTopicBySlug, getLessonBySlug, fetchTopics } = useKnowledgeStore();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    fetchTopics();
+    setMounted(true);
+  }, [fetchTopics]);
 
   const topic = getTopicBySlug(params.topicSlug);
   const lesson = getLessonBySlug(params.topicSlug, params.lessonSlug);
+
+  if (!mounted) return null;
 
   if (!topic || !lesson) {
     return (

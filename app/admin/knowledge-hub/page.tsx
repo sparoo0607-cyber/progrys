@@ -20,7 +20,15 @@ export default function KnowledgeHubAdminPage() {
   const {
     topics, addTopic, updateTopic, deleteTopic,
     addLesson, updateLesson, deleteLesson,
+    fetchTopics,
   } = useKnowledgeStore();
+
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    fetchTopics();
+    setMounted(true);
+  }, [fetchTopics]);
 
   const [search, setSearch] = React.useState("");
   const [expandedTopics, setExpandedTopics] = React.useState<Set<string>>(new Set());
