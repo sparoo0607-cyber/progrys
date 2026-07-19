@@ -11,16 +11,21 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 
 export default function LibraryPage() {
-  const { user, isLoggedIn, isHydrated } = useAuthStore();
+  const { user, isLoggedIn } = useAuthStore();
   const router = useRouter();
+  const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
-    if (isHydrated && !isLoggedIn) {
+    setMounted(true);
+  }, []);
+
+  React.useEffect(() => {
+    if (mounted && !isLoggedIn) {
       router.push("/auth/login");
     }
-  }, [isLoggedIn, isHydrated, router]);
+  }, [isLoggedIn, mounted, router]);
 
-  if (!isHydrated) return null;
+  if (!mounted) return null;
   if (!isLoggedIn || !user) return null;
 
   // Mock purchased products (first 2 from mock data)

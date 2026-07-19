@@ -17,8 +17,6 @@ interface AuthStore {
   isAdmin: boolean;
   login: (user: User) => void;
   updateUser: (partial: Partial<User>) => void;
-  isHydrated: boolean;
-  setHydrated: (state: boolean) => void;
 }
 
 export const useAuthStore = create<AuthStore>()(
@@ -34,14 +32,9 @@ export const useAuthStore = create<AuthStore>()(
         const user = get().user;
         if (user) set({ user: { ...user, ...partial } });
       },
-      isHydrated: false,
-      setHydrated: (state) => set({ isHydrated: state }),
     }),
     { 
-      name: "progrys-auth",
-      onRehydrateStorage: () => (state) => {
-        state?.setHydrated(true);
-      }
+      name: "progrys-auth"
     }
   )
 );

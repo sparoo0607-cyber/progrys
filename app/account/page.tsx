@@ -10,8 +10,13 @@ import { Settings, User, Bell, Shield, LogOut, Camera } from "lucide-react";
 import { toast } from "sonner";
 
 export default function AccountPage() {
-  const { user, isLoggedIn, logout, updateUser, isHydrated } = useAuthStore();
+  const { user, isLoggedIn, logout, updateUser } = useAuthStore();
   const router = useRouter();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
   
   const [activeTab, setActiveTab] = React.useState<"profile" | "security">("profile");
   
@@ -30,10 +35,10 @@ export default function AccountPage() {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
-    if (isHydrated && !isLoggedIn) {
+    if (mounted && !isLoggedIn) {
       router.push("/auth/login");
     }
-  }, [isLoggedIn, isHydrated, router]);
+  }, [isLoggedIn, mounted, router]);
 
   React.useEffect(() => {
     if (user) {
@@ -43,7 +48,7 @@ export default function AccountPage() {
     }
   }, [user]);
 
-  if (!isHydrated) return null;
+  if (!mounted) return null;
   if (!isLoggedIn || !user) return null;
 
   const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
