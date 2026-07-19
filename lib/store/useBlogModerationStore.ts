@@ -1,92 +1,113 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
-import { MOCK_BLOGS } from "@/lib/data/blogs";
 import type { BlogPost } from "@/lib/data/blogs";
 
 export interface ModeratableBlog extends BlogPost {
   status: "pending" | "approved" | "rejected";
 }
 
-// Add moderation status to all mock blogs, some pending
-const seeded: ModeratableBlog[] = MOCK_BLOGS.map((b, i) => ({
-  ...b,
-  status: i < 2 ? "pending" : "approved",
-}));
-
-// Add a couple of new pending submissions
-const pendingSubmissions: ModeratableBlog[] = [
-  {
-    id: "pending-1",
-    title: "How I passed AWS Cloud Practitioner in 2 weeks",
-    slug: "aws-cloud-practitioner-2-weeks",
-    excerpt: "A step-by-step study guide and my personal routine that helped me pass on first attempt.",
-    content: "...",
-    authorName: "Raj Patel",
-    author: { name: "Raj Patel", avatar: "" },
-    category: "Certification",
-    rating: 0,
-    coverImage: "",
-    tags: ["AWS", "Cloud", "Certification"],
-    readTime: 8,
-    publishedAt: new Date().toISOString(),
-    likes: 0,
-    status: "pending",
-  },
-  {
-    id: "pending-2",
-    title: "Top 5 VS Code Extensions for Students",
-    slug: "vscode-extensions-students",
-    excerpt: "Boost your productivity with these must-have extensions. All free, all awesome.",
-    content: "...",
-    authorName: "Lily Nguyen",
-    author: { name: "Lily Nguyen", avatar: "" },
-    category: "Productivity",
-    rating: 0,
-    coverImage: "",
-    tags: ["Tools", "Productivity", "VSCode"],
-    readTime: 4,
-    publishedAt: new Date().toISOString(),
-    likes: 0,
-    status: "pending",
-  },
-];
-
 interface BlogModerationStore {
   blogs: ModeratableBlog[];
-  approve: (id: string) => void;
-  reject: (id: string) => void;
-  delete: (id: string) => void;
-  submitBlog: (blog: Omit<ModeratableBlog, "id" | "status" | "publishedAt" | "likes">) => void;
+  isLoading: boolean;
+  fetchBlogs: () => Promise<void>;
+  approve: (id: string) => Promise<void>;
+  reject: (id: string) => Promise<void>;
+  delete: (id: string) => Promise<void>;
+  submitBlog: (blog: Omit<ModeratableBlog, "id" | "status" | "publishedAt" | "likes">) => Promise<void>;
   getBlogBySlug: (slug: string) => ModeratableBlog | undefined;
 }
 
-export const useBlogModerationStore = create<BlogModerationStore>()(
-  persist(
-    (set, get) => ({
-      blogs: [...pendingSubmissions, ...seeded],
-      approve: (id) =>
-        set((s) => ({ blogs: s.blogs.map((b) => (b.id === id ? { ...b, status: "approved" } : b)) })),
-      reject: (id) =>
-        set((s) => ({ blogs: s.blogs.map((b) => (b.id === id ? { ...b, status: "rejected" } : b)) })),
-      delete: (id) =>
-        set((s) => ({ blogs: s.blogs.filter((b) => b.id !== id) })),
-      submitBlog: (newBlog) =>
+export const useBlogModerationStore = create<BlogModerationStore>((set, get) => ({
+  blogs: [],
+  isLoading: false,
+
+  fetchBlogs: async () => {
+    set({ isLoading: true });
+    try {
+      const res = await fetch("/api/blogs");
+      if (res.ok) {
+        const data = await res.json();
+        set({ blogs: data });
+      }
+    } catch (err) {
+      console.error("Failed to fetch blogs", err);
+    } finally {
+      set({ isLoading: false });
+    }
+  },
+
+  approve: async (id) => {
+    try {
+      const res = await fetch(`/api/blogs/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: "approved" }),
+      });
+      if (res.ok) {
+        const data = await res.json();
         set((s) => ({
-          blogs: [
-            {
-              ...newBlog,
-              id: `b${Date.now()}`,
-              status: "pending",
-              publishedAt: new Date().toISOString(),
-              likes: 0,
-            },
-            ...s.blogs,
-          ],
-        })),
-      getBlogBySlug: (slug) => {
-        return get().blogs.find((b) => b.slug === slug);
-      },
-    }),
-    { name: "progrys-blog-moderation" }
-  )
-);
+          blogs: s.blogs.map((b) => (b.id === id ? data.blog : b)),
+        }));
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  },
+
+  reject: async (id) => {
+    try {
+      const res = await fetch(`/api/blogs/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: "rejected" }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        set((s) => ({
+          blogs: s.blogs.map((b) => (b.id === id ? data.blog : b)),
+        }));
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  },
+
+  delete: async (id) => {
+    try {
+      const res = await fetch(`/api/blogs/${id}`, {
+        method: "DELETE",
+      });
+      if (res.ok) {
+        set((s) => ({
+          blogs: s.blogs.filter((b) => b.id !== id),
+        }));
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  },
+
+  submitBlog: async (newBlog) => {
+    try {
+      const res = await fetch("/api/blogs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newBlog),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        set((s) => ({
+          blogs: [data.blog, ...s.blogs],
+        }));
+      } else {
+        throw new Error("Failed to submit blog");
+      }
+    } catch (err) {
+      console.error(err);
+      throw err;
+    }
+  },
+
+  getBlogBySlug: (slug) => {
+    return get().blogs.find((b) => b.slug === slug);
+  },
+}));

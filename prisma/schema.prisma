@@ -44,3 +44,19 @@ model Product {
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
 }
+
+model Blog {
+  id         String   @id @default(cuid())
+  title      String
+  slug       String   @unique
+  excerpt    String
+  content    String
+  authorName String
+  category   String
+  tags       String   // JSON string of String[]
+  readTime   Int
+  status     String   @default("pending") // "pending", "approved", "rejected"
+  likes      Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}

@@ -13,9 +13,13 @@ import { useAuthStore } from "@/lib/store/useAuthStore";
 import { useRouter } from "next/navigation";
 
 export default function BlogsPage() {
-  const { blogs, submitBlog } = useBlogModerationStore();
+  const { blogs, submitBlog, fetchBlogs } = useBlogModerationStore();
   const { user } = useAuthStore();
   const router = useRouter();
+
+  React.useEffect(() => {
+    fetchBlogs();
+  }, [fetchBlogs]);
   
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isUploading, setIsUploading] = React.useState(false);

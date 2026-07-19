@@ -10,9 +10,13 @@ import { toast } from "sonner";
 import { Modal } from "@/components/ui/modal";
 
 export default function BlogModerationAdminPage() {
-  const { blogs, approve, reject, delete: deleteBlog } = useBlogModerationStore();
+  const { blogs, approve, reject, delete: deleteBlog, fetchBlogs } = useBlogModerationStore();
   const [filter, setFilter] = React.useState<"pending" | "approved" | "rejected">("pending");
   const [previewBlog, setPreviewBlog] = React.useState<typeof blogs[0] | null>(null);
+
+  React.useEffect(() => {
+    fetchBlogs();
+  }, [fetchBlogs]);
 
   const filtered = blogs.filter((b) => b.status === filter);
   const pendingCount = blogs.filter((b) => b.status === "pending").length;
