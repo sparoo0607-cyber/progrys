@@ -16,6 +16,7 @@ interface AuthStore {
   isLoggedIn: boolean;
   isAdmin: boolean;
   login: (user: User) => void;
+  logout: () => void;
   updateUser: (partial: Partial<User>) => void;
 }
 
