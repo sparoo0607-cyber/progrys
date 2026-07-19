@@ -25,7 +25,7 @@ export function RoadmapCard({ roadmap }: { roadmap: Roadmap }) {
       className="group flex flex-col bg-[var(--card)] border border-[var(--card-border)] rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all p-6"
     >
       <div className="flex justify-between items-start mb-4">
-        <div className="w-12 h-12 bg-[var(--alt-section)] rounded-lg flex items-center justify-center group-hover:bg-[#2563EB] transition-colors">
+        <div className="w-12 h-12 bg-[var(--alt-section)] rounded-lg flex items-center justify-center group-hover:bg-[var(--foreground)] transition-colors">
           <Icon size={24} className="text-[var(--foreground)] group-hover:text-white transition-colors" />
         </div>
         <Badge 
@@ -39,7 +39,7 @@ export function RoadmapCard({ roadmap }: { roadmap: Roadmap }) {
         </Badge>
       </div>
       
-      <h3 className="font-bold text-xl text-[var(--foreground)] mb-2 group-hover:text-[#2563EB] transition-colors">{roadmap.title}</h3>
+      <h3 className="font-bold text-xl text-[var(--foreground)] mb-2 group-hover:text-[var(--foreground)] transition-colors">{roadmap.title}</h3>
       
       <p className="text-[var(--text-secondary)] text-sm mb-6 flex-1 line-clamp-3">
         {roadmap.description}

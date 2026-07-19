@@ -25,10 +25,10 @@ export function MobileBottomNav() {
               key={item.name}
               href={item.href}
               className={`flex flex-col items-center justify-center w-full h-full space-y-1 transition-colors ${
-                isActive ? "text-[#2563EB]" : "text-[var(--text-muted)] hover:text-[var(--foreground)]"
+                isActive ? "text-[var(--foreground)]" : "text-[var(--text-muted)] hover:text-[var(--foreground)]"
               }`}
             >
-              <item.icon size={20} className={isActive ? "fill-[#2563EB]/20" : ""} />
+              <item.icon size={20} className={isActive ? "fill-[var(--foreground)]/20" : ""} />
               <span className="text-[10px] font-medium">{item.name}</span>
             </Link>
           );

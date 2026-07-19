@@ -61,7 +61,7 @@ export default function UsersAdminPage() {
               placeholder="Search by name or email..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full sm:w-72 pl-8 pr-3 py-1.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[#2563EB]"
+              className="w-full sm:w-72 pl-8 pr-3 py-1.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]"
             />
           </div>
           <div className="flex p-1 bg-[var(--alt-section)] rounded-lg border border-[var(--border-color)] self-start sm:self-auto">

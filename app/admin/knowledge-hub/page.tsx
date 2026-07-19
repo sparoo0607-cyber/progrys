@@ -115,7 +115,7 @@ export default function KnowledgeHubAdminPage() {
         <input
           type="text" value={search} onChange={(e) => setSearch(e.target.value)}
           placeholder="Search topics..."
-          className="w-full pl-9 pr-3 py-2 bg-[var(--card)] border border-[var(--border-color)] rounded-lg text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[#2563EB]"
+          className="w-full pl-9 pr-3 py-2 bg-[var(--card)] border border-[var(--border-color)] rounded-lg text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]"
         />
       </div>
 
@@ -137,7 +137,7 @@ export default function KnowledgeHubAdminPage() {
                   {isExpanded ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
                 </button>
                 <div className="w-10 h-10 rounded-xl bg-[var(--alt-section)] border border-[var(--border-color)] flex items-center justify-center shrink-0">
-                  <Lightbulb size={18} className="text-[#2563EB]" />
+                  <Lightbulb size={18} className="text-[var(--foreground)]" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-bold text-[var(--foreground)]">{topic.title}</p>
@@ -147,10 +147,10 @@ export default function KnowledgeHubAdminPage() {
                   {topic.lessons.length} lessons
                 </Badge>
                 <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button onClick={() => openAddLesson(topic)} className="p-1.5 text-[var(--text-secondary)] hover:text-[#2563EB] bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]" title="Add Lesson">
+                  <button onClick={() => openAddLesson(topic)} className="p-1.5 text-[var(--text-secondary)] hover:text-[var(--foreground)] bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]" title="Add Lesson">
                     <Plus size={14} />
                   </button>
-                  <button onClick={() => openEditTopic(topic)} className="p-1.5 text-[var(--text-secondary)] hover:text-[#2563EB] bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]">
+                  <button onClick={() => openEditTopic(topic)} className="p-1.5 text-[var(--text-secondary)] hover:text-[var(--foreground)] bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]">
                     <Edit2 size={14} />
                   </button>
                   <button onClick={() => { if (window.confirm(`Delete topic "${topic.title}" and all its lessons?`)) { deleteTopic(topic.id); toast.success("Topic deleted."); } }}
@@ -166,7 +166,7 @@ export default function KnowledgeHubAdminPage() {
                   {topic.lessons.length === 0 ? (
                     <div className="px-6 py-6 text-center text-sm text-[var(--text-muted)]">
                       No lessons yet.{" "}
-                      <button onClick={() => openAddLesson(topic)} className="text-[#2563EB] hover:underline font-medium">Add the first lesson →</button>
+                      <button onClick={() => openAddLesson(topic)} className="text-[var(--foreground)] hover:underline font-medium">Add the first lesson →</button>
                     </div>
                   ) : (
                     <div className="divide-y divide-[var(--border-color)]">
@@ -184,7 +184,7 @@ export default function KnowledgeHubAdminPage() {
                             </span>
                           )}
                           <div className="flex gap-2 opacity-0 group-hover/lesson:opacity-100 transition-opacity">
-                            <button onClick={() => openEditLesson(topic, lesson)} className="p-1.5 text-[var(--text-secondary)] hover:text-[#2563EB] bg-[var(--card)] rounded-md border border-[var(--border-color)]">
+                            <button onClick={() => openEditLesson(topic, lesson)} className="p-1.5 text-[var(--text-secondary)] hover:text-[var(--foreground)] bg-[var(--card)] rounded-md border border-[var(--border-color)]">
                               <Edit2 size={12} />
                             </button>
                             <button onClick={() => { if (window.confirm(`Delete lesson "${lesson.title}"?`)) { deleteLesson(topic.id, lesson.id); toast.success("Lesson deleted."); } }}
@@ -197,7 +197,7 @@ export default function KnowledgeHubAdminPage() {
                     </div>
                   )}
                   <div className="px-8 py-3 border-t border-[var(--border-color)]">
-                    <button onClick={() => openAddLesson(topic)} className="flex items-center gap-2 text-sm text-[#2563EB] hover:text-[#1d4ed8] font-medium transition-colors">
+                    <button onClick={() => openAddLesson(topic)} className="flex items-center gap-2 text-sm text-[var(--foreground)] hover:text-[var(--text-secondary)] font-medium transition-colors">
                       <Plus size={14} /> Add Lesson
                     </button>
                   </div>
@@ -222,7 +222,7 @@ export default function KnowledgeHubAdminPage() {
             <div className="space-y-2">
               <label className="text-sm font-medium text-[var(--foreground)]">Description</label>
               <textarea required rows={2} value={topicForm.description} onChange={(e) => setTopicForm({ ...topicForm, description: e.target.value })}
-                className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[#2563EB] resize-none" placeholder="Short description..." />
+                className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)] resize-none" placeholder="Short description..." />
             </div>
             <div className="flex justify-end gap-3 pt-4 border-t border-[var(--border-color)]">
               <Button type="button" variant="ghost" onClick={() => setModalMode(null)}>Cancel</Button>
@@ -253,21 +253,21 @@ export default function KnowledgeHubAdminPage() {
             <div className="space-y-2">
               <label className="text-sm font-medium text-[var(--foreground)]">Explanation (HTML supported)</label>
               <textarea required rows={5} value={lessonForm.explanationHtml} onChange={(e) => setLessonForm({ ...lessonForm, explanationHtml: e.target.value })}
-                className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm font-mono text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[#2563EB] resize-y"
+                className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm font-mono text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)] resize-y"
                 placeholder="<p>Components are the building blocks...</p>" />
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-[var(--foreground)]">Code Example</label>
               <textarea rows={5} value={lessonForm.codeExample} onChange={(e) => setLessonForm({ ...lessonForm, codeExample: e.target.value })}
-                className="w-full px-3 py-2 bg-[#0A0A0A] text-green-400 border border-[var(--border-color)] rounded-md text-sm font-mono focus:outline-none focus:ring-1 focus:ring-[#2563EB] resize-y"
+                className="w-full px-3 py-2 bg-[#0A0A0A] text-green-400 border border-[var(--border-color)] rounded-md text-sm font-mono focus:outline-none focus:ring-1 focus:ring-[var(--foreground)] resize-y"
                 placeholder="function Welcome(props) { ... }" />
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-[var(--foreground)]">Try-It Default (optional)</label>
               <textarea rows={3} value={lessonForm.tryItDefault} onChange={(e) => setLessonForm({ ...lessonForm, tryItDefault: e.target.value })}
-                className="w-full px-3 py-2 bg-[#0A0A0A] text-green-400 border border-[var(--border-color)] rounded-md text-sm font-mono focus:outline-none focus:ring-1 focus:ring-[#2563EB] resize-y"
+                className="w-full px-3 py-2 bg-[#0A0A0A] text-green-400 border border-[var(--border-color)] rounded-md text-sm font-mono focus:outline-none focus:ring-1 focus:ring-[var(--foreground)] resize-y"
                 placeholder="export default function App() { ... }" />
             </div>
 

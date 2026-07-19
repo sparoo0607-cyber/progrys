@@ -20,7 +20,7 @@ export default function KnowledgeHubPage() {
     <div className="container mx-auto px-4 py-12 md:py-16">
       <AnimatedSection>
         <div className="mb-12">
-          <Badge className="mb-4 bg-[#2563EB]/10 text-[#2563EB] border-transparent hover:bg-[#2563EB]/20">Interactive</Badge>
+          <Badge className="mb-4 bg-[var(--foreground)]/10 text-[var(--foreground)] border-transparent hover:bg-[var(--foreground)]/20">Interactive</Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-4 tracking-tight">Knowledge Hub</h1>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl">
             Learn core concepts quickly. Read bite-sized lessons, copy snippets, and try code right in your browser.
@@ -34,10 +34,10 @@ export default function KnowledgeHubPage() {
               href={`/knowledge-hub/${topic.slug}`}
               className="group bg-[var(--card)] border border-[var(--card-border)] rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col items-start"
             >
-              <div className="w-12 h-12 bg-[var(--alt-section)] rounded-xl flex items-center justify-center mb-6 text-[var(--foreground)] group-hover:bg-[#2563EB] group-hover:text-white transition-colors">
+              <div className="w-12 h-12 bg-[var(--alt-section)] rounded-xl flex items-center justify-center mb-6 text-[var(--foreground)] group-hover:bg-[var(--foreground)] group-hover:text-white transition-colors">
                 <span className="font-bold text-lg">{topic.title.charAt(0)}</span>
               </div>
-              <h2 className="text-2xl font-bold text-[var(--foreground)] mb-2 group-hover:text-[#2563EB] transition-colors">{topic.title}</h2>
+              <h2 className="text-2xl font-bold text-[var(--foreground)] mb-2 group-hover:text-[var(--foreground)] transition-colors">{topic.title}</h2>
               <p className="text-[var(--text-secondary)] mb-8 flex-1">
                 {topic.description}
               </p>

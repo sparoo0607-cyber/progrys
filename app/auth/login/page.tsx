@@ -72,7 +72,7 @@ export default function LoginPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/50"
+                  className="w-full pl-10 pr-4 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/50"
                   placeholder="you@example.com"
                   required
                 />
@@ -82,7 +82,7 @@ export default function LoginPage() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <label className="text-sm font-medium text-[var(--foreground)]" htmlFor="password">Password</label>
-                <Link href="/auth/forgot-password" className="text-xs font-medium text-[#2563EB] hover:underline">
+                <Link href="/auth/forgot-password" className="text-xs font-medium text-[var(--foreground)] hover:underline">
                   Forgot password?
                 </Link>
               </div>
@@ -93,7 +93,7 @@ export default function LoginPage() {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-10 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/50"
+                  className="w-full pl-10 pr-10 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/50"
                   placeholder="••••••••"
                   required
                 />
@@ -119,7 +119,7 @@ export default function LoginPage() {
 
           <div className="mt-6 text-center text-sm text-[var(--text-secondary)]">
             Don't have an account?{" "}
-            <Link href="/auth/signup" className="font-medium text-[#2563EB] hover:underline">
+            <Link href="/auth/signup" className="font-medium text-[var(--foreground)] hover:underline">
               Sign up
             </Link>
           </div>

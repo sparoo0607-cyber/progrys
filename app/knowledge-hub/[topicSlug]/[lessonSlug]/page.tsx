@@ -81,9 +81,9 @@ export default function LessonPage(props: { params: Promise<{ topicSlug: string;
                   key={l.id}
                   className={`h-1.5 rounded-full transition-all ${
                     i === lessonIndex
-                      ? "w-8 bg-[#2563EB]"
+                      ? "w-8 bg-[var(--foreground)]"
                       : i < lessonIndex
-                      ? "w-3 bg-[#2563EB]/40"
+                      ? "w-3 bg-[var(--foreground)]/40"
                       : "w-3 bg-[var(--border-color)]"
                   }`}
                 />
@@ -96,7 +96,7 @@ export default function LessonPage(props: { params: Promise<{ topicSlug: string;
 
           {/* Lesson Header */}
           <header className="mb-10">
-            <Badge className="mb-4 bg-[#2563EB]/10 text-[#2563EB] border-transparent">{topic.title}</Badge>
+            <Badge className="mb-4 bg-[var(--foreground)]/10 text-[var(--foreground)] border-transparent">{topic.title}</Badge>
             <h1 className="text-3xl md:text-4xl font-bold text-[var(--foreground)] tracking-tight">
               {lesson.title}
             </h1>
@@ -104,7 +104,7 @@ export default function LessonPage(props: { params: Promise<{ topicSlug: string;
 
           {/* Explanation */}
           <div
-            className="prose prose-lg dark:prose-invert prose-headings:font-bold prose-headings:tracking-tight prose-a:text-[#2563EB] max-w-none mb-10 text-[var(--foreground)] leading-relaxed"
+            className="prose prose-lg dark:prose-invert prose-headings:font-bold prose-headings:tracking-tight prose-a:text-[var(--foreground)] max-w-none mb-10 text-[var(--foreground)] leading-relaxed"
             dangerouslySetInnerHTML={{ __html: lesson.explanationHtml }}
           />
 
@@ -151,28 +151,28 @@ export default function LessonPage(props: { params: Promise<{ topicSlug: string;
             {prevLesson ? (
               <Link
                 href={`/knowledge-hub/${topic.slug}/${prevLesson.slug}`}
-                className="flex items-center gap-3 px-5 py-3 bg-[var(--card)] border border-[var(--card-border)] rounded-xl hover:border-[#2563EB]/40 hover:-translate-x-0.5 transition-all group"
+                className="flex items-center gap-3 px-5 py-3 bg-[var(--card)] border border-[var(--card-border)] rounded-xl hover:border-[var(--foreground)]/40 hover:-translate-x-0.5 transition-all group"
               >
-                <ArrowLeft size={16} className="text-[var(--text-muted)] group-hover:text-[#2563EB] transition-colors" />
+                <ArrowLeft size={16} className="text-[var(--text-muted)] group-hover:text-[var(--foreground)] transition-colors" />
                 <div>
                   <p className="text-xs text-[var(--text-muted)]">Previous</p>
-                  <p className="text-sm font-medium text-[var(--foreground)] group-hover:text-[#2563EB] transition-colors">{prevLesson.title}</p>
+                  <p className="text-sm font-medium text-[var(--foreground)] group-hover:text-[var(--foreground)] transition-colors">{prevLesson.title}</p>
                 </div>
               </Link>
             ) : (
               <Link
                 href={`/knowledge-hub/${topic.slug}`}
-                className="flex items-center gap-3 px-5 py-3 bg-[var(--card)] border border-[var(--card-border)] rounded-xl hover:border-[#2563EB]/40 transition-all group"
+                className="flex items-center gap-3 px-5 py-3 bg-[var(--card)] border border-[var(--card-border)] rounded-xl hover:border-[var(--foreground)]/40 transition-all group"
               >
-                <ArrowLeft size={16} className="text-[var(--text-muted)] group-hover:text-[#2563EB] transition-colors" />
-                <p className="text-sm font-medium text-[var(--foreground)] group-hover:text-[#2563EB] transition-colors">Back to {topic.title}</p>
+                <ArrowLeft size={16} className="text-[var(--text-muted)] group-hover:text-[var(--foreground)] transition-colors" />
+                <p className="text-sm font-medium text-[var(--foreground)] group-hover:text-[var(--foreground)] transition-colors">Back to {topic.title}</p>
               </Link>
             )}
 
             {nextLesson ? (
               <Link
                 href={`/knowledge-hub/${topic.slug}/${nextLesson.slug}`}
-                className="flex items-center gap-3 px-5 py-3 bg-[#2563EB] text-white rounded-xl hover:bg-[#1d4ed8] hover:translate-x-0.5 transition-all group ml-auto"
+                className="flex items-center gap-3 px-5 py-3 bg-[var(--foreground)] text-white rounded-xl hover:bg-[var(--text-secondary)] hover:translate-x-0.5 transition-all group ml-auto"
               >
                 <div className="text-right">
                   <p className="text-xs text-white/70">Next lesson</p>

@@ -124,7 +124,7 @@ export default function BlogsPage() {
             <div className="space-y-2">
               <label className="text-sm font-medium text-[var(--foreground)]">Excerpt (Short Summary)</label>
               <textarea required rows={2} value={formData.excerpt} onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
-                className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[#2563EB] resize-none" placeholder="What is this article about?" />
+                className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)] resize-none" placeholder="What is this article about?" />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -141,7 +141,7 @@ export default function BlogsPage() {
             <div className="space-y-2">
               <label className="text-sm font-medium text-[var(--foreground)]">Full Content (Markdown supported)</label>
               <textarea required rows={10} value={formData.content} onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[#2563EB] resize-y" placeholder="# Introduction&#10;&#10;Write your article here..." />
+                className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)] resize-y" placeholder="# Introduction&#10;&#10;Write your article here..." />
             </div>
 
             <div className="flex flex-col gap-3 pt-4 border-t border-[var(--border-color)]">

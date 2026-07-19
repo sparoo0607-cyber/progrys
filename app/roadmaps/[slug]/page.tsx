@@ -78,12 +78,12 @@ export default function RoadmapDetailPage(props: { params: Promise<{ slug: strin
               <div key={node.id} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                 
                 {/* Icon Marker */}
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--card)] border-4 border-[var(--background)] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 text-[var(--text-muted)] group-hover:text-[#2563EB] group-hover:border-[#2563EB]/20 transition-all ml-0 md:ml-0 md:absolute md:left-1/2 md:-translate-x-1/2">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--card)] border-4 border-[var(--background)] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 text-[var(--text-muted)] group-hover:text-[var(--foreground)] group-hover:border-[var(--foreground)]/20 transition-all ml-0 md:ml-0 md:absolute md:left-1/2 md:-translate-x-1/2">
                   <span className="text-xs font-bold">{index + 1}</span>
                 </div>
 
                 {/* Content Card */}
-                <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-[var(--card)] border border-[var(--card-border)] shadow-sm group-hover:border-[#2563EB]/30 transition-colors ml-4 md:ml-0">
+                <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-[var(--card)] border border-[var(--card-border)] shadow-sm group-hover:border-[var(--foreground)]/30 transition-colors ml-4 md:ml-0">
                   <h3 className="text-lg font-bold text-[var(--foreground)] mb-2">{node.title}</h3>
                   <p className="text-[var(--text-secondary)] leading-relaxed">{node.description}</p>
                 </div>

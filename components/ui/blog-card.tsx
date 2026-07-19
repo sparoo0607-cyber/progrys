@@ -33,7 +33,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
         </div>
         
         <Link href={`/blogs/${post.slug}`} className="flex-1">
-          <h3 className="font-bold text-xl text-[var(--foreground)] mb-2 group-hover:text-[#2563EB] transition-colors">{post.title}</h3>
+          <h3 className="font-bold text-xl text-[var(--foreground)] mb-2 group-hover:text-[var(--foreground)] transition-colors">{post.title}</h3>
           <p className="text-[var(--text-secondary)] text-sm mb-4 line-clamp-2">
             {post.excerpt}
           </p>

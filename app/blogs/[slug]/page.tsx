@@ -89,7 +89,7 @@ export default function BlogReaderPage(props: { params: Promise<{ slug: string }
           </p>
 
           <div className="flex items-center gap-4 py-6 border-y border-[var(--border-color)]">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#2563EB] to-purple-500 flex items-center justify-center text-white font-bold text-lg">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[var(--foreground)] to-[var(--text-secondary)] flex items-center justify-center text-white font-bold text-lg">
               {post.authorName.charAt(0)}
             </div>
             <div>
@@ -107,7 +107,7 @@ export default function BlogReaderPage(props: { params: Promise<{ slug: string }
         {/* We use dangerouslySetInnerHTML because the mock data has raw HTML string like <p>...</p> */}
         {/* In a real app, you'd parse markdown or sanitize HTML here */}
         <article 
-          className="prose prose-lg dark:prose-invert prose-blue max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-[#2563EB] prose-a:no-underline hover:prose-a:underline"
+          className="prose prose-lg dark:prose-invert prose-neutral max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-[var(--foreground)] prose-a:no-underline hover:prose-a:underline"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
         

@@ -160,13 +160,13 @@ export default function SignupPage() {
         <div className="flex items-center justify-center gap-3 mb-8">
           {(["details", "verify"] as Step[]).map((s, i) => (
             <React.Fragment key={s}>
-              <div className={`flex items-center gap-2 text-sm font-medium transition-colors ${step === s ? "text-[var(--foreground)]" : step === "verify" && s === "details" ? "text-[#2563EB]" : "text-[var(--text-muted)]"}`}>
-                <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-all ${step === s ? "bg-[#2563EB] text-white" : step === "verify" && s === "details" ? "bg-green-500 text-white" : "bg-[var(--alt-section)] text-[var(--text-muted)]"}`}>
+              <div className={`flex items-center gap-2 text-sm font-medium transition-colors ${step === s ? "text-[var(--foreground)]" : step === "verify" && s === "details" ? "text-[var(--foreground)]" : "text-[var(--text-muted)]"}`}>
+                <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-all ${step === s ? "bg-[var(--foreground)] text-white" : step === "verify" && s === "details" ? "bg-green-500 text-white" : "bg-[var(--alt-section)] text-[var(--text-muted)]"}`}>
                   {step === "verify" && s === "details" ? <CheckCircle2 size={14} /> : i + 1}
                 </div>
                 <span className="hidden sm:inline">{s === "details" ? "Your Details" : "Verify Email"}</span>
               </div>
-              {i === 0 && <div className={`flex-1 h-px max-w-[60px] transition-colors ${step === "verify" ? "bg-[#2563EB]" : "bg-[var(--border-color)]"}`} />}
+              {i === 0 && <div className={`flex-1 h-px max-w-[60px] transition-colors ${step === "verify" ? "bg-[var(--foreground)]" : "bg-[var(--border-color)]"}`} />}
             </React.Fragment>
           ))}
         </div>
@@ -189,7 +189,7 @@ export default function SignupPage() {
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)]" size={16} />
                         <input id="firstName" required value={firstName} onChange={(e) => setFirstName(e.target.value)}
-                          className="w-full pl-9 pr-3 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/50 text-sm"
+                          className="w-full pl-9 pr-3 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/50 text-sm"
                           placeholder="Alex" />
                       </div>
                     </div>
@@ -198,7 +198,7 @@ export default function SignupPage() {
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)]" size={16} />
                         <input id="lastName" required value={lastName} onChange={(e) => setLastName(e.target.value)}
-                          className="w-full pl-9 pr-3 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/50 text-sm"
+                          className="w-full pl-9 pr-3 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/50 text-sm"
                           placeholder="Chen" />
                       </div>
                     </div>
@@ -209,7 +209,7 @@ export default function SignupPage() {
                     <div className="relative">
                       <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)]" size={16} />
                       <input id="email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
-                        className="w-full pl-9 pr-3 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/50 text-sm"
+                        className="w-full pl-9 pr-3 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/50 text-sm"
                         placeholder="you@example.com" />
                     </div>
                   </div>
@@ -219,7 +219,7 @@ export default function SignupPage() {
                     <div className="relative">
                       <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)]" size={16} />
                       <input id="password" type={showPassword ? "text" : "password"} required value={password} onChange={(e) => setPassword(e.target.value)}
-                        className="w-full pl-9 pr-10 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/50 text-sm"
+                        className="w-full pl-9 pr-10 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/50 text-sm"
                         placeholder="Min. 8 characters" />
                       <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)] hover:text-[var(--foreground)] transition-colors">
                         {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
@@ -238,9 +238,9 @@ export default function SignupPage() {
 
                   <p className="text-xs text-[var(--text-muted)]">
                     By signing up, you agree to our{" "}
-                    <Link href="#" className="text-[#2563EB] hover:underline">Terms of Service</Link>{" "}
+                    <Link href="#" className="text-[var(--foreground)] hover:underline">Terms of Service</Link>{" "}
                     and{" "}
-                    <Link href="#" className="text-[#2563EB] hover:underline">Privacy Policy</Link>.
+                    <Link href="#" className="text-[var(--foreground)] hover:underline">Privacy Policy</Link>.
                   </p>
 
                   <Button type="submit" variant="primary" className="w-full gap-2 mt-2" disabled={isLoading}>
@@ -250,7 +250,7 @@ export default function SignupPage() {
 
                 <div className="mt-6 text-center text-sm text-[var(--text-secondary)]">
                   Already have an account?{" "}
-                  <Link href="/auth/login" className="font-medium text-[#2563EB] hover:underline">Sign in</Link>
+                  <Link href="/auth/login" className="font-medium text-[var(--foreground)] hover:underline">Sign in</Link>
                 </div>
               </motion.div>
             )}
@@ -259,8 +259,8 @@ export default function SignupPage() {
             {step === "verify" && (
               <motion.div key="verify" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.2 }}>
                 <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-[#2563EB]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Mail size={28} className="text-[#2563EB]" />
+                  <div className="w-16 h-16 bg-[var(--foreground)]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Mail size={28} className="text-[var(--foreground)]" />
                   </div>
                   <h1 className="text-2xl font-bold text-[var(--foreground)] tracking-tight mb-2">Check your inbox</h1>
                   <p className="text-[var(--text-secondary)] text-sm">
@@ -282,7 +282,7 @@ export default function SignupPage() {
                         onChange={(e) => handleOtpChange(i, e.target.value)}
                         onPaste={i === 0 ? handleOtpPaste : undefined}
                         onKeyDown={(e) => { if (e.key === "Backspace" && !digit && i > 0) otpRefs[i - 1].current?.focus(); }}
-                        className={`w-12 h-14 text-center text-2xl font-bold bg-[var(--input-bg)] border-2 rounded-xl text-[var(--foreground)] focus:outline-none transition-all ${digit ? "border-[#2563EB] bg-[#2563EB]/5" : "border-[var(--border-color)] focus:border-[#2563EB]"}`}
+                        className={`w-12 h-14 text-center text-2xl font-bold bg-[var(--input-bg)] border-2 rounded-xl text-[var(--foreground)] focus:outline-none transition-all ${digit ? "border-[var(--foreground)] bg-[var(--foreground)]/5" : "border-[var(--border-color)] focus:border-[var(--foreground)]"}`}
                       />
                     ))}
                   </div>
@@ -297,7 +297,7 @@ export default function SignupPage() {
                       type="button"
                       onClick={handleResend}
                       disabled={resendTimer > 0 || isLoading}
-                      className={`font-medium transition-colors ${resendTimer > 0 ? "text-[var(--text-muted)] cursor-not-allowed" : "text-[#2563EB] hover:underline"}`}
+                      className={`font-medium transition-colors ${resendTimer > 0 ? "text-[var(--text-muted)] cursor-not-allowed" : "text-[var(--foreground)] hover:underline"}`}
                     >
                       {resendTimer > 0 ? `Resend in ${resendTimer}s` : "Resend code"}
                     </button>

@@ -80,7 +80,7 @@ export default function SettingsAdminPage() {
               <button
                 type="button"
                 onClick={() => setSettings({ ...settings, [key]: !settings[key] })}
-                className={`relative shrink-0 h-6 w-11 rounded-full border-2 transition-colors focus:outline-none ${settings[key] ? "bg-[#2563EB] border-[#2563EB]" : "bg-[var(--alt-section)] border-[var(--border-color)]"}`}
+                className={`relative shrink-0 h-6 w-11 rounded-full border-2 transition-colors focus:outline-none ${settings[key] ? "bg-[var(--foreground)] border-[var(--foreground)]" : "bg-[var(--alt-section)] border-[var(--border-color)]"}`}
               >
                 <span className={`block w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${settings[key] ? "translate-x-5" : "translate-x-0.5"}`} />
               </button>

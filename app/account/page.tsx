@@ -173,7 +173,7 @@ export default function AccountPage() {
                     <button 
                       onClick={() => fileInputRef.current?.click()}
                       disabled={isUpdatingAvatar}
-                      className="absolute bottom-0 right-0 p-2 bg-[#2563EB] text-white rounded-full hover:bg-blue-600 transition-colors disabled:opacity-50"
+                      className="absolute bottom-0 right-0 p-2 bg-[var(--foreground)] text-white rounded-full hover:bg-blue-600 transition-colors disabled:opacity-50"
                     >
                       <Camera size={16} />
                     </button>
@@ -199,7 +199,7 @@ export default function AccountPage() {
                         type="text" 
                         value={firstName} 
                         onChange={(e) => setFirstName(e.target.value)}
-                        className="w-full px-4 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/50"
+                        className="w-full px-4 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/50"
                       />
                     </div>
                     <div className="space-y-2">
@@ -208,7 +208,7 @@ export default function AccountPage() {
                         type="text" 
                         value={lastName} 
                         onChange={(e) => setLastName(e.target.value)}
-                        className="w-full px-4 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/50"
+                        className="w-full px-4 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/50"
                       />
                     </div>
                   </div>
@@ -243,7 +243,7 @@ export default function AccountPage() {
                       required
                       value={currentPassword} 
                       onChange={(e) => setCurrentPassword(e.target.value)}
-                      className="w-full px-4 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/50 max-w-md"
+                      className="w-full px-4 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/50 max-w-md"
                     />
                   </div>
 
@@ -254,7 +254,7 @@ export default function AccountPage() {
                       required
                       value={newPassword} 
                       onChange={(e) => setNewPassword(e.target.value)}
-                      className="w-full px-4 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/50 max-w-md"
+                      className="w-full px-4 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/50 max-w-md"
                     />
                   </div>
 
@@ -265,7 +265,7 @@ export default function AccountPage() {
                       required
                       value={confirmPassword} 
                       onChange={(e) => setConfirmPassword(e.target.value)}
-                      className="w-full px-4 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/50 max-w-md"
+                      className="w-full px-4 py-2.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/50 max-w-md"
                     />
                   </div>
 

@@ -214,7 +214,7 @@ export default function DigitalProductsAdminPage() {
             <div className="relative">
               <Search size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[var(--text-muted)]" />
               <input type="text" placeholder="Search products..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full sm:w-64 pl-8 pr-3 py-1.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[#2563EB]" />
+                className="w-full sm:w-64 pl-8 pr-3 py-1.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]" />
             </div>
             <Button variant="secondary" size="icon" className="h-8 w-8 rounded-md shrink-0"><Filter size={14} /></Button>
           </div>
@@ -266,7 +266,7 @@ export default function DigitalProductsAdminPage() {
                   </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <button onClick={() => openEditModal(product)} className="p-1.5 text-[var(--text-secondary)] hover:text-[#2563EB] bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]"><Edit2 size={14} /></button>
+                      <button onClick={() => openEditModal(product)} className="p-1.5 text-[var(--text-secondary)] hover:text-[var(--foreground)] bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]"><Edit2 size={14} /></button>
                       <button onClick={() => handleDelete(product.id, product.title)} className="p-1.5 text-[var(--text-secondary)] hover:text-red-500 bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]"><Trash2 size={14} /></button>
                     </div>
                   </td>
@@ -305,9 +305,9 @@ export default function DigitalProductsAdminPage() {
                 </div>
               ) : (
                 <button type="button" onClick={() => coverImageRef.current?.click()}
-                  className="w-full aspect-video rounded-xl border-2 border-dashed border-[var(--border-color)] bg-[var(--alt-section)] hover:border-[#2563EB] hover:bg-[#2563EB]/5 flex flex-col items-center justify-center gap-3 transition-all group">
-                  <div className="w-12 h-12 rounded-full bg-[var(--card)] border border-[var(--border-color)] flex items-center justify-center group-hover:border-[#2563EB] transition-colors">
-                    <Upload size={20} className="text-[var(--text-muted)] group-hover:text-[#2563EB]" />
+                  className="w-full aspect-video rounded-xl border-2 border-dashed border-[var(--border-color)] bg-[var(--alt-section)] hover:border-[var(--foreground)] hover:bg-[var(--foreground)]/5 flex flex-col items-center justify-center gap-3 transition-all group">
+                  <div className="w-12 h-12 rounded-full bg-[var(--card)] border border-[var(--border-color)] flex items-center justify-center group-hover:border-[var(--foreground)] transition-colors">
+                    <Upload size={20} className="text-[var(--text-muted)] group-hover:text-[var(--foreground)]" />
                   </div>
                   <div className="text-center">
                     <p className="text-sm font-medium text-[var(--foreground)]">Click to upload cover image</p>
@@ -332,9 +332,9 @@ export default function DigitalProductsAdminPage() {
                     </div>
                 ))}
                 <button type="button" onClick={() => additionalImageRef.current?.click()}
-                  className="aspect-square rounded-xl border-2 border-dashed border-[var(--border-color)] bg-[var(--alt-section)] hover:border-[#2563EB] hover:bg-[#2563EB]/5 flex flex-col items-center justify-center transition-all group">
-                  <div className="w-10 h-10 rounded-full bg-[var(--card)] border border-[var(--border-color)] flex items-center justify-center group-hover:border-[#2563EB] transition-colors">
-                    <Plus size={18} className="text-[var(--text-muted)] group-hover:text-[#2563EB]" />
+                  className="aspect-square rounded-xl border-2 border-dashed border-[var(--border-color)] bg-[var(--alt-section)] hover:border-[var(--foreground)] hover:bg-[var(--foreground)]/5 flex flex-col items-center justify-center transition-all group">
+                  <div className="w-10 h-10 rounded-full bg-[var(--card)] border border-[var(--border-color)] flex items-center justify-center group-hover:border-[var(--foreground)] transition-colors">
+                    <Plus size={18} className="text-[var(--text-muted)] group-hover:text-[var(--foreground)]" />
                   </div>
                 </button>
               </div>
@@ -360,9 +360,9 @@ export default function DigitalProductsAdminPage() {
                 </div>
               ) : (
                 <button type="button" onClick={() => productFileRef.current?.click()}
-                  className="w-full p-6 rounded-xl border-2 border-dashed border-[var(--border-color)] bg-[var(--alt-section)] hover:border-[#2563EB] hover:bg-[#2563EB]/5 flex items-center gap-4 transition-all group text-left">
-                  <div className="w-12 h-12 rounded-full bg-[var(--card)] border border-[var(--border-color)] flex items-center justify-center shrink-0 group-hover:border-[#2563EB] transition-colors">
-                    <FileDown size={20} className="text-[var(--text-muted)] group-hover:text-[#2563EB]" />
+                  className="w-full p-6 rounded-xl border-2 border-dashed border-[var(--border-color)] bg-[var(--alt-section)] hover:border-[var(--foreground)] hover:bg-[var(--foreground)]/5 flex items-center gap-4 transition-all group text-left">
+                  <div className="w-12 h-12 rounded-full bg-[var(--card)] border border-[var(--border-color)] flex items-center justify-center shrink-0 group-hover:border-[var(--foreground)] transition-colors">
+                    <FileDown size={20} className="text-[var(--text-muted)] group-hover:text-[var(--foreground)]" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-[var(--foreground)]">Click to upload product file</p>
@@ -412,7 +412,7 @@ export default function DigitalProductsAdminPage() {
             <div className="space-y-2">
               <label className="text-sm font-medium text-[var(--foreground)]">Description</label>
               <textarea required rows={3} value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-[var(--foreground)] text-sm focus:outline-none focus:ring-1 focus:ring-[#2563EB] resize-none" placeholder="Product description..." />
+                className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-[var(--foreground)] text-sm focus:outline-none focus:ring-1 focus:ring-[var(--foreground)] resize-none" placeholder="Product description..." />
             </div>
 
             <div className="flex justify-end gap-3 pt-4 border-t border-[var(--border-color)]">

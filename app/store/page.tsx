@@ -89,7 +89,7 @@ function StorePageContent() {
               placeholder="Search store..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 bg-[var(--card)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] placeholder:text-[var(--text-placeholder)] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/50"
+              className="w-full pl-10 pr-4 py-2.5 bg-[var(--card)] border border-[var(--border-color)] rounded-lg text-[var(--foreground)] placeholder:text-[var(--text-placeholder)] focus:outline-none focus:ring-2 focus:ring-[var(--foreground)]/50"
             />
           </div>
           <div className="flex gap-2">

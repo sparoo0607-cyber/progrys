@@ -52,7 +52,7 @@ export default function AdminOverviewPage() {
       {/* Stats Grid with CSS Sparklines */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         {/* Revenue */}
-        <div className="bg-[var(--card)] border border-[var(--card-border)] p-6 rounded-2xl shadow-sm flex flex-col group hover:border-[#2563EB] transition-colors">
+        <div className="bg-[var(--card)] border border-[var(--card-border)] p-6 rounded-2xl shadow-sm flex flex-col group hover:border-[var(--foreground)] transition-colors">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-sm font-medium text-[var(--text-secondary)]">Total Revenue (7d)</h3>
             <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
@@ -72,7 +72,7 @@ export default function AdminOverviewPage() {
         </div>
 
         {/* Users */}
-        <div className="bg-[var(--card)] border border-[var(--card-border)] p-6 rounded-2xl shadow-sm flex flex-col group hover:border-[#2563EB] transition-colors">
+        <div className="bg-[var(--card)] border border-[var(--card-border)] p-6 rounded-2xl shadow-sm flex flex-col group hover:border-[var(--foreground)] transition-colors">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-sm font-medium text-[var(--text-secondary)]">New Users (7d)</h3>
             <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
@@ -133,7 +133,7 @@ export default function AdminOverviewPage() {
                   placeholder="Search orders..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full sm:w-48 pl-8 pr-3 py-1.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[#2563EB]"
+                  className="w-full sm:w-48 pl-8 pr-3 py-1.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]"
                 />
               </div>
               <Button variant="secondary" size="icon" className="h-8 w-8 rounded-md shrink-0">

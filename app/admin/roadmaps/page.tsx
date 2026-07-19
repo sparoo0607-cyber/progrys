@@ -123,7 +123,7 @@ export default function RoadmapsAdminPage() {
           <div className="relative w-full max-w-sm">
             <Search size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[var(--text-muted)]" />
             <input type="text" placeholder="Search roadmaps..." value={search} onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-8 pr-3 py-1.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[#2563EB]" />
+              className="w-full pl-8 pr-3 py-1.5 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]" />
           </div>
           <p className="text-sm text-[var(--text-muted)] shrink-0">{filtered.length} roadmaps</p>
         </div>
@@ -162,7 +162,7 @@ export default function RoadmapsAdminPage() {
                   <td className="px-6 py-4 text-[var(--foreground)] font-medium">{r.nodes.length}</td>
                   <td className="px-6 py-4">
                     <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <button onClick={() => openEdit(r)} className="p-1.5 text-[var(--text-secondary)] hover:text-[#2563EB] bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]"><Edit2 size={14} /></button>
+                      <button onClick={() => openEdit(r)} className="p-1.5 text-[var(--text-secondary)] hover:text-[var(--foreground)] bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]"><Edit2 size={14} /></button>
                       <button onClick={() => { if (window.confirm(`Delete "${r.title}"?`)) { deleteRoadmap(r.id); toast.success("Roadmap deleted"); } }}
                         className="p-1.5 text-[var(--text-secondary)] hover:text-red-500 bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]"><Trash2 size={14} /></button>
                     </div>
@@ -198,7 +198,7 @@ export default function RoadmapsAdminPage() {
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-[var(--foreground)]">Difficulty</label>
                   <select value={form.difficulty} onChange={(e) => setForm({ ...form, difficulty: e.target.value as Roadmap["difficulty"] })}
-                    className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[#2563EB]">
+                    className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]">
                     <option value="beginner">Beginner</option>
                     <option value="intermediate">Intermediate</option>
                     <option value="advanced">Advanced</option>
@@ -212,7 +212,7 @@ export default function RoadmapsAdminPage() {
               <div className="space-y-2">
                 <label className="text-sm font-medium text-[var(--foreground)]">Description</label>
                 <textarea required rows={3} value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })}
-                  className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[#2563EB] resize-none" placeholder="Roadmap description..." />
+                  className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)] resize-none" placeholder="Roadmap description..." />
               </div>
             </div>
 
@@ -248,7 +248,7 @@ export default function RoadmapsAdminPage() {
                           rows={2} 
                           value={node.description} 
                           onChange={(e) => handleUpdateNode(idx, "description", e.target.value)}
-                          className="w-full px-3 py-2 bg-[var(--card)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[#2563EB] resize-none" 
+                          className="w-full px-3 py-2 bg-[var(--card)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)] resize-none" 
                           placeholder="What will they learn in this step?" 
                         />
                       </div>

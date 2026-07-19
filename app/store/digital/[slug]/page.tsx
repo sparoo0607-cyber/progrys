@@ -59,7 +59,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                   key={idx} 
                   onClick={() => setActiveImage(img)}
                   className={`aspect-square rounded-xl border flex items-center justify-center cursor-pointer transition-all overflow-hidden ${
-                    activeImage === img ? "border-[#2563EB] ring-2 ring-[#2563EB]/20" : "border-[var(--border-color)] hover:border-[var(--foreground)]"
+                    activeImage === img ? "border-[var(--foreground)] ring-2 ring-[var(--foreground)]/20" : "border-[var(--border-color)] hover:border-[var(--foreground)]"
                   }`}
                 >
                   <img src={img} alt={`Preview ${idx + 1}`} className="w-full h-full object-cover" />

@@ -48,7 +48,7 @@ export default function BlogModerationAdminPage() {
             <button
               key={s}
               onClick={() => setFilter(s)}
-              className={`bg-[var(--card)] border rounded-xl p-5 text-left shadow-sm transition-all ${filter === s ? "border-[#2563EB] ring-2 ring-[#2563EB]/20" : "border-[var(--card-border)] hover:border-[var(--foreground)]"}`}
+              className={`bg-[var(--card)] border rounded-xl p-5 text-left shadow-sm transition-all ${filter === s ? "border-[var(--foreground)] ring-2 ring-[var(--foreground)]/20" : "border-[var(--card-border)] hover:border-[var(--foreground)]"}`}
             >
               <p className={`text-3xl font-bold ${colors[s]}`}>{count}</p>
               <p className="text-sm text-[var(--text-muted)] capitalize mt-1">{s}</p>

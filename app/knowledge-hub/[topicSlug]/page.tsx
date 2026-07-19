@@ -42,8 +42,8 @@ export default function TopicPage(props: { params: Promise<{ topicSlug: string }
 
         {/* Header */}
         <div className="mb-12">
-          <div className="w-16 h-16 bg-[#2563EB]/10 rounded-2xl flex items-center justify-center mb-6">
-            <span className="text-3xl font-bold text-[#2563EB]">{topic.title.charAt(0)}</span>
+          <div className="w-16 h-16 bg-[var(--foreground)]/10 rounded-2xl flex items-center justify-center mb-6">
+            <span className="text-3xl font-bold text-[var(--foreground)]">{topic.title.charAt(0)}</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-4 tracking-tight">{topic.title}</h1>
           <p className="text-xl text-[var(--text-secondary)]">{topic.description}</p>
@@ -56,13 +56,13 @@ export default function TopicPage(props: { params: Promise<{ topicSlug: string }
             <Link
               key={lesson.id}
               href={`/knowledge-hub/${topic.slug}/${lesson.slug}`}
-              className="group flex items-center gap-5 bg-[var(--card)] border border-[var(--card-border)] rounded-2xl p-6 hover:shadow-md hover:-translate-y-0.5 hover:border-[#2563EB]/40 transition-all"
+              className="group flex items-center gap-5 bg-[var(--card)] border border-[var(--card-border)] rounded-2xl p-6 hover:shadow-md hover:-translate-y-0.5 hover:border-[var(--foreground)]/40 transition-all"
             >
-              <div className="w-10 h-10 rounded-xl bg-[var(--alt-section)] flex items-center justify-center text-sm font-bold text-[var(--text-muted)] group-hover:bg-[#2563EB] group-hover:text-white transition-colors shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[var(--alt-section)] flex items-center justify-center text-sm font-bold text-[var(--text-muted)] group-hover:bg-[var(--foreground)] group-hover:text-white transition-colors shrink-0">
                 {idx + 1}
               </div>
               <div className="flex-1 min-w-0">
-                <p className="font-bold text-[var(--foreground)] group-hover:text-[#2563EB] transition-colors">
+                <p className="font-bold text-[var(--foreground)] group-hover:text-[var(--foreground)] transition-colors">
                   {lesson.title}
                 </p>
                 <div className="flex items-center gap-3 mt-1">
@@ -81,7 +81,7 @@ export default function TopicPage(props: { params: Promise<{ topicSlug: string }
                   )}
                 </div>
               </div>
-              <ArrowRight size={18} className="text-[var(--text-muted)] group-hover:text-[#2563EB] group-hover:translate-x-1 transition-all shrink-0" />
+              <ArrowRight size={18} className="text-[var(--text-muted)] group-hover:text-[var(--foreground)] group-hover:translate-x-1 transition-all shrink-0" />
             </Link>
           ))}
 
