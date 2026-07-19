@@ -19,7 +19,11 @@ export function AffiliateCard({ product }: { product: AffiliateProduct }) {
         <Badge className="absolute top-4 left-4 bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--text-secondary)] backdrop-blur-md px-3 py-1 font-medium shadow-sm z-10 border border-transparent">
           {product.platform}
         </Badge>
-        <CategoryIcon size={48} strokeWidth={1.5} className="text-[var(--text-muted)] opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all" />
+        {product.imageUrl ? (
+          <img src={product.imageUrl} alt={product.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        ) : (
+          <CategoryIcon size={48} strokeWidth={1.5} className="text-[var(--text-muted)] opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all" />
+        )}
       </div>
       
       <div className="p-6 flex flex-col flex-1 relative z-10 bg-[var(--card)]">

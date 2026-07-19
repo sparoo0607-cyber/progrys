@@ -54,8 +54,8 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
         
         <Link href={`/store/digital/${product.slug}`} className="absolute inset-0 z-0">
-           {product.coverImage ? (
-             <img src={product.coverImage} alt={product.title} className="w-full h-full object-cover" />
+           {product.coverImage || (product.images && product.images.length > 0) ? (
+             <img src={product.coverImage || product.images[0]} alt={product.title} className="w-full h-full object-cover" />
            ) : (
              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[var(--alt-section)] to-[var(--border-color)]/20">
                <CategoryIcon size={40} strokeWidth={1.5} className="text-[var(--text-muted)] opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all" />
