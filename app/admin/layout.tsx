@@ -19,6 +19,7 @@ import {
   CreditCard
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/ui/logo";
 
 const ADMIN_LINKS = [
   { name: "Overview", href: "/admin", icon: LayoutDashboard },
@@ -68,7 +69,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       )}>
         <div className="h-16 flex items-center justify-between px-6 border-b border-[#27272A]">
           <Link href="/admin" className="flex items-center gap-2">
-            <Image src="/logo.png" alt="PROGRYS Logo" width={100} height={32} className="object-contain h-8 w-auto invert" />
+            <Logo size="sm" className="dark" />
             <span className="text-xs font-normal text-[#71717A] bg-[#27272A] px-2 py-0.5 rounded-full">ADMIN</span>
           </Link>
           <button className="lg:hidden text-white" onClick={() => setMobileMenuOpen(false)}>

@@ -12,6 +12,7 @@ import { useThemeStore } from "@/lib/store/useThemeStore";
 import { useAuthStore } from "@/lib/store/useAuthStore";
 import { useCartStore } from "@/lib/store/useCartStore";
 import { SearchDropdown } from "@/components/ui/search-dropdown";
+import { Logo } from "@/components/ui/logo";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -78,14 +79,14 @@ export function Navbar() {
               <Menu size={24} />
             </button>
             <Link href="/" className="flex items-center">
-              <Image src="/logo.png" alt="PROGRYS Logo" width={100} height={32} className="object-contain h-8 w-auto dark:invert" />
+              <Logo size="md" />
             </Link>
           </div>
 
           {/* Logo (Desktop) */}
           <div className="hidden md:flex flex-shrink-0 items-center">
             <Link href="/" className="flex items-center">
-              <Image src="/logo.png" alt="PROGRYS Logo" width={120} height={40} className="object-contain h-10 w-auto dark:invert" priority />
+              <Logo size="lg" />
             </Link>
           </div>
 
@@ -242,7 +243,7 @@ export function Navbar() {
               className="fixed top-0 left-0 bottom-0 w-4/5 max-w-sm bg-[var(--background)] z-50 shadow-2xl flex flex-col md:hidden"
             >
               <div className="p-4 flex items-center justify-between border-b border-[var(--border-color)]">
-                <Image src="/logo.png" alt="PROGRYS Logo" width={100} height={32} className="object-contain h-8 w-auto dark:invert" />
+                <Logo size="md" />
                 <button onClick={() => setMobileMenuOpen(false)} className="p-2 text-[var(--foreground)] hover:bg-[var(--alt-section)] rounded-full">
                   <X size={24} />
                 </button>
