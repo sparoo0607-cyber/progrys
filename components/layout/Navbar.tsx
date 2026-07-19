@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Search, Moon, Sun, Menu, ShoppingCart, X, UserCircle, Settings, Lock, ShoppingBag, Heart, Bell, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -76,15 +77,15 @@ export function Navbar() {
             <button onClick={() => setMobileMenuOpen(true)} className="p-2 -ml-2 text-[var(--foreground)]">
               <Menu size={24} />
             </button>
-            <Link href="/" className="text-xl font-heading font-bold text-[var(--foreground)] tracking-tight flex items-center">
-              PROGRYS <span className="text-[var(--text-secondary)] ml-0.5">.</span>
+            <Link href="/" className="flex items-center">
+              <Image src="/logo.png" alt="PROGRYS Logo" width={100} height={32} className="object-contain h-8 w-auto dark:invert" />
             </Link>
           </div>
 
           {/* Logo (Desktop) */}
           <div className="hidden md:flex flex-shrink-0 items-center">
-            <Link href="/" className="text-2xl font-heading font-bold text-[var(--foreground)] tracking-tight flex items-center">
-              PROGRYS <span className="text-[var(--text-secondary)] ml-0.5">.</span>
+            <Link href="/" className="flex items-center">
+              <Image src="/logo.png" alt="PROGRYS Logo" width={120} height={40} className="object-contain h-10 w-auto dark:invert" priority />
             </Link>
           </div>
 
@@ -241,7 +242,7 @@ export function Navbar() {
               className="fixed top-0 left-0 bottom-0 w-4/5 max-w-sm bg-[var(--background)] z-50 shadow-2xl flex flex-col md:hidden"
             >
               <div className="p-4 flex items-center justify-between border-b border-[var(--border-color)]">
-                <span className="text-xl font-bold text-[var(--foreground)]">PROGRYS</span>
+                <Image src="/logo.png" alt="PROGRYS Logo" width={100} height={32} className="object-contain h-8 w-auto dark:invert" />
                 <button onClick={() => setMobileMenuOpen(false)} className="p-2 text-[var(--foreground)] hover:bg-[var(--alt-section)] rounded-full">
                   <X size={24} />
                 </button>
