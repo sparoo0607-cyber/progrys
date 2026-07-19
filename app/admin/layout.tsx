@@ -31,17 +31,18 @@ const ADMIN_LINKS = [
 ];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  const { user, isAdmin, isLoggedIn } = useAuthStore();
+  const { user, isAdmin, isLoggedIn, isHydrated } = useAuthStore();
   const router = useRouter();
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   React.useEffect(() => {
-    if (!isLoggedIn || !isAdmin) {
+    if (isHydrated && (!isLoggedIn || !isAdmin)) {
       router.push("/auth/login");
     }
-  }, [isLoggedIn, isAdmin, router]);
+  }, [isLoggedIn, isAdmin, isHydrated, router]);
 
+  if (!isHydrated) return null;
   if (!isLoggedIn || !isAdmin) return null;
 
   return (
