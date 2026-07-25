@@ -21,11 +21,22 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
   const { getProductBySlug, voteProduct, fetchProductBySlug } = useProductStore();
   
   const resolvedParams = use(params);
-  const product = getProductBySlug(resolvedParams.slug);
+  const initialProduct = getProductBySlug(resolvedParams.slug);
+  const [product, setProduct] = React.useState(initialProduct);
+  const [isInitializing, setIsInitializing] = React.useState(!initialProduct);
 
   // Load full product data (including heavy base64 preview images) asynchronously
   React.useEffect(() => {
-    fetchProductBySlug(resolvedParams.slug);
+    let isMounted = true;
+    const load = async () => {
+      const fetched = await fetchProductBySlug(resolvedParams.slug);
+      if (isMounted) {
+        if (fetched) setProduct(fetched);
+        setIsInitializing(false);
+      }
+    };
+    load();
+    return () => { isMounted = false; };
   }, [resolvedParams.slug, fetchProductBySlug]);
 
   const [activeImage, setActiveImage] = React.useState<string | null>(null);
@@ -43,6 +54,12 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
     }
     return all;
   }, [product]);
+
+  React.useEffect(() => {
+    if (initialProduct && !product) {
+       setProduct(initialProduct);
+    }
+  }, [initialProduct, product]);
 
   React.useEffect(() => {
     if (product && !activeImage && displayImages.length > 0) {
@@ -92,7 +109,15 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
     }
   };
 
-  if (!product) {
+  if (isInitializing) {
+    return (
+      <div className="container mx-auto px-4 py-32 flex justify-center items-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[var(--foreground)]"></div>
+      </div>
+    );
+  }
+
+  if (!product && !isInitializing) {
     notFound();
   }
 
