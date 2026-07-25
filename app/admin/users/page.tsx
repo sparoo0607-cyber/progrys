@@ -7,11 +7,27 @@ import { Badge } from "@/components/ui/badge";
 import { Search, Trash2, ShieldCheck, ShieldOff, UserCog } from "lucide-react";
 import { useUserAdminStore } from "@/lib/store/useUserAdminStore";
 import { toast } from "sonner";
+import { getUsers, updateUserRole as serverUpdateRole, updateUserStatus as serverUpdateStatus, deleteUserAction as serverDeleteUser } from "./actions";
 
 export default function UsersAdminPage() {
-  const { users, updateRole, updateStatus, deleteUser } = useUserAdminStore();
+  const { users, setUsers, updateRole, updateStatus, deleteUser } = useUserAdminStore();
   const [search, setSearch] = React.useState("");
   const [filter, setFilter] = React.useState<"all" | "user" | "admin" | "banned">("all");
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    async function loadUsers() {
+      try {
+        const fetchedUsers = await getUsers();
+        setUsers(fetchedUsers);
+      } catch (error) {
+        toast.error("Failed to load users");
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadUsers();
+  }, [setUsers]);
 
   const filteredUsers = users.filter((u) => {
     const matchSearch =
@@ -131,10 +147,16 @@ export default function UsersAdminPage() {
                       {/* Toggle Role */}
                       <button
                         title={user.role === "admin" ? "Demote to User" : "Promote to Admin"}
-                        onClick={() => {
+                        onClick={async () => {
                           const newRole = user.role === "admin" ? "user" : "admin";
                           updateRole(user.id, newRole);
-                          toast.success(`${user.firstName} is now ${newRole}`);
+                          try {
+                            await serverUpdateRole(user.id, newRole);
+                            toast.success(`${user.firstName} is now ${newRole}`);
+                          } catch {
+                            updateRole(user.id, user.role); // Revert
+                            toast.error("Failed to update role");
+                          }
                         }}
                         className="p-1.5 text-[var(--text-secondary)] hover:text-blue-500 bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]"
                       >
@@ -143,10 +165,16 @@ export default function UsersAdminPage() {
                       {/* Toggle Ban */}
                       <button
                         title={user.status === "banned" ? "Unban user" : "Ban user"}
-                        onClick={() => {
+                        onClick={async () => {
                           const newStatus = user.status === "banned" ? "active" : "banned";
                           updateStatus(user.id, newStatus);
-                          toast.success(`${user.firstName} has been ${newStatus === "banned" ? "banned" : "unbanned"}`);
+                          try {
+                            await serverUpdateStatus(user.id, newStatus);
+                            toast.success(`${user.firstName} has been ${newStatus === "banned" ? "banned" : "unbanned"}`);
+                          } catch {
+                            updateStatus(user.id, user.status); // Revert
+                            toast.error("Failed to update status");
+                          }
                         }}
                         className="p-1.5 text-[var(--text-secondary)] hover:text-orange-500 bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]"
                       >
@@ -154,10 +182,19 @@ export default function UsersAdminPage() {
                       </button>
                       {/* Delete */}
                       <button
-                        onClick={() => {
+                        onClick={async () => {
                           if (window.confirm(`Delete ${user.firstName}'s account?`)) {
+                            // Keep a backup in case of failure
+                            const userBackup = users.find(u => u.id === user.id);
                             deleteUser(user.id);
-                            toast.success("User deleted");
+                            try {
+                              await serverDeleteUser(user.id);
+                              toast.success("User deleted");
+                            } catch {
+                              if (userBackup) setUsers([...users]); // Basic revert by refetching would be better, but triggering re-render is enough if we had a full state
+                              // Actually to revert properly we just refresh
+                              toast.error("Failed to delete user");
+                            }
                           }
                         }}
                         className="p-1.5 text-[var(--text-secondary)] hover:text-red-500 bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]"
