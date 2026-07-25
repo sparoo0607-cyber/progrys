@@ -220,6 +220,14 @@ export default function KnowledgeHubAdminPage() {
               <Input required value={topicForm.title} onChange={(e) => setTopicForm({ ...topicForm, title: e.target.value })} placeholder="e.g. React Basics" className="w-full bg-[var(--input-bg)]" />
             </div>
             <div className="space-y-2">
+              <label className="text-sm font-medium text-[var(--foreground)]">Slug (Optional)</label>
+              <Input value={topicForm.slug} onChange={(e) => setTopicForm({ ...topicForm, slug: e.target.value })} placeholder="e.g. react-basics" className="w-full bg-[var(--input-bg)]" />
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-medium text-[var(--foreground)]">Icon Name</label>
+              <Input required value={topicForm.iconName} onChange={(e) => setTopicForm({ ...topicForm, iconName: e.target.value })} placeholder="e.g. Lightbulb, Atom, Database" className="w-full bg-[var(--input-bg)]" />
+            </div>
+            <div className="space-y-2">
               <label className="text-sm font-medium text-[var(--foreground)]">Description</label>
               <textarea required rows={2} value={topicForm.description} onChange={(e) => setTopicForm({ ...topicForm, description: e.target.value })}
                 className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-sm text-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)] resize-none" placeholder="Short description..." />
@@ -248,6 +256,10 @@ export default function KnowledgeHubAdminPage() {
             <div className="space-y-2">
               <label className="text-sm font-medium text-[var(--foreground)]">Lesson Title</label>
               <Input required value={lessonForm.title} onChange={(e) => setLessonForm({ ...lessonForm, title: e.target.value })} placeholder="e.g. What are Components?" className="w-full bg-[var(--input-bg)]" />
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-medium text-[var(--foreground)]">Slug (Optional)</label>
+              <Input value={lessonForm.slug} onChange={(e) => setLessonForm({ ...lessonForm, slug: e.target.value })} placeholder="e.g. what-are-components" className="w-full bg-[var(--input-bg)]" />
             </div>
 
             <div className="space-y-2">
