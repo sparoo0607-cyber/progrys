@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Modal } from "@/components/ui/modal";
 import { Product } from "@/lib/data/products";
 import { toast } from "sonner";
-import { saveFile, deleteFile } from "@/lib/utils/fileStorage";
+import { saveFile, deleteFile, getFile } from "@/lib/utils/fileStorage";
 
 export default function DigitalProductsAdminPage() {
   const { products, addProduct, updateProduct, deleteProduct, fetchProducts } = useProductStore();
@@ -171,6 +171,12 @@ export default function DigitalProductsAdminPage() {
     setIsSubmitting(true);
     setUploadProgress(10); // Start progress indicator
 
+    let currentDataUrl = formData.downloadFile?.dataUrl || "";
+    if (editingProduct && !currentDataUrl) {
+      const storedData = await getFile(editingProduct.id);
+      if (storedData) currentDataUrl = storedData;
+    }
+
     const productData = {
       title: formData.title,
       slug: formData.slug || formData.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, ""),
@@ -182,7 +188,7 @@ export default function DigitalProductsAdminPage() {
       fileFormats: formData.fileFormats.split(",").map((s) => s.trim()),
       coverImage: formData.coverImage || undefined,
       downloadFile: formData.downloadFile
-        ? { name: formData.downloadFile.name, size: formData.downloadFile.size, type: formData.downloadFile.type, dataUrl: formData.downloadFile.dataUrl }
+        ? { name: formData.downloadFile.name, size: formData.downloadFile.size, type: formData.downloadFile.type, dataUrl: currentDataUrl }
         : undefined,
       images: [formData.coverImage, ...formData.additionalImages].filter(Boolean),
       features: ["Instant access", "Lifetime updates"],
