@@ -6,7 +6,7 @@ interface ProductStore {
   isLoading: boolean;
   setProducts: (products: Product[]) => void;
   fetchProducts: () => Promise<void>;
-  addProduct: (product: Omit<Product, "id" | "createdAt" | "updatedAt">) => Promise<void>;
+  addProduct: (product: Omit<Product, "id" | "createdAt" | "updatedAt">) => Promise<string>;
   updateProduct: (id: string, product: Partial<Product>) => Promise<void>;
   deleteProduct: (id: string) => Promise<void>;
   getProductBySlug: (slug: string) => Product | undefined;
@@ -50,6 +50,7 @@ export const useProductStore = create<ProductStore>((set, get) => ({
           features: data.product.features ? JSON.parse(data.product.features) : [],
         };
         set((state) => ({ products: [createdProduct, ...state.products] }));
+        return createdProduct.id;
       } else {
         throw new Error("Failed to add product");
       }

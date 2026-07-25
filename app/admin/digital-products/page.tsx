@@ -18,6 +18,7 @@ export default function DigitalProductsAdminPage() {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [editingProduct, setEditingProduct] = React.useState<Product | null>(null);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [uploadProgress, setUploadProgress] = React.useState(0);
 
   React.useEffect(() => {
     fetchProducts();
@@ -145,12 +146,7 @@ export default function DigitalProductsAdminPage() {
     }
 
     setIsSubmitting(true);
-    const productId = editingProduct?.id ?? `p${Date.now()}`;
-
-    // Save file to IndexedDB if a new file was picked (dataUrl is present)
-    if (formData.downloadFile?.dataUrl) {
-      await saveFile(productId, formData.downloadFile.dataUrl);
-    }
+    setUploadProgress(10); // Start progress indicator
 
     const productData = {
       title: formData.title,
@@ -162,7 +158,6 @@ export default function DigitalProductsAdminPage() {
       isFree: formData.isFree,
       fileFormats: formData.fileFormats.split(",").map((s) => s.trim()),
       coverImage: formData.coverImage || undefined,
-      // Store only metadata in DB for large files — NOT the dataUrl (that's in IndexedDB)
       downloadFile: formData.downloadFile
         ? { name: formData.downloadFile.name, size: formData.downloadFile.size, type: formData.downloadFile.type, dataUrl: "" }
         : undefined,
@@ -173,18 +168,40 @@ export default function DigitalProductsAdminPage() {
     };
 
     try {
+      let finalProductId = editingProduct?.id;
+
       if (editingProduct) { 
         await updateProduct(editingProduct.id, productData); 
-        toast.success("Product updated!"); 
       } else { 
-        await addProduct({ ...productData, id: productId } as any); 
-        toast.success("Product created!"); 
+        finalProductId = await addProduct(productData as any); 
       }
-      setIsModalOpen(false);
+
+      setUploadProgress(40); // DB update complete
+
+      // Save file to IndexedDB if a new file was picked
+      if (formData.downloadFile?.dataUrl && finalProductId) {
+        // Simulated progress for the UI while storing large file
+        const interval = setInterval(() => {
+          setUploadProgress((prev) => (prev < 90 ? prev + 15 : prev));
+        }, 150);
+        
+        await saveFile(finalProductId, formData.downloadFile.dataUrl);
+        clearInterval(interval);
+      }
+
+      setUploadProgress(100);
+      toast.success(editingProduct ? "Product updated!" : "Product created!");
+      
+      // Slight delay to let admin see 100% completion before closing
+      setTimeout(() => {
+        setIsModalOpen(false);
+        setIsSubmitting(false);
+        setUploadProgress(0);
+      }, 600);
     } catch (error) {
       toast.error("Failed to save product.");
-    } finally {
       setIsSubmitting(false);
+      setUploadProgress(0);
     }
   };
 
@@ -415,9 +432,18 @@ export default function DigitalProductsAdminPage() {
                 className="w-full px-3 py-2 bg-[var(--input-bg)] border border-[var(--border-color)] rounded-md text-[var(--foreground)] text-sm focus:outline-none focus:ring-1 focus:ring-[var(--foreground)] resize-none" placeholder="Product description..." />
             </div>
 
-            <div className="flex justify-end gap-3 pt-4 border-t border-[var(--border-color)]">
-              <Button type="button" variant="ghost" onClick={() => setIsModalOpen(false)}>Cancel</Button>
-              <Button type="submit" variant="primary">{editingProduct ? "Save Changes" : "Create Product"}</Button>
+            <div className="flex flex-col gap-3 pt-4 border-t border-[var(--border-color)]">
+              {isSubmitting && (
+                <div className="w-full bg-[var(--alt-section)] rounded-full h-1.5 overflow-hidden border border-[var(--border-color)]">
+                  <div className="bg-[var(--foreground)] h-full transition-all duration-200 ease-out" style={{ width: `${uploadProgress}%` }}></div>
+                </div>
+              )}
+              <div className="flex justify-end gap-3">
+                <Button type="button" variant="ghost" onClick={() => setIsModalOpen(false)} disabled={isSubmitting}>Cancel</Button>
+                <Button type="submit" variant="primary" disabled={isSubmitting}>
+                  {isSubmitting ? (uploadProgress < 50 ? "Saving..." : "Uploading File...") : (editingProduct ? "Save Changes" : "Create Product")}
+                </Button>
+              </div>
             </div>
           </form>
         </div>
