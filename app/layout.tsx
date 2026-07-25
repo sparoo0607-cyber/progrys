@@ -35,6 +35,12 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${captureIt.variable} antialiased h-full`} suppressHydrationWarning>
       <head>
         <link href="https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&display=swap" rel="stylesheet" />
+        <Script 
+          id="Cookiebot" 
+          src="https://consent.cookiebot.com/uc.js" 
+          data-cbid="181833a5-1bd2-4ea0-be3a-35242cf1b5bd" 
+          strategy="beforeInteractive" 
+        />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-XGXMKKL4CB" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
