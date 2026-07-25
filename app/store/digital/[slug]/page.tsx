@@ -18,12 +18,13 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
   const { addItem } = useCartStore();
   const { isLoggedIn } = useAuthStore();
   const { hasProduct, toggleProduct } = useWishlistStore();
-  const { getProductBySlug } = useProductStore();
+  const { getProductBySlug, updateProduct } = useProductStore();
   
   const resolvedParams = use(params);
   const product = getProductBySlug(resolvedParams.slug);
 
   const [activeImage, setActiveImage] = React.useState<string | null>(null);
+  const [voteStatus, setVoteStatus] = React.useState<"like" | "dislike" | null>(null);
   
   const isWishlisted = product ? hasProduct(product.id) : false;
 
@@ -41,7 +42,46 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
     if (product && !activeImage && displayImages.length > 0) {
       setActiveImage(displayImages[0]);
     }
+    if (product) {
+      const stored = localStorage.getItem(`vote_${product.id}`);
+      if (stored === "like" || stored === "dislike") {
+        setVoteStatus(stored);
+      }
+    }
   }, [product, activeImage, displayImages]);
+
+  const handleVote = async (type: "like" | "dislike") => {
+    if (!product) return;
+    
+    if (voteStatus === type) {
+      toast.info(`You already ${type}d this product.`);
+      return;
+    }
+  
+    const previousVote = voteStatus;
+    setVoteStatus(type);
+    localStorage.setItem(`vote_${product.id}`, type);
+    
+    let newLikes = product.likes || 0;
+    let newDislikes = product.dislikes || 0;
+    
+    if (type === "like") {
+      newLikes++;
+      if (previousVote === "dislike") newDislikes--;
+    } else {
+      newDislikes++;
+      if (previousVote === "like") newLikes--;
+    }
+    
+    try {
+      await updateProduct(product.id, { likes: newLikes, dislikes: newDislikes });
+    } catch (err) {
+      toast.error("Failed to register vote.");
+      setVoteStatus(previousVote);
+      if (previousVote) localStorage.setItem(`vote_${product.id}`, previousVote);
+      else localStorage.removeItem(`vote_${product.id}`);
+    }
+  };
 
   if (!product) {
     notFound();
@@ -99,12 +139,18 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
           
           <div className="flex items-center gap-4 mb-6 pb-6 border-b border-[var(--border-color)]">
             <div className="flex items-center gap-4">
-              <button className="flex items-center gap-1.5 text-[var(--text-muted)] hover:text-[var(--foreground)] transition-colors group">
-                <ThumbsUp size={16} className="group-hover:-translate-y-0.5 transition-transform" />
+              <button 
+                onClick={() => handleVote("like")}
+                className={`flex items-center gap-1.5 transition-colors group ${voteStatus === "like" ? "text-green-500" : "text-[var(--text-muted)] hover:text-green-500"}`}
+              >
+                <ThumbsUp size={16} className={`transition-transform ${voteStatus === "like" ? "fill-green-500" : "group-hover:-translate-y-0.5"}`} />
                 <span className="font-medium text-sm">{product.likes || 0}</span>
               </button>
-              <button className="flex items-center gap-1.5 text-[var(--text-muted)] hover:text-[#EF4444] transition-colors group">
-                <ThumbsDown size={16} className="group-hover:translate-y-0.5 transition-transform" />
+              <button 
+                onClick={() => handleVote("dislike")}
+                className={`flex items-center gap-1.5 transition-colors group ${voteStatus === "dislike" ? "text-[#EF4444]" : "text-[var(--text-muted)] hover:text-[#EF4444]"}`}
+              >
+                <ThumbsDown size={16} className={`transition-transform ${voteStatus === "dislike" ? "fill-[#EF4444]" : "group-hover:translate-y-0.5"}`} />
                 <span className="font-medium text-sm">{product.dislikes || 0}</span>
               </button>
             </div>

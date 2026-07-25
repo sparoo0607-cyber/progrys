@@ -42,7 +42,8 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
     const { 
       title, slug, description, price, originalPrice, 
       images, coverImage, tags, rating, reviewCount, 
-      isFree, category, fileFormats, downloadFile, features 
+      isFree, category, fileFormats, downloadFile, features,
+      likes, dislikes
     } = body;
 
     const dataToUpdate: any = {};
@@ -60,6 +61,8 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
     if (category !== undefined) dataToUpdate.category = category;
     if (fileFormats !== undefined) dataToUpdate.fileFormats = JSON.stringify(fileFormats);
     if (features !== undefined) dataToUpdate.features = JSON.stringify(features);
+    if (likes !== undefined) dataToUpdate.likes = likes;
+    if (dislikes !== undefined) dataToUpdate.dislikes = dislikes;
     
     if (downloadFile !== undefined) {
       if (downloadFile === null) {
