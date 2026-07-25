@@ -48,34 +48,17 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
         });
       }
 
-      // Handle the Product Counts
-      let likesIncrement = 0;
-      let dislikesIncrement = 0;
+      // Handle the Product Counts by strictly counting the records
+      const likeCount = await tx.productVote.count({ where: { productId: id, type: "like" } });
+      const dislikeCount = await tx.productVote.count({ where: { productId: id, type: "dislike" } });
 
-      if (type === "remove") {
-        if (previousType === "like") likesIncrement = -1;
-        if (previousType === "dislike") dislikesIncrement = -1;
-      } else if (type === "like") {
-        if (previousType !== "like") likesIncrement = 1;
-        if (previousType === "dislike") dislikesIncrement = -1;
-      } else if (type === "dislike") {
-        if (previousType !== "dislike") dislikesIncrement = 1;
-        if (previousType === "like") likesIncrement = -1;
-      }
-
-      if (likesIncrement !== 0 || dislikesIncrement !== 0) {
-        // Prevent negative values
-        const product = await tx.product.findUnique({ where: { id } });
-        if (product) {
-          await tx.product.update({
-            where: { id },
-            data: {
-              likes: Math.max(0, product.likes + likesIncrement),
-              dislikes: Math.max(0, product.dislikes + dislikesIncrement)
-            }
-          });
+      await tx.product.update({
+        where: { id },
+        data: {
+          likes: likeCount,
+          dislikes: dislikeCount
         }
-      }
+      });
     });
 
     // Return the fresh product
