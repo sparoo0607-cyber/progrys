@@ -9,6 +9,8 @@ import { Download, ShoppingBag, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { getFile } from "@/lib/utils/fileStorage";
+import { toast } from "sonner";
 
 export default function LibraryPage() {
   const { user, isLoggedIn } = useAuthStore();
@@ -62,7 +64,33 @@ export default function LibraryPage() {
                     </p>
                     <div className="flex flex-col gap-2">
                       {product.fileFormats.map(format => (
-                        <Button key={format} variant="secondary" className="w-full gap-2">
+                        <Button 
+                          key={format} 
+                          variant="secondary" 
+                          className="w-full gap-2"
+                          onClick={async () => {
+                            try {
+                              const dataUrl = await getFile(product.id);
+                              if (!dataUrl) {
+                                toast.error("Download file not found. Please contact support.");
+                                return;
+                              }
+                              
+                              const fileName = product.downloadFile?.name || `${product.title.replace(/\s+/g, "_")}.${format.toLowerCase()}`;
+                              
+                              const a = document.createElement("a");
+                              a.href = dataUrl;
+                              a.download = fileName;
+                              document.body.appendChild(a);
+                              a.click();
+                              document.body.removeChild(a);
+                              toast.success(`Downloading ${fileName}...`);
+                            } catch (err) {
+                              console.error("Download error:", err);
+                              toast.error("Failed to download file");
+                            }
+                          }}
+                        >
                           <Download size={16} /> Download {format}
                         </Button>
                       ))}
