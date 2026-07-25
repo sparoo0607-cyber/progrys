@@ -4,7 +4,7 @@ import * as React from "react";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Plus, Search, Filter, Edit2, Trash2, Package, Upload, X, FileDown, CheckCircle2 } from "lucide-react";
+import { Plus, Search, Filter, Edit2, Trash2, Package, Upload, X, FileDown, CheckCircle2, Users } from "lucide-react";
 import { useProductStore } from "@/lib/store/useProductStore";
 import { Badge } from "@/components/ui/badge";
 import { Modal } from "@/components/ui/modal";
@@ -19,6 +19,10 @@ export default function DigitalProductsAdminPage() {
   const [editingProduct, setEditingProduct] = React.useState<Product | null>(null);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [uploadProgress, setUploadProgress] = React.useState(0);
+  
+  const [isVotersModalOpen, setIsVotersModalOpen] = React.useState(false);
+  const [voters, setVoters] = React.useState<{ likes: any[], dislikes: any[] }>({ likes: [], dislikes: [] });
+  const [isLoadingVoters, setIsLoadingVoters] = React.useState(false);
 
   React.useEffect(() => {
     fetchProducts();
@@ -74,6 +78,25 @@ export default function DigitalProductsAdminPage() {
       downloadFile: product.downloadFile || null,
     });
     setIsModalOpen(true);
+  };
+
+  const openVotersModal = async (productId: string) => {
+    setIsVotersModalOpen(true);
+    setIsLoadingVoters(true);
+    setVoters({ likes: [], dislikes: [] });
+    try {
+      const res = await fetch(`/api/products/${productId}/voters`);
+      if (res.ok) {
+        const data = await res.json();
+        setVoters(data);
+      } else {
+        toast.error("Failed to load voters.");
+      }
+    } catch (error) {
+      toast.error("An error occurred loading voters.");
+    } finally {
+      setIsLoadingVoters(false);
+    }
   };
 
   // Cover image — converts to base64
@@ -283,6 +306,7 @@ export default function DigitalProductsAdminPage() {
                   </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <button onClick={() => openVotersModal(product.id)} className="p-1.5 text-[var(--text-secondary)] hover:text-blue-500 bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]" title="View Votes"><Users size={14} /></button>
                       <button onClick={() => openEditModal(product)} className="p-1.5 text-[var(--text-secondary)] hover:text-[var(--foreground)] bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]"><Edit2 size={14} /></button>
                       <button onClick={() => handleDelete(product.id, product.title)} className="p-1.5 text-[var(--text-secondary)] hover:text-red-500 bg-[var(--alt-section)] rounded-md border border-[var(--border-color)]"><Trash2 size={14} /></button>
                     </div>
@@ -446,6 +470,72 @@ export default function DigitalProductsAdminPage() {
               </div>
             </div>
           </form>
+        </div>
+      </Modal>
+
+      {/* Voters Modal */}
+      <Modal isOpen={isVotersModalOpen} onClose={() => setIsVotersModalOpen(false)}>
+        <div className="p-6 max-h-[80vh] overflow-y-auto">
+          <h2 className="text-xl font-bold text-[var(--foreground)] mb-6 flex items-center justify-between">
+            <span>Product Voters</span>
+            <button onClick={() => setIsVotersModalOpen(false)} className="text-[var(--text-muted)] hover:text-[var(--foreground)]">
+              <X size={20} />
+            </button>
+          </h2>
+
+          {isLoadingVoters ? (
+            <div className="py-12 flex items-center justify-center text-[var(--text-muted)]">
+              Loading voters...
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-semibold text-green-500 mb-4 flex items-center gap-2">
+                  👍 Likes ({voters.likes.length})
+                </h3>
+                <div className="space-y-3">
+                  {voters.likes.length === 0 ? (
+                    <p className="text-sm text-[var(--text-muted)]">No likes yet.</p>
+                  ) : (
+                    voters.likes.map((user, i) => (
+                      <div key={i} className="flex items-center gap-3 p-3 bg-[var(--alt-section)] rounded-xl border border-[var(--border-color)]">
+                        <div className="w-8 h-8 rounded-full bg-[var(--card)] border border-[var(--border-color)] flex items-center justify-center overflow-hidden">
+                          {user.avatar ? <img src={user.avatar} alt={user.firstName} className="w-full h-full object-cover" /> : <Users size={14} className="text-[var(--text-muted)]" />}
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium text-[var(--foreground)]">{user.firstName} {user.lastName}</p>
+                          <p className="text-xs text-[var(--text-muted)]">{user.email}</p>
+                        </div>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="font-semibold text-red-500 mb-4 flex items-center gap-2">
+                  👎 Dislikes ({voters.dislikes.length})
+                </h3>
+                <div className="space-y-3">
+                  {voters.dislikes.length === 0 ? (
+                    <p className="text-sm text-[var(--text-muted)]">No dislikes yet.</p>
+                  ) : (
+                    voters.dislikes.map((user, i) => (
+                      <div key={i} className="flex items-center gap-3 p-3 bg-[var(--alt-section)] rounded-xl border border-[var(--border-color)]">
+                        <div className="w-8 h-8 rounded-full bg-[var(--card)] border border-[var(--border-color)] flex items-center justify-center overflow-hidden">
+                          {user.avatar ? <img src={user.avatar} alt={user.firstName} className="w-full h-full object-cover" /> : <Users size={14} className="text-[var(--text-muted)]" />}
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium text-[var(--foreground)]">{user.firstName} {user.lastName}</p>
+                          <p className="text-xs text-[var(--text-muted)]">{user.email}</p>
+                        </div>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </Modal>
     </AnimatedSection>

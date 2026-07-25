@@ -17,6 +17,7 @@ model User {
   isVerified   Boolean  @default(false)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+  productVotes ProductVote[]
 }
 
 model Product {
@@ -43,6 +44,7 @@ model Product {
   dislikes           Int      @default(0)
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
+  votes              ProductVote[]
 }
 
 model Blog {
@@ -123,4 +125,17 @@ model KnowledgeLesson {
   updatedAt       DateTime       @updatedAt
 
   @@unique([topicId, slug])
+}
+
+model ProductVote {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  type      String   // "like" or "dislike"
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId])
 }

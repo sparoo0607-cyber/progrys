@@ -16,9 +16,9 @@ import * as React from "react";
 export default function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const router = useRouter();
   const { addItem } = useCartStore();
-  const { isLoggedIn } = useAuthStore();
+  const { isLoggedIn, user } = useAuthStore();
   const { hasProduct, toggleProduct } = useWishlistStore();
-  const { getProductBySlug, updateProduct } = useProductStore();
+  const { getProductBySlug, voteProduct } = useProductStore();
   
   const resolvedParams = use(params);
   const product = getProductBySlug(resolvedParams.slug);
@@ -43,16 +43,21 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
     if (product && !activeImage && displayImages.length > 0) {
       setActiveImage(displayImages[0]);
     }
-    if (product) {
-      const stored = localStorage.getItem(`vote_${product.id}`);
+    if (product && user) {
+      const stored = localStorage.getItem(`vote_${product.id}_${user.id}`);
       if (stored === "like" || stored === "dislike") {
         setVoteStatus(stored);
       }
     }
-  }, [product, activeImage, displayImages]);
+  }, [product, activeImage, displayImages, user]);
 
   const handleVote = async (type: "like" | "dislike") => {
     if (!product || isVoting) return;
+    
+    if (!isLoggedIn || !user) {
+      toast.error("Please login to like or dislike products.");
+      return;
+    }
     
     setIsVoting(true);
     const previousVote = voteStatus;
@@ -62,34 +67,21 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
     if (voteStatus === type) {
       // Un-vote
       setVoteStatus(null);
-      localStorage.removeItem(`vote_${product.id}`);
-      
-      if (type === "like") {
-        newLikes = Math.max(0, newLikes - 1);
-      } else {
-        newDislikes = Math.max(0, newDislikes - 1);
-      }
+      localStorage.removeItem(`vote_${product.id}_${user.id}`);
     } else {
       // Switch vote or new vote
       setVoteStatus(type);
-      localStorage.setItem(`vote_${product.id}`, type);
-      
-      if (type === "like") {
-        newLikes++;
-        if (previousVote === "dislike") newDislikes = Math.max(0, newDislikes - 1);
-      } else {
-        newDislikes++;
-        if (previousVote === "like") newLikes = Math.max(0, newLikes - 1);
-      }
+      localStorage.setItem(`vote_${product.id}_${user.id}`, type);
     }
     
     try {
-      await updateProduct(product.id, { likes: newLikes, dislikes: newDislikes });
+      const action = voteStatus === type ? "remove" : type;
+      await voteProduct(product.id, user.id, action);
     } catch (err) {
       toast.error("Failed to register vote.");
       setVoteStatus(previousVote);
-      if (previousVote) localStorage.setItem(`vote_${product.id}`, previousVote);
-      else localStorage.removeItem(`vote_${product.id}`);
+      if (previousVote) localStorage.setItem(`vote_${product.id}_${user.id}`, previousVote);
+      else localStorage.removeItem(`vote_${product.id}_${user.id}`);
     } finally {
       setIsVoting(false);
     }

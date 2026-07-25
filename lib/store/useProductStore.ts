@@ -8,6 +8,7 @@ interface ProductStore {
   fetchProducts: () => Promise<void>;
   addProduct: (product: Omit<Product, "id" | "createdAt" | "updatedAt">) => Promise<string>;
   updateProduct: (id: string, product: Partial<Product>) => Promise<void>;
+  voteProduct: (id: string, userId: string, type: "like" | "dislike" | "remove") => Promise<void>;
   deleteProduct: (id: string) => Promise<void>;
   getProductBySlug: (slug: string) => Product | undefined;
 }
@@ -76,6 +77,30 @@ export const useProductStore = create<ProductStore>((set, get) => ({
         }));
       } else {
         throw new Error("Failed to update product");
+      }
+    } catch (err) {
+      console.error(err);
+      throw err;
+    }
+  },
+
+  voteProduct: async (id, userId, type) => {
+    try {
+      const res = await fetch(`/api/products/${id}/vote`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId, type }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        // data.product has the updated likes/dislikes
+        set((state) => ({
+          products: state.products.map((p) =>
+            p.id === id ? { ...p, likes: data.product.likes, dislikes: data.product.dislikes, updatedAt: new Date().toISOString() } : p
+          ),
+        }));
+      } else {
+        throw new Error("Failed to vote on product");
       }
     } catch (err) {
       console.error(err);
