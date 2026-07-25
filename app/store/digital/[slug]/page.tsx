@@ -258,13 +258,29 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                         return;
                       }
 
+                      // Mobile browsers cannot download raw base64 data URLs. We must convert it to a Blob.
+                      const arr = dataUrl.split(',');
+                      const mime = arr[0].match(/:(.*?);/)?.[1] || 'application/octet-stream';
+                      const bstr = atob(arr[1]);
+                      let n = bstr.length;
+                      const u8arr = new Uint8Array(n);
+                      while (n--) {
+                        u8arr[n] = bstr.charCodeAt(n);
+                      }
+                      const blob = new Blob([u8arr], { type: mime });
+                      const blobUrl = URL.createObjectURL(blob);
+
                       // Trigger download
                       const a = document.createElement("a");
-                      a.href = dataUrl;
+                      a.style.display = "none";
+                      a.href = blobUrl;
                       a.download = product.downloadFile.name || "download";
                       document.body.appendChild(a);
                       a.click();
                       document.body.removeChild(a);
+                      
+                      setTimeout(() => URL.revokeObjectURL(blobUrl), 100);
+                      
                       toast.dismiss(loadingToastId);
                       toast.success("Download started!");
                     } catch (err) {
