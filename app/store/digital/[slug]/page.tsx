@@ -42,6 +42,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
   const [activeImage, setActiveImage] = React.useState<string | null>(null);
   const [voteStatus, setVoteStatus] = React.useState<"like" | "dislike" | null>(null);
   const [isVoting, setIsVoting] = React.useState(false);
+  const [isDownloading, setIsDownloading] = React.useState(false);
   
   const isWishlisted = product ? hasProduct(product.id) : false;
 
@@ -90,11 +91,24 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
       // Un-vote
       setVoteStatus(null);
       localStorage.removeItem(`vote_${product.id}_${user.id}`);
+      if (type === "like") newLikes = Math.max(0, newLikes - 1);
+      if (type === "dislike") newDislikes = Math.max(0, newDislikes - 1);
     } else {
       // Switch vote or new vote
       setVoteStatus(type);
       localStorage.setItem(`vote_${product.id}_${user.id}`, type);
+      
+      if (type === "like") {
+        newLikes++;
+        if (previousVote === "dislike") newDislikes = Math.max(0, newDislikes - 1);
+      } else {
+        newDislikes++;
+        if (previousVote === "like") newLikes = Math.max(0, newLikes - 1);
+      }
     }
+    
+    // Optimistic local update
+    setProduct({ ...product, likes: newLikes, dislikes: newDislikes });
     
     try {
       const action = voteStatus === type ? "remove" : type;
@@ -102,6 +116,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
     } catch (err) {
       toast.error("Failed to register vote.");
       setVoteStatus(previousVote);
+      setProduct({ ...product, likes: product.likes, dislikes: product.dislikes }); // Revert
       if (previousVote) localStorage.setItem(`vote_${product.id}_${user.id}`, previousVote);
       else localStorage.removeItem(`vote_${product.id}_${user.id}`);
     } finally {
@@ -214,24 +229,55 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                   size="lg"
                   variant="primary"
                   className="flex-1"
+                  disabled={isDownloading}
                   onClick={async () => {
                     if (!product.downloadFile) {
                       toast.info("No download file attached to this product yet.");
                       return;
                     }
-                    const dataUrl = await getFile(product.id);
-                    if (!dataUrl) {
-                      toast.info("Download file not found. The admin may need to re-upload it.");
-                      return;
+                    
+                    setIsDownloading(true);
+                    const loadingToastId = toast.loading("Preparing download...");
+                    
+                    try {
+                      // 1. Try IndexedDB (Admin)
+                      let dataUrl = await getFile(product.id);
+                      
+                      // 2. Fallback to API (Users)
+                      if (!dataUrl) {
+                        const res = await fetch(`/api/products/${product.id}/download`);
+                        if (res.ok) {
+                          const data = await res.json();
+                          dataUrl = data.dataUrl;
+                        }
+                      }
+                      
+                      if (!dataUrl) {
+                        toast.dismiss(loadingToastId);
+                        toast.info("Download file not found. The admin may need to re-upload it.");
+                        return;
+                      }
+
+                      // Trigger download
+                      const a = document.createElement("a");
+                      a.href = dataUrl;
+                      a.download = product.downloadFile.name || "download";
+                      document.body.appendChild(a);
+                      a.click();
+                      document.body.removeChild(a);
+                      toast.dismiss(loadingToastId);
+                      toast.success("Download started!");
+                    } catch (err) {
+                      console.error("Download failed:", err);
+                      toast.dismiss(loadingToastId);
+                      toast.error("Failed to download file.");
+                    } finally {
+                      setIsDownloading(false);
                     }
-                    const a = document.createElement("a");
-                    a.href = dataUrl;
-                    a.download = product.downloadFile.name;
-                    a.click();
-                    toast.success(`Downloading ${product.downloadFile.name}...`);
                   }}
                 >
-                  <Download className="mr-2" size={20} /> Download Now (Free)
+                  <Download size={20} className="mr-2" />
+                  {isDownloading ? "Downloading..." : "Download Free"}
                 </Button>
               ) : (
                 <>

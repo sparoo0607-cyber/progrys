@@ -20,7 +20,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
       features: product.features ? JSON.parse(product.features) : [],
       downloadFile: product.downloadFileName ? {
         name: product.downloadFileName,
-        dataUrl: product.downloadFileUrl || "",
+        dataUrl: "", // Do not send massive base64 string on page load
         size: product.downloadFileSize || 0,
         type: product.downloadFileType || "application/octet-stream",
       } : undefined
