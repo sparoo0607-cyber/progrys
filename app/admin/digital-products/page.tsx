@@ -182,7 +182,7 @@ export default function DigitalProductsAdminPage() {
       fileFormats: formData.fileFormats.split(",").map((s) => s.trim()),
       coverImage: formData.coverImage || undefined,
       downloadFile: formData.downloadFile
-        ? { name: formData.downloadFile.name, size: formData.downloadFile.size, type: formData.downloadFile.type, dataUrl: "" }
+        ? { name: formData.downloadFile.name, size: formData.downloadFile.size, type: formData.downloadFile.type, dataUrl: formData.downloadFile.dataUrl }
         : undefined,
       images: [formData.coverImage, ...formData.additionalImages].filter(Boolean),
       features: ["Instant access", "Lifetime updates"],
