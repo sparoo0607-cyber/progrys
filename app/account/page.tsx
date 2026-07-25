@@ -31,6 +31,7 @@ export default function AccountPage() {
   const [confirmPassword, setConfirmPassword] = React.useState("");
   const [isUpdatingPassword, setIsUpdatingPassword] = React.useState(false);
   const [isUpdatingAvatar, setIsUpdatingAvatar] = React.useState(false);
+  const [isUpdatingProfile, setIsUpdatingProfile] = React.useState(false);
 
   const fileInputRef = React.useRef<HTMLInputElement>(null);
 
@@ -118,6 +119,33 @@ export default function AccountPage() {
     }
   };
 
+  const handleProfileUpdate = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!firstName.trim() || !lastName.trim()) {
+      toast.error("First and last names are required.");
+      return;
+    }
+
+    setIsUpdatingProfile(true);
+    try {
+      const res = await fetch("/api/user/update-profile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: user.email, firstName, lastName }),
+      });
+      const data = await res.json();
+      
+      if (!res.ok) throw new Error(data.error || "Failed to update profile");
+      
+      updateUser({ firstName, lastName });
+      toast.success("Profile updated successfully!");
+    } catch (err: any) {
+      toast.error(err.message);
+    } finally {
+      setIsUpdatingProfile(false);
+    }
+  };
+
   return (
     <div className="container mx-auto px-4 py-12 md:py-16 min-h-[70vh]">
       <AnimatedSection className="max-w-4xl mx-auto">
@@ -191,7 +219,7 @@ export default function AccountPage() {
                   </div>
                 </div>
 
-                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-6" onSubmit={handleProfileUpdate}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-[var(--foreground)]">First Name</label>
@@ -225,7 +253,9 @@ export default function AccountPage() {
                   </div>
 
                   <div className="pt-4 flex justify-end">
-                    <Button variant="primary">Save Changes</Button>
+                    <Button type="submit" variant="primary" disabled={isUpdatingProfile}>
+                      {isUpdatingProfile ? "Saving..." : "Save Changes"}
+                    </Button>
                   </div>
                 </form>
               </div>
