@@ -228,7 +228,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                 <Button
                   size="lg"
                   variant="primary"
-                  className="flex-1"
+                  className="flex-1 h-16 md:h-14 text-lg md:text-base"
                   disabled={isDownloading}
                   onClick={async () => {
                     if (!product.downloadFile) {
@@ -300,7 +300,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                   <Button 
                     size="lg" 
                     variant="secondary" 
-                    className="flex-1"
+                    className="flex-1 h-16 md:h-14 text-lg md:text-base"
                     onClick={() => {
                       if (!isLoggedIn) {
                         toast.error("Please login to add to cart");
@@ -316,7 +316,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                   <Button 
                     size="lg" 
                     variant="primary" 
-                    className="flex-1"
+                    className="flex-1 h-16 md:h-14 text-lg md:text-base"
                     onClick={() => {
                       if (!isLoggedIn) {
                         toast.error("Please login to purchase");
