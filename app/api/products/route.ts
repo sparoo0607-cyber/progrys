@@ -5,18 +5,42 @@ export async function GET() {
   try {
     const products = await prisma.product.findMany({
       orderBy: { createdAt: "desc" },
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        description: true,
+        price: true,
+        originalPrice: true,
+        coverImage: true,
+        tags: true,
+        rating: true,
+        reviewCount: true,
+        isFree: true,
+        category: true,
+        fileFormats: true,
+        features: true,
+        likes: true,
+        dislikes: true,
+        createdAt: true,
+        updatedAt: true,
+        downloadFileName: true,
+        downloadFileSize: true,
+        downloadFileType: true,
+        // specifically omitting `images` and `downloadFileUrl` to prevent massive payload sizes
+      }
     });
     
     // Parse JSON strings back to arrays
     const formattedProducts = products.map((p: any) => ({
       ...p,
-      images: JSON.parse(p.images),
+      images: [p.coverImage].filter(Boolean), // Default to just cover image for the lightweight payload
       tags: JSON.parse(p.tags),
       fileFormats: JSON.parse(p.fileFormats),
       features: p.features ? JSON.parse(p.features) : [],
       downloadFile: p.downloadFileName ? {
         name: p.downloadFileName,
-        dataUrl: p.downloadFileUrl || "",
+        dataUrl: "", // Omitted from global payload
         size: p.downloadFileSize || 0,
         type: p.downloadFileType || "application/octet-stream",
       } : undefined

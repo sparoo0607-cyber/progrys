@@ -18,10 +18,15 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
   const { addItem } = useCartStore();
   const { isLoggedIn, user } = useAuthStore();
   const { hasProduct, toggleProduct } = useWishlistStore();
-  const { getProductBySlug, voteProduct } = useProductStore();
+  const { getProductBySlug, voteProduct, fetchProductBySlug } = useProductStore();
   
   const resolvedParams = use(params);
   const product = getProductBySlug(resolvedParams.slug);
+
+  // Load full product data (including heavy base64 preview images) asynchronously
+  React.useEffect(() => {
+    fetchProductBySlug(resolvedParams.slug);
+  }, [resolvedParams.slug, fetchProductBySlug]);
 
   const [activeImage, setActiveImage] = React.useState<string | null>(null);
   const [voteStatus, setVoteStatus] = React.useState<"like" | "dislike" | null>(null);

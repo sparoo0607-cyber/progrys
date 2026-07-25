@@ -6,6 +6,7 @@ interface ProductStore {
   isLoading: boolean;
   setProducts: (products: Product[]) => void;
   fetchProducts: () => Promise<void>;
+  fetchProductBySlug: (slug: string) => Promise<Product | undefined>;
   addProduct: (product: Omit<Product, "id" | "createdAt" | "updatedAt">) => Promise<string>;
   updateProduct: (id: string, product: Partial<Product>) => Promise<void>;
   voteProduct: (id: string, userId: string, type: "like" | "dislike" | "remove") => Promise<void>;
@@ -32,6 +33,28 @@ export const useProductStore = create<ProductStore>((set, get) => ({
     } finally {
       set({ isLoading: false });
     }
+  },
+
+  fetchProductBySlug: async (slug) => {
+    try {
+      const res = await fetch(`/api/products/slug/${slug}`);
+      if (res.ok) {
+        const fullProduct = await res.json();
+        set((state) => {
+          // Replace the lightweight product with the full product (including images)
+          const exists = state.products.some(p => p.id === fullProduct.id);
+          if (exists) {
+            return { products: state.products.map(p => p.id === fullProduct.id ? fullProduct : p) };
+          } else {
+            return { products: [...state.products, fullProduct] };
+          }
+        });
+        return fullProduct;
+      }
+    } catch (err) {
+      console.error(`Failed to fetch product ${slug}`, err);
+    }
+    return undefined;
   },
 
   addProduct: async (newProduct) => {
