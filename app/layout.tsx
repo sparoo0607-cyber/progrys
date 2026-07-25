@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { Toaster } from "sonner";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -13,6 +14,12 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const captureIt = localFont({
+  src: "../public/fonts/capture-it/Capture_it.ttf",
+  variable: "--font-capture",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "PROGRYS | The Student Digital Ecosystem",
   description: "Everything a student needs. All in one place. Digital products, roadmaps, blogs, and knowledge hub.",
@@ -24,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased h-full`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${captureIt.variable} antialiased h-full`} suppressHydrationWarning>
       <head>
         <link href="https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&display=swap" rel="stylesheet" />
       </head>

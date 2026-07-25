@@ -15,7 +15,7 @@ export function Logo({ className, size = "md" }: LogoProps) {
 
   return (
     <div className={cn(
-      "flex items-stretch font-heading font-black tracking-widest uppercase select-none border-2 border-[var(--foreground)] overflow-hidden",
+      "flex items-stretch font-[family-name:var(--font-capture)] tracking-widest uppercase select-none border-2 border-[var(--foreground)] overflow-hidden",
       sizeClasses[size],
       className
     )}>
