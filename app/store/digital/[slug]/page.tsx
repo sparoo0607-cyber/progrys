@@ -27,11 +27,21 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
   
   const isWishlisted = product ? hasProduct(product.id) : false;
 
-  React.useEffect(() => {
-    if (product && !activeImage) {
-      setActiveImage(product.coverImage || (product.images.length > 0 ? product.images[0] : null));
+  const displayImages = React.useMemo(() => {
+    if (!product) return [];
+    const all = [];
+    if (product.coverImage) all.push(product.coverImage);
+    if (product.images) {
+      all.push(...product.images.filter(img => img !== product.coverImage));
     }
-  }, [product, activeImage]);
+    return all;
+  }, [product]);
+
+  React.useEffect(() => {
+    if (product && !activeImage && displayImages.length > 0) {
+      setActiveImage(displayImages[0]);
+    }
+  }, [product, activeImage, displayImages]);
 
   if (!product) {
     notFound();
@@ -41,25 +51,16 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
     <div className="container mx-auto px-4 py-8 md:py-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left: Images */}
-        <div className="space-y-4">
-          <div className="aspect-[4/3] bg-[var(--alt-section)] rounded-2xl border border-[var(--border-color)] relative overflow-hidden">
-            {activeImage ? (
-              <img src={activeImage} alt={product.title} className="w-full h-full object-cover" />
-            ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center gap-2">
-                <ImageIcon className="text-[var(--text-muted)]" size={32} />
-                <span className="text-[var(--text-muted)] font-medium text-sm">No images uploaded</span>
-              </div>
-            )}
-          </div>
-          {product.images && product.images.length > 0 && (
-            <div className="grid grid-cols-4 gap-3">
-              {product.images.map((img, idx) => (
+        <div className="flex flex-col-reverse md:flex-row gap-4 h-fit sticky top-24">
+          {displayImages.length > 1 && (
+            <div className="flex md:flex-col gap-3 overflow-x-auto md:overflow-y-auto md:w-24 shrink-0 pb-2 md:pb-0 md:max-h-[600px] custom-scrollbar">
+              {displayImages.map((img, idx) => (
                 <button 
                   key={idx} 
+                  onMouseEnter={() => setActiveImage(img)}
                   onClick={() => setActiveImage(img)}
-                  className={`aspect-square rounded-xl border flex items-center justify-center cursor-pointer transition-all overflow-hidden ${
-                    activeImage === img ? "border-[var(--foreground)] ring-2 ring-[var(--foreground)]/20" : "border-[var(--border-color)] hover:border-[var(--foreground)]"
+                  className={`aspect-square w-20 md:w-full shrink-0 rounded-xl border flex items-center justify-center cursor-pointer transition-all overflow-hidden bg-[var(--card)] ${
+                    activeImage === img ? "border-[var(--foreground)] ring-2 ring-[var(--foreground)]/20" : "border-[var(--border-color)] hover:border-[var(--foreground)] opacity-70 hover:opacity-100"
                   }`}
                 >
                   <img src={img} alt={`Preview ${idx + 1}`} className="w-full h-full object-cover" />
@@ -67,6 +68,16 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
               ))}
             </div>
           )}
+          <div className="flex-1 aspect-[4/3] md:aspect-[4/4] bg-[var(--alt-section)] rounded-2xl border border-[var(--border-color)] relative overflow-hidden">
+            {activeImage ? (
+              <img src={activeImage} alt={product.title} className="w-full h-full object-cover transition-opacity duration-300" />
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center gap-2">
+                <ImageIcon className="text-[var(--text-muted)]" size={32} />
+                <span className="text-[var(--text-muted)] font-medium text-sm">No images uploaded</span>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Right: Info */}

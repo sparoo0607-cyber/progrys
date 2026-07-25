@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Bookmark, Star, Download, BookOpen, LayoutTemplate, FileText, Package } from "lucide-react";
+import { Bookmark, Star, Download, BookOpen, LayoutTemplate, FileText, Package, ChevronLeft, ChevronRight } from "lucide-react";
 import { Product } from "@/lib/data/products";
 import { useWishlistStore } from "@/lib/store/useWishlistStore";
 import { useAuthStore } from "@/lib/store/useAuthStore";
@@ -10,6 +10,7 @@ import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useCartStore } from "@/lib/store/useCartStore";
+import * as React from "react";
 
 const CATEGORY_ICON = {
   ebooks: BookOpen,
@@ -25,6 +26,30 @@ export function ProductCard({ product }: { product: Product }) {
   const { isLoggedIn } = useAuthStore();
   const router = useRouter();
   const isWishlisted = hasProduct(product.id);
+  const [imageIndex, setImageIndex] = React.useState(0);
+
+  const displayImages = React.useMemo(() => {
+    const allImages = [];
+    if (product.coverImage) allImages.push(product.coverImage);
+    if (product.images && product.images.length > 0) {
+      allImages.push(...product.images.filter(img => img !== product.coverImage));
+    }
+    return allImages;
+  }, [product]);
+
+  const hasMultipleImages = displayImages.length > 1;
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setImageIndex((prev) => (prev + 1) % displayImages.length);
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setImageIndex((prev) => (prev - 1 + displayImages.length) % displayImages.length);
+  };
 
   return (
     <div className="group flex flex-col bg-[var(--card)] border border-[var(--border-color)] rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-white/5 hover:-translate-y-1.5 hover:border-[var(--foreground)]/30 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]">
@@ -53,15 +78,41 @@ export function ProductCard({ product }: { product: Product }) {
         {/* Subtle hover gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
         
-        <Link href={`/store/digital/${product.slug}`} className="absolute inset-0 z-0">
-           {product.coverImage || (product.images && product.images.length > 0) ? (
-             <img src={product.coverImage || product.images[0]} alt={product.title} className="w-full h-full object-cover" />
+        <Link href={`/store/${product.category}/${product.slug}`} className="absolute inset-0 z-0">
+           {displayImages.length > 0 ? (
+             <img src={displayImages[imageIndex]} alt={product.title} className="w-full h-full object-cover transition-opacity duration-300" />
            ) : (
              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[var(--alt-section)] to-[var(--border-color)]/20">
                <CategoryIcon size={40} strokeWidth={1.5} className="text-[var(--text-muted)] opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all" />
              </div>
            )}
         </Link>
+
+        {hasMultipleImages && (
+          <>
+            <button 
+              onClick={prevImage}
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 hover:bg-black/70 transition-all z-10"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button 
+              onClick={nextImage}
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 hover:bg-black/70 transition-all z-10"
+            >
+              <ChevronRight size={18} />
+            </button>
+            
+            <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
+              {displayImages.map((_, idx) => (
+                <div 
+                  key={idx} 
+                  className={`h-1.5 rounded-full transition-all ${idx === imageIndex ? "w-4 bg-white" : "w-1.5 bg-white/50"}`} 
+                />
+              ))}
+            </div>
+          </>
+        )}
       </div>
 
       <div className="p-6 flex flex-col flex-grow bg-[var(--card)]">
