@@ -157,7 +157,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
               ))}
             </div>
           )}
-          <div className="flex-1 aspect-[4/3] md:aspect-[4/4] bg-[var(--alt-section)] rounded-2xl border border-[var(--border-color)] relative overflow-hidden">
+          <div className="w-full md:flex-1 aspect-[4/3] md:aspect-[4/4] bg-[var(--alt-section)] rounded-2xl border border-[var(--border-color)] relative overflow-hidden">
             {activeImage ? (
               <img src={activeImage} alt={product.title} className="w-full h-full object-cover transition-opacity duration-300" />
             ) : (
