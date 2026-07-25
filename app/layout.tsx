@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { Toaster } from "sonner";
@@ -34,6 +35,15 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${captureIt.variable} antialiased h-full`} suppressHydrationWarning>
       <head>
         <link href="https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&display=swap" rel="stylesheet" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-XGXMKKL4CB" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XGXMKKL4CB');
+          `}
+        </Script>
       </head>
       <body className="min-h-full flex flex-col relative bg-[var(--background)] text-[var(--foreground)] transition-colors duration-200">
         <ThemeProvider>
