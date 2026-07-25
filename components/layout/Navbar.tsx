@@ -167,8 +167,12 @@ export function Navbar() {
                     onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
                     className="flex items-center gap-2 hover:bg-[var(--alt-section)] p-1 pr-3 rounded-full transition-colors border border-transparent hover:border-[var(--border-color)]"
                   >
-                    <div className="w-8 h-8 rounded-full bg-[var(--foreground)] text-[var(--background)] flex items-center justify-center font-bold text-sm">
-                      {user.firstName.charAt(0)}
+                    <div className="w-8 h-8 rounded-full bg-[var(--foreground)] text-[var(--background)] flex items-center justify-center font-bold text-sm overflow-hidden">
+                      {user.avatar ? (
+                        <img src={user.avatar} alt="Avatar" className="w-full h-full object-cover" />
+                      ) : (
+                        user.firstName.charAt(0).toUpperCase()
+                      )}
                     </div>
                   </button>
 
