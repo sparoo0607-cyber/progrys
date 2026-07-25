@@ -140,7 +140,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
     <div className="container mx-auto px-4 py-8 md:py-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left: Images */}
-        <div className="flex flex-col-reverse md:flex-row gap-4 h-fit sticky top-24">
+        <div className="flex flex-col-reverse md:flex-row gap-4 h-fit lg:sticky lg:top-24">
           {displayImages.length > 1 && (
             <div className="flex md:flex-col gap-3 overflow-x-auto md:overflow-y-auto md:w-24 shrink-0 pb-2 md:pb-0 md:max-h-[600px] custom-scrollbar snap-x snap-mandatory">
               {displayImages.map((img, idx) => (
