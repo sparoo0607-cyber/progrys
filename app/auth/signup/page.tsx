@@ -14,7 +14,13 @@ type Step = "details" | "verify";
 
 export default function SignupPage() {
   const router = useRouter();
-  const { login } = useAuthStore();
+  const { login, isLoggedIn } = useAuthStore();
+
+  React.useEffect(() => {
+    if (isLoggedIn) {
+      router.push("/");
+    }
+  }, [isLoggedIn, router]);
 
   const [step, setStep] = React.useState<Step>("details");
   const [isLoading, setIsLoading] = React.useState(false);

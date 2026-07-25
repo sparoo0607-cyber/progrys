@@ -9,10 +9,12 @@ import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/
 import { ProductCard } from "@/components/ui/product-card";
 import { RoadmapCard } from "@/components/ui/roadmap-card";
 import { useProductStore } from "@/lib/store/useProductStore";
+import { useAuthStore } from "@/lib/store/useAuthStore";
 import { MOCK_ROADMAPS } from "@/lib/data/roadmaps";
 
 export default function Home() {
   const { products } = useProductStore();
+  const { isLoggedIn } = useAuthStore();
   const featuredProducts = products.slice(0, 4);
   const trendingRoadmaps = MOCK_ROADMAPS.slice(0, 3);
 
@@ -163,21 +165,23 @@ export default function Home() {
 
 
       {/* 7. FINAL CTA */}
-      <section className="py-40 container mx-auto px-4 text-center">
-        <AnimatedSection>
-          <h2 className="text-5xl md:text-7xl font-heading font-bold text-[var(--foreground)] tracking-tight mb-8">
-            Ready to upgrade?
-          </h2>
-          <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto mb-12">
-            Join the next generation of ambitious students who are building their future with PROGRYS today.
-          </p>
-          <Link href="/auth/signup">
-            <Button size="lg" className="h-14 px-10 text-lg shadow-xl shadow-black/10 dark:shadow-white/5 hover:shadow-black/20 dark:hover:shadow-white/10 transition-shadow">
-              Create Free Account
-            </Button>
-          </Link>
-        </AnimatedSection>
-      </section>
+      {!isLoggedIn && (
+        <section className="py-40 container mx-auto px-4 text-center">
+          <AnimatedSection>
+            <h2 className="text-5xl md:text-7xl font-heading font-bold text-[var(--foreground)] tracking-tight mb-8">
+              Ready to upgrade?
+            </h2>
+            <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto mb-12">
+              Join the next generation of ambitious students who are building their future with PROGRYS today.
+            </p>
+            <Link href="/auth/signup">
+              <Button size="lg" className="h-14 px-10 text-lg shadow-xl shadow-black/10 dark:shadow-white/5 hover:shadow-black/20 dark:hover:shadow-white/10 transition-shadow">
+                Create Free Account
+              </Button>
+            </Link>
+          </AnimatedSection>
+        </section>
+      )}
 
     </div>
   );
