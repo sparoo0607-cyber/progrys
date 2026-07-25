@@ -52,25 +52,33 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
 
   const handleVote = async (type: "like" | "dislike") => {
     if (!product) return;
-    
-    if (voteStatus === type) {
-      toast.info(`You already ${type}d this product.`);
-      return;
-    }
   
     const previousVote = voteStatus;
-    setVoteStatus(type);
-    localStorage.setItem(`vote_${product.id}`, type);
-    
     let newLikes = product.likes || 0;
     let newDislikes = product.dislikes || 0;
     
-    if (type === "like") {
-      newLikes++;
-      if (previousVote === "dislike") newDislikes--;
+    if (voteStatus === type) {
+      // Un-vote
+      setVoteStatus(null);
+      localStorage.removeItem(`vote_${product.id}`);
+      
+      if (type === "like") {
+        newLikes = Math.max(0, newLikes - 1);
+      } else {
+        newDislikes = Math.max(0, newDislikes - 1);
+      }
     } else {
-      newDislikes++;
-      if (previousVote === "like") newLikes--;
+      // Switch vote or new vote
+      setVoteStatus(type);
+      localStorage.setItem(`vote_${product.id}`, type);
+      
+      if (type === "like") {
+        newLikes++;
+        if (previousVote === "dislike") newDislikes = Math.max(0, newDislikes - 1);
+      } else {
+        newDislikes++;
+        if (previousVote === "like") newLikes = Math.max(0, newLikes - 1);
+      }
     }
     
     try {
