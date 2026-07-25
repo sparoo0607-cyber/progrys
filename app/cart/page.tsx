@@ -39,15 +39,17 @@ export default function CartPage() {
           <div className="lg:col-span-2 space-y-6">
             {items.map((item) => (
               <div key={item.product.id} className="flex flex-col sm:flex-row gap-6 p-4 sm:p-6 bg-[var(--card)] border border-[var(--card-border)] rounded-2xl shadow-sm">
-                <div className="w-full sm:w-32 aspect-[4/3] sm:aspect-square bg-[var(--alt-section)] rounded-xl border border-[var(--border-color)] flex-shrink-0 overflow-hidden relative">
+                <Link href={`/store/digital/${item.product.slug}`} className="w-full sm:w-32 aspect-[4/3] sm:aspect-square bg-[var(--alt-section)] rounded-xl border border-[var(--border-color)] flex-shrink-0 overflow-hidden relative block hover:opacity-80 transition-opacity">
                   {item.product.coverImage && (
                     <img src={item.product.coverImage} alt={item.product.title} className="w-full h-full object-cover" />
                   )}
-                </div>
+                </Link>
                 
                 <div className="flex flex-col flex-1">
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="font-semibold text-lg text-[var(--foreground)]">{item.product.title}</h3>
+                    <Link href={`/store/digital/${item.product.slug}`} className="hover:underline decoration-[var(--text-muted)] underline-offset-4 transition-all">
+                      <h3 className="font-semibold text-lg text-[var(--foreground)]">{item.product.title}</h3>
+                    </Link>
                     <span className="font-bold text-lg text-[var(--foreground)]">₹{item.product.price.toFixed(2)}</span>
                   </div>
                   
