@@ -125,7 +125,7 @@ export function ProductCard({ product }: { product: Product }) {
           </p>
         </Link>
         
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-4 mt-auto pt-4">
           <div className="flex flex-col">
             <span className="font-bold text-[var(--foreground)] text-lg">
               {product.isFree ? "Free" : `₹${product.price.toFixed(2)}`}

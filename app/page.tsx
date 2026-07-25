@@ -24,14 +24,14 @@ export default function Home() {
       {/* 1. HERO SECTION */}
       <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 container mx-auto px-4 flex flex-col items-center text-center overflow-hidden">
         {/* Apple-style background blur orb */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--color-brand)] opacity-[0.03] blur-[100px] rounded-full pointer-events-none -z-10"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] max-w-[600px] max-h-[600px] bg-[var(--color-brand)] opacity-[0.03] blur-[100px] rounded-full pointer-events-none -z-10"></div>
         
         <AnimatedSection className="flex flex-col items-center max-w-5xl mx-auto">
           <Badge className="mb-8 bg-[var(--card)] text-[var(--color-brand)] border border-[var(--color-brand)]/20 px-4 py-1.5 rounded-full uppercase font-semibold tracking-widest text-[10px] shadow-sm shadow-[var(--color-brand)]/5">
             PROGRYS OS 2.0 IS LIVE
           </Badge>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold tracking-[-0.04em] text-[var(--foreground)] mb-6 leading-[1.05]">
+          <h1 className="text-4xl md:text-6xl lg:text-8xl font-heading font-bold tracking-[-0.04em] text-[var(--foreground)] mb-6 leading-[1.05]">
             The operating system <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-[var(--foreground)] to-[var(--text-muted)]">
               for ambitious students.
@@ -71,7 +71,7 @@ export default function Home() {
           </p>
         </AnimatedSection>
         
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
           {trendingRoadmaps.map((roadmap) => (
             <StaggerItem key={roadmap.id}>
               <RoadmapCard roadmap={roadmap} />
@@ -108,7 +108,7 @@ export default function Home() {
             </Link>
           </AnimatedSection>
 
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {featuredProducts.map(product => (
               <StaggerItem key={product.id}>
                 <ProductCard product={product} />
@@ -168,7 +168,7 @@ export default function Home() {
       {!isLoggedIn && (
         <section className="py-40 container mx-auto px-4 text-center">
           <AnimatedSection>
-            <h2 className="text-5xl md:text-7xl font-heading font-bold text-[var(--foreground)] tracking-tight mb-8">
+            <h2 className="text-4xl md:text-6xl font-heading font-bold text-[var(--foreground)] tracking-tight mb-8">
               Ready to upgrade?
             </h2>
             <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto mb-12">

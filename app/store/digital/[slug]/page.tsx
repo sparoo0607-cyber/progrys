@@ -102,13 +102,13 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
         {/* Left: Images */}
         <div className="flex flex-col-reverse md:flex-row gap-4 h-fit sticky top-24">
           {displayImages.length > 1 && (
-            <div className="flex md:flex-col gap-3 overflow-x-auto md:overflow-y-auto md:w-24 shrink-0 pb-2 md:pb-0 md:max-h-[600px] custom-scrollbar">
+            <div className="flex md:flex-col gap-3 overflow-x-auto md:overflow-y-auto md:w-24 shrink-0 pb-2 md:pb-0 md:max-h-[600px] custom-scrollbar snap-x snap-mandatory">
               {displayImages.map((img, idx) => (
                 <button 
                   key={idx} 
                   onMouseEnter={() => setActiveImage(img)}
                   onClick={() => setActiveImage(img)}
-                  className={`aspect-square w-20 md:w-full shrink-0 rounded-xl border flex items-center justify-center cursor-pointer transition-all overflow-hidden bg-[var(--card)] ${
+                  className={`aspect-square w-[22%] min-w-[70px] md:w-full shrink-0 snap-start rounded-xl border flex items-center justify-center cursor-pointer transition-all overflow-hidden bg-[var(--card)] ${
                     activeImage === img ? "border-[var(--foreground)] ring-2 ring-[var(--foreground)]/20" : "border-[var(--border-color)] hover:border-[var(--foreground)] opacity-70 hover:opacity-100"
                   }`}
                 >

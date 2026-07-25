@@ -32,7 +32,7 @@ export function AffiliateCard({ product }: { product: AffiliateProduct }) {
           {product.description}
         </p>
         
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-4 mt-auto">
           <div className="flex flex-col">
             <span className="font-bold text-[var(--foreground)] text-lg">
               ₹{product.price.toFixed(2)}
@@ -45,10 +45,12 @@ export function AffiliateCard({ product }: { product: AffiliateProduct }) {
           <Button 
             size="sm" 
             variant="secondary" 
-            className="gap-2 shadow-sm"
+            className="gap-2 shadow-sm shrink-0"
             onClick={() => window.open(product.url, "_blank", "noopener,noreferrer")}
           >
-            View on {product.platform} <ExternalLink size={14} />
+            <span className="hidden sm:inline">View on {product.platform}</span>
+            <span className="sm:hidden">View</span> 
+            <ExternalLink size={14} />
           </Button>
         </div>
       </div>
