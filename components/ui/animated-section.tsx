@@ -15,7 +15,7 @@ export function AnimatedSection({ children, className, delay = 0 }: AnimatedSect
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ margin: "-50px" }}
+      viewport={{ once: true, margin: "-20px" }}
       transition={{ duration: 0.7, delay, ease: [0.25, 0.1, 0.25, 1.0] }}
       className={cn("w-full", className)}
     >
@@ -46,7 +46,7 @@ export function StaggerContainer({ children, className }: { children: ReactNode,
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ margin: "-50px" }}
+      viewport={{ once: true, margin: "-20px" }}
       className={className}
     >
       {children}

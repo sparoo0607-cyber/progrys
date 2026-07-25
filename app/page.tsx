@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Star, ExternalLink, BookOpen, Layers, Users, Zap, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,10 +13,16 @@ import { useAuthStore } from "@/lib/store/useAuthStore";
 import { MOCK_ROADMAPS } from "@/lib/data/roadmaps";
 
 export default function Home() {
-  const { products } = useProductStore();
+  const { products, fetchProducts, isLoading } = useProductStore();
   const { isLoggedIn } = useAuthStore();
   const featuredProducts = products.slice(0, 4);
   const trendingRoadmaps = MOCK_ROADMAPS.slice(0, 3);
+
+  useEffect(() => {
+    if (products.length === 0 && !isLoading) {
+      fetchProducts();
+    }
+  }, [fetchProducts, products.length, isLoading]);
 
   return (
     <div className="flex flex-col relative w-full overflow-hidden">
@@ -109,7 +115,11 @@ export default function Home() {
           </AnimatedSection>
 
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {featuredProducts.map(product => (
+            {isLoading ? (
+              Array.from({ length: 4 }).map((_, i) => (
+                <div key={i} className="aspect-[3/4] rounded-2xl bg-[var(--alt-section)] border border-[var(--border-color)] animate-pulse" />
+              ))
+            ) : featuredProducts.map(product => (
               <StaggerItem key={product.id}>
                 <ProductCard product={product} />
               </StaggerItem>
