@@ -78,7 +78,7 @@ export function ProductCard({ product }: { product: Product }) {
         {/* Subtle hover gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
         
-        <Link href={`/store/${product.category}/${product.slug}`} className="absolute inset-0 z-0">
+        <Link href={`/store/digital/${product.slug}`} className="absolute inset-0 z-0">
            {displayImages.length > 0 ? (
              <img src={displayImages[imageIndex]} alt={product.title} className="w-full h-full object-cover transition-opacity duration-300" />
            ) : (
@@ -116,7 +116,7 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
 
       <div className="p-6 flex flex-col flex-grow bg-[var(--card)]">
-        <Link href={`/store/${product.category}/${product.slug}`} className="flex-grow group/title">
+        <Link href={`/store/digital/${product.slug}`} className="flex-grow group/title">
           <h3 className="font-heading font-semibold text-lg text-[var(--foreground)] mb-1 group-hover/title:text-[var(--color-brand)] transition-colors">
             {product.title}
           </h3>
