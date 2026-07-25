@@ -62,7 +62,7 @@ export default function DigitalProductsAdminPage() {
     setIsModalOpen(true);
   };
 
-  const openEditModal = (product: Product) => {
+  const openEditModal = async (product: Product) => {
     setEditingProduct(product);
     setFormData({
       title: product.title,
@@ -74,10 +74,24 @@ export default function DigitalProductsAdminPage() {
       isFree: product.isFree,
       fileFormats: product.fileFormats.join(", "),
       coverImage: product.coverImage || "",
-      additionalImages: product.images.filter(img => img !== product.coverImage),
+      additionalImages: [], // Will load from API below
       downloadFile: product.downloadFile || null,
     });
     setIsModalOpen(true);
+
+    try {
+      const res = await fetch(`/api/products/${product.id}`);
+      if (res.ok) {
+        const fullProduct = await res.json();
+        setFormData(prev => ({
+          ...prev,
+          additionalImages: fullProduct.images.filter((img: string) => img !== fullProduct.coverImage)
+        }));
+      }
+    } catch (e) {
+      console.error("Failed to load full product details:", e);
+      toast.error("Failed to load additional preview images");
+    }
   };
 
   const openVotersModal = async (productId: string) => {
