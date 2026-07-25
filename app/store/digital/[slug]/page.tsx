@@ -25,6 +25,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
 
   const [activeImage, setActiveImage] = React.useState<string | null>(null);
   const [voteStatus, setVoteStatus] = React.useState<"like" | "dislike" | null>(null);
+  const [isVoting, setIsVoting] = React.useState(false);
   
   const isWishlisted = product ? hasProduct(product.id) : false;
 
@@ -51,8 +52,9 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
   }, [product, activeImage, displayImages]);
 
   const handleVote = async (type: "like" | "dislike") => {
-    if (!product) return;
-  
+    if (!product || isVoting) return;
+    
+    setIsVoting(true);
     const previousVote = voteStatus;
     let newLikes = product.likes || 0;
     let newDislikes = product.dislikes || 0;
@@ -88,6 +90,8 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
       setVoteStatus(previousVote);
       if (previousVote) localStorage.setItem(`vote_${product.id}`, previousVote);
       else localStorage.removeItem(`vote_${product.id}`);
+    } finally {
+      setIsVoting(false);
     }
   };
 
@@ -149,14 +153,16 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             <div className="flex items-center gap-4">
               <button 
                 onClick={() => handleVote("like")}
-                className={`flex items-center gap-1.5 transition-colors group ${voteStatus === "like" ? "text-green-500" : "text-[var(--text-muted)] hover:text-green-500"}`}
+                disabled={isVoting}
+                className={`flex items-center gap-1.5 transition-colors group ${voteStatus === "like" ? "text-green-500" : "text-[var(--text-muted)] hover:text-green-500"} ${isVoting ? "opacity-50 cursor-not-allowed" : ""}`}
               >
                 <ThumbsUp size={16} className={`transition-transform ${voteStatus === "like" ? "fill-green-500" : "group-hover:-translate-y-0.5"}`} />
                 <span className="font-medium text-sm">{product.likes || 0}</span>
               </button>
               <button 
                 onClick={() => handleVote("dislike")}
-                className={`flex items-center gap-1.5 transition-colors group ${voteStatus === "dislike" ? "text-[#EF4444]" : "text-[var(--text-muted)] hover:text-[#EF4444]"}`}
+                disabled={isVoting}
+                className={`flex items-center gap-1.5 transition-colors group ${voteStatus === "dislike" ? "text-[#EF4444]" : "text-[var(--text-muted)] hover:text-[#EF4444]"} ${isVoting ? "opacity-50 cursor-not-allowed" : ""}`}
               >
                 <ThumbsDown size={16} className={`transition-transform ${voteStatus === "dislike" ? "fill-[#EF4444]" : "group-hover:translate-y-0.5"}`} />
                 <span className="font-medium text-sm">{product.dislikes || 0}</span>
