@@ -20,11 +20,11 @@ export function Logo({ className, size = "md" }: LogoProps) {
       className
     )}>
       {/* PRO - White background, Black text (in light mode) */}
-      <div className="bg-[var(--background)] text-[var(--foreground)] px-2 flex items-center justify-center">
+      <div className="bg-[var(--background)] text-[var(--foreground)] pl-2 pr-0.5 flex items-center justify-center">
         PRO
       </div>
       {/* GRYS - Black background, White text (in light mode) */}
-      <div className="bg-[var(--foreground)] text-[var(--background)] px-2 flex items-center justify-center">
+      <div className="bg-[var(--foreground)] text-[var(--background)] pr-2 pl-0.5 flex items-center justify-center">
         GRYS
       </div>
     </div>
