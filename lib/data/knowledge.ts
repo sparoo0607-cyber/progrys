@@ -1473,7 +1473,7 @@ is_student = True
 price = 99.99
 tax = price * 0.18
 total = price + tax
-print(f"Total: ${total:.2f}")`,
+print(f"Total: \${total:.2f}")`,
         tryItDefault: `# Try changing the values!
 name = "Your Name"
 age = 20
