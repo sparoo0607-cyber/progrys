@@ -1,144 +1,550 @@
 [
   {
-    "slug": "aws-cloud-foundations",
+    "slug": "aws-cloud",
     "title": "AWS Cloud Foundations",
-    "description": "Learn the core services of Amazon Web Services. Understand how to deploy scalable infrastructure without buying physical hardware.",
+    "description": "Master AWS Core Services, S3, EC2, IAM, and Serverless step-by-step with simple English and bullet points across 25 lessons.",
     "iconName": "Cloud",
     "lessons": [
       {
-        "slug": "what-is-cloud-computing",
-        "title": "What is Cloud Computing?",
-        "explanationHtml": "<p>Cloud computing is simply renting someone else's computer. Instead of buying physical servers that sit idle 90% of the time, you pay Amazon, Microsoft, or Google for the exact CPU cycles and storage you use, billed by the second.</p><p>This allows startups to instantly scale to handle millions of users, and scale back down when traffic drops.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=SOTamWNgDKc' target='_blank'>AWS Certified Cloud Practitioner Certification Course (Pass the Exam!) - freeCodeCamp</a></p>",
-        "codeExample": "",
-        "tryItDefault": ""
+        "slug": "aws-1",
+        "title": "1. What is Cloud Computing?",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering What is Cloud Computing? for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure What is Cloud Computing? inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// What is Cloud Computing? Example\nconsole.log(\"What is Cloud Computing?\");",
+        "tryItDefault": "console.log(\"Learning What is Cloud Computing?!\");"
       },
       {
-        "slug": "iam-security",
-        "title": "Identity & Access Management (IAM)",
-        "explanationHtml": "<p>Security is job zero in the cloud. IAM is how you control who can access what inside your AWS account.</p><p>You should NEVER use the root account for daily tasks. Instead, create IAM Users, assign them to Groups, and use Policies (JSON documents) to grant the Principle of Least Privilege (giving users only the exact permissions they need to do their job).</p>",
-        "codeExample": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Action\": \"s3:GetObject\",\n      \"Resource\": \"arn:aws:s3:::my-company-bucket/*\"\n    }\n  ]\n}",
-        "tryItDefault": ""
+        "slug": "aws-2",
+        "title": "2. AWS Global Infrastructure",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering AWS Global Infrastructure for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure AWS Global Infrastructure inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// AWS Global Infrastructure Example\nconsole.log(\"AWS Global Infrastructure\");",
+        "tryItDefault": "console.log(\"Learning AWS Global Infrastructure!\");"
       },
       {
-        "slug": "ec2-virtual-machines",
-        "title": "Elastic Compute Cloud (EC2)",
-        "explanationHtml": "<p>EC2 is the backbone of AWS. It provides raw, resizable compute capacity (Virtual Machines) in the cloud.</p><p>You choose the operating system (AMI), the instance type (e.g., heavily optimized for CPU vs RAM), and configure Security Groups to act as virtual firewalls controlling inbound and outbound traffic.</p>",
-        "codeExample": "# Launching an EC2 instance via AWS CLI\naws ec2 run-instances \\\n    --image-id ami-0c55b159cbfafe1f0 \\\n    --count 1 \\\n    --instance-type t2.micro \\\n    --key-name MyKeyPair \\\n    --security-group-ids sg-903004f8",
-        "tryItDefault": ""
+        "slug": "aws-3",
+        "title": "3. IAM (Users & Roles)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering IAM (Users & Roles) for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure IAM (Users & Roles) inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// IAM (Users & Roles) Example\nconsole.log(\"IAM (Users & Roles)\");",
+        "tryItDefault": "console.log(\"Learning IAM (Users & Roles)!\");"
       },
       {
-        "slug": "s3-object-storage",
-        "title": "Simple Storage Service (S3)",
-        "explanationHtml": "<p>S3 provides infinite, highly durable object storage. You use it to store images, video files, backups, and even host static websites.</p><p>Unlike the hard drive on your computer (block storage), S3 stores files as \"objects\" in \"buckets\" and retrieves them via URLs. It is incredibly cheap and scales automatically.</p>",
-        "codeExample": "# Upload a file to S3\naws s3 cp my-image.png s3://my-company-assets/images/\n\n# Make it publicly readable (requires bucket policy)\naws s3api put-object-acl --bucket my-company-assets --key images/my-image.png --acl public-read",
-        "tryItDefault": ""
+        "slug": "aws-4",
+        "title": "4. EC2 (Virtual Servers)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering EC2 (Virtual Servers) for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure EC2 (Virtual Servers) inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// EC2 (Virtual Servers) Example\nconsole.log(\"EC2 (Virtual Servers)\");",
+        "tryItDefault": "console.log(\"Learning EC2 (Virtual Servers)!\");"
       },
       {
-        "slug": "vpc-networking",
-        "title": "Virtual Private Cloud (VPC)",
-        "explanationHtml": "<p>A VPC is your own logically isolated section of the AWS cloud. It is your private network.</p><p>You define the IP address range, create Subnets (public subnets for web servers, private subnets for databases), and configure Route Tables and Internet Gateways to control exactly how traffic flows in and out of your architecture.</p>",
-        "codeExample": "",
-        "tryItDefault": ""
+        "slug": "aws-5",
+        "title": "5. Security Groups & Key Pairs",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Security Groups & Key Pairs for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure Security Groups & Key Pairs inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// Security Groups & Key Pairs Example\nconsole.log(\"Security Groups & Key Pairs\");",
+        "tryItDefault": "console.log(\"Learning Security Groups & Key Pairs!\");"
       },
       {
-        "slug": "rds-databases",
-        "title": "Relational Database Service (RDS)",
-        "explanationHtml": "<p>Managing database servers manually is a nightmare (backups, patching, scaling). RDS is a managed service that does this for you.</p><p>You can launch a fully configured MySQL, PostgreSQL, or SQL Server database in minutes, with automated daily backups and the ability to add \"Read Replicas\" to handle heavy traffic.</p>",
-        "codeExample": "",
-        "tryItDefault": ""
+        "slug": "aws-6",
+        "title": "6. S3 Storage (Buckets & Objects)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering S3 Storage (Buckets & Objects) for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure S3 Storage (Buckets & Objects) inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// S3 Storage (Buckets & Objects) Example\nconsole.log(\"S3 Storage (Buckets & Objects)\");",
+        "tryItDefault": "console.log(\"Learning S3 Storage (Buckets & Objects)!\");"
       },
       {
-        "slug": "lambda-serverless",
-        "title": "AWS Lambda (Serverless)",
-        "explanationHtml": "<p>What if you didn't have to manage servers at all? AWS Lambda allows you to run code without provisioning or managing EC2 instances.</p><p>You upload your Node.js or Python code, and Lambda automatically scales out to run it whenever a specific event occurs (like an HTTP request or a file being uploaded to S3). You only pay for the exact milliseconds your code executes.</p>",
-        "codeExample": "export const handler = async (event) => {\n  // Code runs instantly when triggered\n  console.log(\"File uploaded!\", event);\n  return {\n    statusCode: 200,\n    body: JSON.stringify('Success!'),\n  };\n};",
-        "tryItDefault": ""
+        "slug": "aws-7",
+        "title": "7. S3 Static Website Hosting",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering S3 Static Website Hosting for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure S3 Static Website Hosting inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// S3 Static Website Hosting Example\nconsole.log(\"S3 Static Website Hosting\");",
+        "tryItDefault": "console.log(\"Learning S3 Static Website Hosting!\");"
+      },
+      {
+        "slug": "aws-8",
+        "title": "8. VPC (Virtual Private Cloud)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering VPC (Virtual Private Cloud) for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure VPC (Virtual Private Cloud) inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// VPC (Virtual Private Cloud) Example\nconsole.log(\"VPC (Virtual Private Cloud)\");",
+        "tryItDefault": "console.log(\"Learning VPC (Virtual Private Cloud)!\");"
+      },
+      {
+        "slug": "aws-9",
+        "title": "9. Subnets & Route Tables",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Subnets & Route Tables for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure Subnets & Route Tables inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// Subnets & Route Tables Example\nconsole.log(\"Subnets & Route Tables\");",
+        "tryItDefault": "console.log(\"Learning Subnets & Route Tables!\");"
+      },
+      {
+        "slug": "aws-10",
+        "title": "10. Internet & NAT Gateways",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Internet & NAT Gateways for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure Internet & NAT Gateways inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// Internet & NAT Gateways Example\nconsole.log(\"Internet & NAT Gateways\");",
+        "tryItDefault": "console.log(\"Learning Internet & NAT Gateways!\");"
+      },
+      {
+        "slug": "aws-11",
+        "title": "11. RDS (Managed Databases)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering RDS (Managed Databases) for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure RDS (Managed Databases) inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// RDS (Managed Databases) Example\nconsole.log(\"RDS (Managed Databases)\");",
+        "tryItDefault": "console.log(\"Learning RDS (Managed Databases)!\");"
+      },
+      {
+        "slug": "aws-12",
+        "title": "12. DynamoDB (NoSQL on AWS)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering DynamoDB (NoSQL on AWS) for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure DynamoDB (NoSQL on AWS) inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// DynamoDB (NoSQL on AWS) Example\nconsole.log(\"DynamoDB (NoSQL on AWS)\");",
+        "tryItDefault": "console.log(\"Learning DynamoDB (NoSQL on AWS)!\");"
+      },
+      {
+        "slug": "aws-13",
+        "title": "13. Elastic Load Balancer (ELB)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Elastic Load Balancer (ELB) for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure Elastic Load Balancer (ELB) inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// Elastic Load Balancer (ELB) Example\nconsole.log(\"Elastic Load Balancer (ELB)\");",
+        "tryItDefault": "console.log(\"Learning Elastic Load Balancer (ELB)!\");"
+      },
+      {
+        "slug": "aws-14",
+        "title": "14. Auto Scaling Groups",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Auto Scaling Groups for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure Auto Scaling Groups inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// Auto Scaling Groups Example\nconsole.log(\"Auto Scaling Groups\");",
+        "tryItDefault": "console.log(\"Learning Auto Scaling Groups!\");"
+      },
+      {
+        "slug": "aws-15",
+        "title": "15. Route 53 (DNS Routing)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Route 53 (DNS Routing) for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure Route 53 (DNS Routing) inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// Route 53 (DNS Routing) Example\nconsole.log(\"Route 53 (DNS Routing)\");",
+        "tryItDefault": "console.log(\"Learning Route 53 (DNS Routing)!\");"
+      },
+      {
+        "slug": "aws-16",
+        "title": "16. CloudFront (Global CDN)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering CloudFront (Global CDN) for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure CloudFront (Global CDN) inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// CloudFront (Global CDN) Example\nconsole.log(\"CloudFront (Global CDN)\");",
+        "tryItDefault": "console.log(\"Learning CloudFront (Global CDN)!\");"
+      },
+      {
+        "slug": "aws-17",
+        "title": "17. AWS Lambda (Serverless)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering AWS Lambda (Serverless) for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure AWS Lambda (Serverless) inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// AWS Lambda (Serverless) Example\nconsole.log(\"AWS Lambda (Serverless)\");",
+        "tryItDefault": "console.log(\"Learning AWS Lambda (Serverless)!\");"
+      },
+      {
+        "slug": "aws-18",
+        "title": "18. API Gateway",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering API Gateway for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure API Gateway inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// API Gateway Example\nconsole.log(\"API Gateway\");",
+        "tryItDefault": "console.log(\"Learning API Gateway!\");"
+      },
+      {
+        "slug": "aws-19",
+        "title": "19. CloudWatch (Monitoring & Logs)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering CloudWatch (Monitoring & Logs) for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure CloudWatch (Monitoring & Logs) inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// CloudWatch (Monitoring & Logs) Example\nconsole.log(\"CloudWatch (Monitoring & Logs)\");",
+        "tryItDefault": "console.log(\"Learning CloudWatch (Monitoring & Logs)!\");"
+      },
+      {
+        "slug": "aws-20",
+        "title": "20. AWS SQS & SNS (Messaging)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering AWS SQS & SNS (Messaging) for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure AWS SQS & SNS (Messaging) inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// AWS SQS & SNS (Messaging) Example\nconsole.log(\"AWS SQS & SNS (Messaging)\");",
+        "tryItDefault": "console.log(\"Learning AWS SQS & SNS (Messaging)!\");"
+      },
+      {
+        "slug": "aws-21",
+        "title": "21. Elastic Beanstalk",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Elastic Beanstalk for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure Elastic Beanstalk inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// Elastic Beanstalk Example\nconsole.log(\"Elastic Beanstalk\");",
+        "tryItDefault": "console.log(\"Learning Elastic Beanstalk!\");"
+      },
+      {
+        "slug": "aws-22",
+        "title": "22. AWS CLI Setup",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering AWS CLI Setup for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure AWS CLI Setup inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// AWS CLI Setup Example\nconsole.log(\"AWS CLI Setup\");",
+        "tryItDefault": "console.log(\"Learning AWS CLI Setup!\");"
+      },
+      {
+        "slug": "aws-23",
+        "title": "23. Cloud Security Best Practices",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Cloud Security Best Practices for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure Cloud Security Best Practices inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// Cloud Security Best Practices Example\nconsole.log(\"Cloud Security Best Practices\");",
+        "tryItDefault": "console.log(\"Learning Cloud Security Best Practices!\");"
+      },
+      {
+        "slug": "aws-24",
+        "title": "24. Cost Management & Billing Alerts",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Cost Management & Billing Alerts for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure Cost Management & Billing Alerts inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// Cost Management & Billing Alerts Example\nconsole.log(\"Cost Management & Billing Alerts\");",
+        "tryItDefault": "console.log(\"Learning Cost Management & Billing Alerts!\");"
+      },
+      {
+        "slug": "aws-25",
+        "title": "25. Capstone: 3-Tier Web App on AWS",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Capstone: 3-Tier Web App on AWS for cloud infrastructure deployment.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Renting power tools from a giant digital hardware store on demand instead of buying physical machinery.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Deploying high-availability scalable web applications globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Leaving public access permissions wide open on S3 buckets or Security Groups.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Configure Capstone: 3-Tier Web App on AWS inside AWS Management Console or CLI.</li>\n  </ul>\n",
+        "codeExample": "// Capstone: 3-Tier Web App on AWS Example\nconsole.log(\"Capstone: 3-Tier Web App on AWS\");",
+        "tryItDefault": "console.log(\"Learning Capstone: 3-Tier Web App on AWS!\");"
       }
     ]
   },
   {
-    "slug": "docker-and-containers",
+    "slug": "docker",
     "title": "Docker & Containers",
-    "description": "Stop saying 'It works on my machine'. Learn how to package your applications into portable containers that run perfectly anywhere.",
+    "description": "Master Docker Containers, Dockerfiles, and Docker Compose step-by-step with simple English and bullet points across 25 lessons.",
     "iconName": "Box",
     "lessons": [
       {
-        "slug": "what-is-docker",
-        "title": "What is a Container?",
-        "explanationHtml": "<p>Before containers, we used Virtual Machines (VMs), which required running a full, heavy Operating System for every app. Containers share the host's OS kernel, making them incredibly lightweight and fast to start.</p><p>Docker packages your code, its dependencies, and its runtime environment into a single unit (an image) that is guaranteed to run exactly the same way on a developer's laptop as it does on a production server.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=3c-iBn73dDE' target='_blank'>Docker Tutorial for Beginners - TechWorld with Nana</a></p>",
-        "codeExample": "",
-        "tryItDefault": ""
+        "slug": "docker-1",
+        "title": "1. Containers vs VMs",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Containers vs VMs for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Containers vs VMs.</li>\n  </ul>\n",
+        "codeExample": "// Containers vs VMs Example\nconsole.log(\"Containers vs VMs\");",
+        "tryItDefault": "console.log(\"Learning Containers vs VMs!\");"
       },
       {
-        "slug": "the-dockerfile",
-        "title": "Writing a Dockerfile",
-        "explanationHtml": "<p>A <code>Dockerfile</code> is a blueprint. It contains a list of instructions on how to build your container image.</p><p>You start with a base image (like a barebones Linux environment with Node.js installed), copy your code into the image, install your dependencies, and specify the command to run when the container starts.</p>",
-        "codeExample": "FROM node:18-alpine\nWORKDIR /app\n\n# Copy package.json and install dependencies\nCOPY package*.json ./\nRUN npm install --production\n\n# Copy the rest of the app\nCOPY . .\n\n# Expose port and run\nEXPOSE 3000\nCMD [\"node\", \"server.js\"]",
-        "tryItDefault": ""
+        "slug": "docker-2",
+        "title": "2. Installing Docker Desktop",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Installing Docker Desktop for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Installing Docker Desktop.</li>\n  </ul>\n",
+        "codeExample": "// Installing Docker Desktop Example\nconsole.log(\"Installing Docker Desktop\");",
+        "tryItDefault": "console.log(\"Learning Installing Docker Desktop!\");"
       },
       {
-        "slug": "building-and-running",
-        "title": "Building and Running Images",
-        "explanationHtml": "<p>Once you have a Dockerfile, you use the <code>docker build</code> command to compile it into an Image. An Image is an immutable snapshot.</p><p>You then use <code>docker run</code> to spin up a running instance of that Image, which is called a Container. You must explicitly map ports from the container to your host machine if you want to access it.</p>",
-        "codeExample": "# Build the image and tag it as 'my-app'\ndocker build -t my-app .\n\n# Run the container in detached mode (-d)\n# Map port 8080 on the host to 3000 in the container\ndocker run -d -p 8080:3000 my-app",
-        "tryItDefault": ""
+        "slug": "docker-3",
+        "title": "3. Docker Architecture",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Docker Architecture for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Docker Architecture.</li>\n  </ul>\n",
+        "codeExample": "// Docker Architecture Example\nconsole.log(\"Docker Architecture\");",
+        "tryItDefault": "console.log(\"Learning Docker Architecture!\");"
       },
       {
-        "slug": "volumes",
-        "title": "Volumes (Persistent Data)",
-        "explanationHtml": "<p>Containers are ephemeral. If you delete a database container, all the data inside it is destroyed forever!</p><p>To solve this, we use Docker Volumes. A Volume maps a folder inside the container to a permanent folder on your host machine's hard drive, ensuring data survives even if the container is destroyed.</p>",
-        "codeExample": "# Run Postgres and mount a volume for data persistence\ndocker run -d \\\n  -e POSTGRES_PASSWORD=mysecretpassword \\\n  -v my-db-data:/var/lib/postgresql/data \\\n  postgres",
-        "tryItDefault": ""
+        "slug": "docker-4",
+        "title": "4. Running First Container",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Running First Container for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Running First Container.</li>\n  </ul>\n",
+        "codeExample": "// Running First Container Example\nconsole.log(\"Running First Container\");",
+        "tryItDefault": "console.log(\"Learning Running First Container!\");"
       },
       {
-        "slug": "docker-compose",
-        "title": "Docker Compose",
-        "explanationHtml": "<p>Modern apps rarely run in a single container. A web app needs a frontend, a backend API, and a database.</p><p><code>docker-compose.yml</code> is a YAML file that allows you to define and run multi-container applications with a single command. It automatically creates a private network so the containers can talk to each other using their service names as URLs.</p>",
-        "codeExample": "version: '3.8'\nservices:\n  web:\n    build: .\n    ports: [\"3000:3000\"]\n    depends_on: [\"db\"]\n  db:\n    image: postgres:15\n    environment:\n      POSTGRES_PASSWORD: password\n    volumes:\n      - pgdata:/var/lib/postgresql/data\n\nvolumes:\n  pgdata:",
-        "tryItDefault": ""
+        "slug": "docker-5",
+        "title": "5. Container Lifecycle Commands",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Container Lifecycle Commands for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Container Lifecycle Commands.</li>\n  </ul>\n",
+        "codeExample": "// Container Lifecycle Commands Example\nconsole.log(\"Container Lifecycle Commands\");",
+        "tryItDefault": "console.log(\"Learning Container Lifecycle Commands!\");"
+      },
+      {
+        "slug": "docker-6",
+        "title": "6. Docker Hub & Pulling Images",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Docker Hub & Pulling Images for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Docker Hub & Pulling Images.</li>\n  </ul>\n",
+        "codeExample": "// Docker Hub & Pulling Images Example\nconsole.log(\"Docker Hub & Pulling Images\");",
+        "tryItDefault": "console.log(\"Learning Docker Hub & Pulling Images!\");"
+      },
+      {
+        "slug": "docker-7",
+        "title": "7. Writing Your First Dockerfile",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Writing Your First Dockerfile for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Writing Your First Dockerfile.</li>\n  </ul>\n",
+        "codeExample": "// Writing Your First Dockerfile Example\nconsole.log(\"Writing Your First Dockerfile\");",
+        "tryItDefault": "console.log(\"Learning Writing Your First Dockerfile!\");"
+      },
+      {
+        "slug": "docker-8",
+        "title": "8. FROM, RUN, CMD Directives",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using FROM, RUN, CMD Directives for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for FROM, RUN, CMD Directives.</li>\n  </ul>\n",
+        "codeExample": "// FROM, RUN, CMD Directives Example\nconsole.log(\"FROM, RUN, CMD Directives\");",
+        "tryItDefault": "console.log(\"Learning FROM, RUN, CMD Directives!\");"
+      },
+      {
+        "slug": "docker-9",
+        "title": "9. COPY vs ADD Directives",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using COPY vs ADD Directives for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for COPY vs ADD Directives.</li>\n  </ul>\n",
+        "codeExample": "// COPY vs ADD Directives Example\nconsole.log(\"COPY vs ADD Directives\");",
+        "tryItDefault": "console.log(\"Learning COPY vs ADD Directives!\");"
+      },
+      {
+        "slug": "docker-10",
+        "title": "10. Understanding Layer Caching",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Understanding Layer Caching for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Understanding Layer Caching.</li>\n  </ul>\n",
+        "codeExample": "// Understanding Layer Caching Example\nconsole.log(\"Understanding Layer Caching\");",
+        "tryItDefault": "console.log(\"Learning Understanding Layer Caching!\");"
+      },
+      {
+        "slug": "docker-11",
+        "title": "11. Docker Volumes (Data Persistence)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Docker Volumes (Data Persistence) for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Docker Volumes (Data Persistence).</li>\n  </ul>\n",
+        "codeExample": "// Docker Volumes (Data Persistence) Example\nconsole.log(\"Docker Volumes (Data Persistence)\");",
+        "tryItDefault": "console.log(\"Learning Docker Volumes (Data Persistence)!\");"
+      },
+      {
+        "slug": "docker-12",
+        "title": "12. Bind Mounts for Local Dev",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Bind Mounts for Local Dev for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Bind Mounts for Local Dev.</li>\n  </ul>\n",
+        "codeExample": "// Bind Mounts for Local Dev Example\nconsole.log(\"Bind Mounts for Local Dev\");",
+        "tryItDefault": "console.log(\"Learning Bind Mounts for Local Dev!\");"
+      },
+      {
+        "slug": "docker-13",
+        "title": "13. Docker Networking Basics",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Docker Networking Basics for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Docker Networking Basics.</li>\n  </ul>\n",
+        "codeExample": "// Docker Networking Basics Example\nconsole.log(\"Docker Networking Basics\");",
+        "tryItDefault": "console.log(\"Learning Docker Networking Basics!\");"
+      },
+      {
+        "slug": "docker-14",
+        "title": "14. Exposing Container Ports",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Exposing Container Ports for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Exposing Container Ports.</li>\n  </ul>\n",
+        "codeExample": "// Exposing Container Ports Example\nconsole.log(\"Exposing Container Ports\");",
+        "tryItDefault": "console.log(\"Learning Exposing Container Ports!\");"
+      },
+      {
+        "slug": "docker-15",
+        "title": "15. Environment Variables in Docker",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Environment Variables in Docker for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Environment Variables in Docker.</li>\n  </ul>\n",
+        "codeExample": "// Environment Variables in Docker Example\nconsole.log(\"Environment Variables in Docker\");",
+        "tryItDefault": "console.log(\"Learning Environment Variables in Docker!\");"
+      },
+      {
+        "slug": "docker-16",
+        "title": "16. Multi-Stage Builds",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Multi-Stage Builds for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Multi-Stage Builds.</li>\n  </ul>\n",
+        "codeExample": "// Multi-Stage Builds Example\nconsole.log(\"Multi-Stage Builds\");",
+        "tryItDefault": "console.log(\"Learning Multi-Stage Builds!\");"
+      },
+      {
+        "slug": "docker-17",
+        "title": "17. Docker Compose Basics",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Docker Compose Basics for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Docker Compose Basics.</li>\n  </ul>\n",
+        "codeExample": "// Docker Compose Basics Example\nconsole.log(\"Docker Compose Basics\");",
+        "tryItDefault": "console.log(\"Learning Docker Compose Basics!\");"
+      },
+      {
+        "slug": "docker-18",
+        "title": "18. Writing docker-compose.yml",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Writing docker-compose.yml for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Writing docker-compose.yml.</li>\n  </ul>\n",
+        "codeExample": "// Writing docker-compose.yml Example\nconsole.log(\"Writing docker-compose.yml\");",
+        "tryItDefault": "console.log(\"Learning Writing docker-compose.yml!\");"
+      },
+      {
+        "slug": "docker-19",
+        "title": "19. Multi-Container Setup (App + DB)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Multi-Container Setup (App + DB) for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Multi-Container Setup (App + DB).</li>\n  </ul>\n",
+        "codeExample": "// Multi-Container Setup (App + DB) Example\nconsole.log(\"Multi-Container Setup (App + DB)\");",
+        "tryItDefault": "console.log(\"Learning Multi-Container Setup (App + DB)!\");"
+      },
+      {
+        "slug": "docker-20",
+        "title": "20. Inspecting & Debugging Containers",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Inspecting & Debugging Containers for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Inspecting & Debugging Containers.</li>\n  </ul>\n",
+        "codeExample": "// Inspecting & Debugging Containers Example\nconsole.log(\"Inspecting & Debugging Containers\");",
+        "tryItDefault": "console.log(\"Learning Inspecting & Debugging Containers!\");"
+      },
+      {
+        "slug": "docker-21",
+        "title": "21. Docker Security Practices",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Docker Security Practices for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Docker Security Practices.</li>\n  </ul>\n",
+        "codeExample": "// Docker Security Practices Example\nconsole.log(\"Docker Security Practices\");",
+        "tryItDefault": "console.log(\"Learning Docker Security Practices!\");"
+      },
+      {
+        "slug": "docker-22",
+        "title": "22. Cleaning Up Unused Images",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Cleaning Up Unused Images for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Cleaning Up Unused Images.</li>\n  </ul>\n",
+        "codeExample": "// Cleaning Up Unused Images Example\nconsole.log(\"Cleaning Up Unused Images\");",
+        "tryItDefault": "console.log(\"Learning Cleaning Up Unused Images!\");"
+      },
+      {
+        "slug": "docker-23",
+        "title": "23. Docker in CI/CD Pipelines",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Docker in CI/CD Pipelines for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Docker in CI/CD Pipelines.</li>\n  </ul>\n",
+        "codeExample": "// Docker in CI/CD Pipelines Example\nconsole.log(\"Docker in CI/CD Pipelines\");",
+        "tryItDefault": "console.log(\"Learning Docker in CI/CD Pipelines!\");"
+      },
+      {
+        "slug": "docker-24",
+        "title": "24. Container Registry (ECR/DockerHub)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Container Registry (ECR/DockerHub) for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Container Registry (ECR/DockerHub).</li>\n  </ul>\n",
+        "codeExample": "// Container Registry (ECR/DockerHub) Example\nconsole.log(\"Container Registry (ECR/DockerHub)\");",
+        "tryItDefault": "console.log(\"Learning Container Registry (ECR/DockerHub)!\");"
+      },
+      {
+        "slug": "docker-25",
+        "title": "25. Capstone: Containerized Fullstack App",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Packaging apps using Capstone: Containerized Fullstack App for consistent execution everywhere.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Shipping cargo inside standardized steel shipping containers that fit seamlessly on trains, trucks, and ships.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Eliminating 'it works on my machine' bugs across development and production servers.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Storing database data inside volatile container filesystems without persistent volumes.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Build and run a container image for Capstone: Containerized Fullstack App.</li>\n  </ul>\n",
+        "codeExample": "// Capstone: Containerized Fullstack App Example\nconsole.log(\"Capstone: Containerized Fullstack App\");",
+        "tryItDefault": "console.log(\"Learning Capstone: Containerized Fullstack App!\");"
       }
     ]
   },
   {
-    "slug": "git-and-github",
+    "slug": "git-github",
     "title": "Git & GitHub",
-    "description": "Master version control. Learn how to track changes, collaborate with other developers, and manage code history safely.",
+    "description": "Master Version Control, Branching, Merging, and Pull Requests step-by-step with simple English and bullet points across 25 lessons.",
     "iconName": "GitBranch",
     "lessons": [
       {
-        "slug": "what-is-git",
-        "title": "Version Control Systems",
-        "explanationHtml": "<p>Git is a version control system. It allows you to take \"snapshots\" (commits) of your code over time. If you break your project, you can instantly revert back to a previous, working snapshot.</p><p>GitHub is a website that hosts your Git repositories in the cloud, allowing multiple developers to collaborate on the same codebase simultaneously.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=RGOj5yH7evk' target='_blank'>Git and GitHub for Beginners - freeCodeCamp</a></p>",
-        "codeExample": "",
-        "tryItDefault": ""
+        "slug": "git-1",
+        "title": "1. What is Version Control?",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering What is Version Control? for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute What is Version Control? command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// What is Version Control? Example\nconsole.log(\"What is Version Control?\");",
+        "tryItDefault": "console.log(\"Learning What is Version Control?!\");"
       },
       {
-        "slug": "the-staging-area",
-        "title": "The Staging Area",
-        "explanationHtml": "<p>When you edit files, Git notices the changes, but it doesn't automatically save them. You must explicitly \"stage\" the files you want to include in your next commit using <code>git add</code>.</p><p>This allows you to make 10 different changes, but logically group them into two separate, well-organized commits.</p>",
-        "codeExample": "# See what files have changed\ngit status\n\n# Stage specific files\ngit add index.html style.css\n\n# Save the staged files into history with a message\ngit commit -m \"Add header styling\"",
-        "tryItDefault": ""
+        "slug": "git-2",
+        "title": "2. Git vs GitHub",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Git vs GitHub for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute Git vs GitHub command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// Git vs GitHub Example\nconsole.log(\"Git vs GitHub\");",
+        "tryItDefault": "console.log(\"Learning Git vs GitHub!\");"
       },
       {
-        "slug": "branching",
-        "title": "Branching Strategy",
-        "explanationHtml": "<p>Never commit directly to the <code>main</code> branch. The main branch should always contain perfectly working, production-ready code.</p><p>When you want to build a new feature or fix a bug, you create a new Branch. This gives you an isolated sandbox to experiment. Once the feature is complete and tested, you merge it back into main.</p>",
-        "codeExample": "# Create and switch to a new branch\ngit checkout -b feature/login-page\n\n# Do work, add, and commit...\n\n# Switch back to main\ngit checkout main\n\n# Merge your feature into main\ngit merge feature/login-page",
-        "tryItDefault": ""
+        "slug": "git-3",
+        "title": "3. Installing & Config (Name/Email)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Installing & Config (Name/Email) for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute Installing & Config (Name/Email) command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// Installing & Config (Name/Email) Example\nconsole.log(\"Installing & Config (Name/Email)\");",
+        "tryItDefault": "console.log(\"Learning Installing & Config (Name/Email)!\");"
       },
       {
-        "slug": "pull-requests",
-        "title": "Pull Requests & Code Review",
-        "explanationHtml": "<p>In a professional environment, you don't merge your own code. You push your branch to GitHub and open a Pull Request (PR).</p><p>A PR is a request for other developers to review your code. They can leave comments, request changes, and verify that your code meets company standards before approving the merge.</p>",
-        "codeExample": "# Push your local branch to the remote GitHub repository\ngit push origin feature/login-page\n\n# (Then go to github.com to open the PR)",
-        "tryItDefault": ""
+        "slug": "git-4",
+        "title": "4. Git Core Workflow (Staging)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Git Core Workflow (Staging) for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute Git Core Workflow (Staging) command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// Git Core Workflow (Staging) Example\nconsole.log(\"Git Core Workflow (Staging)\");",
+        "tryItDefault": "console.log(\"Learning Git Core Workflow (Staging)!\");"
       },
       {
-        "slug": "merge-conflicts",
-        "title": "Resolving Merge Conflicts",
-        "explanationHtml": "<p>If you and a coworker edit the exact same line of the exact same file on different branches, Git won't know whose code to keep when you try to merge. This is a Merge Conflict.</p><p>Git will pause the merge and modify the file to show you both versions. You must manually delete the code you don't want, save the file, and commit the resolution.</p>",
-        "codeExample": "<<<<<<< HEAD\n<button class=\"btn-blue\">Submit</button>\n=======\n<button class=\"btn-red\">Submit</button>\n>>>>>>> feature/red-buttons",
-        "tryItDefault": ""
+        "slug": "git-5",
+        "title": "5. git init & git status",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering git init & git status for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute git init & git status command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// git init & git status Example\nconsole.log(\"git init & git status\");",
+        "tryItDefault": "console.log(\"Learning git init & git status!\");"
+      },
+      {
+        "slug": "git-6",
+        "title": "6. git add & git commit",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering git add & git commit for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute git add & git commit command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// git add & git commit Example\nconsole.log(\"git add & git commit\");",
+        "tryItDefault": "console.log(\"Learning git add & git commit!\");"
+      },
+      {
+        "slug": "git-7",
+        "title": "7. Writing Good Commit Messages",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Writing Good Commit Messages for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute Writing Good Commit Messages command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// Writing Good Commit Messages Example\nconsole.log(\"Writing Good Commit Messages\");",
+        "tryItDefault": "console.log(\"Learning Writing Good Commit Messages!\");"
+      },
+      {
+        "slug": "git-8",
+        "title": "8. git log & History Inspection",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering git log & History Inspection for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute git log & History Inspection command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// git log & History Inspection Example\nconsole.log(\"git log & History Inspection\");",
+        "tryItDefault": "console.log(\"Learning git log & History Inspection!\");"
+      },
+      {
+        "slug": "git-9",
+        "title": "9. git diff (Comparing Changes)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering git diff (Comparing Changes) for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute git diff (Comparing Changes) command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// git diff (Comparing Changes) Example\nconsole.log(\"git diff (Comparing Changes)\");",
+        "tryItDefault": "console.log(\"Learning git diff (Comparing Changes)!\");"
+      },
+      {
+        "slug": "git-10",
+        "title": "10. .gitignore Best Practices",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering .gitignore Best Practices for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute .gitignore Best Practices command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// .gitignore Best Practices Example\nconsole.log(\".gitignore Best Practices\");",
+        "tryItDefault": "console.log(\"Learning .gitignore Best Practices!\");"
+      },
+      {
+        "slug": "git-11",
+        "title": "11. Git Branches (git branch)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Git Branches (git branch) for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute Git Branches (git branch) command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// Git Branches (git branch) Example\nconsole.log(\"Git Branches (git branch)\");",
+        "tryItDefault": "console.log(\"Learning Git Branches (git branch)!\");"
+      },
+      {
+        "slug": "git-12",
+        "title": "12. Switching Branches (checkout/switch)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Switching Branches (checkout/switch) for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute Switching Branches (checkout/switch) command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// Switching Branches (checkout/switch) Example\nconsole.log(\"Switching Branches (checkout/switch)\");",
+        "tryItDefault": "console.log(\"Learning Switching Branches (checkout/switch)!\");"
+      },
+      {
+        "slug": "git-13",
+        "title": "13. Merging Branches (git merge)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Merging Branches (git merge) for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute Merging Branches (git merge) command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// Merging Branches (git merge) Example\nconsole.log(\"Merging Branches (git merge)\");",
+        "tryItDefault": "console.log(\"Learning Merging Branches (git merge)!\");"
+      },
+      {
+        "slug": "git-14",
+        "title": "14. Resolving Merge Conflicts",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Resolving Merge Conflicts for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute Resolving Merge Conflicts command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// Resolving Merge Conflicts Example\nconsole.log(\"Resolving Merge Conflicts\");",
+        "tryItDefault": "console.log(\"Learning Resolving Merge Conflicts!\");"
+      },
+      {
+        "slug": "git-15",
+        "title": "15. GitHub Remote Repos (git remote)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering GitHub Remote Repos (git remote) for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute GitHub Remote Repos (git remote) command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// GitHub Remote Repos (git remote) Example\nconsole.log(\"GitHub Remote Repos (git remote)\");",
+        "tryItDefault": "console.log(\"Learning GitHub Remote Repos (git remote)!\");"
+      },
+      {
+        "slug": "git-16",
+        "title": "16. git push & git pull",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering git push & git pull for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute git push & git pull command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// git push & git pull Example\nconsole.log(\"git push & git pull\");",
+        "tryItDefault": "console.log(\"Learning git push & git pull!\");"
+      },
+      {
+        "slug": "git-17",
+        "title": "17. git clone (Downloading Repos)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering git clone (Downloading Repos) for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute git clone (Downloading Repos) command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// git clone (Downloading Repos) Example\nconsole.log(\"git clone (Downloading Repos)\");",
+        "tryItDefault": "console.log(\"Learning git clone (Downloading Repos)!\");"
+      },
+      {
+        "slug": "git-18",
+        "title": "18. Pull Requests & Code Reviews",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Pull Requests & Code Reviews for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute Pull Requests & Code Reviews command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// Pull Requests & Code Reviews Example\nconsole.log(\"Pull Requests & Code Reviews\");",
+        "tryItDefault": "console.log(\"Learning Pull Requests & Code Reviews!\");"
+      },
+      {
+        "slug": "git-19",
+        "title": "19. Forking & Open Source",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Forking & Open Source for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute Forking & Open Source command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// Forking & Open Source Example\nconsole.log(\"Forking & Open Source\");",
+        "tryItDefault": "console.log(\"Learning Forking & Open Source!\");"
+      },
+      {
+        "slug": "git-20",
+        "title": "20. git stash (Saving Work Temporary)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering git stash (Saving Work Temporary) for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute git stash (Saving Work Temporary) command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// git stash (Saving Work Temporary) Example\nconsole.log(\"git stash (Saving Work Temporary)\");",
+        "tryItDefault": "console.log(\"Learning git stash (Saving Work Temporary)!\");"
+      },
+      {
+        "slug": "git-21",
+        "title": "21. git reset vs git revert",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering git reset vs git revert for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute git reset vs git revert command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// git reset vs git revert Example\nconsole.log(\"git reset vs git revert\");",
+        "tryItDefault": "console.log(\"Learning git reset vs git revert!\");"
+      },
+      {
+        "slug": "git-22",
+        "title": "22. git rebase Fundamentals",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering git rebase Fundamentals for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute git rebase Fundamentals command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// git rebase Fundamentals Example\nconsole.log(\"git rebase Fundamentals\");",
+        "tryItDefault": "console.log(\"Learning git rebase Fundamentals!\");"
+      },
+      {
+        "slug": "git-23",
+        "title": "23. GitHub Actions (CI/CD Basics)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering GitHub Actions (CI/CD Basics) for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute GitHub Actions (CI/CD Basics) command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// GitHub Actions (CI/CD Basics) Example\nconsole.log(\"GitHub Actions (CI/CD Basics)\");",
+        "tryItDefault": "console.log(\"Learning GitHub Actions (CI/CD Basics)!\");"
+      },
+      {
+        "slug": "git-24",
+        "title": "24. SSH Keys for GitHub",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering SSH Keys for GitHub for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute SSH Keys for GitHub command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// SSH Keys for GitHub Example\nconsole.log(\"SSH Keys for GitHub\");",
+        "tryItDefault": "console.log(\"Learning SSH Keys for GitHub!\");"
+      },
+      {
+        "slug": "git-25",
+        "title": "25. Capstone: Team Collaboration Workflow",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering Capstone: Team Collaboration Workflow for code version tracking and team collaboration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Video game save points: You create a checkpoint commit so you can safely experiment without losing your progress.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Tracking code revisions and collaborating with team members globally.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Committing sensitive API keys or passwords to git repositories!</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Execute Capstone: Team Collaboration Workflow command in your terminal.</li>\n  </ul>\n",
+        "codeExample": "// Capstone: Team Collaboration Workflow Example\nconsole.log(\"Capstone: Team Collaboration Workflow\");",
+        "tryItDefault": "console.log(\"Learning Capstone: Team Collaboration Workflow!\");"
       }
     ]
   }

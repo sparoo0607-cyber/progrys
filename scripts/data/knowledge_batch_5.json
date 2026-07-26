@@ -2,136 +2,549 @@
   {
     "slug": "api-design",
     "title": "API Design (REST & GraphQL)",
-    "description": "Learn how to build robust, secure, and scalable Application Programming Interfaces that power mobile apps and front-end frameworks.",
+    "description": "Master RESTful APIs, Status Codes, Authentication, and GraphQL step-by-step with simple English and bullet points across 25 lessons.",
     "iconName": "Network",
     "lessons": [
       {
-        "slug": "what-is-rest",
-        "title": "What is REST?",
-        "explanationHtml": "<p>REST (Representational State Transfer) is an architectural style for designing networked applications. It treats data and functionality as \"Resources\" which are accessed via standard HTTP URIs (like <code>/users/123</code>).</p><p>A true RESTful API is stateless: the server does not store any client context between requests. Every request must contain all the information necessary to understand it.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=lsMQRaeKNDk' target='_blank'>What is a REST API? - IBM Technology</a></p>",
-        "codeExample": "",
-        "tryItDefault": ""
+        "slug": "api-1",
+        "title": "1. What is an API?",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using What is an API?.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for What is an API?.</li>\n  </ul>\n",
+        "codeExample": "// What is an API? Example\nconsole.log(\"What is an API?\");",
+        "tryItDefault": "console.log(\"Learning What is an API?!\");"
       },
       {
-        "slug": "http-verbs",
-        "title": "HTTP Methods (CRUD)",
-        "explanationHtml": "<p>In REST, you use different HTTP methods to indicate what action you want to perform on a resource.</p><ul><li><strong>GET:</strong> Read data (should never modify the database).</li><li><strong>POST:</strong> Create a new resource.</li><li><strong>PUT:</strong> Completely replace an existing resource.</li><li><strong>PATCH:</strong> Partially update an existing resource.</li><li><strong>DELETE:</strong> Remove a resource.</li></ul>",
-        "codeExample": "GET /api/articles      # Returns a list of articles\nPOST /api/articles     # Creates a new article\nGET /api/articles/42   # Returns article #42\nPATCH /api/articles/42 # Updates the title of article #42",
-        "tryItDefault": ""
+        "slug": "api-2",
+        "title": "2. HTTP Methods (GET, POST, PUT, DELETE)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using HTTP Methods (GET, POST, PUT, DELETE).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for HTTP Methods (GET, POST, PUT, DELETE).</li>\n  </ul>\n",
+        "codeExample": "// HTTP Methods (GET, POST, PUT, DELETE) Example\nconsole.log(\"HTTP Methods (GET, POST, PUT, DELETE)\");",
+        "tryItDefault": "console.log(\"Learning HTTP Methods (GET, POST, PUT, DELETE)!\");"
       },
       {
-        "slug": "status-codes",
-        "title": "HTTP Status Codes",
-        "explanationHtml": "<p>Your API must return the correct status code so the client knows exactly what happened.</p><p><strong>2xx (Success):</strong> 200 OK, 201 Created.<br><strong>4xx (Client Error):</strong> 400 Bad Request (invalid data), 401 Unauthorized (not logged in), 403 Forbidden (logged in, but no permission), 404 Not Found.<br><strong>5xx (Server Error):</strong> 500 Internal Server Error (your code crashed).</p>",
-        "codeExample": "app.get('/users/:id', (req, res) => {\n  const user = db.find(req.params.id);\n  if (!user) {\n    return res.status(404).json({ error: \"User not found\" });\n  }\n  return res.status(200).json(user);\n});",
-        "tryItDefault": ""
+        "slug": "api-3",
+        "title": "3. HTTP Status Codes (200, 201, 400, 404, 500)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using HTTP Status Codes (200, 201, 400, 404, 500).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for HTTP Status Codes (200, 201, 400, 404, 500).</li>\n  </ul>\n",
+        "codeExample": "// HTTP Status Codes (200, 201, 400, 404, 500) Example\nconsole.log(\"HTTP Status Codes (200, 201, 400, 404, 500)\");",
+        "tryItDefault": "console.log(\"Learning HTTP Status Codes (200, 201, 400, 404, 500)!\");"
       },
       {
-        "slug": "api-versioning",
-        "title": "API Versioning",
-        "explanationHtml": "<p>Once an API is public, you cannot change the JSON structure without breaking existing mobile apps or third-party integrations.</p><p>You solve this by versioning your API, typically by putting <code>/v1/</code> in the URL. When you need to make a breaking change, you release <code>/v2/</code> and keep <code>/v1/</code> running for older clients.</p>",
-        "codeExample": "GET /api/v1/users/42  # Returns { \"name\": \"Alice Bob\" }\n\nGET /api/v2/users/42  # Breaking change: returns { \"firstName\": \"Alice\", \"lastName\": \"Bob\" }",
-        "tryItDefault": ""
+        "slug": "api-4",
+        "title": "4. REST Architecture Principles",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using REST Architecture Principles.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for REST Architecture Principles.</li>\n  </ul>\n",
+        "codeExample": "// REST Architecture Principles Example\nconsole.log(\"REST Architecture Principles\");",
+        "tryItDefault": "console.log(\"Learning REST Architecture Principles!\");"
       },
       {
-        "slug": "graphql-introduction",
-        "title": "Introduction to GraphQL",
-        "explanationHtml": "<p>REST suffers from Over-fetching (downloading too much data) and Under-fetching (having to make 5 different API calls to get related data).</p><p>GraphQL solves this. Instead of multiple endpoints, you have ONE endpoint (<code>/graphql</code>). The client sends a query specifying EXACTLY the fields it wants, and the server returns precisely that shape.</p>",
-        "codeExample": "/* GraphQL Query */\nquery {\n  user(id: 42) {\n    name\n    email\n    posts(limit: 2) {\n      title\n    }\n  }\n}",
-        "tryItDefault": ""
+        "slug": "api-5",
+        "title": "5. Resource URL Naming Conventions",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using Resource URL Naming Conventions.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for Resource URL Naming Conventions.</li>\n  </ul>\n",
+        "codeExample": "// Resource URL Naming Conventions Example\nconsole.log(\"Resource URL Naming Conventions\");",
+        "tryItDefault": "console.log(\"Learning Resource URL Naming Conventions!\");"
       },
       {
-        "slug": "graphql-resolvers",
-        "title": "Schemas and Resolvers",
-        "explanationHtml": "<p>In GraphQL, you define a strictly typed <strong>Schema</strong> that outlines what data is available. You then write <strong>Resolvers</strong>: functions that actually go to the database to fetch the data for those specific fields.</p>",
-        "codeExample": "// GraphQL Resolver Example\nconst resolvers = {\n  Query: {\n    user: (parent, args, context) => {\n      return db.getUserById(args.id);\n    }\n  },\n  User: {\n    // Only executes if the client specifically asks for 'posts'\n    posts: (parent) => {\n      return db.getPostsByUserId(parent.id);\n    }\n  }\n};",
-        "tryItDefault": ""
+        "slug": "api-6",
+        "title": "6. JSON Data Payloads",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using JSON Data Payloads.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for JSON Data Payloads.</li>\n  </ul>\n",
+        "codeExample": "// JSON Data Payloads Example\nconsole.log(\"JSON Data Payloads\");",
+        "tryItDefault": "console.log(\"Learning JSON Data Payloads!\");"
+      },
+      {
+        "slug": "api-7",
+        "title": "7. Query Parameters vs Path Params",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using Query Parameters vs Path Params.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for Query Parameters vs Path Params.</li>\n  </ul>\n",
+        "codeExample": "// Query Parameters vs Path Params Example\nconsole.log(\"Query Parameters vs Path Params\");",
+        "tryItDefault": "console.log(\"Learning Query Parameters vs Path Params!\");"
+      },
+      {
+        "slug": "api-8",
+        "title": "8. API Authentication (API Keys)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using API Authentication (API Keys).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for API Authentication (API Keys).</li>\n  </ul>\n",
+        "codeExample": "// API Authentication (API Keys) Example\nconsole.log(\"API Authentication (API Keys)\");",
+        "tryItDefault": "console.log(\"Learning API Authentication (API Keys)!\");"
+      },
+      {
+        "slug": "api-9",
+        "title": "9. OAuth2 & JWT Tokens",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using OAuth2 & JWT Tokens.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for OAuth2 & JWT Tokens.</li>\n  </ul>\n",
+        "codeExample": "// OAuth2 & JWT Tokens Example\nconsole.log(\"OAuth2 & JWT Tokens\");",
+        "tryItDefault": "console.log(\"Learning OAuth2 & JWT Tokens!\");"
+      },
+      {
+        "slug": "api-10",
+        "title": "10. CORS Configuration",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using CORS Configuration.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for CORS Configuration.</li>\n  </ul>\n",
+        "codeExample": "// CORS Configuration Example\nconsole.log(\"CORS Configuration\");",
+        "tryItDefault": "console.log(\"Learning CORS Configuration!\");"
+      },
+      {
+        "slug": "api-11",
+        "title": "11. Request Validation & Sanitization",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using Request Validation & Sanitization.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for Request Validation & Sanitization.</li>\n  </ul>\n",
+        "codeExample": "// Request Validation & Sanitization Example\nconsole.log(\"Request Validation & Sanitization\");",
+        "tryItDefault": "console.log(\"Learning Request Validation & Sanitization!\");"
+      },
+      {
+        "slug": "api-12",
+        "title": "12. API Rate Limiting",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using API Rate Limiting.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for API Rate Limiting.</li>\n  </ul>\n",
+        "codeExample": "// API Rate Limiting Example\nconsole.log(\"API Rate Limiting\");",
+        "tryItDefault": "console.log(\"Learning API Rate Limiting!\");"
+      },
+      {
+        "slug": "api-13",
+        "title": "13. Error Handling Standards",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using Error Handling Standards.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for Error Handling Standards.</li>\n  </ul>\n",
+        "codeExample": "// Error Handling Standards Example\nconsole.log(\"Error Handling Standards\");",
+        "tryItDefault": "console.log(\"Learning Error Handling Standards!\");"
+      },
+      {
+        "slug": "api-14",
+        "title": "14. API Versioning (/v1/ vs /v2/)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using API Versioning (/v1/ vs /v2/).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for API Versioning (/v1/ vs /v2/).</li>\n  </ul>\n",
+        "codeExample": "// API Versioning (/v1/ vs /v2/) Example\nconsole.log(\"API Versioning (/v1/ vs /v2/)\");",
+        "tryItDefault": "console.log(\"Learning API Versioning (/v1/ vs /v2/)!\");"
+      },
+      {
+        "slug": "api-15",
+        "title": "15. Swagger & OpenAPI Documentation",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using Swagger & OpenAPI Documentation.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for Swagger & OpenAPI Documentation.</li>\n  </ul>\n",
+        "codeExample": "// Swagger & OpenAPI Documentation Example\nconsole.log(\"Swagger & OpenAPI Documentation\");",
+        "tryItDefault": "console.log(\"Learning Swagger & OpenAPI Documentation!\");"
+      },
+      {
+        "slug": "api-16",
+        "title": "16. Postman API Testing",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using Postman API Testing.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for Postman API Testing.</li>\n  </ul>\n",
+        "codeExample": "// Postman API Testing Example\nconsole.log(\"Postman API Testing\");",
+        "tryItDefault": "console.log(\"Learning Postman API Testing!\");"
+      },
+      {
+        "slug": "api-17",
+        "title": "17. GraphQL Intro vs REST",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using GraphQL Intro vs REST.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for GraphQL Intro vs REST.</li>\n  </ul>\n",
+        "codeExample": "// GraphQL Intro vs REST Example\nconsole.log(\"GraphQL Intro vs REST\");",
+        "tryItDefault": "console.log(\"Learning GraphQL Intro vs REST!\");"
+      },
+      {
+        "slug": "api-18",
+        "title": "18. GraphQL Schemas & Types",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using GraphQL Schemas & Types.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for GraphQL Schemas & Types.</li>\n  </ul>\n",
+        "codeExample": "// GraphQL Schemas & Types Example\nconsole.log(\"GraphQL Schemas & Types\");",
+        "tryItDefault": "console.log(\"Learning GraphQL Schemas & Types!\");"
+      },
+      {
+        "slug": "api-19",
+        "title": "19. GraphQL Queries & Mutations",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using GraphQL Queries & Mutations.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for GraphQL Queries & Mutations.</li>\n  </ul>\n",
+        "codeExample": "// GraphQL Queries & Mutations Example\nconsole.log(\"GraphQL Queries & Mutations\");",
+        "tryItDefault": "console.log(\"Learning GraphQL Queries & Mutations!\");"
+      },
+      {
+        "slug": "api-20",
+        "title": "20. Webhooks & Real-time Subscriptions",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using Webhooks & Real-time Subscriptions.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for Webhooks & Real-time Subscriptions.</li>\n  </ul>\n",
+        "codeExample": "// Webhooks & Real-time Subscriptions Example\nconsole.log(\"Webhooks & Real-time Subscriptions\");",
+        "tryItDefault": "console.log(\"Learning Webhooks & Real-time Subscriptions!\");"
+      },
+      {
+        "slug": "api-21",
+        "title": "21. API Caching Strategies",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using API Caching Strategies.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for API Caching Strategies.</li>\n  </ul>\n",
+        "codeExample": "// API Caching Strategies Example\nconsole.log(\"API Caching Strategies\");",
+        "tryItDefault": "console.log(\"Learning API Caching Strategies!\");"
+      },
+      {
+        "slug": "api-22",
+        "title": "22. Idempotency in APIs",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using Idempotency in APIs.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for Idempotency in APIs.</li>\n  </ul>\n",
+        "codeExample": "// Idempotency in APIs Example\nconsole.log(\"Idempotency in APIs\");",
+        "tryItDefault": "console.log(\"Learning Idempotency in APIs!\");"
+      },
+      {
+        "slug": "api-23",
+        "title": "23. API Gateway Architecture",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using API Gateway Architecture.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for API Gateway Architecture.</li>\n  </ul>\n",
+        "codeExample": "// API Gateway Architecture Example\nconsole.log(\"API Gateway Architecture\");",
+        "tryItDefault": "console.log(\"Learning API Gateway Architecture!\");"
+      },
+      {
+        "slug": "api-24",
+        "title": "24. Mocking APIs for Frontend Dev",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using Mocking APIs for Frontend Dev.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for Mocking APIs for Frontend Dev.</li>\n  </ul>\n",
+        "codeExample": "// Mocking APIs for Frontend Dev Example\nconsole.log(\"Mocking APIs for Frontend Dev\");",
+        "tryItDefault": "console.log(\"Learning Mocking APIs for Frontend Dev!\");"
+      },
+      {
+        "slug": "api-25",
+        "title": "25. Capstone: Production REST API Specification",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Designing robust APIs using Capstone: Production REST API Specification.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>A waiter taking orders from customers (Frontend) and delivering requested meals from the kitchen (Backend).</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering mobile apps, single-page web apps, and third-party integrations.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Returning HTTP 200 OK status when a server error actually occurred.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Design an API endpoint specification for Capstone: Production REST API Specification.</li>\n  </ul>\n",
+        "codeExample": "// Capstone: Production REST API Specification Example\nconsole.log(\"Capstone: Production REST API Specification\");",
+        "tryItDefault": "console.log(\"Learning Capstone: Production REST API Specification!\");"
       }
     ]
   },
   {
     "slug": "system-design",
     "title": "System Design Basics",
-    "description": "Learn how to architect applications that can handle millions of users without crashing.",
-    "iconName": "Share2",
+    "description": "Master Scalability, Load Balancers, Caching, and Microservices step-by-step with simple English and bullet points across 25 lessons.",
+    "iconName": "Cpu",
     "lessons": [
       {
-        "slug": "vertical-vs-horizontal",
-        "title": "Vertical vs Horizontal Scaling",
-        "explanationHtml": "<p>When your server is overloaded, you have two choices.</p><p><strong>Vertical Scaling (Scaling Up):</strong> Buying a bigger, more expensive server with more CPU and RAM. It is easy but has a hard limit.</p><p><strong>Horizontal Scaling (Scaling Out):</strong> Buying 10 cheap servers and splitting the traffic between them. This requires more complex architecture but allows infinite scaling.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=bUBtGQEQCGg' target='_blank'>System Design Interview Prep - ByteByteGo</a></p>",
-        "codeExample": "",
-        "tryItDefault": ""
+        "slug": "sys-1",
+        "title": "1. What is System Design?",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with What is System Design?.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing What is System Design?.</li>\n  </ul>\n",
+        "codeExample": "// What is System Design? Example\nconsole.log(\"What is System Design?\");",
+        "tryItDefault": "console.log(\"Learning What is System Design?!\");"
       },
       {
-        "slug": "load-balancing",
-        "title": "Load Balancing",
-        "explanationHtml": "<p>If you have 10 servers (Horizontal Scaling), how do users know which one to talk to? They don't. They talk to a Load Balancer.</p><p>The Load Balancer acts as a traffic cop. It receives all incoming requests and distributes them evenly across your 10 servers, ensuring no single server gets overwhelmed.</p>",
-        "codeExample": "",
-        "tryItDefault": ""
+        "slug": "sys-2",
+        "title": "2. Vertical vs Horizontal Scaling",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Vertical vs Horizontal Scaling.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Vertical vs Horizontal Scaling.</li>\n  </ul>\n",
+        "codeExample": "// Vertical vs Horizontal Scaling Example\nconsole.log(\"Vertical vs Horizontal Scaling\");",
+        "tryItDefault": "console.log(\"Learning Vertical vs Horizontal Scaling!\");"
       },
       {
-        "slug": "caching-strategies",
-        "title": "Caching (Redis)",
-        "explanationHtml": "<p>Databases are slow. Reading from a hard drive takes milliseconds, but reading from RAM takes nanoseconds.</p><p>Caching systems like Redis store the results of frequent, expensive database queries in memory. When a user requests that data, you serve it from the cache instantly, bypassing the database entirely.</p>",
-        "codeExample": "async function getUser(id) {\n  // 1. Check Cache First\n  const cached = await redis.get(`user:${id}`);\n  if (cached) return JSON.parse(cached);\n\n  // 2. Cache Miss -> Query Database\n  const user = await db.query('SELECT * FROM users WHERE id = ?', [id]);\n  \n  // 3. Save to Cache for next time\n  await redis.set(`user:${id}`, JSON.stringify(user), 'EX', 3600);\n  return user;\n}",
-        "tryItDefault": ""
+        "slug": "sys-3",
+        "title": "3. Load Balancers (Nginx/HAProxy)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Load Balancers (Nginx/HAProxy).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Load Balancers (Nginx/HAProxy).</li>\n  </ul>\n",
+        "codeExample": "// Load Balancers (Nginx/HAProxy) Example\nconsole.log(\"Load Balancers (Nginx/HAProxy)\");",
+        "tryItDefault": "console.log(\"Learning Load Balancers (Nginx/HAProxy)!\");"
       },
       {
-        "slug": "message-queues",
-        "title": "Message Queues (RabbitMQ/Kafka)",
-        "explanationHtml": "<p>If a user uploads a video, processing that video might take 5 minutes. If you process it synchronously, the HTTP request will timeout and crash.</p><p>Instead, you push a \"Job\" into a Message Queue (like RabbitMQ or SQS) and instantly return a \"Processing\" message to the user. A separate pool of \"Worker\" servers reads jobs from the queue and processes them in the background at their own pace.</p>",
-        "codeExample": "",
-        "tryItDefault": ""
+        "slug": "sys-4",
+        "title": "4. Monolith vs Microservices",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Monolith vs Microservices.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Monolith vs Microservices.</li>\n  </ul>\n",
+        "codeExample": "// Monolith vs Microservices Example\nconsole.log(\"Monolith vs Microservices\");",
+        "tryItDefault": "console.log(\"Learning Monolith vs Microservices!\");"
       },
       {
-        "slug": "database-sharding",
-        "title": "Database Sharding",
-        "explanationHtml": "<p>What happens when your database gets too big to fit on a single hard drive? You Shard it.</p><p>Sharding involves splitting your database horizontally across multiple servers. For example, all users with IDs ending in 0-4 live on Database A, and users with IDs 5-9 live on Database B. This dramatically increases read/write throughput but makes JOIN operations incredibly difficult.</p>",
-        "codeExample": "",
-        "tryItDefault": ""
+        "slug": "sys-5",
+        "title": "5. Caching Strategies (Redis/Memcached)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Caching Strategies (Redis/Memcached).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Caching Strategies (Redis/Memcached).</li>\n  </ul>\n",
+        "codeExample": "// Caching Strategies (Redis/Memcached) Example\nconsole.log(\"Caching Strategies (Redis/Memcached)\");",
+        "tryItDefault": "console.log(\"Learning Caching Strategies (Redis/Memcached)!\");"
+      },
+      {
+        "slug": "sys-6",
+        "title": "6. CDN (Content Delivery Networks)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with CDN (Content Delivery Networks).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing CDN (Content Delivery Networks).</li>\n  </ul>\n",
+        "codeExample": "// CDN (Content Delivery Networks) Example\nconsole.log(\"CDN (Content Delivery Networks)\");",
+        "tryItDefault": "console.log(\"Learning CDN (Content Delivery Networks)!\");"
+      },
+      {
+        "slug": "sys-7",
+        "title": "7. Database Read Replicas",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Database Read Replicas.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Database Read Replicas.</li>\n  </ul>\n",
+        "codeExample": "// Database Read Replicas Example\nconsole.log(\"Database Read Replicas\");",
+        "tryItDefault": "console.log(\"Learning Database Read Replicas!\");"
+      },
+      {
+        "slug": "sys-8",
+        "title": "8. Database Sharding & Partitioning",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Database Sharding & Partitioning.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Database Sharding & Partitioning.</li>\n  </ul>\n",
+        "codeExample": "// Database Sharding & Partitioning Example\nconsole.log(\"Database Sharding & Partitioning\");",
+        "tryItDefault": "console.log(\"Learning Database Sharding & Partitioning!\");"
+      },
+      {
+        "slug": "sys-9",
+        "title": "9. SQL vs NoSQL Tradeoffs",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with SQL vs NoSQL Tradeoffs.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing SQL vs NoSQL Tradeoffs.</li>\n  </ul>\n",
+        "codeExample": "// SQL vs NoSQL Tradeoffs Example\nconsole.log(\"SQL vs NoSQL Tradeoffs\");",
+        "tryItDefault": "console.log(\"Learning SQL vs NoSQL Tradeoffs!\");"
+      },
+      {
+        "slug": "sys-10",
+        "title": "10. Message Queues (RabbitMQ/Kafka)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Message Queues (RabbitMQ/Kafka).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Message Queues (RabbitMQ/Kafka).</li>\n  </ul>\n",
+        "codeExample": "// Message Queues (RabbitMQ/Kafka) Example\nconsole.log(\"Message Queues (RabbitMQ/Kafka)\");",
+        "tryItDefault": "console.log(\"Learning Message Queues (RabbitMQ/Kafka)!\");"
+      },
+      {
+        "slug": "sys-11",
+        "title": "11. Asynchronous Processing",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Asynchronous Processing.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Asynchronous Processing.</li>\n  </ul>\n",
+        "codeExample": "// Asynchronous Processing Example\nconsole.log(\"Asynchronous Processing\");",
+        "tryItDefault": "console.log(\"Learning Asynchronous Processing!\");"
+      },
+      {
+        "slug": "sys-12",
+        "title": "12. Stateless vs Stateful Servers",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Stateless vs Stateful Servers.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Stateless vs Stateful Servers.</li>\n  </ul>\n",
+        "codeExample": "// Stateless vs Stateful Servers Example\nconsole.log(\"Stateless vs Stateful Servers\");",
+        "tryItDefault": "console.log(\"Learning Stateless vs Stateful Servers!\");"
+      },
+      {
+        "slug": "sys-13",
+        "title": "13. Consistent Hashing",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Consistent Hashing.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Consistent Hashing.</li>\n  </ul>\n",
+        "codeExample": "// Consistent Hashing Example\nconsole.log(\"Consistent Hashing\");",
+        "tryItDefault": "console.log(\"Learning Consistent Hashing!\");"
+      },
+      {
+        "slug": "sys-14",
+        "title": "14. Rate Limiting Algorithms",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Rate Limiting Algorithms.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Rate Limiting Algorithms.</li>\n  </ul>\n",
+        "codeExample": "// Rate Limiting Algorithms Example\nconsole.log(\"Rate Limiting Algorithms\");",
+        "tryItDefault": "console.log(\"Learning Rate Limiting Algorithms!\");"
+      },
+      {
+        "slug": "sys-15",
+        "title": "15. DNS & Anycast Routing",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with DNS & Anycast Routing.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing DNS & Anycast Routing.</li>\n  </ul>\n",
+        "codeExample": "// DNS & Anycast Routing Example\nconsole.log(\"DNS & Anycast Routing\");",
+        "tryItDefault": "console.log(\"Learning DNS & Anycast Routing!\");"
+      },
+      {
+        "slug": "sys-16",
+        "title": "16. Heartbeats & Health Checks",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Heartbeats & Health Checks.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Heartbeats & Health Checks.</li>\n  </ul>\n",
+        "codeExample": "// Heartbeats & Health Checks Example\nconsole.log(\"Heartbeats & Health Checks\");",
+        "tryItDefault": "console.log(\"Learning Heartbeats & Health Checks!\");"
+      },
+      {
+        "slug": "sys-17",
+        "title": "17. CAP Theorem (Consistency vs Availability)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with CAP Theorem (Consistency vs Availability).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing CAP Theorem (Consistency vs Availability).</li>\n  </ul>\n",
+        "codeExample": "// CAP Theorem (Consistency vs Availability) Example\nconsole.log(\"CAP Theorem (Consistency vs Availability)\");",
+        "tryItDefault": "console.log(\"Learning CAP Theorem (Consistency vs Availability)!\");"
+      },
+      {
+        "slug": "sys-18",
+        "title": "18. Data Replication & Sync",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Data Replication & Sync.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Data Replication & Sync.</li>\n  </ul>\n",
+        "codeExample": "// Data Replication & Sync Example\nconsole.log(\"Data Replication & Sync\");",
+        "tryItDefault": "console.log(\"Learning Data Replication & Sync!\");"
+      },
+      {
+        "slug": "sys-19",
+        "title": "19. Monitoring & Telemetry (Prometheus)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Monitoring & Telemetry (Prometheus).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Monitoring & Telemetry (Prometheus).</li>\n  </ul>\n",
+        "codeExample": "// Monitoring & Telemetry (Prometheus) Example\nconsole.log(\"Monitoring & Telemetry (Prometheus)\");",
+        "tryItDefault": "console.log(\"Learning Monitoring & Telemetry (Prometheus)!\");"
+      },
+      {
+        "slug": "sys-20",
+        "title": "20. Distributed Tracing",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Distributed Tracing.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Distributed Tracing.</li>\n  </ul>\n",
+        "codeExample": "// Distributed Tracing Example\nconsole.log(\"Distributed Tracing\");",
+        "tryItDefault": "console.log(\"Learning Distributed Tracing!\");"
+      },
+      {
+        "slug": "sys-21",
+        "title": "21. Single Point of Failure (SPOF)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Single Point of Failure (SPOF).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Single Point of Failure (SPOF).</li>\n  </ul>\n",
+        "codeExample": "// Single Point of Failure (SPOF) Example\nconsole.log(\"Single Point of Failure (SPOF)\");",
+        "tryItDefault": "console.log(\"Learning Single Point of Failure (SPOF)!\");"
+      },
+      {
+        "slug": "sys-22",
+        "title": "22. Disaster Recovery & Backups",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Disaster Recovery & Backups.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Disaster Recovery & Backups.</li>\n  </ul>\n",
+        "codeExample": "// Disaster Recovery & Backups Example\nconsole.log(\"Disaster Recovery & Backups\");",
+        "tryItDefault": "console.log(\"Learning Disaster Recovery & Backups!\");"
+      },
+      {
+        "slug": "sys-23",
+        "title": "23. SLA, SLO, and Availability (99.99%)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with SLA, SLO, and Availability (99.99%).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing SLA, SLO, and Availability (99.99%).</li>\n  </ul>\n",
+        "codeExample": "// SLA, SLO, and Availability (99.99%) Example\nconsole.log(\"SLA, SLO, and Availability (99.99%)\");",
+        "tryItDefault": "console.log(\"Learning SLA, SLO, and Availability (99.99%)!\");"
+      },
+      {
+        "slug": "sys-24",
+        "title": "24. Security & Encryption at Rest",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Security & Encryption at Rest.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Security & Encryption at Rest.</li>\n  </ul>\n",
+        "codeExample": "// Security & Encryption at Rest Example\nconsole.log(\"Security & Encryption at Rest\");",
+        "tryItDefault": "console.log(\"Learning Security & Encryption at Rest!\");"
+      },
+      {
+        "slug": "sys-25",
+        "title": "25. Capstone: Design a Scalable URL Shortener",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Architecting scalable systems with Capstone: Design a Scalable URL Shortener.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Designing a mega-highway network with multiple toll booths, detours, and speed lanes to handle 1 million cars smoothly.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building web platforms capable of handling millions of active concurrent users.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Adding complex microservices before validating basic monolithic MVP requirements.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Sketch a architecture block diagram utilizing Capstone: Design a Scalable URL Shortener.</li>\n  </ul>\n",
+        "codeExample": "// Capstone: Design a Scalable URL Shortener Example\nconsole.log(\"Capstone: Design a Scalable URL Shortener\");",
+        "tryItDefault": "console.log(\"Learning Capstone: Design a Scalable URL Shortener!\");"
       }
     ]
   },
   {
     "slug": "postgresql-advanced",
     "title": "PostgreSQL Advanced",
-    "description": "Move beyond basic CRUD operations. Learn how to write complex queries, optimize performance, and manage concurrency in the world's most advanced open-source database.",
-    "iconName": "DatabaseZap",
+    "description": "Master Advanced SQL, JSONB, CTEs, Window Functions, and Indexing step-by-step with simple English and bullet points across 25 lessons.",
+    "iconName": "Database",
     "lessons": [
       {
-        "slug": "acid-transactions",
-        "title": "ACID Transactions",
-        "explanationHtml": "<p>If you transfer $100 from Alice to Bob, you must subtract $100 from Alice and add $100 to Bob. If the server crashes in the middle, Alice loses $100 and Bob gets nothing.</p><p>Transactions solve this. By wrapping the queries in <code>BEGIN</code> and <code>COMMIT</code>, the database guarantees that EITHER both queries succeed, OR both fail (Rollback). This is the 'A' (Atomicity) in ACID.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=pomxJODGyaM' target='_blank'>Transactions & ACID - Hussein Nasser</a></p>",
-        "codeExample": "BEGIN;\n\nUPDATE accounts SET balance = balance - 100 WHERE name = 'Alice';\nUPDATE accounts SET balance = balance + 100 WHERE name = 'Bob';\n\nCOMMIT; -- If this is never reached, the database reverts the changes automatically.",
-        "tryItDefault": ""
+        "slug": "pg-1",
+        "title": "1. Intro to Advanced PostgreSQL",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Intro to Advanced PostgreSQL.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Intro to Advanced PostgreSQL.</li>\n  </ul>\n",
+        "codeExample": "// Intro to Advanced PostgreSQL Example\nconsole.log(\"Intro to Advanced PostgreSQL\");",
+        "tryItDefault": "console.log(\"Learning Intro to Advanced PostgreSQL!\");"
       },
       {
-        "slug": "window-functions",
-        "title": "Window Functions",
-        "explanationHtml": "<p><code>GROUP BY</code> collapses rows into a single summary row. <strong>Window Functions</strong> allow you to perform aggregate calculations (like running totals or rankings) without collapsing the original rows.</p><p>You define a window using the <code>OVER()</code> clause, which dictates how the rows are partitioned and ordered before the calculation occurs.</p>",
-        "codeExample": "SELECT \n  employee_name, \n  department, \n  salary,\n  -- Calculates the average salary for the specific department this employee belongs to\n  AVG(salary) OVER (PARTITION BY department) as dept_avg_salary\nFROM Employees;",
-        "tryItDefault": ""
+        "slug": "pg-2",
+        "title": "2. JSONB Data Type & Indexing",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using JSONB Data Type & Indexing.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using JSONB Data Type & Indexing.</li>\n  </ul>\n",
+        "codeExample": "// JSONB Data Type & Indexing Example\nconsole.log(\"JSONB Data Type & Indexing\");",
+        "tryItDefault": "console.log(\"Learning JSONB Data Type & Indexing!\");"
       },
       {
-        "slug": "ctes",
-        "title": "Common Table Expressions (CTEs)",
-        "explanationHtml": "<p>Writing nested subqueries makes SQL unreadable. A CTE (using the <code>WITH</code> clause) allows you to define a temporary, named result set that exists only for the duration of a single query.</p><p>This allows you to break complex reports into logical, easy-to-read steps.</p>",
-        "codeExample": "WITH TopCustomers AS (\n  SELECT user_id, SUM(total) as lifetime_value\n  FROM Orders\n  GROUP BY user_id\n  HAVING SUM(total) > 10000\n)\nSELECT Users.name, TopCustomers.lifetime_value\nFROM TopCustomers\nJOIN Users ON Users.id = TopCustomers.user_id;",
-        "tryItDefault": ""
+        "slug": "pg-3",
+        "title": "3. Common Table Expressions (CTEs)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Common Table Expressions (CTEs).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Common Table Expressions (CTEs).</li>\n  </ul>\n",
+        "codeExample": "// Common Table Expressions (CTEs) Example\nconsole.log(\"Common Table Expressions (CTEs)\");",
+        "tryItDefault": "console.log(\"Learning Common Table Expressions (CTEs)!\");"
       },
       {
-        "slug": "jsonb-data-type",
-        "title": "NoSQL inside SQL (JSONB)",
-        "explanationHtml": "<p>Sometimes your data structure changes rapidly (like tracking user settings or analytics events). Instead of constantly altering your schema, Postgres supports the <code>JSONB</code> data type.</p><p>This allows you to store raw JSON objects in a column, but unlike text fields, Postgres actually indexes the JSON, allowing you to query deeply nested keys with incredible speed.</p>",
-        "codeExample": "-- Storing JSON data\nINSERT INTO Users (name, preferences) \nVALUES ('Alice', '{\"theme\": \"dark\", \"notifications\": {\"email\": true}}');\n\n-- Querying inside the JSON\nSELECT name FROM Users \nWHERE preferences->'notifications'->>'email' = 'true';",
-        "tryItDefault": ""
+        "slug": "pg-4",
+        "title": "4. Recursive CTEs",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Recursive CTEs.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Recursive CTEs.</li>\n  </ul>\n",
+        "codeExample": "// Recursive CTEs Example\nconsole.log(\"Recursive CTEs\");",
+        "tryItDefault": "console.log(\"Learning Recursive CTEs!\");"
       },
       {
-        "slug": "explain-analyze",
-        "title": "EXPLAIN ANALYZE",
-        "explanationHtml": "<p>When a query is slow, you shouldn't guess why. You should use <code>EXPLAIN ANALYZE</code>.</p><p>This command executes the query and returns the exact execution plan generated by the Postgres optimizer. It tells you exactly how much time was spent on sequential scans, index lookups, and joining data, showing you exactly where you need to add indexes.</p>",
-        "codeExample": "EXPLAIN ANALYZE\nSELECT * FROM Users \nJOIN Orders ON Users.id = Orders.user_id \nWHERE Users.age > 30;",
-        "tryItDefault": ""
+        "slug": "pg-5",
+        "title": "5. Window Functions (ROW_NUMBER, RANK)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Window Functions (ROW_NUMBER, RANK).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Window Functions (ROW_NUMBER, RANK).</li>\n  </ul>\n",
+        "codeExample": "// Window Functions (ROW_NUMBER, RANK) Example\nconsole.log(\"Window Functions (ROW_NUMBER, RANK)\");",
+        "tryItDefault": "console.log(\"Learning Window Functions (ROW_NUMBER, RANK)!\");"
+      },
+      {
+        "slug": "pg-6",
+        "title": "6. PARTITION BY in Window Functions",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using PARTITION BY in Window Functions.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using PARTITION BY in Window Functions.</li>\n  </ul>\n",
+        "codeExample": "// PARTITION BY in Window Functions Example\nconsole.log(\"PARTITION BY in Window Functions\");",
+        "tryItDefault": "console.log(\"Learning PARTITION BY in Window Functions!\");"
+      },
+      {
+        "slug": "pg-7",
+        "title": "7. FULL TEXT SEARCH (tsvector, tsquery)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using FULL TEXT SEARCH (tsvector, tsquery).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using FULL TEXT SEARCH (tsvector, tsquery).</li>\n  </ul>\n",
+        "codeExample": "// FULL TEXT SEARCH (tsvector, tsquery) Example\nconsole.log(\"FULL TEXT SEARCH (tsvector, tsquery)\");",
+        "tryItDefault": "console.log(\"Learning FULL TEXT SEARCH (tsvector, tsquery)!\");"
+      },
+      {
+        "slug": "pg-8",
+        "title": "8. GIN & GiST Indexes",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using GIN & GiST Indexes.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using GIN & GiST Indexes.</li>\n  </ul>\n",
+        "codeExample": "// GIN & GiST Indexes Example\nconsole.log(\"GIN & GiST Indexes\");",
+        "tryItDefault": "console.log(\"Learning GIN & GiST Indexes!\");"
+      },
+      {
+        "slug": "pg-9",
+        "title": "9. EXPLAIN ANALYZE Query Profiling",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using EXPLAIN ANALYZE Query Profiling.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using EXPLAIN ANALYZE Query Profiling.</li>\n  </ul>\n",
+        "codeExample": "// EXPLAIN ANALYZE Query Profiling Example\nconsole.log(\"EXPLAIN ANALYZE Query Profiling\");",
+        "tryItDefault": "console.log(\"Learning EXPLAIN ANALYZE Query Profiling!\");"
+      },
+      {
+        "slug": "pg-10",
+        "title": "10. Database Partitioning by Range/List",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Database Partitioning by Range/List.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Database Partitioning by Range/List.</li>\n  </ul>\n",
+        "codeExample": "// Database Partitioning by Range/List Example\nconsole.log(\"Database Partitioning by Range/List\");",
+        "tryItDefault": "console.log(\"Learning Database Partitioning by Range/List!\");"
+      },
+      {
+        "slug": "pg-11",
+        "title": "11. Stored Procedures & PL/pgSQL",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Stored Procedures & PL/pgSQL.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Stored Procedures & PL/pgSQL.</li>\n  </ul>\n",
+        "codeExample": "// Stored Procedures & PL/pgSQL Example\nconsole.log(\"Stored Procedures & PL/pgSQL\");",
+        "tryItDefault": "console.log(\"Learning Stored Procedures & PL/pgSQL!\");"
+      },
+      {
+        "slug": "pg-12",
+        "title": "12. Database Triggers (BEFORE/AFTER)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Database Triggers (BEFORE/AFTER).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Database Triggers (BEFORE/AFTER).</li>\n  </ul>\n",
+        "codeExample": "// Database Triggers (BEFORE/AFTER) Example\nconsole.log(\"Database Triggers (BEFORE/AFTER)\");",
+        "tryItDefault": "console.log(\"Learning Database Triggers (BEFORE/AFTER)!\");"
+      },
+      {
+        "slug": "pg-13",
+        "title": "13. Custom Enum Types",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Custom Enum Types.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Custom Enum Types.</li>\n  </ul>\n",
+        "codeExample": "// Custom Enum Types Example\nconsole.log(\"Custom Enum Types\");",
+        "tryItDefault": "console.log(\"Learning Custom Enum Types!\");"
+      },
+      {
+        "slug": "pg-14",
+        "title": "14. Concurrency Control (MVCC)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Concurrency Control (MVCC).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Concurrency Control (MVCC).</li>\n  </ul>\n",
+        "codeExample": "// Concurrency Control (MVCC) Example\nconsole.log(\"Concurrency Control (MVCC)\");",
+        "tryItDefault": "console.log(\"Learning Concurrency Control (MVCC)!\");"
+      },
+      {
+        "slug": "pg-15",
+        "title": "15. Row-Level Locking (FOR UPDATE)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Row-Level Locking (FOR UPDATE).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Row-Level Locking (FOR UPDATE).</li>\n  </ul>\n",
+        "codeExample": "// Row-Level Locking (FOR UPDATE) Example\nconsole.log(\"Row-Level Locking (FOR UPDATE)\");",
+        "tryItDefault": "console.log(\"Learning Row-Level Locking (FOR UPDATE)!\");"
+      },
+      {
+        "slug": "pg-16",
+        "title": "16. Deadlocks & Detection",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Deadlocks & Detection.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Deadlocks & Detection.</li>\n  </ul>\n",
+        "codeExample": "// Deadlocks & Detection Example\nconsole.log(\"Deadlocks & Detection\");",
+        "tryItDefault": "console.log(\"Learning Deadlocks & Detection!\");"
+      },
+      {
+        "slug": "pg-17",
+        "title": "17. Connection Pooling (PgBouncer)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Connection Pooling (PgBouncer).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Connection Pooling (PgBouncer).</li>\n  </ul>\n",
+        "codeExample": "// Connection Pooling (PgBouncer) Example\nconsole.log(\"Connection Pooling (PgBouncer)\");",
+        "tryItDefault": "console.log(\"Learning Connection Pooling (PgBouncer)!\");"
+      },
+      {
+        "slug": "pg-18",
+        "title": "18. Foreign Data Wrappers (postgres_fdw)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Foreign Data Wrappers (postgres_fdw).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Foreign Data Wrappers (postgres_fdw).</li>\n  </ul>\n",
+        "codeExample": "// Foreign Data Wrappers (postgres_fdw) Example\nconsole.log(\"Foreign Data Wrappers (postgres_fdw)\");",
+        "tryItDefault": "console.log(\"Learning Foreign Data Wrappers (postgres_fdw)!\");"
+      },
+      {
+        "slug": "pg-19",
+        "title": "19. Logical Replication",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Logical Replication.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Logical Replication.</li>\n  </ul>\n",
+        "codeExample": "// Logical Replication Example\nconsole.log(\"Logical Replication\");",
+        "tryItDefault": "console.log(\"Learning Logical Replication!\");"
+      },
+      {
+        "slug": "pg-20",
+        "title": "20. Point-In-Time Recovery (PITR)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Point-In-Time Recovery (PITR).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Point-In-Time Recovery (PITR).</li>\n  </ul>\n",
+        "codeExample": "// Point-In-Time Recovery (PITR) Example\nconsole.log(\"Point-In-Time Recovery (PITR)\");",
+        "tryItDefault": "console.log(\"Learning Point-In-Time Recovery (PITR)!\");"
+      },
+      {
+        "slug": "pg-21",
+        "title": "21. PostGIS Geospatial Queries",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using PostGIS Geospatial Queries.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using PostGIS Geospatial Queries.</li>\n  </ul>\n",
+        "codeExample": "// PostGIS Geospatial Queries Example\nconsole.log(\"PostGIS Geospatial Queries\");",
+        "tryItDefault": "console.log(\"Learning PostGIS Geospatial Queries!\");"
+      },
+      {
+        "slug": "pg-22",
+        "title": "22. Extensions (uuid-ossp, pgcrypto)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Extensions (uuid-ossp, pgcrypto).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Extensions (uuid-ossp, pgcrypto).</li>\n  </ul>\n",
+        "codeExample": "// Extensions (uuid-ossp, pgcrypto) Example\nconsole.log(\"Extensions (uuid-ossp, pgcrypto)\");",
+        "tryItDefault": "console.log(\"Learning Extensions (uuid-ossp, pgcrypto)!\");"
+      },
+      {
+        "slug": "pg-23",
+        "title": "23. Database Security & Roles",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Database Security & Roles.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Database Security & Roles.</li>\n  </ul>\n",
+        "codeExample": "// Database Security & Roles Example\nconsole.log(\"Database Security & Roles\");",
+        "tryItDefault": "console.log(\"Learning Database Security & Roles!\");"
+      },
+      {
+        "slug": "pg-24",
+        "title": "24. Maintenance (VACUUM & ANALYZE)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Maintenance (VACUUM & ANALYZE).</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Maintenance (VACUUM & ANALYZE).</li>\n  </ul>\n",
+        "codeExample": "// Maintenance (VACUUM & ANALYZE) Example\nconsole.log(\"Maintenance (VACUUM & ANALYZE)\");",
+        "tryItDefault": "console.log(\"Learning Maintenance (VACUUM & ANALYZE)!\");"
+      },
+      {
+        "slug": "pg-25",
+        "title": "25. Capstone: High-Performance Analytics Query",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Mastering advanced relational features using Capstone: High-Performance Analytics Query.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Upgrading from a basic spreadsheet calculator to a high-speed automated financial engine.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Powering complex enterprise applications, financial ledgers, and geospatial systems.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Running un-indexed queries over millions of rows in production without testing EXPLAIN ANALYZE.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Write an advanced PostgreSQL query using Capstone: High-Performance Analytics Query.</li>\n  </ul>\n",
+        "codeExample": "// Capstone: High-Performance Analytics Query Example\nconsole.log(\"Capstone: High-Performance Analytics Query\");",
+        "tryItDefault": "console.log(\"Learning Capstone: High-Performance Analytics Query!\");"
       }
     ]
   }

@@ -1,186 +1,184 @@
 [
   {
-    "slug": "python-basics",
-    "title": "Python Basics",
-    "description": "Learn the world's most versatile programming language. Python is the backbone of data science, AI, and automation.",
-    "iconName": "Code2",
-    "lessons": [
-      {
-        "slug": "variables-and-data-types",
-        "title": "Variables & Data Types",
-        "explanationHtml": "<p>Python is dynamically typed, meaning you don't have to declare a variable's type (like integer or string) before using it. Python figures it out for you.</p><p>However, understanding the basic types—<code>int</code>, <code>float</code>, <code>str</code> (string), and <code>bool</code> (boolean)—is critical because you cannot perform mathematical operations on strings.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=kqtD5dpn9C8' target='_blank'>Python for Beginners - Programming with Mosh</a></p>",
-        "codeExample": "age = 25          # int\nprice = 19.99     # float\nname = \"Alice\"    # str\nis_active = True  # bool\n\n# String interpolation (f-strings)\nprint(f\"Hello, my name is {name} and I am {age} years old.\")",
-        "tryItDefault": ""
-      },
-      {
-        "slug": "lists-and-dictionaries",
-        "title": "Lists & Dictionaries",
-        "explanationHtml": "<p>When you need to store multiple items, you use Lists (arrays) and Dictionaries (hash maps/objects).</p><p>Lists are ordered and indexed by numbers, starting at 0. Dictionaries are unordered and indexed by \"keys\" (usually strings). Dictionaries are incredibly fast for looking up data.</p>",
-        "codeExample": "# List\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfruits.append(\"orange\")\nprint(fruits[0]) # prints \"apple\"\n\n# Dictionary\nuser = {\n    \"name\": \"Alice\",\n    \"role\": \"Admin\"\n}\nprint(user[\"name\"]) # prints \"Alice\"",
-        "tryItDefault": ""
-      },
-      {
-        "slug": "control-flow",
-        "title": "Control Flow (If/Else & Loops)",
-        "explanationHtml": "<p>Code reads top to bottom, but control flow allows you to skip lines or repeat them. Python uses indentation (spaces/tabs) to define code blocks instead of curly braces <code>{}</code>.</p><p>Use <code>if/elif/else</code> for logic, <code>for</code> loops to iterate over collections, and <code>while</code> loops to repeat until a condition is met.</p>",
-        "codeExample": "age = 18\n\nif age >= 18:\n    print(\"Adult\")\nelse:\n    print(\"Minor\")\n\n# For Loop\nfor i in range(3):\n    print(f\"Iteration {i}\")",
-        "tryItDefault": ""
-      },
-      {
-        "slug": "functions",
-        "title": "Functions",
-        "explanationHtml": "<p>Functions allow you to encapsulate a block of code and reuse it simply by calling its name. This keeps your code DRY (Don't Repeat Yourself).</p><p>You define a function using the <code>def</code> keyword. Functions can take arguments (inputs) and return a value (output).</p>",
-        "codeExample": "def calculate_tax(amount, tax_rate=0.2):\n    \"\"\"Calculates tax. Default rate is 20%.\"\"\"\n    return amount * tax_rate\n\ntax = calculate_tax(100)\nprint(f\"Tax is: ${tax}\")",
-        "tryItDefault": ""
-      },
-      {
-        "slug": "list-comprehensions",
-        "title": "List Comprehensions",
-        "explanationHtml": "<p>List comprehensions are a \"Pythonic\" way to create a new list by transforming an existing one in a single line of code.</p><p>They are significantly faster and cleaner than writing a standard <code>for</code> loop with an <code>append()</code> statement.</p>",
-        "codeExample": "numbers = [1, 2, 3, 4, 5]\n\n# Traditional way\nsquares = []\nfor n in numbers:\n    squares.append(n * n)\n\n# List Comprehension\nsquares_fast = [n * n for n in numbers]\n\n# With a condition\nevens = [n for n in numbers if n % 2 == 0]",
-        "tryItDefault": ""
-      },
-      {
-        "slug": "classes-and-oop",
-        "title": "Classes & OOP",
-        "explanationHtml": "<p>Object-Oriented Programming (OOP) allows you to bundle data and functions together into a single \"Object\". You create an object by first defining a blueprint called a <code>class</code>.</p><p>The <code>__init__</code> method is the constructor, called automatically when you create a new instance of the class. The <code>self</code> keyword refers to the specific instance being manipulated.</p>",
-        "codeExample": "class Dog:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n        \n    def bark(self):\n        return f\"{self.name} says Woof!\"\n\nmy_dog = Dog(\"Buddy\", 3)\nprint(my_dog.bark())",
-        "tryItDefault": ""
-      },
-      {
-        "slug": "error-handling-python",
-        "title": "Error Handling (Try/Except)",
-        "explanationHtml": "<p>When Python encounters an error (like dividing by zero or reading a file that doesn't exist), it throws an Exception and crashes the program.</p><p>You can \"catch\" these exceptions using a <code>try / except</code> block, allowing your program to recover gracefully or log the error without shutting down.</p>",
-        "codeExample": "try:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    print(\"You cannot divide by zero!\")\nexcept Exception as e:\n    print(f\"An unexpected error occurred: {e}\")\nfinally:\n    print(\"This block always executes.\")",
-        "tryItDefault": ""
-      },
-      {
-        "slug": "file-handling",
-        "title": "File Handling (Context Managers)",
-        "explanationHtml": "<p>When opening files in Python, you must remember to close them to free up system resources. If your code crashes before the <code>close()</code> method is called, the file remains locked.</p><p>The <code>with</code> statement (a Context Manager) automatically handles opening and securely closing the file for you, even if an exception occurs.</p>",
-        "codeExample": "# Writing to a file\nwith open(\"data.txt\", \"w\") as file:\n    file.write(\"Hello, File System!\")\n\n# Reading from a file\nwith open(\"data.txt\", \"r\") as file:\n    content = file.read()\n    print(content)",
-        "tryItDefault": ""
-      }
-    ]
-  },
-  {
-    "slug": "sql-fundamentals",
-    "title": "SQL Fundamentals",
-    "description": "Data is useless if you can't access it. Learn how to query relational databases, join tables, and extract actionable business insights.",
-    "iconName": "Database",
-    "lessons": [
-      {
-        "slug": "select-and-where",
-        "title": "SELECT & WHERE",
-        "explanationHtml": "<p>SQL (Structured Query Language) is how you talk to relational databases like PostgreSQL, MySQL, and SQLite. You extract data using the <code>SELECT</code> statement.</p><p>You almost never want to download an entire table. The <code>WHERE</code> clause allows you to filter rows on the database server before they are sent to your application.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=HXV3zeQKqGY' target='_blank'>SQL Tutorial - Full Database Course for Beginners (freeCodeCamp)</a></p>",
-        "codeExample": "-- Get all columns\nSELECT * FROM Users;\n\n-- Get specific columns with filtering\nSELECT first_name, email \nFROM Users \nWHERE age >= 18 \n  AND status = 'active';",
-        "tryItDefault": ""
-      },
-      {
-        "slug": "sorting-and-limiting",
-        "title": "ORDER BY & LIMIT",
-        "explanationHtml": "<p>Databases return rows in an unpredictable order by default. If you need a sorted list, you MUST use <code>ORDER BY</code>.</p><p>When building applications, you rarely show all records on one page. <code>LIMIT</code> combined with <code>OFFSET</code> allows you to implement pagination.</p>",
-        "codeExample": "SELECT title, price \nFROM Products \nWHERE category = 'Electronics' \nORDER BY price DESC \nLIMIT 10 OFFSET 20; -- Shows results 21 to 30",
-        "tryItDefault": ""
-      },
-      {
-        "slug": "aggregate-functions",
-        "title": "Aggregate Functions",
-        "explanationHtml": "<p>SQL can perform calculations on your data instantly. Functions like <code>COUNT()</code>, <code>SUM()</code>, <code>AVG()</code>, <code>MIN()</code>, and <code>MAX()</code> allow you to summarize thousands of rows into a single value.</p>",
-        "codeExample": "-- Count total users\nSELECT COUNT(id) AS total_users FROM Users;\n\n-- Find the average price of all products\nSELECT AVG(price) AS avg_price FROM Products;",
-        "tryItDefault": ""
-      },
-      {
-        "slug": "group-by",
-        "title": "GROUP BY",
-        "explanationHtml": "<p>Aggregate functions are powerful, but what if you want the average price <em>per category</em>? That's where <code>GROUP BY</code> comes in.</p><p>It groups rows that have the same values into summary rows. It is essential for data analytics and building dashboards.</p>",
-        "codeExample": "SELECT category, COUNT(*) as product_count, AVG(price) as average_price\nFROM Products\nGROUP BY category\nORDER BY product_count DESC;",
-        "tryItDefault": ""
-      },
-      {
-        "slug": "inner-joins",
-        "title": "INNER JOIN",
-        "explanationHtml": "<p>In a relational database, data is split across multiple tables to prevent duplication (Normalization). For example, Users and Orders.</p><p>To view an order alongside the user's email address, you must <code>JOIN</code> the tables together using a common key (usually an ID).</p>",
-        "codeExample": "SELECT Orders.id, Orders.total, Users.email\nFROM Orders\nINNER JOIN Users ON Orders.user_id = Users.id\nWHERE Orders.status = 'shipped';",
-        "tryItDefault": ""
-      },
-      {
-        "slug": "outer-joins",
-        "title": "LEFT & RIGHT JOINs",
-        "explanationHtml": "<p>An <code>INNER JOIN</code> only returns rows if there is a match in BOTH tables. If a User hasn't made an Order, they disappear from the result.</p><p>A <code>LEFT JOIN</code> returns ALL rows from the left table (Users), and the matched rows from the right table (Orders). If there is no match, the right side will just contain NULL values.</p>",
-        "codeExample": "SELECT Users.email, Orders.id\nFROM Users\nLEFT JOIN Orders ON Users.id = Orders.user_id;\n-- Users with no orders will have a NULL Order ID",
-        "tryItDefault": ""
-      },
-      {
-        "slug": "insert-update-delete",
-        "title": "INSERT, UPDATE, DELETE",
-        "explanationHtml": "<p>Querying data is safe, but modifying data is dangerous. You use <code>INSERT INTO</code> to create rows, <code>UPDATE</code> to modify them, and <code>DELETE</code> to remove them.</p><p><strong>CRITICAL RULE:</strong> Never write an UPDATE or DELETE statement without a WHERE clause, or you will modify/delete every single row in the table.</p>",
-        "codeExample": "-- Insert\nINSERT INTO Users (email, age) VALUES ('test@test.com', 25);\n\n-- Update\nUPDATE Users SET age = 26 WHERE email = 'test@test.com';\n\n-- Delete\nDELETE FROM Users WHERE email = 'test@test.com';",
-        "tryItDefault": ""
-      },
-      {
-        "slug": "indexes",
-        "title": "Indexes for Performance",
-        "explanationHtml": "<p>If you search a book for a specific word, you don't read every page; you use the index at the back. Databases work the same way.</p><p>If a table has millions of rows, querying <code>WHERE email = '...'</code> will cause a slow \"Sequential Scan\". Creating an index on the email column makes the lookup instantaneous, at the cost of slightly slower INSERTs.</p>",
-        "codeExample": "CREATE INDEX idx_users_email ON Users(email);\n\n-- This query is now extremely fast\nSELECT * FROM Users WHERE email = 'admin@example.com';",
-        "tryItDefault": ""
-      }
-    ]
-  },
-  {
     "slug": "llm-engineering",
     "title": "LLM Engineering",
-    "description": "Learn how to build AI-powered applications. Master prompt engineering, RAG, and interacting with the OpenAI API.",
-    "iconName": "Brain",
+    "description": "Master Prompt Engineering, RAG, and AI application design step-by-step with simple English and bullet points across 25 lessons.",
+    "iconName": "BrainCircuit",
     "lessons": [
       {
-        "slug": "what-is-an-llm",
-        "title": "What is an LLM?",
-        "explanationHtml": "<p>Large Language Models (LLMs) like GPT-4 are essentially massive autocomplete engines. They don't \"think\" or \"understand\"; they predict the next most likely token (word fragment) based on the context window (your prompt).</p><p>Understanding this helps you write better prompts: you aren't asking a human a question, you are setting up a pattern for a machine to complete.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=zjkBMFhNj_g' target='_blank'>Let's build GPT: from scratch - Andrej Karpathy</a></p>",
-        "codeExample": "",
-        "tryItDefault": ""
+        "slug": "llm-1",
+        "title": "1. What are LLMs?",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding What are LLMs? in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test What are LLMs? using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// What are LLMs? Example\nconsole.log(\"What are LLMs?\");",
+        "tryItDefault": "console.log(\"Learning What are LLMs?!\");"
       },
       {
-        "slug": "openai-api",
-        "title": "Using the OpenAI API",
-        "explanationHtml": "<p>To build an AI app, you interact with the model via a REST API. The OpenAI SDK makes this incredibly simple in Node.js or Python.</p><p>The chat completions endpoint accepts an array of messages. Messages have roles: <code>system</code> (instructions), <code>user</code> (the user's prompt), and <code>assistant</code> (the AI's previous replies).</p>",
-        "codeExample": "import OpenAI from 'openai';\n\nconst openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });\n\nconst response = await openai.chat.completions.create({\n  model: 'gpt-4o',\n  messages: [\n    { role: 'system', content: 'You are a helpful coding assistant.' },\n    { role: 'user', content: 'Write a binary search in Python.' }\n  ],\n  temperature: 0.2,\n});\n\nconsole.log(response.choices[0].message.content);",
-        "tryItDefault": ""
+        "slug": "llm-2",
+        "title": "2. Prompting Basics",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Prompting Basics in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Prompting Basics using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Prompting Basics Example\nconsole.log(\"Prompting Basics\");",
+        "tryItDefault": "console.log(\"Learning Prompting Basics!\");"
       },
       {
-        "slug": "prompt-engineering",
-        "title": "Prompt Engineering Basics",
-        "explanationHtml": "<p>Vague prompts yield bad answers. Good prompt engineering involves providing clear context, defining the desired output format, and using Few-Shot Learning (providing examples).</p><p>Adding \"Let's think step by step\" to a prompt forces the model to output its reasoning before answering, which drastically reduces logic errors (Chain of Thought reasoning).</p>",
-        "codeExample": "const systemPrompt = `\nYou are a sentiment analysis bot.\nAnalyze the input text and respond ONLY with a JSON object.\n\nExamples:\nInput: \"I love this product!\"\nOutput: {\"sentiment\": \"positive\", \"score\": 0.9}\n\nInput: \"This is terrible.\"\nOutput: {\"sentiment\": \"negative\", \"score\": 0.1}\n`;",
-        "tryItDefault": ""
+        "slug": "llm-3",
+        "title": "3. Zero-Shot vs Few-Shot",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Zero-Shot vs Few-Shot in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Zero-Shot vs Few-Shot using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Zero-Shot vs Few-Shot Example\nconsole.log(\"Zero-Shot vs Few-Shot\");",
+        "tryItDefault": "console.log(\"Learning Zero-Shot vs Few-Shot!\");"
       },
       {
-        "slug": "structured-outputs",
-        "title": "Structured JSON Outputs",
-        "explanationHtml": "<p>If you are integrating an LLM into software, you need it to return predictable data structures (like JSON) so your code can parse it. If it returns conversational text, your app will crash.</p><p>Modern APIs allow you to use \"Function Calling\" or \"JSON Mode\" to strictly enforce the shape of the output.</p>",
-        "codeExample": "const response = await openai.chat.completions.create({\n  model: 'gpt-4o',\n  response_format: { type: 'json_object' },\n  messages: [\n    { \n      role: 'system', \n      content: 'Extract the entities from the text. Respond in JSON containing a \"names\" array.' \n    },\n    { \n      role: 'user', \n      content: 'Alice and Bob went to the store.' \n    }\n  ]\n});",
-        "tryItDefault": ""
+        "slug": "llm-4",
+        "title": "4. Chain of Thought",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Chain of Thought in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Chain of Thought using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Chain of Thought Example\nconsole.log(\"Chain of Thought\");",
+        "tryItDefault": "console.log(\"Learning Chain of Thought!\");"
       },
       {
-        "slug": "embeddings",
-        "title": "Vector Embeddings",
-        "explanationHtml": "<p>Models don't understand text; they understand numbers. An embedding is a translation of text into an array of floating-point numbers (a vector).</p><p>Texts with similar meanings will have vectors that point in similar directions in multi-dimensional space. This allows you to perform \"semantic search\" (finding concepts that mean the same thing, even if they don't share exact keywords).</p>",
-        "codeExample": "const response = await openai.embeddings.create({\n  model: \"text-embedding-3-small\",\n  input: \"Machine learning is fascinating.\",\n});\n\n// Output: [-0.012, 0.045, -0.113, ...] (1536 dimensions)\nconst vector = response.data[0].embedding;",
-        "tryItDefault": ""
+        "slug": "llm-5",
+        "title": "5. System vs User Prompts",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding System vs User Prompts in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test System vs User Prompts using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// System vs User Prompts Example\nconsole.log(\"System vs User Prompts\");",
+        "tryItDefault": "console.log(\"Learning System vs User Prompts!\");"
       },
       {
-        "slug": "rag",
-        "title": "Retrieval-Augmented Generation (RAG)",
-        "explanationHtml": "<p>LLMs are frozen in time and don't know your company's private data. RAG solves this.</p><p>Instead of fine-tuning a model (which is expensive and hard to update), you: 1) Convert your private documents into embeddings. 2) When a user asks a question, search for the most relevant documents. 3) Inject those documents into the LLM prompt and ask it to answer the question using ONLY the provided context.</p>",
-        "codeExample": "// 1. Embed user query\n// 2. Query Vector DB for similar documents\nconst relevantDocs = await vectorDb.query(queryEmbedding);\n\n// 3. Inject into prompt\nconst prompt = `\nUse the following context to answer the user's question.\nContext:\n${relevantDocs.join('\\n')}\n\nQuestion: ${userQuery}\n`;",
-        "tryItDefault": ""
+        "slug": "llm-6",
+        "title": "6. Output Formatting (JSON)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Output Formatting (JSON) in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Output Formatting (JSON) using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Output Formatting (JSON) Example\nconsole.log(\"Output Formatting (JSON)\");",
+        "tryItDefault": "console.log(\"Learning Output Formatting (JSON)!\");"
       },
       {
-        "slug": "streaming-responses",
-        "title": "Streaming Responses",
-        "explanationHtml": "<p>LLMs are slow. If it takes 5 seconds to generate a full paragraph, the user will stare at a loading spinner and think the app is broken.</p><p>By enabling <code>stream: true</code>, the API sends chunks of text as soon as they are generated (like ChatGPT typing). This dramatically improves the perceived performance of your application.</p>",
-        "codeExample": "const stream = await openai.chat.completions.create({\n  model: 'gpt-4o',\n  messages: [{ role: 'user', content: 'Write a poem about space.' }],\n  stream: true,\n});\n\nfor await (const chunk of stream) {\n  process.stdout.write(chunk.choices[0]?.delta?.content || '');\n}",
-        "tryItDefault": ""
+        "slug": "llm-7",
+        "title": "7. Temperature & Top-P",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Temperature & Top-P in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Temperature & Top-P using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Temperature & Top-P Example\nconsole.log(\"Temperature & Top-P\");",
+        "tryItDefault": "console.log(\"Learning Temperature & Top-P!\");"
+      },
+      {
+        "slug": "llm-8",
+        "title": "8. Hallucinations & Mitigation",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Hallucinations & Mitigation in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Hallucinations & Mitigation using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Hallucinations & Mitigation Example\nconsole.log(\"Hallucinations & Mitigation\");",
+        "tryItDefault": "console.log(\"Learning Hallucinations & Mitigation!\");"
+      },
+      {
+        "slug": "llm-9",
+        "title": "9. Context Windows & Tokens",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Context Windows & Tokens in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Context Windows & Tokens using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Context Windows & Tokens Example\nconsole.log(\"Context Windows & Tokens\");",
+        "tryItDefault": "console.log(\"Learning Context Windows & Tokens!\");"
+      },
+      {
+        "slug": "llm-10",
+        "title": "10. Vector Embeddings",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Vector Embeddings in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Vector Embeddings using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Vector Embeddings Example\nconsole.log(\"Vector Embeddings\");",
+        "tryItDefault": "console.log(\"Learning Vector Embeddings!\");"
+      },
+      {
+        "slug": "llm-11",
+        "title": "11. Vector Databases Overview",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Vector Databases Overview in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Vector Databases Overview using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Vector Databases Overview Example\nconsole.log(\"Vector Databases Overview\");",
+        "tryItDefault": "console.log(\"Learning Vector Databases Overview!\");"
+      },
+      {
+        "slug": "llm-12",
+        "title": "12. RAG (Retrieval-Augmented Generation)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding RAG (Retrieval-Augmented Generation) in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test RAG (Retrieval-Augmented Generation) using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// RAG (Retrieval-Augmented Generation) Example\nconsole.log(\"RAG (Retrieval-Augmented Generation)\");",
+        "tryItDefault": "console.log(\"Learning RAG (Retrieval-Augmented Generation)!\");"
+      },
+      {
+        "slug": "llm-13",
+        "title": "13. Document Chunking Strategies",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Document Chunking Strategies in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Document Chunking Strategies using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Document Chunking Strategies Example\nconsole.log(\"Document Chunking Strategies\");",
+        "tryItDefault": "console.log(\"Learning Document Chunking Strategies!\");"
+      },
+      {
+        "slug": "llm-14",
+        "title": "14. OpenAI API Integration",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding OpenAI API Integration in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test OpenAI API Integration using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// OpenAI API Integration Example\nconsole.log(\"OpenAI API Integration\");",
+        "tryItDefault": "console.log(\"Learning OpenAI API Integration!\");"
+      },
+      {
+        "slug": "llm-15",
+        "title": "15. Gemini API Integration",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Gemini API Integration in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Gemini API Integration using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Gemini API Integration Example\nconsole.log(\"Gemini API Integration\");",
+        "tryItDefault": "console.log(\"Learning Gemini API Integration!\");"
+      },
+      {
+        "slug": "llm-16",
+        "title": "16. LangChain Basics",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding LangChain Basics in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test LangChain Basics using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// LangChain Basics Example\nconsole.log(\"LangChain Basics\");",
+        "tryItDefault": "console.log(\"Learning LangChain Basics!\");"
+      },
+      {
+        "slug": "llm-17",
+        "title": "17. AI Agents & Function Calling",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding AI Agents & Function Calling in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test AI Agents & Function Calling using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// AI Agents & Function Calling Example\nconsole.log(\"AI Agents & Function Calling\");",
+        "tryItDefault": "console.log(\"Learning AI Agents & Function Calling!\");"
+      },
+      {
+        "slug": "llm-18",
+        "title": "18. Fine-Tuning vs RAG",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Fine-Tuning vs RAG in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Fine-Tuning vs RAG using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Fine-Tuning vs RAG Example\nconsole.log(\"Fine-Tuning vs RAG\");",
+        "tryItDefault": "console.log(\"Learning Fine-Tuning vs RAG!\");"
+      },
+      {
+        "slug": "llm-19",
+        "title": "19. Prompt Injection & Security",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Prompt Injection & Security in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Prompt Injection & Security using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Prompt Injection & Security Example\nconsole.log(\"Prompt Injection & Security\");",
+        "tryItDefault": "console.log(\"Learning Prompt Injection & Security!\");"
+      },
+      {
+        "slug": "llm-20",
+        "title": "20. Evaluating LLM Outputs",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Evaluating LLM Outputs in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Evaluating LLM Outputs using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Evaluating LLM Outputs Example\nconsole.log(\"Evaluating LLM Outputs\");",
+        "tryItDefault": "console.log(\"Learning Evaluating LLM Outputs!\");"
+      },
+      {
+        "slug": "llm-21",
+        "title": "21. Running LLMs Locally (Ollama)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Running LLMs Locally (Ollama) in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Running LLMs Locally (Ollama) using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Running LLMs Locally (Ollama) Example\nconsole.log(\"Running LLMs Locally (Ollama)\");",
+        "tryItDefault": "console.log(\"Learning Running LLMs Locally (Ollama)!\");"
+      },
+      {
+        "slug": "llm-22",
+        "title": "22. Open Source Models (Llama 3)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Open Source Models (Llama 3) in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Open Source Models (Llama 3) using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Open Source Models (Llama 3) Example\nconsole.log(\"Open Source Models (Llama 3)\");",
+        "tryItDefault": "console.log(\"Learning Open Source Models (Llama 3)!\");"
+      },
+      {
+        "slug": "llm-23",
+        "title": "23. Cost Optimization for APIs",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Cost Optimization for APIs in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Cost Optimization for APIs using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Cost Optimization for APIs Example\nconsole.log(\"Cost Optimization for APIs\");",
+        "tryItDefault": "console.log(\"Learning Cost Optimization for APIs!\");"
+      },
+      {
+        "slug": "llm-24",
+        "title": "24. Multimodal Prompts (Vision)",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Multimodal Prompts (Vision) in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Multimodal Prompts (Vision) using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Multimodal Prompts (Vision) Example\nconsole.log(\"Multimodal Prompts (Vision)\");",
+        "tryItDefault": "console.log(\"Learning Multimodal Prompts (Vision)!\");"
+      },
+      {
+        "slug": "llm-25",
+        "title": "25. Capstone: Custom AI Assistant",
+        "explanationHtml": "\n  <h4>📌 What is it?</h4>\n  <ul>\n    <li>Understanding Capstone: Custom AI Assistant in Large Language Model applications.</li>\n  </ul>\n  <h4>💡 Daily Life Example</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4>🎯 Real-World Usage</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4>⚠️ Common Mistake</h4>\n  <ul>\n    <li>❌ Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4>📝 Quick Task</h4>\n  <ul>\n    <li>Test Capstone: Custom AI Assistant using an AI API or playground environment.</li>\n  </ul>\n",
+        "codeExample": "// Capstone: Custom AI Assistant Example\nconsole.log(\"Capstone: Custom AI Assistant\");",
+        "tryItDefault": "console.log(\"Learning Capstone: Custom AI Assistant!\");"
       }
     ]
   }
