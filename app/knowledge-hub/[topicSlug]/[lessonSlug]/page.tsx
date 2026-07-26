@@ -122,7 +122,7 @@ export default function LessonPage(props: { params: Promise<{ topicSlug: string;
           />
 
           {/* Code Example */}
-          {lesson.codeExample && (
+          {lesson.codeExample && lesson.codeExample.trim() && (
             <div className="mb-10">
               <h2 className="text-lg font-bold text-[var(--foreground)] mb-4">Code Example</h2>
               <CodeBlock code={lesson.codeExample} />
@@ -130,7 +130,7 @@ export default function LessonPage(props: { params: Promise<{ topicSlug: string;
           )}
 
           {/* Try It */}
-          {lesson.tryItDefault && (
+          {lesson.tryItDefault && lesson.tryItDefault.trim() && (
             <div className="mb-12">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-lg font-bold text-[var(--foreground)]">Try It Yourself</h2>

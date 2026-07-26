@@ -178,7 +178,7 @@ export default function KnowledgeHubAdminPage() {
                             <p className="text-sm font-medium text-[var(--foreground)]">{lesson.title}</p>
                             <p className="text-xs text-[var(--text-muted)]">/{lesson.slug}</p>
                           </div>
-                          {lesson.codeExample && (
+                          {lesson.codeExample && lesson.codeExample.trim() && (
                             <span title="Has code example" className="shrink-0 flex">
                               <Code2 size={14} className="text-[var(--text-muted)]" />
                             </span>

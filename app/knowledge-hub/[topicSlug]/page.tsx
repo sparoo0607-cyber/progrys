@@ -81,12 +81,12 @@ export default function TopicPage(props: { params: Promise<{ topicSlug: string }
                   <span className="flex items-center gap-1 text-xs text-[var(--text-muted)]">
                     <BookOpen size={12} /> Lesson
                   </span>
-                  {lesson.codeExample && (
+                  {lesson.codeExample && lesson.codeExample.trim() && (
                     <span className="flex items-center gap-1 text-xs text-[var(--text-muted)]">
                       <Code2 size={12} /> Code example
                     </span>
                   )}
-                  {lesson.tryItDefault && (
+                  {lesson.tryItDefault && lesson.tryItDefault.trim() && (
                     <Badge className="text-[10px] px-1.5 py-0 h-4 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 border-transparent">
                       Try it
                     </Badge>
