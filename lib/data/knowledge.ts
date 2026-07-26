@@ -1424,4 +1424,737 @@ JOIN products p ON o.product_id = p.id;`,
       },
     ],
   },
+,
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // TOPIC 6 — TypeScript
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    id: "t6",
+    slug: "typescript",
+    title: "TypeScript",
+    description: "Add type safety to JavaScript — catch errors before your code runs.",
+    iconName: "FileCode",
+    lessons: [
+      {
+        id: "ts-1",
+        slug: "what-is-typescript",
+        title: "What is TypeScript?",
+        explanationHtml: `
+<h3>Definition</h3>
+<p><strong>TypeScript</strong> is a syntactic superset of JavaScript which adds <strong>static typing</strong>.</p>
+<p>It allows you to define what types of data (string, number, object, etc.) your variables and functions should use. This helps catch errors <em>during development</em> rather than at runtime.</p>
+<h3>Why Use TypeScript?</h3>
+<ul>
+  <li><strong>Error Prevention:</strong> Catches common bugs (like typos or passing the wrong data type) before you even run the code.</li>
+  <li><strong>Better Autocomplete:</strong> Editors like VS Code provide much better intellisense when they know your types.</li>
+  <li><strong>Easier Refactoring:</strong> Changing large codebases is safer because the compiler will warn you if you break something.</li>
+</ul>
+<div class="knowledge-tip">
+  <strong>💡 Note:</strong> Browsers cannot run TypeScript directly. It must be <strong>compiled</strong> (transpiled) into plain JavaScript first.
+</div>`,
+        codeExample: `// Standard JavaScript (allows changing types)
+let myVar = "Hello";
+myVar = 42; // Valid in JS, but might cause bugs
+
+// TypeScript (Static Typing)
+let myText: string = "Hello";
+// myText = 42; // ❌ Error: Type 'number' is not assignable to type 'string'
+
+function greet(name: string): string {
+  return "Hello " + name;
+}
+
+greet("Alice"); // ✅ Works
+// greet(123);  // ❌ Error: Argument of type 'number' is not assignable to parameter of type 'string'
+`,
+      },
+      {
+        id: "ts-2",
+        slug: "interfaces-and-types",
+        title: "Interfaces and Types",
+        explanationHtml: `
+<h3>Defining Custom Types</h3>
+<p>In TypeScript, you can define the shape of an object using <code>interface</code> or <code>type</code>.</p>
+<ul>
+  <li><strong>Interface:</strong> Best for defining object structures and classes. Can be extended easily.</li>
+  <li><strong>Type Alias:</strong> More versatile. Can be used for primitives, unions, and complex types.</li>
+</ul>
+<h3>Union Types</h3>
+<p>You can allow a variable to be one of multiple types using the <code>|</code> (pipe) symbol. This is called a Union Type.</p>
+<div class="knowledge-tip">
+  <strong>💡 Tip:</strong> For most object shapes in modern React/TS development, <code>type</code> and <code>interface</code> are nearly identical. Use <code>interface</code> for object definitions by default.
+</div>`,
+        codeExample: `// Using an Interface
+interface User {
+  id: number;
+  name: string;
+  isAdmin?: boolean; // The '?' makes this optional
+}
+
+const user1: User = {
+  id: 1,
+  name: "John"
+  // isAdmin is optional
+};
+
+// Using a Type Alias
+type ID = number | string; // Union type
+
+let userId: ID;
+userId = 101;    // ✅ Valid
+userId = "U-123"; // ✅ Valid
+// userId = true;   // ❌ Error
+
+// Type definition for a function
+type MathOperation = (a: number, b: number) => number;
+
+const add: MathOperation = (x, y) => x + y;
+`,
+      }
+    ]
+  },
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // TOPIC 7 — MongoDB
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    id: "t7",
+    slug: "mongodb",
+    title: "MongoDB",
+    description: "Work with NoSQL databases — store and query flexible, document-based data.",
+    iconName: "Database",
+    lessons: [
+      {
+        id: "mongo-1",
+        slug: "nosql-and-documents",
+        title: "NoSQL and Documents",
+        explanationHtml: `
+<h3>What is MongoDB?</h3>
+<p><strong>MongoDB</strong> is a NoSQL database. Unlike SQL databases (like MySQL or Postgres) that store data in rigid tables, MongoDB stores data in flexible, JSON-like <strong>documents</strong>.</p>
+<h3>Key Concepts</h3>
+<ul>
+  <li><strong>Database:</strong> The physical container for collections.</li>
+  <li><strong>Collection:</strong> A group of MongoDB documents (equivalent to an SQL Table).</li>
+  <li><strong>Document:</strong> A set of key-value pairs (equivalent to an SQL Row). Documents have dynamic schemas.</li>
+</ul>
+<h3>Why Use MongoDB?</h3>
+<ul>
+  <li><strong>Flexibility:</strong> You don't need to define a rigid schema before inserting data.</li>
+  <li><strong>Scalability:</strong> Built to scale out across multiple servers easily.</li>
+  <li><strong>JSON-friendly:</strong> Works seamlessly with JavaScript/Node.js applications.</li>
+</ul>`,
+        codeExample: `// A typical MongoDB Document (JSON/BSON format)
+{
+  "_id": ObjectId("507f1f77bcf86cd799439011"),
+  "username": "johndoe",
+  "email": "john@example.com",
+  "age": 28,
+  "hobbies": ["reading", "gaming"],
+  "address": {
+    "city": "New York",
+    "zip": "10001"
+  }
+}
+// Notice how it can store arrays and nested objects directly!
+`,
+      },
+      {
+        id: "mongo-2",
+        slug: "crud-operations",
+        title: "CRUD Operations",
+        explanationHtml: `
+<h3>Basic Database Operations</h3>
+<p>CRUD stands for <strong>Create, Read, Update, Delete</strong>. In MongoDB, you perform these using specific methods on your collections.</p>
+<ul>
+  <li><strong>Create:</strong> <code>insertOne()</code>, <code>insertMany()</code></li>
+  <li><strong>Read:</strong> <code>find()</code>, <code>findOne()</code></li>
+  <li><strong>Update:</strong> <code>updateOne()</code>, <code>updateMany()</code></li>
+  <li><strong>Delete:</strong> <code>deleteOne()</code>, <code>deleteMany()</code></li>
+</ul>
+<div class="knowledge-tip">
+  <strong>💡 Tip:</strong> In Node.js, we typically use an ODM (Object Data Modeling) library like <strong>Mongoose</strong> to enforce some structure and make queries easier.
+</div>`,
+        codeExample: `// Find all users over age 18
+db.users.find({ age: { $gt: 18 } })
+
+// Insert a new user
+db.users.insertOne({
+  name: "Alice",
+  age: 25,
+  status: "active"
+})
+
+// Update a user's status
+db.users.updateOne(
+  { name: "Alice" }, // Filter
+  { $set: { status: "inactive" } } // Update action
+)
+
+// Delete a user
+db.users.deleteOne({ name: "Alice" })
+`,
+      }
+    ]
+  },
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // TOPIC 8 — Tailwind CSS
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    id: "t8",
+    slug: "tailwind",
+    title: "Tailwind CSS",
+    description: "Build modern UIs rapidly using utility-first CSS classes.",
+    iconName: "Wind",
+    lessons: [
+      {
+        id: "tailwind-1",
+        slug: "utility-first-css",
+        title: "Utility-First CSS",
+        explanationHtml: `
+<h3>What is Tailwind CSS?</h3>
+<p><strong>Tailwind CSS</strong> is a utility-first CSS framework. Instead of writing custom CSS classes like <code>.btn-primary</code>, you construct designs by composing tiny, single-purpose classes directly in your HTML.</p>
+<h3>Benefits of Tailwind</h3>
+<ul>
+  <li><strong>No Naming Conventions:</strong> Stop wasting time thinking up class names.</li>
+  <li><strong>Smaller CSS Bundles:</strong> Tailwind purges unused classes, resulting in tiny file sizes.</li>
+  <li><strong>Faster Development:</strong> Build complex layouts without ever leaving your HTML file.</li>
+</ul>
+<div class="knowledge-tip">
+  <strong>💡 Tip:</strong> At first, your HTML might look cluttered with many classes, but the speed and consistency you gain are well worth it!
+</div>`,
+        codeExample: `<!-- Traditional CSS Approach -->
+<style>
+  .chat-notification {
+    display: flex;
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+</style>
+<div class="chat-notification">...</div>
+
+<!-- Tailwind CSS Approach -->
+<div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
+  <div>
+    <div class="text-xl font-medium text-black">ChitChat</div>
+    <p class="text-slate-500">You have a new message!</p>
+  </div>
+</div>
+`,
+      },
+      {
+        id: "tailwind-2",
+        slug: "responsive-design",
+        title: "Responsive Design",
+        explanationHtml: `
+<h3>Mobile-First Approach</h3>
+<p>Tailwind uses a mobile-first breakpoint system. Unprefixed utilities take effect on all screen sizes, while prefixed utilities (like <code>md:</code> or <code>lg:</code>) apply to specific breakpoints and larger.</p>
+<h3>Standard Breakpoints</h3>
+<ul>
+  <li><code>sm:</code> - 640px and up (Tablets)</li>
+  <li><code>md:</code> - 768px and up (Small laptops)</li>
+  <li><code>lg:</code> - 1024px and up (Desktops)</li>
+  <li><code>xl:</code> - 1280px and up (Large monitors)</li>
+</ul>`,
+        codeExample: `<!-- Responsive grid layout -->
+<!-- 1 column on mobile, 2 on tablet, 4 on desktop -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+  <div class="bg-blue-500 p-4">Item 1</div>
+  <div class="bg-blue-500 p-4">Item 2</div>
+  <div class="bg-blue-500 p-4">Item 3</div>
+  <div class="bg-blue-500 p-4">Item 4</div>
+</div>
+
+<!-- Responsive text alignment and color -->
+<p class="text-center md:text-left text-red-500 hover:text-red-700">
+  This text changes alignment on medium screens.
+</p>
+`,
+      }
+    ]
+  },
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // TOPIC 9 — Data Structures
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    id: "t9",
+    slug: "data-structures",
+    title: "Data Structures",
+    description: "Understand arrays, stacks, queues, linked lists, and trees.",
+    iconName: "Network",
+    lessons: [
+      {
+        id: "dsa-1",
+        slug: "stacks-and-queues",
+        title: "Stacks and Queues",
+        explanationHtml: `
+<h3>What are Data Structures?</h3>
+<p>A data structure is a specialized format for organizing, processing, retrieving and storing data.</p>
+<h3>Stack (LIFO)</h3>
+<p>A Stack follows the <strong>Last In, First Out</strong> (LIFO) principle. Think of it like a stack of plates — you add to the top, and you remove from the top.</p>
+<ul>
+  <li><strong>Push:</strong> Add an item to the top.</li>
+  <li><strong>Pop:</strong> Remove the top item.</li>
+</ul>
+<h3>Queue (FIFO)</h3>
+<p>A Queue follows the <strong>First In, First Out</strong> (FIFO) principle. Think of it like a line at a grocery store — the first person in line is the first to be served.</p>
+<ul>
+  <li><strong>Enqueue:</strong> Add an item to the back of the line.</li>
+  <li><strong>Dequeue:</strong> Remove the item from the front.</li>
+</ul>`,
+        codeExample: `// Implementing a Stack in JavaScript using an Array
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+  push(element) {
+    this.items.push(element);
+  }
+  pop() {
+    if (this.items.length === 0) return "Underflow";
+    return this.items.pop();
+  }
+}
+
+let stack = new Stack();
+stack.push(10);
+stack.push(20);
+console.log(stack.pop()); // 20
+`,
+      },
+      {
+        id: "dsa-2",
+        slug: "hash-tables",
+        title: "Hash Tables",
+        explanationHtml: `
+<h3>What is a Hash Table?</h3>
+<p>A Hash Table (or Hash Map) is a data structure that implements an associative array abstract data type, a structure that can map <strong>keys to values</strong>.</p>
+<p>It uses a <strong>hash function</strong> to compute an index into an array of buckets or slots, from which the desired value can be found.</p>
+<h3>Why Use Hash Tables?</h3>
+<ul>
+  <li><strong>Extremely Fast:</strong> Data retrieval (lookup), insertion, and deletion are extremely fast — typically O(1) time complexity on average.</li>
+</ul>
+<div class="knowledge-tip">
+  <strong>💡 Note:</strong> In JavaScript, standard <code>Objects</code> and the built-in <code>Map</code> data structure function essentially as hash tables.
+</div>`,
+        codeExample: `// Using a JavaScript Map as a Hash Table
+const userRoles = new Map();
+
+// Inserting data
+userRoles.set('alice123', 'admin');
+userRoles.set('bob456', 'editor');
+
+// Fast Lookup O(1)
+console.log(userRoles.get('alice123')); // 'admin'
+
+// Checking existence
+console.log(userRoles.has('charlie789')); // false
+
+// Deletion
+userRoles.delete('bob456');
+`,
+      }
+    ]
+  },
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // TOPIC 10 — Linux Commands
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    id: "t10",
+    slug: "linux",
+    title: "Linux Commands",
+    description: "Navigate the terminal, manage files, and run commands like a pro.",
+    iconName: "TerminalSquare",
+    lessons: [
+      {
+        id: "linux-1",
+        slug: "file-system-navigation",
+        title: "File System Navigation",
+        explanationHtml: `
+<h3>The Command Line</h3>
+<p>The Linux command line (terminal) is a text interface to your computer. It allows you to perform tasks much faster than using a graphical user interface (GUI).</p>
+<h3>Basic Navigation Commands</h3>
+<ul>
+  <li><code>pwd</code> : Print Working Directory (shows where you are).</li>
+  <li><code>ls</code> : List contents of a directory.</li>
+  <li><code>cd</code> : Change Directory.</li>
+</ul>
+<h3>Absolute vs Relative Paths</h3>
+<ul>
+  <li><strong>Absolute:</strong> Starts from the root directory <code>/</code> (e.g., <code>/home/user/documents</code>).</li>
+  <li><strong>Relative:</strong> Starts from your current directory (e.g., <code>../downloads</code>).</li>
+</ul>`,
+        codeExample: `# Print current directory
+$ pwd
+/home/user/desktop
+
+# List files and folders
+$ ls
+project-folder  notes.txt
+
+# List files with detailed information and hidden files
+$ ls -la
+
+# Go into a folder
+$ cd project-folder
+
+# Go up one directory level
+$ cd ..
+
+# Go to your home directory instantly
+$ cd ~
+`,
+      },
+      {
+        id: "linux-2",
+        slug: "file-management",
+        title: "File Management",
+        explanationHtml: `
+<h3>Creating and Removing Files</h3>
+<p>Managing files and directories is a daily task in the terminal.</p>
+<ul>
+  <li><code>mkdir</code> : Make directory (create a folder).</li>
+  <li><code>touch</code> : Create a new empty file.</li>
+  <li><code>rm</code> : Remove a file.</li>
+  <li><code>rm -r</code> : Remove a directory recursively.</li>
+  <li><code>cp</code> : Copy files or directories.</li>
+  <li><code>mv</code> : Move (or rename) files or directories.</li>
+</ul>
+<div class="knowledge-note">
+  <strong>📌 Warning:</strong> Be very careful with the <code>rm</code> command, especially with the <code>-r</code> (recursive) and <code>-f</code> (force) flags. There is no recycling bin in the terminal!
+</div>`,
+        codeExample: `# Create a new folder
+$ mkdir my-website
+
+# Create an empty file
+$ touch index.html
+
+# Copy a file
+$ cp index.html about.html
+
+# Move or Rename a file
+$ mv about.html contact.html
+
+# Delete a file
+$ rm contact.html
+
+# Delete a folder and all its contents
+$ rm -rf my-website
+`,
+      }
+    ]
+  },
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // TOPIC 11 — C Programming
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    id: "t11",
+    slug: "c-programming",
+    title: "C Programming",
+    description: "Learn the foundational language behind operating systems, embedded systems, and more.",
+    iconName: "Cpu",
+    lessons: [
+      {
+        id: "c-1",
+        slug: "introduction-to-c",
+        title: "Introduction to C",
+        explanationHtml: `
+<h3>What is C?</h3>
+<p><strong>C</strong> is a general-purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion. By design, C provides constructs that map efficiently to typical machine instructions.</p>
+<h3>Why Learn C?</h3>
+<ul>
+  <li><strong>Foundation:</strong> Many modern languages (C++, Java, Python, JavaScript) borrow heavily from C syntax.</li>
+  <li><strong>Performance:</strong> C is incredibly fast and close to the hardware.</li>
+  <li><strong>Use Cases:</strong> Operating systems (Linux, Windows kernel), embedded systems, database engines (MySQL), and high-performance applications.</li>
+</ul>`,
+        codeExample: `#include <stdio.h>
+
+// The main function is the entry point of every C program
+int main() {
+    // printf is used to print text to the console
+    printf("Hello, World!\\n");
+    
+    // Return 0 indicates successful execution
+    return 0;
+}
+`,
+      },
+      {
+        id: "c-2",
+        slug: "pointers-basics",
+        title: "Pointers Basics",
+        explanationHtml: `
+<h3>What are Pointers?</h3>
+<p>A <strong>pointer</strong> is a variable whose value is the <strong>memory address</strong> of another variable.</p>
+<p>Pointers are considered one of the most powerful—and challenging—features of C. They allow for dynamic memory allocation and efficient array/string manipulation.</p>
+<h3>Key Operators</h3>
+<ul>
+  <li><code>&</code> (Address-of operator): Returns the memory address of its operand.</li>
+  <li><code>*</code> (Dereference operator): Returns the value stored at the address kept in the pointer.</li>
+</ul>`,
+        codeExample: `#include <stdio.h>
+
+int main() {
+    int age = 25;       // A normal integer variable
+    int *ptr = &age;    // A pointer variable storing the address of 'age'
+
+    printf("Value of age: %d\\n", age);           // Outputs 25
+    printf("Memory address of age: %p\\n", ptr);  // Outputs address (e.g., 0x7ffe...)
+    
+    // Dereferencing the pointer to get the value
+    printf("Value stored at ptr: %d\\n", *ptr);   // Outputs 25
+    
+    return 0;
+}
+`,
+      }
+    ]
+  },
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // TOPIC 12 — Java Basics
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    id: "t12",
+    slug: "java",
+    title: "Java Basics",
+    description: "Learn the enterprise-grade, object-oriented language used by millions of developers.",
+    iconName: "Coffee",
+    lessons: [
+      {
+        id: "java-1",
+        slug: "java-hello-world",
+        title: "Hello World and OOP",
+        explanationHtml: `
+<h3>What is Java?</h3>
+<p><strong>Java</strong> is a high-level, class-based, object-oriented programming language. It is designed to have as few implementation dependencies as possible, summarized by the mantra: <em>"Write once, run anywhere"</em> (WORA).</p>
+<h3>Key Features</h3>
+<ul>
+  <li><strong>Object-Oriented:</strong> Everything in Java is an Object (except primitives).</li>
+  <li><strong>Platform Independent:</strong> Java code compiles to bytecode, which runs on the Java Virtual Machine (JVM) on any OS.</li>
+  <li><strong>Strongly Typed:</strong> You must declare the type of all variables.</li>
+</ul>`,
+        codeExample: `// Every application begins with a class name that matches the filename
+public class Main {
+    
+    // The main method: entry point of the program
+    public static void main(String[] args) {
+        
+        // Print statement
+        System.out.println("Hello, World!");
+        
+        // Variable declaration (Strongly typed)
+        int num = 10;
+        String name = "Alice";
+    }
+}
+`,
+      },
+      {
+        id: "java-2",
+        slug: "classes-and-objects",
+        title: "Classes and Objects",
+        explanationHtml: `
+<h3>Object-Oriented Programming (OOP)</h3>
+<p>Java is heavily based on OOP concepts.</p>
+<ul>
+  <li><strong>Class:</strong> A blueprint or template for creating objects.</li>
+  <li><strong>Object:</strong> An instance of a class.</li>
+</ul>
+<h3>Constructors and Methods</h3>
+<ul>
+  <li><strong>Constructor:</strong> A special method used to initialize objects. It has the same name as the class.</li>
+  <li><strong>Method:</strong> Functions defined inside a class that describe the behaviors of an object.</li>
+</ul>`,
+        codeExample: `// Class definition
+class Car {
+    String color;
+    int year;
+
+    // Constructor
+    public Car(String c, int y) {
+        color = c;
+        year = y;
+    }
+
+    // Method
+    public void startEngine() {
+        System.out.println("The " + color + " car is starting.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating an object (Instance) of the Car class
+        Car myCar = new Car("Red", 2023);
+        
+        // Calling a method on the object
+        myCar.startEngine(); // Outputs: The Red car is starting.
+    }
+}
+`,
+      }
+    ]
+  },
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // TOPIC 13 — PHP Basics
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    id: "t13",
+    slug: "php",
+    title: "PHP Basics",
+    description: "Learn the server-side language that powers WordPress and millions of websites.",
+    iconName: "Server",
+    lessons: [
+      {
+        id: "php-1",
+        slug: "what-is-php",
+        title: "What is PHP?",
+        explanationHtml: `
+<h3>Definition</h3>
+<p><strong>PHP</strong> (Hypertext Preprocessor) is a widely-used open source general-purpose scripting language that is especially suited for web development and can be embedded into HTML.</p>
+<h3>How PHP Works</h3>
+<p>Unlike JavaScript, which usually runs in the browser (client-side), PHP runs on the <strong>web server</strong>. The server processes the PHP code and returns pure HTML to the client's browser.</p>
+<div class="knowledge-tip">
+  <strong>💡 Tip:</strong> PHP code is enclosed in special start and end processing instructions <code>&lt;?php</code> and <code>?&gt;</code>.
+</div>`,
+        codeExample: `<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First PHP Page</h1>
+
+<?php
+  // PHP code goes here
+  echo "Hello World!";
+  
+  // Variables in PHP start with a $ sign
+  $greeting = "Welcome to PHP";
+  echo "<p>" . $greeting . "</p>"; // The dot (.) is used for string concatenation
+?>
+
+</body>
+</html>
+`,
+      },
+      {
+        id: "php-2",
+        slug: "php-arrays-and-loops",
+        title: "Arrays and Loops",
+        explanationHtml: `
+<h3>Arrays in PHP</h3>
+<p>PHP has three types of arrays:</p>
+<ul>
+  <li><strong>Indexed arrays:</strong> Arrays with a numeric index.</li>
+  <li><strong>Associative arrays:</strong> Arrays with named keys (like dictionaries or objects in other languages).</li>
+  <li><strong>Multidimensional arrays:</strong> Arrays containing one or more arrays.</li>
+</ul>
+<h3>The foreach Loop</h3>
+<p>The <code>foreach</code> loop is specifically designed to loop through arrays easily in PHP.</p>`,
+        codeExample: `<?php
+// Indexed Array
+$colors = array("Red", "Green", "Blue");
+
+// Iterating over indexed array
+foreach ($colors as $color) {
+  echo $color . "<br>";
+}
+
+// Associative Array
+$ages = array(
+  "Peter" => 35,
+  "Ben" => 37,
+  "Joe" => 43
+);
+
+// Iterating over associative array
+foreach ($ages as $name => $age) {
+  echo "Name: " . $name . ", Age: " . $age . "<br>";
+}
+?>
+`,
+      }
+    ]
+  },
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // TOPIC 14 — Bootstrap
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  {
+    id: "t14",
+    slug: "bootstrap",
+    title: "Bootstrap",
+    description: "Build responsive, mobile-first websites quickly with pre-built components.",
+    iconName: "Layout",
+    lessons: [
+      {
+        id: "bs-1",
+        slug: "bootstrap-grid",
+        title: "The Grid System",
+        explanationHtml: `
+<h3>What is Bootstrap?</h3>
+<p><strong>Bootstrap</strong> is the world's most popular front-end open source toolkit. It provides pre-styled CSS classes and JavaScript plugins to build responsive sites quickly.</p>
+<h3>The Grid System</h3>
+<p>Bootstrap’s grid system uses a series of containers, rows, and columns to layout and align content. It’s built with flexbox and is fully responsive.</p>
+<ul>
+  <li><strong>Container:</strong> Wraps the site content and centers it.</li>
+  <li><strong>Row:</strong> A wrapper for columns.</li>
+  <li><strong>Columns:</strong> The grid consists of up to 12 columns across the page.</li>
+</ul>`,
+        codeExample: `<!-- Include Bootstrap via CDN in your head tag -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+<div class="container">
+  <!-- A Row -->
+  <div class="row">
+    <!-- Columns that take up equal width -->
+    <div class="col">Column 1</div>
+    <div class="col">Column 2</div>
+    <div class="col">Column 3</div>
+  </div>
+  
+  <div class="row mt-4">
+    <!-- Columns specifying out of 12 -->
+    <div class="col-8 bg-primary text-white p-3">Takes up 8/12</div>
+    <div class="col-4 bg-secondary text-white p-3">Takes up 4/12</div>
+  </div>
+</div>
+`,
+      },
+      {
+        id: "bs-2",
+        slug: "bootstrap-components",
+        title: "Pre-built Components",
+        explanationHtml: `
+<h3>Ready-to-Use UI</h3>
+<p>Bootstrap shines because it offers dozens of pre-styled components. Instead of writing custom CSS for standard UI elements, you just apply Bootstrap classes.</p>
+<h3>Common Components</h3>
+<ul>
+  <li><strong>Buttons:</strong> <code>btn</code>, <code>btn-primary</code>, <code>btn-danger</code></li>
+  <li><strong>Cards:</strong> Flexible content containers.</li>
+  <li><strong>Alerts:</strong> Contextual feedback messages.</li>
+  <li><strong>Navbars:</strong> Responsive navigation headers.</li>
+</ul>`,
+        codeExample: `<!-- Bootstrap Button -->
+<button type="button" class="btn btn-success">Success Button</button>
+
+<!-- Bootstrap Alert -->
+<div class="alert alert-warning mt-3" role="alert">
+  This is a warning alert—check it out!
+</div>
+
+<!-- Bootstrap Card -->
+<div class="card mt-4" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title.</p>
+    <a href="#" class="card-link">Card link</a>
+  </div>
+</div>
+`,
+      }
+    ]
+  }
+
 ];
