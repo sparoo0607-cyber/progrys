@@ -8,182 +8,182 @@
       {
         "slug": "js-intro",
         "title": "1. What is JavaScript?",
-        "explanationHtml": "\n      <h4>📌 What is JavaScript?</h4>\n      <ul>\n        <li><strong>Language of the Web:</strong> Makes static web pages interactive.</li>\n        <li>Runs directly in your browser without downloading extra software.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>If HTML is the bricks of a house and CSS is the paint, JavaScript is the electrical wiring that turns on lights when you flip a switch!</li>\n      </ul>\n      <h4>🎯 Where is it Used?</h4>\n      <ul>\n        <li>Clicking \"Like\" on Instagram, live chat popups, YouTube video players, and shopping carts.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Open your browser console (F12) and type <code>console.log(\"JavaScript is active!\")</code>.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> What is JavaScript?</h4>\n      <ul>\n        <li><strong>Language of the Web:</strong> Makes static web pages interactive.</li>\n        <li>Runs directly in your browser without downloading extra software.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>If HTML is the bricks of a house and CSS is the paint, JavaScript is the electrical wiring that turns on lights when you flip a switch!</li>\n      </ul>\n      <h4> Where is it Used?</h4>\n      <ul>\n        <li>Clicking \"Like\" on Instagram, live chat popups, YouTube video players, and shopping carts.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n      <ul>\n        <li>Open your browser console (F12) and type <code>console.log(\"JavaScript is active!\")</code>.</li>\n      </ul>",
         "codeExample": "console.log(\"Welcome to JavaScript!\");",
         "tryItDefault": "console.log(\"JavaScript makes web pages alive!\")"
       },
       {
         "slug": "js-hello-world",
         "title": "2. First Program (Hello World)",
-        "explanationHtml": "\n      <h4>📌 Displaying Messages</h4>\n      <ul>\n        <li><code>console.log()</code>: Prints messages inside developer tools.</li>\n        <li><code>alert()</code>: Creates a popup notification box on the browser window.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li><code>console.log()</code> is like whispering a reminder to yourself. <code>alert()</code> is like an alarm clock ringing out loud.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Displaying Messages</h4>\n      <ul>\n        <li><code>console.log()</code>: Prints messages inside developer tools.</li>\n        <li><code>alert()</code>: Creates a popup notification box on the browser window.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li><code>console.log()</code> is like whispering a reminder to yourself. <code>alert()</code> is like an alarm clock ringing out loud.</li>\n      </ul>",
         "codeExample": "console.log(\"Hello, World!\");\n// alert(\"Hello from JavaScript!\");",
         "tryItDefault": "console.log(\"Hello, World!\")"
       },
       {
         "slug": "js-syntax",
         "title": "3. JavaScript Syntax & Comments",
-        "explanationHtml": "\n      <h4>📌 Syntax Rules</h4>\n      <ul>\n        <li><strong>Case-Sensitive:</strong> <code>myVar</code> and <code>myvar</code> are completely different!</li>\n        <li><strong>Single Line Comment:</strong> Starts with <code>//</code>.</li>\n        <li><strong>Multi-Line Comment:</strong> Wrapped in <code>/* ... */</code>.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Comments are like sticky notes left on the fridge for your family—the computer ignores them, but humans read them.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Syntax Rules</h4>\n      <ul>\n        <li><strong>Case-Sensitive:</strong> <code>myVar</code> and <code>myvar</code> are completely different!</li>\n        <li><strong>Single Line Comment:</strong> Starts with <code>//</code>.</li>\n        <li><strong>Multi-Line Comment:</strong> Wrapped in <code>/* ... */</code>.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Comments are like sticky notes left on the fridge for your family—the computer ignores them, but humans read them.</li>\n      </ul>",
         "codeExample": "// This is a single line comment\nlet price = 100; // Inline comment\n\n/* This is a \nmulti-line comment */\nconsole.log(price);",
         "tryItDefault": "// Add your comment here\nconsole.log(\"Comments are easy!\")"
       },
       {
         "slug": "js-variables",
         "title": "4. Variables (let, const, var)",
-        "explanationHtml": "\n      <h4>📌 Named Containers</h4>\n      <ul>\n        <li><code>const</code>: Use when value will <strong>NEVER change</strong> (Default!).</li>\n        <li><code>let</code>: Use when value <strong>WILL change</strong> later.</li>\n        <li><code>var</code>: Old way of writing variables (Avoid in modern code!).</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li><code>const</code> = Your Date of Birth (Fixed). <code>let</code> = Your Current Weight (Can change).</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Named Containers</h4>\n      <ul>\n        <li><code>const</code>: Use when value will <strong>NEVER change</strong> (Default!).</li>\n        <li><code>let</code>: Use when value <strong>WILL change</strong> later.</li>\n        <li><code>var</code>: Old way of writing variables (Avoid in modern code!).</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li><code>const</code> = Your Date of Birth (Fixed). <code>let</code> = Your Current Weight (Can change).</li>\n      </ul>",
         "codeExample": "const birthYear = 2000;\nlet age = 24;\nage = 25; // Allowed!\n\nconsole.log(birthYear, age);",
         "tryItDefault": "const appName = \"Progrys\";\nlet usersCount = 100;\nconsole.log(appName, usersCount)"
       },
       {
         "slug": "js-data-types",
         "title": "5. Data Types Overview",
-        "explanationHtml": "\n      <h4>📌 Primitive Types</h4>\n      <ul>\n        <li><code>String</code>: Text wrapped in quotes (\"Hello\").</li>\n        <li><code>Number</code>: Numbers with or without decimals (25, 3.14).</li>\n        <li><code>Boolean</code>: <code>true</code> or <code>false</code> switches.</li>\n        <li><code>Undefined</code>: Empty variable with no value assigned yet.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>String = Name (\"Rahul\"), Number = Wallet Cash ($50), Boolean = TV Power (ON/OFF).</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Primitive Types</h4>\n      <ul>\n        <li><code>String</code>: Text wrapped in quotes (\"Hello\").</li>\n        <li><code>Number</code>: Numbers with or without decimals (25, 3.14).</li>\n        <li><code>Boolean</code>: <code>true</code> or <code>false</code> switches.</li>\n        <li><code>Undefined</code>: Empty variable with no value assigned yet.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>String = Name (\"Rahul\"), Number = Wallet Cash ($50), Boolean = TV Power (ON/OFF).</li>\n      </ul>",
         "codeExample": "let name = \"Rahul\";\nlet cash = 50;\nlet isTvOn = true;\n\nconsole.log(typeof name);\nconsole.log(typeof cash);",
         "tryItDefault": "let score = 99;\nprint(typeof score);"
       },
       {
         "slug": "js-operators",
         "title": "6. Math & Comparison Operators",
-        "explanationHtml": "\n      <h4>📌 Essential Symbols</h4>\n      <ul>\n        <li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (Remainder).</li>\n        <li><code>===</code>: Strict equality (Checks value AND type).</li>\n        <li><code>!==</code>: Not equal to.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Using <code>===</code> is like checking both the size AND color of a shoe before buying.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Essential Symbols</h4>\n      <ul>\n        <li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (Remainder).</li>\n        <li><code>===</code>: Strict equality (Checks value AND type).</li>\n        <li><code>!==</code>: Not equal to.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Using <code>===</code> is like checking both the size AND color of a shoe before buying.</li>\n      </ul>",
         "codeExample": "console.log(10 + 5);\nconsole.log(10 % 3); // Remainder 1\nconsole.log(5 === \"5\"); // false (Strict check)",
         "tryItDefault": "console.log(10 === 10)"
       },
       {
         "slug": "js-strings",
         "title": "7. Strings & Template Literals",
-        "explanationHtml": "\n      <h4>📌 Working with Text</h4>\n      <ul>\n        <li>Enclosed in single <code>'...'</code>, double <code>\"...\"</code>, or backticks <code>`...`</code>.</li>\n        <li><strong>Template Literals:</strong> Inject variables using <code>`Hello ${name}`</code>.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Customized birthday greeting card: \"Happy Birthday, [Name]!\"</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Working with Text</h4>\n      <ul>\n        <li>Enclosed in single <code>'...'</code>, double <code>\"...\"</code>, or backticks <code>`...`</code>.</li>\n        <li><strong>Template Literals:</strong> Inject variables using <code>`Hello ${name}`</code>.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Customized birthday greeting card: \"Happy Birthday, [Name]!\"</li>\n      </ul>",
         "codeExample": "const name = \"Pooja\";\nconst age = 22;\n\nconst msg = `Hello ${name}, you are ${age} years old.`;\nconsole.log(msg);",
         "tryItDefault": "const user = \"Alex\";\nconsole.log(`Welcome ${user}!`)"
       },
       {
         "slug": "js-if-else",
         "title": "8. Conditional Logic (If...Else)",
-        "explanationHtml": "\n      <h4>📌 Making Decisions</h4>\n      <ul>\n        <li><code>if</code>: Runs block if condition is true.</li>\n        <li><code>else</code>: Runs block if condition is false.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Rain Check: IF it is raining -> Take an umbrella. ELSE -> Wear sunglasses.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Making Decisions</h4>\n      <ul>\n        <li><code>if</code>: Runs block if condition is true.</li>\n        <li><code>else</code>: Runs block if condition is false.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Rain Check: IF it is raining -> Take an umbrella. ELSE -> Wear sunglasses.</li>\n      </ul>",
         "codeExample": "let isRaining = true;\n\nif (isRaining) {\n  console.log(\"Take an umbrella!\");\n} else {\n  console.log(\"Wear sunglasses!\");\n}",
         "tryItDefault": "let score = 80;\nif (score >= 50) {\n  console.log(\"Passed!\");\n}"
       },
       {
         "slug": "js-functions",
         "title": "9. Functions (Recipe Machines)",
-        "explanationHtml": "\n      <h4>📌 Reusable Commands</h4>\n      <ul>\n        <li>Wrap code inside <code>function name() { ... }</code>.</li>\n        <li><strong>Arrow Syntax:</strong> <code>const name = () => { ... }</code>.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>A coffee vending machine: Push the \"Espresso\" button (call function), and out comes hot coffee (return value)!</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Reusable Commands</h4>\n      <ul>\n        <li>Wrap code inside <code>function name() { ... }</code>.</li>\n        <li><strong>Arrow Syntax:</strong> <code>const name = () => { ... }</code>.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>A coffee vending machine: Push the \"Espresso\" button (call function), and out comes hot coffee (return value)!</li>\n      </ul>",
         "codeExample": "const makeCoffee = (type) => {\n  return `Here is your hot ${type}!`;\n};\n\nconsole.log(makeCoffee(\"Latte\"));",
         "tryItDefault": "const add = (a, b) => a + b;\nconsole.log(add(5, 5))"
       },
       {
         "slug": "js-arrays-basics",
         "title": "10. Arrays (Train Cars)",
-        "explanationHtml": "\n      <h4>📌 Ordered Collections</h4>\n      <ul>\n        <li>Stores multiple items in order inside square brackets <code>[...]</code>.</li>\n        <li>Index starts at 0 (First item is <code>array[0]</code>).</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Train cars attached in a row: Car 0, Car 1, Car 2.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Ordered Collections</h4>\n      <ul>\n        <li>Stores multiple items in order inside square brackets <code>[...]</code>.</li>\n        <li>Index starts at 0 (First item is <code>array[0]</code>).</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Train cars attached in a row: Car 0, Car 1, Car 2.</li>\n      </ul>",
         "codeExample": "const fruits = [\"Apple\", \"Banana\", \"Mango\"];\nconsole.log(fruits[0]); // \"Apple\"\nconsole.log(fruits.length); // 3",
         "tryItDefault": "const colors = [\"Red\", \"Green\"];\nconsole.log(colors[0])"
       },
       {
         "slug": "js-array-methods",
         "title": "11. Array Methods (Push, Pop, Map)",
-        "explanationHtml": "\n      <h4>📌 Modifying Arrays</h4>\n      <ul>\n        <li><code>.push(\"item\")</code>: Add item to the end.</li>\n        <li><code>.pop()</code>: Remove item from the end.</li>\n        <li><code>.map()</code>: Transform every item in list.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Adding a new person to the back of a queue line.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Modifying Arrays</h4>\n      <ul>\n        <li><code>.push(\"item\")</code>: Add item to the end.</li>\n        <li><code>.pop()</code>: Remove item from the end.</li>\n        <li><code>.map()</code>: Transform every item in list.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Adding a new person to the back of a queue line.</li>\n      </ul>",
         "codeExample": "const queue = [\"User 1\", \"User 2\"];\nqueue.push(\"User 3\");\nconsole.log(queue);\n\nconst numbers = [1, 2, 3];\nconst doubled = numbers.map(n => n * 2);\nconsole.log(doubled);",
         "tryItDefault": "const nums = [10, 20];\nnums.push(30);\nconsole.log(nums)"
       },
       {
         "slug": "js-objects",
         "title": "12. Objects (ID Cards)",
-        "explanationHtml": "\n      <h4>📌 Key-Value Stores</h4>\n      <ul>\n        <li>Group related details using <code>{ key: value }</code>.</li>\n        <li>Access properties using dot notation: <code>person.name</code>.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>A Student ID Card holding photo, roll number, name, and grade.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Key-Value Stores</h4>\n      <ul>\n        <li>Group related details using <code>{ key: value }</code>.</li>\n        <li>Access properties using dot notation: <code>person.name</code>.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>A Student ID Card holding photo, roll number, name, and grade.</li>\n      </ul>",
         "codeExample": "const student = {\n  name: \"Rohan\",\n  rollNo: 101,\n  marks: 95\n};\n\nconsole.log(student.name);\nconsole.log(student.marks);",
         "tryItDefault": "const car = { brand: \"Honda\", speed: 180 };\nconsole.log(car.brand)"
       },
       {
         "slug": "js-dom",
         "title": "13. The DOM (Document Object Model)",
-        "explanationHtml": "\n      <h4>📌 Connecting JS to HTML</h4>\n      <ul>\n        <li>The DOM turns your HTML page into JS objects you can edit live.</li>\n        <li><code>document.querySelector(\"#id\")</code> finds an element on the screen.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Using a remote control to change the volume or text displayed on your TV screen.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Connecting JS to HTML</h4>\n      <ul>\n        <li>The DOM turns your HTML page into JS objects you can edit live.</li>\n        <li><code>document.querySelector(\"#id\")</code> finds an element on the screen.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Using a remote control to change the volume or text displayed on your TV screen.</li>\n      </ul>",
         "codeExample": "// Select an HTML element and change text\n// const title = document.querySelector('#title');\n// title.textContent = 'Updated via JS!';",
         "tryItDefault": "console.log(\"DOM allows JS to edit HTML live!\")"
       },
       {
         "slug": "js-events",
         "title": "14. Event Listeners (Doorbell Rings)",
-        "explanationHtml": "\n      <h4>📌 Responding to Clicks</h4>\n      <ul>\n        <li><code>addEventListener(\"click\", callback)</code> executes code when user clicks.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>A doorbell: Someone presses the button (event), and a chime rings inside the house (callback).</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Responding to Clicks</h4>\n      <ul>\n        <li><code>addEventListener(\"click\", callback)</code> executes code when user clicks.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>A doorbell: Someone presses the button (event), and a chime rings inside the house (callback).</li>\n      </ul>",
         "codeExample": "// const button = document.querySelector('#btn');\n// button.addEventListener('click', () => {\n//   console.log('Button was clicked!');\n// });",
         "tryItDefault": "console.log(\"Event listeners catch user button clicks!\")"
       },
       {
         "slug": "js-localstorage",
         "title": "15. Local Storage (Browser Memory)",
-        "explanationHtml": "\n      <h4>📌 Saving Data in Browser</h4>\n      <ul>\n        <li>Saves user choices even after closing the tab.</li>\n        <li><code>localStorage.setItem(\"key\", \"value\")</code></li>\n        <li><code>localStorage.getItem(\"key\")</code></li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>A website remembering your choice for Dark Mode vs Light Mode next time you open it.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Saving Data in Browser</h4>\n      <ul>\n        <li>Saves user choices even after closing the tab.</li>\n        <li><code>localStorage.setItem(\"key\", \"value\")</code></li>\n        <li><code>localStorage.getItem(\"key\")</code></li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>A website remembering your choice for Dark Mode vs Light Mode next time you open it.</li>\n      </ul>",
         "codeExample": "localStorage.setItem(\"theme\", \"dark\");\nconst savedTheme = localStorage.getItem(\"theme\");\nconsole.log(savedTheme);",
         "tryItDefault": "localStorage.setItem(\"user\", \"Guest\");\nconsole.log(localStorage.getItem(\"user\"))"
       },
       {
         "slug": "js-async",
         "title": "16. Async / Await & Fetch (Ordering Food)",
-        "explanationHtml": "\n      <h4>📌 Fetching Online Data</h4>\n      <ul>\n        <li>Network calls take time. <code>async/await</code> waits without freezing the browser.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Ordering food at a restaurant: You give your order (fetch), take a seat (async), and eat when food arrives (await).</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Fetching Online Data</h4>\n      <ul>\n        <li>Network calls take time. <code>async/await</code> waits without freezing the browser.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Ordering food at a restaurant: You give your order (fetch), take a seat (async), and eat when food arrives (await).</li>\n      </ul>",
         "codeExample": "const loadData = async () => {\n  try {\n    const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');\n    const data = await res.json();\n    console.log(data.title);\n  } catch (err) {\n    console.error(\"Error loading data\");\n  }\n};\n\nloadData();",
         "tryItDefault": "console.log(\"Async await fetches live APIs cleanly!\")"
       },
       {
         "slug": "js-capstone",
         "title": "17. Capstone Project: Interactive Weather App",
-        "explanationHtml": "\n      <h4>📌 Final JS Project</h4>\n      <ul>\n        <li>Combine forms, event listeners, fetch API, and DOM updates into a live app!</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Final JS Project</h4>\n      <ul>\n        <li>Combine forms, event listeners, fetch API, and DOM updates into a live app!</li>\n      </ul>",
         "codeExample": "console.log(\"Building Weather App Capstone...\");",
         "tryItDefault": "console.log(\"Congratulations on completing JavaScript lessons!\")"
       },
       {
         "slug": "js-promises",
         "title": "18. Promises (Delivery Tracking)",
-        "explanationHtml": "\n      <h4>📌 Asynchronous Guarantees</h4>\n      <ul>\n        <li>A Promise is a guarantee that a task will finish in the future (Pending -> Resolved or Rejected).</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Ordering a package online: You get a tracking ID (Promise). Eventually, it gets Delivered (Resolved) or Lost (Rejected).</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Asynchronous Guarantees</h4>\n      <ul>\n        <li>A Promise is a guarantee that a task will finish in the future (Pending -> Resolved or Rejected).</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Ordering a package online: You get a tracking ID (Promise). Eventually, it gets Delivered (Resolved) or Lost (Rejected).</li>\n      </ul>",
         "codeExample": "const checkDelivery = new Promise((resolve, reject) => {\n  let delivered = true;\n  if (delivered) resolve(\"Package Delivered!\");\n  else reject(\"Delivery Failed.\");\n});\n\ncheckDelivery.then(msg => console.log(msg));",
         "tryItDefault": "Promise.resolve(\"Success!\").then(res => console.log(res));"
       },
       {
         "slug": "js-destructuring",
         "title": "19. Destructuring (Unpacking Suitcases)",
-        "explanationHtml": "\n      <h4>📌 Quick Extraction</h4>\n      <ul>\n        <li>Unpack values from arrays or objects directly into variables.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Unpacking specific clothes from your suitcase without dumping out the entire bag.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Quick Extraction</h4>\n      <ul>\n        <li>Unpack values from arrays or objects directly into variables.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Unpacking specific clothes from your suitcase without dumping out the entire bag.</li>\n      </ul>",
         "codeExample": "const user = { name: \"Pooja\", age: 22 };\nconst { name, age } = user;\nconsole.log(name, age);",
         "tryItDefault": "const [a, b] = [10, 20];\nconsole.log(a, b);"
       },
       {
         "slug": "js-spread-operator",
         "title": "20. Spread Operator (Copying & Merging)",
-        "explanationHtml": "\n      <h4>📌 The Triple Dot (...)</h4>\n      <ul>\n        <li>Unrolls array items or object properties into a new copy.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Photocopying a document and adding new handwritten notes on the copy without touching the original.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> The Triple Dot (...)</h4>\n      <ul>\n        <li>Unrolls array items or object properties into a new copy.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Photocopying a document and adding new handwritten notes on the copy without touching the original.</li>\n      </ul>",
         "codeExample": "const oldList = [1, 2];\nconst newList = [...oldList, 3, 4];\nconsole.log(newList);",
         "tryItDefault": "const obj1 = { a: 1 };\nconst obj2 = { ...obj1, b: 2 };\nconsole.log(obj2);"
       },
       {
         "slug": "js-try-catch",
         "title": "21. Try...Catch (Emergency Brakes)",
-        "explanationHtml": "\n      <h4>📌 Handling Errors Gracefully</h4>\n      <ul>\n        <li>Catches runtime errors so your website doesn't crash.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Emergency brakes on a train—stops danger smoothly instead of crashing.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Handling Errors Gracefully</h4>\n      <ul>\n        <li>Catches runtime errors so your website doesn't crash.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Emergency brakes on a train—stops danger smoothly instead of crashing.</li>\n      </ul>",
         "codeExample": "try {\n  JSON.parse(\"invalid json\");\n} catch (err) {\n  console.log(\"Caught invalid data safely!\");\n}",
         "tryItDefault": "try { throw new Error(\"Oops\"); } catch(e) { console.log(e.message); }"
       },
       {
         "slug": "js-modules",
         "title": "22. ES6 Modules (Organized Toolboxes)",
-        "explanationHtml": "\n      <h4>📌 Code Organization</h4>\n      <ul>\n        <li>Split code into separate files using <code>export</code> and <code>import</code>.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Keeping hammers in a toolbox, paints in an art bin, and kitchen knives in a drawer.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Code Organization</h4>\n      <ul>\n        <li>Split code into separate files using <code>export</code> and <code>import</code>.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Keeping hammers in a toolbox, paints in an art bin, and kitchen knives in a drawer.</li>\n      </ul>",
         "codeExample": "// export const add = (a, b) => a + b;\n// import { add } from './math.js';",
         "tryItDefault": "console.log(\"Modules keep project files clean!\")"
       },
       {
         "slug": "js-classes",
         "title": "23. Classes & OOP (Blueprints)",
-        "explanationHtml": "\n      <h4>📌 Object Blueprints</h4>\n      <ul>\n        <li>Define reusable class structures using <code>class ClassName { ... }</code>.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>A house blueprint: Architect draws 1 map (Class), and builders construct 10 identical houses (Objects).</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Object Blueprints</h4>\n      <ul>\n        <li>Define reusable class structures using <code>class ClassName { ... }</code>.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>A house blueprint: Architect draws 1 map (Class), and builders construct 10 identical houses (Objects).</li>\n      </ul>",
         "codeExample": "class User {\n  constructor(name) {\n    this.name = name;\n  }\n}\nconst u = new User(\"Rahul\");\nconsole.log(u.name);",
         "tryItDefault": "class Car { constructor(m) { this.m = m; } }\nconsole.log(new Car(\"BMW\").m)"
       },
       {
         "slug": "js-math-dates",
         "title": "24. Math & Dates (Clocks & Calculators)",
-        "explanationHtml": "\n      <h4>📌 Built-in Utilities</h4>\n      <ul>\n        <li><code>Math.random()</code>, <code>Math.floor()</code>, <code>new Date()</code>.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Rolling a dice (Math.random) or looking at your wristwatch (new Date()).</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Built-in Utilities</h4>\n      <ul>\n        <li><code>Math.random()</code>, <code>Math.floor()</code>, <code>new Date()</code>.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Rolling a dice (Math.random) or looking at your wristwatch (new Date()).</li>\n      </ul>",
         "codeExample": "console.log(Math.floor(5.9)); // 5\nconsole.log(new Date().toLocaleDateString());",
         "tryItDefault": "console.log(new Date().getFullYear())"
       },
       {
         "slug": "js-json",
         "title": "25. JSON (Universal Parcel Standard)",
-        "explanationHtml": "\n      <h4>📌 Data Exchange Format</h4>\n      <ul>\n        <li><code>JSON.stringify()</code>: Object -> String.</li>\n        <li><code>JSON.parse()</code>: String -> Object.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Packing items into a standardized cardboard box for shipping overseas.</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Data Exchange Format</h4>\n      <ul>\n        <li><code>JSON.stringify()</code>: Object -> String.</li>\n        <li><code>JSON.parse()</code>: String -> Object.</li>\n      </ul>\n      <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n      <ul>\n        <li>Packing items into a standardized cardboard box for shipping overseas.</li>\n      </ul>",
         "codeExample": "const data = { name: \"Amit\", age: 20 };\nconst jsonStr = JSON.stringify(data);\nconsole.log(jsonStr);\nconsole.log(JSON.parse(jsonStr).name);",
         "tryItDefault": "console.log(JSON.stringify({ test: 1 }))"
       },
       {
         "slug": "js-final-capstone",
         "title": "26. Final Capstone: Task Manager App",
-        "explanationHtml": "\n      <h4>📌 Complete Full Project</h4>\n      <ul>\n        <li>Combine everything learned to build an interactive Task Manager app!</li>\n      </ul>\n    ",
+        "explanationHtml": "<h4> Complete Full Project</h4>\n      <ul>\n        <li>Combine everything learned to build an interactive Task Manager app!</li>\n      </ul>",
         "codeExample": "console.log(\"Congratulations on reaching the JavaScript Capstone!\");",
         "tryItDefault": "console.log(\"You have mastered JavaScript basics to advanced!\")"
       }
