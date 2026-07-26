@@ -3,12 +3,25 @@ import { prisma } from "@/lib/prisma";
 
 export async function GET() {
   try {
-    const topics = await prisma.knowledgeTopic.findMany({
+    const rawTopics = await prisma.knowledgeTopic.findMany({
       include: {
         lessons: true,
       },
       orderBy: { createdAt: "asc" },
     });
+
+    const topics = rawTopics.map((topic) => ({
+      ...topic,
+      lessons: [...topic.lessons].sort((a, b) => {
+        const numA = parseInt(a.title);
+        const numB = parseInt(b.title);
+        if (!isNaN(numA) && !isNaN(numB)) {
+          return numA - numB;
+        }
+        return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+      }),
+    }));
+
     return NextResponse.json(topics, { status: 200 });
   } catch (error: any) {
     console.error("[GET KNOWLEDGE TOPICS ERROR]", error);

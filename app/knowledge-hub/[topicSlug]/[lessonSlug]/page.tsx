@@ -42,7 +42,20 @@ export default function LessonPage(props: { params: Promise<{ topicSlug: string;
     setMounted(true);
   }, [fetchTopics]);
 
-  const topic = getTopicBySlug(params.topicSlug);
+  const rawTopic = getTopicBySlug(params.topicSlug);
+  const topic = React.useMemo(() => {
+    if (!rawTopic) return null;
+    return {
+      ...rawTopic,
+      lessons: [...rawTopic.lessons].sort((a, b) => {
+        const numA = parseInt(a.title);
+        const numB = parseInt(b.title);
+        if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
+        return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+      }),
+    };
+  }, [rawTopic]);
+
   const lesson = getLessonBySlug(params.topicSlug, params.lessonSlug);
 
   if (!mounted) return null;

@@ -25,7 +25,16 @@ export const useKnowledgeStore = create<KnowledgeStore>((set, get) => ({
       const res = await fetch("/api/knowledge");
       if (res.ok) {
         const data = await res.json();
-        set({ topics: data });
+        const sortedData = data.map((t: any) => ({
+          ...t,
+          lessons: [...(t.lessons || [])].sort((a: any, b: any) => {
+            const numA = parseInt(a.title);
+            const numB = parseInt(b.title);
+            if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
+            return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+          }),
+        }));
+        set({ topics: sortedData });
       }
     } catch (err) {
       console.error(err);
