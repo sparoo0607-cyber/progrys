@@ -1,0 +1,331 @@
+[
+  {
+    "slug": "embedded-systems-engineer",
+    "title": "Embedded Systems Engineer",
+    "description": "Write code that touches the physical world. Learn how to program microcontrollers, manage memory constraints, and interface with hardware sensors to build the devices that power the modern world.",
+    "difficulty": "advanced",
+    "estimatedTime": "10-12 Months",
+    "nodes": [
+      {
+        "title": "C & Assembly Language",
+        "description": "You must understand the machine. Master C for its low-level memory access and speed, and learn basic Assembly to understand exactly how the CPU executes your instructions."
+      },
+      {
+        "title": "Computer Architecture",
+        "description": "Know the hardware you are programming. Learn how the ALU, registers, cache, and memory buses work together to process data at the silicon level."
+      },
+      {
+        "title": "Microcontrollers (Arduino to ARM)",
+        "description": "Start simple and scale up. Learn how to program basic 8-bit AVR microcontrollers, and then transition to industry-standard 32-bit ARM Cortex-M processors."
+      },
+      {
+        "title": "Hardware Interfaces (I2C, SPI, UART)",
+        "description": "Microcontrollers need to talk to sensors. Master the standard communication protocols used to read temperature sensors, drive displays, and communicate between chips on a PCB."
+      },
+      {
+        "title": "Real-Time Operating Systems (RTOS)",
+        "description": "When a millisecond delay can crash a drone, standard operating systems fail. Learn how to use FreeRTOS to guarantee strict timing constraints and manage concurrent tasks safely."
+      },
+      {
+        "title": "Interrupts & Timers",
+        "description": "Stop using infinite 'while' loops to check for button presses. Learn how to use hardware interrupts to instantly pause your code, handle a physical event, and resume execution seamlessly."
+      },
+      {
+        "title": "Low-Level Debugging",
+        "description": "Debugging hardware is painful. Learn how to use oscilloscopes, logic analyzers, and JTAG/SWD debuggers to step through code execution directly on the silicon."
+      }
+    ]
+  },
+  {
+    "slug": "iot-developer",
+    "title": "IoT Developer",
+    "description": "Connect the physical world to the internet. Learn how to build smart devices, transmit telemetry data over low-power networks, and process that data securely in the cloud.",
+    "difficulty": "intermediate",
+    "estimatedTime": "6-8 Months",
+    "nodes": [
+      {
+        "title": "Electronics Fundamentals",
+        "description": "Before you connect a device, you must build it. Learn basic circuitry, Ohm's law, and how to use breadboards to connect sensors and actuators to microcontrollers like the ESP32."
+      },
+      {
+        "title": "MicroPython & C++",
+        "description": "Master the languages of IoT. Use C++ for high-performance, battery-constrained devices, and MicroPython for rapid prototyping and complex logic on more powerful chips."
+      },
+      {
+        "title": "IoT Communication Protocols",
+        "description": "HTTP is too heavy for tiny devices. Learn MQTT, a lightweight publish/subscribe protocol designed specifically for IoT devices to send telemetry data over unreliable networks."
+      },
+      {
+        "title": "Wireless Technologies",
+        "description": "Understand how data travels through the air. Learn the pros and cons of Wi-Fi, Bluetooth Low Energy (BLE), LoRaWAN, and Cellular (NB-IoT) for different use cases and range requirements."
+      },
+      {
+        "title": "Cloud IoT Platforms",
+        "description": "Don't build the backend from scratch. Learn how to securely connect thousands of devices using AWS IoT Core or Azure IoT Hub, managing certificates and device shadows."
+      },
+      {
+        "title": "Edge Computing",
+        "description": "Sending all data to the cloud is expensive. Learn how to process data locally on edge devices (like a Raspberry Pi) to reduce latency and save bandwidth before transmitting."
+      },
+      {
+        "title": "Hardware Security",
+        "description": "IoT devices are notorious for getting hacked. Learn how to secure over-the-air (OTA) updates, encrypt telemetry data, and prevent physical tampering with your hardware."
+      }
+    ]
+  },
+  {
+    "slug": "robotics-engineer",
+    "title": "Robotics Engineer",
+    "description": "Build machines that move, see, and think. Combine mechanical understanding, control systems, and artificial intelligence to create autonomous robots for manufacturing, logistics, or exploration.",
+    "difficulty": "advanced",
+    "estimatedTime": "12-18 Months",
+    "nodes": [
+      {
+        "title": "Kinematics & Dynamics",
+        "description": "Math makes the robot move. Master forward and inverse kinematics to calculate exactly what joint angles are required to move a robotic arm to a specific point in 3D space."
+      },
+      {
+        "title": "Control Systems (PID)",
+        "description": "How does a drone stay level? Learn how to implement Proportional-Integral-Derivative (PID) controllers to smoothly correct errors in motion and maintain stability."
+      },
+      {
+        "title": "Robot Operating System (ROS 2)",
+        "description": "The standard framework for robotics. Learn how to use ROS nodes, topics, and services to build a modular software architecture that scales from simple rovers to autonomous cars."
+      },
+      {
+        "title": "Sensors & Perception",
+        "description": "Robots need to understand their environment. Learn how to integrate LiDAR, ultrasonic sensors, and stereoscopic cameras to build an accurate internal representation of the world."
+      },
+      {
+        "title": "Computer Vision for Robotics",
+        "description": "Enable your robot to 'see'. Use OpenCV and deep learning to detect objects, track moving targets, and recognize human gestures in real-time."
+      },
+      {
+        "title": "Simultaneous Localization and Mapping (SLAM)",
+        "description": "How does a vacuum robot know where it is? Learn SLAM algorithms that allow a robot to build a map of an unknown environment while simultaneously keeping track of its own location."
+      },
+      {
+        "title": "Path Planning & Navigation",
+        "description": "Get from point A to point B without crashing. Learn algorithms like A* and Dijkstra's, and implement local costmaps to help robots dynamically avoid unexpected obstacles."
+      }
+    ]
+  },
+  {
+    "slug": "product-manager",
+    "title": "Product Manager",
+    "description": "Become the CEO of your product. Learn how to discover user needs, define product strategy, prioritize roadmaps, and lead cross-functional teams to deliver incredible software.",
+    "difficulty": "intermediate",
+    "estimatedTime": "6-8 Months",
+    "nodes": [
+      {
+        "title": "Product Discovery",
+        "description": "Stop building features nobody wants. Learn how to conduct user interviews, validate assumptions, and identify the true core problems your users are trying to solve."
+      },
+      {
+        "title": "Market & Competitor Analysis",
+        "description": "Understand the landscape. Learn how to size a market, analyze competitors' strengths and weaknesses, and carve out a unique value proposition for your product."
+      },
+      {
+        "title": "Defining the MVP",
+        "description": "Perfection is the enemy of launch. Learn how to aggressively cut scope to define a Minimum Viable Product that delivers value and tests your riskiest assumptions as quickly as possible."
+      },
+      {
+        "title": "Roadmapping & Prioritization",
+        "description": "You can't build everything at once. Master frameworks like RICE or MoSCoW to ruthlessly prioritize features based on business impact and engineering effort."
+      },
+      {
+        "title": "Agile & Scrum Methodologies",
+        "description": "Learn how to execute the plan. Master the ceremonies of Agile development, write crystal-clear user stories, and manage the product backlog to keep the engineering team unblocked."
+      },
+      {
+        "title": "Go-to-Market Strategy (GTM)",
+        "description": "Building it is only half the battle. Learn how to coordinate with Marketing, Sales, and Customer Success to plan a successful launch that drives user adoption and revenue."
+      },
+      {
+        "title": "Metrics & Data Analysis",
+        "description": "Measure what matters. Learn how to define KPIs, set up analytics funnels, and run A/B tests to make data-driven decisions that iteratively improve the product."
+      }
+    ]
+  },
+  {
+    "slug": "business-analyst",
+    "title": "Business Analyst",
+    "description": "Bridge the gap between business stakeholders and technical teams. Learn how to gather complex requirements, model business processes, and translate them into actionable software development tasks.",
+    "difficulty": "beginner",
+    "estimatedTime": "4-6 Months",
+    "nodes": [
+      {
+        "title": "Requirement Elicitation",
+        "description": "Stakeholders rarely know exactly what they want. Learn how to conduct workshops, interviews, and surveys to extract clear, unambiguous business requirements."
+      },
+      {
+        "title": "Process Modeling (BPMN)",
+        "description": "Visualize the business. Learn how to use Business Process Model and Notation (BPMN) to map out current workflows and identify bottlenecks that software can solve."
+      },
+      {
+        "title": "Writing Technical Specifications",
+        "description": "Translate business needs into engineering tasks. Learn how to write comprehensive Functional Requirement Documents (FRDs) and clear acceptance criteria that leave no room for developer guesswork."
+      },
+      {
+        "title": "Stakeholder Management",
+        "description": "You are the mediator. Learn how to manage conflicting priorities from different departments, handle scope creep gracefully, and keep all parties aligned throughout the project lifecycle."
+      },
+      {
+        "title": "Data Querying (SQL basics)",
+        "description": "Don't rely entirely on engineers for answers. Learn basic SQL to query databases yourself, verifying data integrity and pulling quick reports to support your business cases."
+      },
+      {
+        "title": "UAT & Quality Assurance",
+        "description": "Ensure the product actually solves the problem. Learn how to design User Acceptance Testing (UAT) scenarios and coordinate with end-users to validate the final software delivery."
+      }
+    ]
+  },
+  {
+    "slug": "startup-founder",
+    "title": "Startup Founder",
+    "description": "Turn an idea into a scalable company. Learn the fundamentals of lean startup methodology, customer acquisition, fundraising, and how to build a team that executes relentlessly.",
+    "difficulty": "advanced",
+    "estimatedTime": "12+ Months",
+    "nodes": [
+      {
+        "title": "Idea Validation & The Lean Startup",
+        "description": "Don't write a line of code until you've talked to users. Learn how to conduct problem interviews, build landing page tests, and validate that people are actually willing to pay for your solution."
+      },
+      {
+        "title": "Business Models & Pricing",
+        "description": "How will you make money? Understand SaaS metrics, freemium vs premium models, and how to price your product based on value rather than simply cost-plus margins."
+      },
+      {
+        "title": "Building the MVP (No-Code/Low-Code)",
+        "description": "Speed is everything. Learn how to use tools like Bubble, Webflow, or Zapier to build a functional Minimum Viable Product in weeks instead of months, without hiring an engineering team."
+      },
+      {
+        "title": "Customer Acquisition & Growth",
+        "description": "If you build it, they will not come. Learn inbound marketing, SEO, paid ads, and cold outreach strategies to find your first 100 paying customers and find Product-Market Fit."
+      },
+      {
+        "title": "Legal & Incorporation",
+        "description": "Protect yourself and your company. Learn the basics of forming a C-Corp, issuing founder equity, vesting schedules, and protecting intellectual property."
+      },
+      {
+        "title": "Fundraising (Angels & VC)",
+        "description": "Fuel the fire. Learn how to craft a compelling pitch deck, understand term sheets (SAFEs and convertible notes), and navigate the intense process of raising venture capital."
+      },
+      {
+        "title": "Hiring & Culture",
+        "description": "A startup is only as good as its team. Learn how to hire your first engineers, establish a high-performance culture, and transition from doing everything yourself to managing leaders."
+      }
+    ]
+  },
+  {
+    "slug": "blockchain-developer",
+    "title": "Blockchain Developer",
+    "description": "Build the decentralized web. Learn cryptography, smart contract development with Solidity, and how to architect Web3 applications that run on Ethereum and other modern blockchains.",
+    "difficulty": "advanced",
+    "estimatedTime": "8-10 Months",
+    "nodes": [
+      {
+        "title": "Blockchain Fundamentals",
+        "description": "Understand the architecture of trust. Learn how distributed ledgers, consensus mechanisms (Proof of Work vs Proof of Stake), and cryptographic hashing actually secure the network."
+      },
+      {
+        "title": "Solidity Programming",
+        "description": "Learn the language of Ethereum. Master the syntax of Solidity, focusing heavily on security, state variables, mappings, and how to write efficient code that minimizes gas costs."
+      },
+      {
+        "title": "Smart Contract Architecture",
+        "description": "Code on the blockchain is immutable. Learn how to design upgradeable contracts, implement access controls, and understand token standards like ERC-20 (fungible) and ERC-721 (NFTs)."
+      },
+      {
+        "title": "Smart Contract Security",
+        "description": "A single bug can cost millions. Learn about reentrancy attacks, integer overflows, oracle manipulation, and how to use tools like Slither to rigorously audit your contracts before deployment."
+      },
+      {
+        "title": "Development Frameworks (Hardhat/Foundry)",
+        "description": "Set up a professional workflow. Learn how to write extensive test suites in JavaScript or Solidity, simulate network conditions locally, and deploy your contracts to testnets."
+      },
+      {
+        "title": "Web3 Frontend Integration",
+        "description": "Connect the blockchain to the browser. Learn how to use ethers.js or viem to allow users to connect their MetaMask wallets and interact directly with your smart contracts."
+      },
+      {
+        "title": "Decentralized Storage & Oracles",
+        "description": "The blockchain can't hold large files or see the real world. Learn how to store images on IPFS (InterPlanetary File System) and use Chainlink oracles to securely bring real-world data on-chain."
+      }
+    ]
+  },
+  {
+    "slug": "ar-vr-developer",
+    "title": "AR/VR Developer",
+    "description": "Create immersive spatial experiences. Learn how to use Unity or Unreal Engine to build Virtual Reality games and Augmented Reality applications for devices like the Meta Quest and Apple Vision Pro.",
+    "difficulty": "advanced",
+    "estimatedTime": "8-12 Months",
+    "nodes": [
+      {
+        "title": "3D Engine Fundamentals",
+        "description": "Master the canvas. Learn how to navigate Unity or Unreal, manipulate 3D transforms, apply materials, and understand the core rendering pipeline required for spatial computing."
+      },
+      {
+        "title": "Spatial Math & Physics",
+        "description": "Immersive worlds require accurate physics. Deep dive into vector math, quaternions, and rigid body physics to ensure virtual objects react realistically to gravity and collisions."
+      },
+      {
+        "title": "VR Interaction Design",
+        "description": "Traditional UIs don't work in VR. Learn how to design spatial UI panels, implement realistic hand tracking, and create physics-based grabbing mechanics that feel natural to the user."
+      },
+      {
+        "title": "Locomotion & Comfort",
+        "description": "Don't make your users sick. Learn how to implement teleportation, snap turning, and vignetting to allow users to move through large virtual environments without experiencing motion sickness."
+      },
+      {
+        "title": "Augmented Reality (ARKit & ARCore)",
+        "description": "Blend the digital and physical worlds. Learn how to use plane detection, image tracking, and environmental understanding to anchor virtual objects securely to real-world surfaces."
+      },
+      {
+        "title": "Optimization for Mobile VR",
+        "description": "Headsets have limited processing power. Learn aggressive optimization techniques like baked lighting, occlusion culling, and reducing draw calls to maintain a strict 72-90 frames per second."
+      },
+      {
+        "title": "Multiplayer Spatial Networking",
+        "description": "Shared presence is the future. Learn how to use networking frameworks like Photon or Netcode for GameObjects to synchronize player avatars, voice chat, and object physics across the internet."
+      }
+    ]
+  },
+  {
+    "slug": "qa-automation-engineer",
+    "title": "QA Automation Engineer",
+    "description": "Ensure software quality at scale. Learn how to write automated test scripts, build CI/CD pipelines, and design robust testing frameworks that catch bugs before they ever reach production.",
+    "difficulty": "intermediate",
+    "estimatedTime": "5-7 Months",
+    "nodes": [
+      {
+        "title": "Software Testing Fundamentals",
+        "description": "Understand the philosophy of quality. Learn the difference between unit, integration, and end-to-end testing, and how to write clear, reproducible bug reports that engineers love."
+      },
+      {
+        "title": "Programming for QA (Python or JS)",
+        "description": "Automation requires coding. Master a scripting language, focusing specifically on object-oriented principles, interacting with the file system, and making HTTP requests."
+      },
+      {
+        "title": "UI Automation (Playwright or Cypress)",
+        "description": "Stop clicking buttons manually. Learn how to write robust, flake-free scripts that launch a browser, navigate pages, assert DOM elements, and simulate complex user workflows."
+      },
+      {
+        "title": "API Automation Testing",
+        "description": "Test the backend directly. Learn how to use tools like Postman or write code with Axios/Requests to validate API endpoints, assert JSON schemas, and ensure data integrity without a UI."
+      },
+      {
+        "title": "Page Object Model (POM)",
+        "description": "Maintainable tests require architecture. Learn how to structure your automation code using the Page Object Model design pattern so that when the UI changes, you only update one file."
+      },
+      {
+        "title": "Performance & Load Testing",
+        "description": "Ensure the system doesn't crash on launch day. Learn how to use JMeter or k6 to simulate thousands of concurrent users and identify performance bottlenecks in the infrastructure."
+      },
+      {
+        "title": "Integrating with CI/CD",
+        "description": "Testing must be automatic. Learn how to trigger your automation suites via GitHub Actions or Jenkins on every pull request, acting as the final gatekeeper before code goes to production."
+      }
+    ]
+  }
+]

@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "api-design",
+    "title": "API Design (REST & GraphQL)",
+    "description": "Learn how to build robust, secure, and scalable Application Programming Interfaces that power mobile apps and front-end frameworks.",
+    "iconName": "Network",
+    "lessons": [
+      {
+        "slug": "what-is-rest",
+        "title": "What is REST?",
+        "explanationHtml": "<p>REST (Representational State Transfer) is an architectural style for designing networked applications. It treats data and functionality as \"Resources\" which are accessed via standard HTTP URIs (like <code>/users/123</code>).</p><p>A true RESTful API is stateless: the server does not store any client context between requests. Every request must contain all the information necessary to understand it.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=lsMQRaeKNDk' target='_blank'>What is a REST API? - IBM Technology</a></p>",
+        "codeExample": "",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "http-verbs",
+        "title": "HTTP Methods (CRUD)",
+        "explanationHtml": "<p>In REST, you use different HTTP methods to indicate what action you want to perform on a resource.</p><ul><li><strong>GET:</strong> Read data (should never modify the database).</li><li><strong>POST:</strong> Create a new resource.</li><li><strong>PUT:</strong> Completely replace an existing resource.</li><li><strong>PATCH:</strong> Partially update an existing resource.</li><li><strong>DELETE:</strong> Remove a resource.</li></ul>",
+        "codeExample": "GET /api/articles      # Returns a list of articles\nPOST /api/articles     # Creates a new article\nGET /api/articles/42   # Returns article #42\nPATCH /api/articles/42 # Updates the title of article #42",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "status-codes",
+        "title": "HTTP Status Codes",
+        "explanationHtml": "<p>Your API must return the correct status code so the client knows exactly what happened.</p><p><strong>2xx (Success):</strong> 200 OK, 201 Created.<br><strong>4xx (Client Error):</strong> 400 Bad Request (invalid data), 401 Unauthorized (not logged in), 403 Forbidden (logged in, but no permission), 404 Not Found.<br><strong>5xx (Server Error):</strong> 500 Internal Server Error (your code crashed).</p>",
+        "codeExample": "app.get('/users/:id', (req, res) => {\n  const user = db.find(req.params.id);\n  if (!user) {\n    return res.status(404).json({ error: \"User not found\" });\n  }\n  return res.status(200).json(user);\n});",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "api-versioning",
+        "title": "API Versioning",
+        "explanationHtml": "<p>Once an API is public, you cannot change the JSON structure without breaking existing mobile apps or third-party integrations.</p><p>You solve this by versioning your API, typically by putting <code>/v1/</code> in the URL. When you need to make a breaking change, you release <code>/v2/</code> and keep <code>/v1/</code> running for older clients.</p>",
+        "codeExample": "GET /api/v1/users/42  # Returns { \"name\": \"Alice Bob\" }\n\nGET /api/v2/users/42  # Breaking change: returns { \"firstName\": \"Alice\", \"lastName\": \"Bob\" }",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "graphql-introduction",
+        "title": "Introduction to GraphQL",
+        "explanationHtml": "<p>REST suffers from Over-fetching (downloading too much data) and Under-fetching (having to make 5 different API calls to get related data).</p><p>GraphQL solves this. Instead of multiple endpoints, you have ONE endpoint (<code>/graphql</code>). The client sends a query specifying EXACTLY the fields it wants, and the server returns precisely that shape.</p>",
+        "codeExample": "/* GraphQL Query */\nquery {\n  user(id: 42) {\n    name\n    email\n    posts(limit: 2) {\n      title\n    }\n  }\n}",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "graphql-resolvers",
+        "title": "Schemas and Resolvers",
+        "explanationHtml": "<p>In GraphQL, you define a strictly typed <strong>Schema</strong> that outlines what data is available. You then write <strong>Resolvers</strong>: functions that actually go to the database to fetch the data for those specific fields.</p>",
+        "codeExample": "// GraphQL Resolver Example\nconst resolvers = {\n  Query: {\n    user: (parent, args, context) => {\n      return db.getUserById(args.id);\n    }\n  },\n  User: {\n    // Only executes if the client specifically asks for 'posts'\n    posts: (parent) => {\n      return db.getPostsByUserId(parent.id);\n    }\n  }\n};",
+        "tryItDefault": ""
+      }
+    ]
+  },
+  {
+    "slug": "system-design",
+    "title": "System Design Basics",
+    "description": "Learn how to architect applications that can handle millions of users without crashing.",
+    "iconName": "Share2",
+    "lessons": [
+      {
+        "slug": "vertical-vs-horizontal",
+        "title": "Vertical vs Horizontal Scaling",
+        "explanationHtml": "<p>When your server is overloaded, you have two choices.</p><p><strong>Vertical Scaling (Scaling Up):</strong> Buying a bigger, more expensive server with more CPU and RAM. It is easy but has a hard limit.</p><p><strong>Horizontal Scaling (Scaling Out):</strong> Buying 10 cheap servers and splitting the traffic between them. This requires more complex architecture but allows infinite scaling.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=bUBtGQEQCGg' target='_blank'>System Design Interview Prep - ByteByteGo</a></p>",
+        "codeExample": "",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "load-balancing",
+        "title": "Load Balancing",
+        "explanationHtml": "<p>If you have 10 servers (Horizontal Scaling), how do users know which one to talk to? They don't. They talk to a Load Balancer.</p><p>The Load Balancer acts as a traffic cop. It receives all incoming requests and distributes them evenly across your 10 servers, ensuring no single server gets overwhelmed.</p>",
+        "codeExample": "",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "caching-strategies",
+        "title": "Caching (Redis)",
+        "explanationHtml": "<p>Databases are slow. Reading from a hard drive takes milliseconds, but reading from RAM takes nanoseconds.</p><p>Caching systems like Redis store the results of frequent, expensive database queries in memory. When a user requests that data, you serve it from the cache instantly, bypassing the database entirely.</p>",
+        "codeExample": "async function getUser(id) {\n  // 1. Check Cache First\n  const cached = await redis.get(`user:${id}`);\n  if (cached) return JSON.parse(cached);\n\n  // 2. Cache Miss -> Query Database\n  const user = await db.query('SELECT * FROM users WHERE id = ?', [id]);\n  \n  // 3. Save to Cache for next time\n  await redis.set(`user:${id}`, JSON.stringify(user), 'EX', 3600);\n  return user;\n}",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "message-queues",
+        "title": "Message Queues (RabbitMQ/Kafka)",
+        "explanationHtml": "<p>If a user uploads a video, processing that video might take 5 minutes. If you process it synchronously, the HTTP request will timeout and crash.</p><p>Instead, you push a \"Job\" into a Message Queue (like RabbitMQ or SQS) and instantly return a \"Processing\" message to the user. A separate pool of \"Worker\" servers reads jobs from the queue and processes them in the background at their own pace.</p>",
+        "codeExample": "",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "database-sharding",
+        "title": "Database Sharding",
+        "explanationHtml": "<p>What happens when your database gets too big to fit on a single hard drive? You Shard it.</p><p>Sharding involves splitting your database horizontally across multiple servers. For example, all users with IDs ending in 0-4 live on Database A, and users with IDs 5-9 live on Database B. This dramatically increases read/write throughput but makes JOIN operations incredibly difficult.</p>",
+        "codeExample": "",
+        "tryItDefault": ""
+      }
+    ]
+  },
+  {
+    "slug": "postgresql-advanced",
+    "title": "PostgreSQL Advanced",
+    "description": "Move beyond basic CRUD operations. Learn how to write complex queries, optimize performance, and manage concurrency in the world's most advanced open-source database.",
+    "iconName": "DatabaseZap",
+    "lessons": [
+      {
+        "slug": "acid-transactions",
+        "title": "ACID Transactions",
+        "explanationHtml": "<p>If you transfer $100 from Alice to Bob, you must subtract $100 from Alice and add $100 to Bob. If the server crashes in the middle, Alice loses $100 and Bob gets nothing.</p><p>Transactions solve this. By wrapping the queries in <code>BEGIN</code> and <code>COMMIT</code>, the database guarantees that EITHER both queries succeed, OR both fail (Rollback). This is the 'A' (Atomicity) in ACID.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=pomxJODGyaM' target='_blank'>Transactions & ACID - Hussein Nasser</a></p>",
+        "codeExample": "BEGIN;\n\nUPDATE accounts SET balance = balance - 100 WHERE name = 'Alice';\nUPDATE accounts SET balance = balance + 100 WHERE name = 'Bob';\n\nCOMMIT; -- If this is never reached, the database reverts the changes automatically.",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "window-functions",
+        "title": "Window Functions",
+        "explanationHtml": "<p><code>GROUP BY</code> collapses rows into a single summary row. <strong>Window Functions</strong> allow you to perform aggregate calculations (like running totals or rankings) without collapsing the original rows.</p><p>You define a window using the <code>OVER()</code> clause, which dictates how the rows are partitioned and ordered before the calculation occurs.</p>",
+        "codeExample": "SELECT \n  employee_name, \n  department, \n  salary,\n  -- Calculates the average salary for the specific department this employee belongs to\n  AVG(salary) OVER (PARTITION BY department) as dept_avg_salary\nFROM Employees;",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "ctes",
+        "title": "Common Table Expressions (CTEs)",
+        "explanationHtml": "<p>Writing nested subqueries makes SQL unreadable. A CTE (using the <code>WITH</code> clause) allows you to define a temporary, named result set that exists only for the duration of a single query.</p><p>This allows you to break complex reports into logical, easy-to-read steps.</p>",
+        "codeExample": "WITH TopCustomers AS (\n  SELECT user_id, SUM(total) as lifetime_value\n  FROM Orders\n  GROUP BY user_id\n  HAVING SUM(total) > 10000\n)\nSELECT Users.name, TopCustomers.lifetime_value\nFROM TopCustomers\nJOIN Users ON Users.id = TopCustomers.user_id;",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "jsonb-data-type",
+        "title": "NoSQL inside SQL (JSONB)",
+        "explanationHtml": "<p>Sometimes your data structure changes rapidly (like tracking user settings or analytics events). Instead of constantly altering your schema, Postgres supports the <code>JSONB</code> data type.</p><p>This allows you to store raw JSON objects in a column, but unlike text fields, Postgres actually indexes the JSON, allowing you to query deeply nested keys with incredible speed.</p>",
+        "codeExample": "-- Storing JSON data\nINSERT INTO Users (name, preferences) \nVALUES ('Alice', '{\"theme\": \"dark\", \"notifications\": {\"email\": true}}');\n\n-- Querying inside the JSON\nSELECT name FROM Users \nWHERE preferences->'notifications'->>'email' = 'true';",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "explain-analyze",
+        "title": "EXPLAIN ANALYZE",
+        "explanationHtml": "<p>When a query is slow, you shouldn't guess why. You should use <code>EXPLAIN ANALYZE</code>.</p><p>This command executes the query and returns the exact execution plan generated by the Postgres optimizer. It tells you exactly how much time was spent on sequential scans, index lookups, and joining data, showing you exactly where you need to add indexes.</p>",
+        "codeExample": "EXPLAIN ANALYZE\nSELECT * FROM Users \nJOIN Orders ON Users.id = Orders.user_id \nWHERE Users.age > 30;",
+        "tryItDefault": ""
+      }
+    ]
+  }
+]

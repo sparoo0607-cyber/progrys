@@ -1,0 +1,235 @@
+[
+  {
+    "slug": "frontend-developer",
+    "title": "Frontend Developer",
+    "description": "Master the art of building beautiful, interactive, and high-performance user interfaces. This roadmap takes you from internet fundamentals to modern frameworks like React and Next.js, teaching you how to architect applications that users love.",
+    "difficulty": "intermediate",
+    "estimatedTime": "6-8 Months",
+    "nodes": [
+      {
+        "title": "Internet Fundamentals",
+        "description": "Understand how websites actually work before writing code. Learn HTTP, DNS, browsers, hosting, and how information travels across the internet. This foundation makes every future topic easier to understand and debug."
+      },
+      {
+        "title": "HTML5 & Semantic Web",
+        "description": "Don't just throw <div> tags everywhere. Learn how to structure documents meaningfully using semantic HTML. This ensures your websites are accessible to screen readers, perform well in search engines (SEO), and are easier to maintain."
+      },
+      {
+        "title": "Modern CSS & Layouts",
+        "description": "Stop guessing why your elements aren't aligning. Master Flexbox and CSS Grid to confidently build any layout. You'll also learn variables, transitions, and animations to bring your interfaces to life without sacrificing performance."
+      },
+      {
+        "title": "Responsive Web Design",
+        "description": "Don't just make pages look good on your laptop. Learn media queries, fluid typography, and responsive layouts so your applications work beautifully across phones, tablets, and massive desktop monitors."
+      },
+      {
+        "title": "JavaScript Core",
+        "description": "JavaScript is the engine of the web. Move beyond basic syntax to understand closures, prototypes, asynchronous programming (Promises/async-await), and the DOM. This sets you apart from framework-only developers."
+      },
+      {
+        "title": "Version Control (Git & GitHub)",
+        "description": "Professional development is a team sport. Learn how to track changes, create branches, resolve merge conflicts, and collaborate using pull requests. This is the absolute standard for working in any tech company."
+      },
+      {
+        "title": "Package Managers & Bundlers",
+        "description": "Modern apps use hundreds of external libraries. Learn how to manage dependencies with npm/yarn, and understand how bundlers like Vite and Webpack compile your code for production."
+      },
+      {
+        "title": "React.js Fundamentals",
+        "description": "Dive into the industry's most popular UI library. Learn how to break UIs into reusable components, manage state, and handle side effects with Hooks. You'll shift your mindset from imperative DOM manipulation to declarative rendering."
+      },
+      {
+        "title": "State Management & Architecture",
+        "description": "As your app grows, passing props becomes a nightmare. Learn how to structure global state using context, Redux, or Zustand. Understanding when NOT to use global state is just as important."
+      },
+      {
+        "title": "Next.js & Server-Side Rendering",
+        "description": "React alone can be slow to load and bad for SEO. Learn Next.js to pre-render your pages on the server. You'll understand routing, SSR, SSG, and API routes, taking your apps to enterprise-grade performance."
+      },
+      {
+        "title": "CSS Frameworks & Tailwind",
+        "description": "Writing vanilla CSS for every project takes too long. Master utility-first CSS with Tailwind to rapidly build responsive, consistent designs without leaving your HTML, which is a massive productivity boost."
+      },
+      {
+        "title": "Testing (Jest & Playwright)",
+        "description": "Don't test your code by endlessly clicking around. Learn how to write unit tests for your functions and end-to-end tests for your user flows, giving you the confidence to refactor code without breaking the app."
+      }
+    ]
+  },
+  {
+    "slug": "backend-developer",
+    "title": "Backend Developer",
+    "description": "Become the architect behind the scenes. Learn how to design robust databases, build secure APIs, manage servers, and scale applications to handle millions of requests smoothly.",
+    "difficulty": "advanced",
+    "estimatedTime": "8-10 Months",
+    "nodes": [
+      {
+        "title": "Internet & Networking",
+        "description": "Backend engineering starts with the network. Deep dive into HTTP/HTTPS, TCP/UDP, WebSockets, and how browsers communicate with servers. You must understand what happens when a user types a URL."
+      },
+      {
+        "title": "Backend Language (Node.js/Python/Go)",
+        "description": "Choose a primary weapon. Learn how your chosen language handles memory, concurrency, and package management. Understanding the event loop in Node or goroutines in Go is critical for writing performant servers."
+      },
+      {
+        "title": "Relational Databases (SQL)",
+        "description": "Data is the core of any application. Learn how to design normalized schemas, write complex joins, and use indexes efficiently. Postgres or MySQL will be your bread and butter."
+      },
+      {
+        "title": "NoSQL Databases",
+        "description": "Not all data fits neatly into tables. Understand document stores like MongoDB and key-value stores like Redis. You need to know exactly when to choose NoSQL over SQL based on your data access patterns."
+      },
+      {
+        "title": "RESTful API Design",
+        "description": "Your API is how the world interacts with your system. Learn how to design predictable, resource-based endpoints, handle proper HTTP status codes, and paginate large datasets."
+      },
+      {
+        "title": "Authentication & Security",
+        "description": "Don't let user data get stolen. Master secure password hashing (bcrypt), session management, JWTs, OAuth2, and how to defend against common attacks like SQL injection and CSRF."
+      },
+      {
+        "title": "Caching Strategies",
+        "description": "Database queries are slow. Learn how to implement in-memory caching with Redis to serve responses instantly. You'll also learn the hard part: cache invalidation."
+      },
+      {
+        "title": "Message Brokers & Async Processing",
+        "description": "Never block the main thread for a slow task. Learn how to offload heavy workloads (like sending emails or processing images) to background workers using RabbitMQ or Kafka."
+      },
+      {
+        "title": "Docker & Containerization",
+        "description": "Stop saying 'It works on my machine'. Learn how to package your application and its dependencies into isolated containers so it runs identically in development, testing, and production."
+      },
+      {
+        "title": "CI/CD Pipelines",
+        "description": "Automate your deployments. Learn how to set up GitHub Actions to run your tests and deploy your code every time you push to the repository, eliminating manual deployment errors."
+      }
+    ]
+  },
+  {
+    "slug": "full-stack-developer",
+    "title": "Full Stack Developer",
+    "description": "Bridge the gap between frontend and backend. Learn the entire lifecycle of web applications, from designing the database schema to deploying the final user interface.",
+    "difficulty": "advanced",
+    "estimatedTime": "10-12 Months",
+    "nodes": [
+      {
+        "title": "HTML, CSS & JavaScript Fundamentals",
+        "description": "Before touching a framework, build a strong foundation. Master the trio of web languages, focusing heavily on ES6+ JavaScript, DOM manipulation, and responsive design principles."
+      },
+      {
+        "title": "Frontend Framework (React)",
+        "description": "Learn how modern UIs are built. Understand component lifecycles, state management, and declarative rendering to build complex, interactive single-page applications."
+      },
+      {
+        "title": "Server-Side Fundamentals (Node.js)",
+        "description": "Take JavaScript to the server. Learn how to handle file systems, streams, and basic HTTP routing without relying on a framework, giving you a deep understanding of server mechanics."
+      },
+      {
+        "title": "Building APIs (Express)",
+        "description": "Connect your frontend to real data. Learn how to create RESTful APIs, manage middleware, parse incoming requests, and return structured JSON responses to the client."
+      },
+      {
+        "title": "Database Integration (SQL & ORMs)",
+        "description": "Stop storing data in variables. Learn how to design a relational database schema and use an ORM like Prisma or Sequelize to safely query and mutate data from your server."
+      },
+      {
+        "title": "User Authentication",
+        "description": "Secure your application end-to-end. Learn how to register users, hash passwords securely, and implement cookie-based or token-based authentication flows that work across frontend and backend."
+      },
+      {
+        "title": "Full Stack Meta-Frameworks (Next.js)",
+        "description": "Blur the lines between client and server. Learn how to build applications where the frontend and backend live in the same codebase, utilizing Server Components and Server Actions."
+      },
+      {
+        "title": "Deployment & Hosting",
+        "description": "Get your app on the internet. Learn how to provision a database on a cloud provider, deploy your server on platforms like Render or AWS, and host your frontend on Vercel."
+      }
+    ]
+  },
+  {
+    "slug": "mobile-app-developer",
+    "title": "Mobile App Developer",
+    "description": "Build native applications that live in users pockets. Learn modern mobile development using React Native or Flutter to create high-performance apps for both iOS and Android.",
+    "difficulty": "intermediate",
+    "estimatedTime": "6-8 Months",
+    "nodes": [
+      {
+        "title": "Programming Foundations",
+        "description": "Master JavaScript (for React Native) or Dart (for Flutter). A strong grasp of the underlying language's object-oriented and functional features is critical before diving into mobile UI paradigms."
+      },
+      {
+        "title": "Mobile UI Layouts",
+        "description": "Mobile screens are small and wildly varied. Learn how to use Flexbox or layout widgets to create responsive designs that adapt perfectly from an iPhone Mini to a large Android tablet."
+      },
+      {
+        "title": "Navigation & Routing",
+        "description": "Websites use URLs; apps use stacks. Understand stack, tab, and drawer navigation paradigms. Managing the back-stack correctly prevents users from getting trapped in your app."
+      },
+      {
+        "title": "State & Data Fetching",
+        "description": "Mobile apps must handle spotty network connections gracefully. Learn how to manage local state, fetch API data, and cache responses for offline viewing so the app feels instantly responsive."
+      },
+      {
+        "title": "Device Hardware & APIs",
+        "description": "Apps are powerful because they have hardware access. Learn how to request user permissions and integrate the camera, GPS, accelerometer, and local file storage."
+      },
+      {
+        "title": "Push Notifications",
+        "description": "Keep users engaged. Learn how to configure Apple APNs and Firebase Cloud Messaging to send reliable, targeted notifications to users devices even when the app is closed."
+      },
+      {
+        "title": "Animations & Gestures",
+        "description": "A static app feels dead. Learn how to implement fluid transitions, swipe-to-delete gestures, and micro-interactions that make your application feel premium and native."
+      },
+      {
+        "title": "App Store Deployment",
+        "description": "The final hurdle. Understand the complex processes of signing certificates, provisioning profiles, and navigating the review guidelines to successfully publish to the App Store and Google Play."
+      }
+    ]
+  },
+  {
+    "slug": "game-developer",
+    "title": "Game Developer",
+    "description": "Turn your imagination into playable realities. Learn game engines, 3D math, physics, and scripting to build immersive, interactive experiences for PC, console, or mobile.",
+    "difficulty": "advanced",
+    "estimatedTime": "10-14 Months",
+    "nodes": [
+      {
+        "title": "C# or C++ Foundations",
+        "description": "Games require performance. Master object-oriented programming, memory management, and data structures in a strictly typed language. This is the bedrock of game logic."
+      },
+      {
+        "title": "Game Engine Architecture",
+        "description": "Understand the game loop. Learn how Unity or Unreal Engine processes inputs, updates game state, and renders frames at 60fps, and how to optimize your code to fit within that window."
+      },
+      {
+        "title": "2D & 3D Math Fundamentals",
+        "description": "Don't let the math scare you. You must understand vectors, quaternions (for rotation), and matrices to move objects, calculate bullet trajectories, and determine lines of sight."
+      },
+      {
+        "title": "Physics & Collision Detection",
+        "description": "Stop things from falling through the floor. Learn how to use rigidbodies, colliders, and raycasts to create realistic physics interactions and trigger events when objects touch."
+      },
+      {
+        "title": "Animation Systems",
+        "description": "Bring characters to life. Learn about state machines, blend trees, and skeletal animation to seamlessly transition a character from walking, to running, to jumping."
+      },
+      {
+        "title": "UI & Input Systems",
+        "description": "Games need menus and controls. Learn how to build responsive health bars, inventories, and pause menus, while supporting multiple input devices like keyboards, mice, and gamepads."
+      },
+      {
+        "title": "AI & Pathfinding",
+        "description": "Make your enemies smart. Implement NavMeshes for pathfinding so NPCs can navigate around obstacles, and use Finite State Machines to give them behaviors like patrol, chase, and attack."
+      },
+      {
+        "title": "Audio Implementation",
+        "description": "Sound is half the experience. Learn how to manage audio sources, spatial 3D sound, and audio mixing to create immersive soundscapes and satisfying impact effects."
+      },
+      {
+        "title": "Optimization & Profiling",
+        "description": "Find out why your game is lagging. Use profiling tools to identify CPU bottlenecks, reduce draw calls, and manage memory effectively so your game runs smoothly on low-end hardware."
+      }
+    ]
+  }
+]

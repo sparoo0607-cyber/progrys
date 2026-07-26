@@ -1,0 +1,187 @@
+[
+  {
+    "slug": "react-fundamentals",
+    "title": "React Fundamentals",
+    "description": "Learn the industry's most popular UI library. Master component-driven architecture, declarative rendering, and state management using Hooks.",
+    "iconName": "Atom",
+    "lessons": [
+      {
+        "slug": "thinking-in-react",
+        "title": "Thinking in React",
+        "explanationHtml": "<p>React requires a mental shift from imperative programming (telling the browser EXACTLY how to update the DOM) to declarative programming (describing what the UI SHOULD look like based on the current state).</p><p>You build applications by breaking the UI down into isolated, reusable pieces called Components.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=bMknfKXIFA8' target='_blank'>React Course - Beginner's Tutorial for React 18 (freeCodeCamp)</a></p>",
+        "codeExample": "function Welcome() {\n  return <h1>Hello, World!</h1>;\n}\n\nexport default function App() {\n  return (\n    <div>\n      <Welcome />\n      <Welcome />\n    </div>\n  );\n}",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "jsx-syntax",
+        "title": "JSX: JavaScript + XML",
+        "explanationHtml": "<p>JSX looks like HTML, but it's actually JavaScript. It gets compiled into <code>React.createElement()</code> calls under the hood.</p><p>Because it's JavaScript, you can embed any JS expression inside curly braces <code>{}</code>. However, you must use <code>className</code> instead of <code>class</code>, and all tags must be explicitly closed (e.g., <code>&lt;br /&gt;</code>).</p>",
+        "codeExample": "const user = \"Alice\";\nconst element = <h1 className=\"greeting\">Hello, {user}!</h1>;",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "props-and-data-flow",
+        "title": "Props & Data Flow",
+        "explanationHtml": "<p>Props (short for properties) are how React components communicate. You pass data from a parent component down to a child component, similar to passing arguments to a function.</p><p>Props are <strong>read-only</strong>. A child component must never modify its own props directly. Data in React strictly flows downwards.</p>",
+        "codeExample": "function Avatar(props) {\n  return <img src={props.url} alt={props.name} />;\n}\n\nfunction Profile() {\n  return <Avatar url=\"/alice.png\" name=\"Alice\" />;\n}",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "usestate-hook",
+        "title": "State Management with useState",
+        "explanationHtml": "<p>While props are passed in from above, state is managed internally by the component. When state changes, React automatically re-renders the component to reflect the new data.</p><p>The <code>useState</code> hook returns an array with two elements: the current state value, and a function to update it.</p>",
+        "codeExample": "import { useState } from 'react';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n\n  return (\n    <button onClick={() => setCount(count + 1)}>\n      Clicked {count} times\n    </button>\n  );\n}",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "useeffect-hook",
+        "title": "Side Effects with useEffect",
+        "explanationHtml": "<p>Components should be pure functions, but sometimes you need to \"step outside\" of React to fetch data, set up a subscription, or manually manipulate the DOM. These are called side effects.</p><p>The <code>useEffect</code> hook takes a function and a dependency array. If the array is empty <code>[]</code>, the effect runs exactly once when the component mounts.</p>",
+        "codeExample": "import { useState, useEffect } from 'react';\n\nfunction UserProfile({ id }) {\n  const [user, setUser] = useState(null);\n\n  useEffect(() => {\n    fetch(`/api/users/${id}`)\n      .then(res => res.json())\n      .then(data => setUser(data));\n  }, [id]); // Re-run if 'id' changes\n\n  if (!user) return <p>Loading...</p>;\n  return <h1>{user.name}</h1>;\n}",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "conditional-rendering",
+        "title": "Conditional Rendering",
+        "explanationHtml": "<p>You can render different UI elements based on state using standard JavaScript operators like <code>if</code>, the ternary operator <code>? :</code>, or the logical AND operator <code>&&</code>.</p><p>Be careful with <code>&&</code>: if the left side evaluates to the number <code>0</code>, React will literally render \"0\" on the screen.</p>",
+        "codeExample": "function Dashboard({ isLoggedIn, hasUnreadMessages }) {\n  return (\n    <div>\n      {isLoggedIn ? <AdminPanel /> : <LoginPrompt />}\n      \n      {/* Only renders if true */}\n      {hasUnreadMessages && <span className=\"badge\">New!</span>}\n    </div>\n  );\n}",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "rendering-lists",
+        "title": "Rendering Lists & Keys",
+        "explanationHtml": "<p>To render an array of data, use the JavaScript <code>.map()</code> function to transform the array of objects into an array of JSX elements.</p><p>Every rendered item in a list MUST have a unique <code>key</code> prop (usually an ID from your database). This helps React identify which items have changed, been added, or been removed, drastically improving performance.</p>",
+        "codeExample": "function TodoList({ todos }) {\n  return (\n    <ul>\n      {todos.map(todo => (\n        <li key={todo.id}>{todo.text}</li>\n      ))}\n    </ul>\n  );\n}",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "forms-in-react",
+        "title": "Controlled Components (Forms)",
+        "explanationHtml": "<p>In standard HTML, form inputs maintain their own internal state. In React, we usually override this by tying the input's value directly to a piece of React state. These are called \"Controlled Components\".</p><p>This gives you instant access to the form data for validation, submitting, or disabling submit buttons.</p>",
+        "codeExample": "function SignupForm() {\n  const [email, setEmail] = useState('');\n\n  const handleSubmit = (e) => {\n    e.preventDefault();\n    console.log(\"Submitting:\", email);\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <input \n        value={email} \n        onChange={(e) => setEmail(e.target.value)} \n        placeholder=\"Email\" \n      />\n      <button type=\"submit\">Sign Up</button>\n    </form>\n  );\n}",
+        "tryItDefault": ""
+      }
+    ]
+  },
+  {
+    "slug": "nextjs-mastery",
+    "title": "Next.js Mastery",
+    "description": "Learn the React framework for production. Master App Router, Server Components, SSR, and API routes.",
+    "iconName": "Triangle",
+    "lessons": [
+      {
+        "slug": "what-is-nextjs",
+        "title": "Why Next.js?",
+        "explanationHtml": "<p>React is a client-side library. When a user visits a React app, they download a massive JavaScript bundle before they see anything on screen. This is bad for SEO and slow on mobile.</p><p>Next.js solves this by pre-rendering your pages on the server (Server-Side Rendering or Static Site Generation). It also provides built-in routing, image optimization, and API endpoints.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=ZjAqacIC_3c' target='_blank'>Next.js Full Course - JS Mastery</a></p>",
+        "codeExample": "",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "app-router",
+        "title": "The App Router",
+        "explanationHtml": "<p>Next.js 13 introduced the App Router. Routing is defined by the file system: every folder inside the <code>app/</code> directory that contains a <code>page.tsx</code> file becomes a public route.</p><p>For example, <code>app/about/page.tsx</code> maps to the <code>/about</code> URL.</p>",
+        "codeExample": "// app/about/page.tsx\nexport default function AboutPage() {\n  return <h1>About Us</h1>;\n}",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "server-components",
+        "title": "React Server Components (RSC)",
+        "explanationHtml": "<p>By default, all components inside the App Router are Server Components. They render entirely on the server and send zero JavaScript to the browser!</p><p>This means you can directly query your database securely from inside your component. You only add <code>\"use client\";</code> to the top of the file when you need interactivity (like <code>onClick</code> or <code>useState</code>).</p>",
+        "codeExample": "// Server Component (default)\nimport db from '@/lib/db';\n\nexport default async function UserList() {\n  const users = await db.user.findMany(); // Secure server-side code\n  \n  return (\n    <ul>\n      {users.map(u => <li key={u.id}>{u.name}</li>)}\n    </ul>\n  );\n}",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "data-fetching",
+        "title": "Data Fetching & Caching",
+        "explanationHtml": "<p>Next.js extends the native <code>fetch</code> API. You can dictate exactly how caching works on a per-request basis.</p><p>By default, fetch requests are cached aggressively (Static). You can opt out by using <code>cache: 'no-store'</code> (Dynamic), or revalidate the cache every X seconds (ISR).</p>",
+        "codeExample": "export default async function Page() {\n  // Fetch fresh data on every request (Dynamic)\n  const res = await fetch('https://api.example.com/data', { \n    cache: 'no-store' \n  });\n  const data = await res.json();\n\n  return <div>{data.title}</div>;\n}",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "server-actions",
+        "title": "Server Actions",
+        "explanationHtml": "<p>Traditionally, to submit a form, you had to build a separate API endpoint and write frontend <code>fetch</code> logic. Server Actions allow you to call server-side functions directly from your client-side or server-side forms.</p><p>This drastically reduces boilerplate and provides excellent progressive enhancement.</p>",
+        "codeExample": "import { redirect } from 'next/navigation';\nimport db from '@/lib/db';\n\nexport default function Signup() {\n  async function createAccount(formData: FormData) {\n    'use server'; // Marks this as a Server Action\n    const email = formData.get('email');\n    await db.user.create({ data: { email } });\n    redirect('/dashboard');\n  }\n\n  return (\n    <form action={createAccount}>\n      <input name=\"email\" type=\"email\" />\n      <button type=\"submit\">Sign Up</button>\n    </form>\n  );\n}",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "layouts-and-templates",
+        "title": "Layouts & Nested Routes",
+        "explanationHtml": "<p>A <code>layout.tsx</code> file wraps all pages in its directory and any subdirectories. It is perfect for navigation bars and sidebars because it does NOT re-render when the user navigates between pages, preserving state and performance.</p>",
+        "codeExample": "// app/dashboard/layout.tsx\nexport default function DashboardLayout({ children }) {\n  return (\n    <div className=\"flex\">\n      <Sidebar />\n      <main className=\"flex-1\">{children}</main>\n    </div>\n  );\n}",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "route-handlers",
+        "title": "Route Handlers (API)",
+        "explanationHtml": "<p>If you need to expose a public API endpoint (e.g., for a mobile app or a webhook), you create a <code>route.ts</code> file.</p><p>You export functions named after the HTTP verbs: <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>.</p>",
+        "codeExample": "// app/api/hello/route.ts\nimport { NextResponse } from 'next/server';\n\nexport async function GET(request: Request) {\n  return NextResponse.json({ message: 'Hello World' });\n}",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "image-optimization",
+        "title": "Image Optimization",
+        "explanationHtml": "<p>Images account for the vast majority of web page weight. The Next.js <code>&lt;Image&gt;</code> component automatically converts images to modern formats like WebP, serves correctly sized images based on the user's device, and lazy-loads them to prevent layout shift.</p>",
+        "codeExample": "import Image from 'next/image';\n\nexport default function Hero() {\n  return (\n    <Image \n      src=\"/hero-banner.jpg\"\n      alt=\"Hero Banner\"\n      width={1200}\n      height={600}\n      priority // Load immediately, don't lazy load\n    />\n  );\n}",
+        "tryItDefault": ""
+      }
+    ]
+  },
+  {
+    "slug": "nodejs-backend",
+    "title": "Node.js Backend",
+    "description": "Learn how to build scalable, high-performance servers using JavaScript runtime.",
+    "iconName": "Server",
+    "lessons": [
+      {
+        "slug": "what-is-nodejs",
+        "title": "What is Node.js?",
+        "explanationHtml": "<p>Node.js is not a framework or a language. It is a C++ program built on top of Google Chrome's V8 JavaScript engine that allows you to run JavaScript code outside of a web browser.</p><p>Because it uses an event-driven, non-blocking I/O model, Node.js is incredibly efficient for building data-intensive real-time applications.</p><h3>Recommended Resource</h3><p><a href='https://www.youtube.com/watch?v=TlB_eWDSMt4' target='_blank'>Node.js Tutorial for Beginners - Programming with Mosh</a></p>",
+        "codeExample": "",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "the-event-loop",
+        "title": "The Event Loop",
+        "explanationHtml": "<p>JavaScript is single-threaded. So how can Node.js handle thousands of concurrent requests? The Event Loop.</p><p>When Node receives an I/O request (like reading from a database), it offloads that heavy work to the operating system and continues executing other code. When the database finishes, it places a callback in the event queue to be executed. This is why you must NEVER write synchronous, blocking code in Node.</p>",
+        "codeExample": "const fs = require('fs');\n\n// Bad (Blocking)\nconst data = fs.readFileSync('/file.txt');\nconsole.log(data);\n\n// Good (Non-blocking)\nfs.readFile('/file.txt', (err, data) => {\n  console.log(data);\n});",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "express-framework",
+        "title": "Building Servers with Express",
+        "explanationHtml": "<p>While you can build a server using Node's built-in <code>http</code> module, the Express.js framework makes routing and handling requests vastly simpler.</p><p>Express is minimalist, unopinionated, and the industry standard for Node.js REST APIs.</p>",
+        "codeExample": "const express = require('express');\nconst app = express();\n\napp.get('/api/users', (req, res) => {\n  res.json([{ name: 'Alice' }, { name: 'Bob' }]);\n});\n\napp.listen(3000, () => console.log('Server running on port 3000'));",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "express-middleware",
+        "title": "Understanding Middleware",
+        "explanationHtml": "<p>Middleware functions are functions that have access to the request (req) and response (res) objects. They sit in the middle of the request-response cycle.</p><p>You use middleware to parse JSON bodies, handle CORS, log requests, or authenticate users before allowing them to hit your route handlers.</p>",
+        "codeExample": "app.use(express.json()); // Built-in middleware to parse JSON\n\n// Custom logging middleware\napp.use((req, res, next) => {\n  console.log(`${req.method} request to ${req.url}`);\n  next(); // MUST call next() to continue the chain\n});",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "environment-variables",
+        "title": "Environment Variables (.env)",
+        "explanationHtml": "<p>Never hardcode API keys or database passwords in your source code. If you commit them to GitHub, bots will steal them in seconds.</p><p>Use the <code>dotenv</code> package to load secrets from a local <code>.env</code> file into Node's <code>process.env</code> object.</p>",
+        "codeExample": "require('dotenv').config();\n\nconst dbPassword = process.env.DATABASE_PASSWORD;\nconsole.log(`Connecting to DB securely...`);",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "error-handling",
+        "title": "Global Error Handling",
+        "explanationHtml": "<p>If an asynchronous route handler throws an error and you don't catch it, your entire Node server will crash.</p><p>In Express, you can define a special middleware function with exactly four arguments <code>(err, req, res, next)</code> to catch and format all errors gracefully.</p>",
+        "codeExample": "app.get('/api/broken', (req, res, next) => {\n  const error = new Error('Database disconnected!');\n  next(error); // Pass error to global handler\n});\n\n// Global Error Handler\napp.use((err, req, res, next) => {\n  console.error(err.message);\n  res.status(500).json({ error: 'Internal Server Error' });\n});",
+        "tryItDefault": ""
+      },
+      {
+        "slug": "jwt-authentication",
+        "title": "JWT Authentication",
+        "explanationHtml": "<p>JSON Web Tokens (JWT) are a stateless way to authenticate users. When a user logs in, you generate a signed token and send it back. The user includes this token in the header of subsequent requests.</p><p>Because the token is cryptographically signed, you can verify the user's identity without querying the database every time.</p>",
+        "codeExample": "const jwt = require('jsonwebtoken');\n\n// Generate Token\nconst token = jwt.sign({ userId: 123 }, process.env.JWT_SECRET, { expiresIn: '1h' });\n\n// Verify Token (Middleware)\nfunction authenticate(req, res, next) {\n  const token = req.headers.authorization?.split(' ')[1];\n  if (!token) return res.status(401).send('Access Denied');\n\n  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {\n    if (err) return res.status(403).send('Invalid Token');\n    req.user = decoded;\n    next();\n  });\n}",
+        "tryItDefault": ""
+      }
+    ]
+  }
+]

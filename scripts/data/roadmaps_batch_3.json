@@ -1,0 +1,248 @@
+[
+  {
+    "slug": "ethical-hacker",
+    "title": "Ethical Hacker",
+    "description": "Learn to think like a malicious attacker in order to defend against them. This roadmap teaches you how to identify vulnerabilities in networks, applications, and human behavior to secure modern infrastructure.",
+    "difficulty": "advanced",
+    "estimatedTime": "9-12 Months",
+    "nodes": [
+      {
+        "title": "Networking & Protocols",
+        "description": "You cannot hack a network if you don't know how it operates. Master TCP/IP, DNS, routing, and deep packet inspection to understand exactly how data moves and where it can be intercepted."
+      },
+      {
+        "title": "Linux & Bash Scripting",
+        "description": "Linux is the operating system of hackers. Learn how to navigate the command line fluently, manage file permissions, and write bash scripts to automate repetitive reconnaissance tasks."
+      },
+      {
+        "title": "Reconnaissance & Footprinting",
+        "description": "Hacking is 80% research. Learn how to use OSINT (Open Source Intelligence), WHOIS, Shodan, and Nmap to silently gather information about a target before ever sending a malicious payload."
+      },
+      {
+        "title": "Web Application Security",
+        "description": "The web is the biggest attack surface. Master the OWASP Top 10. Learn how to manually find and exploit SQL Injection, Cross-Site Scripting (XSS), and Broken Authentication using tools like Burp Suite."
+      },
+      {
+        "title": "Network Exploitation",
+        "description": "Move beyond the web. Learn how to exploit misconfigured services, perform Man-in-the-Middle (MitM) attacks, and use tools like Metasploit to deliver payloads to vulnerable servers."
+      },
+      {
+        "title": "Privilege Escalation",
+        "description": "Getting a low-level shell is just the beginning. Learn how to exploit kernel vulnerabilities, misconfigured cron jobs, and weak permissions to elevate your access to 'root' or 'SYSTEM'."
+      },
+      {
+        "title": "Wireless Hacking",
+        "description": "Wi-Fi is inherently vulnerable. Learn how to capture handshakes, crack WPA2 passwords using Aircrack-ng, and set up rogue access points to intercept traffic from unsuspecting users."
+      },
+      {
+        "title": "Social Engineering",
+        "description": "Humans are the weakest link. Understand the psychology of phishing, pretexting, and baiting to manipulate employees into bypassing multi-million dollar security systems."
+      },
+      {
+        "title": "Cryptography Fundamentals",
+        "description": "Understand how secrets are kept. Learn the difference between symmetric and asymmetric encryption, hashing algorithms, and how to identify and exploit weak cryptographic implementations."
+      },
+      {
+        "title": "Reporting & Documentation",
+        "description": "A successful hack means nothing if you can't explain it. Learn how to write professional penetration testing reports that executives can understand and developers can use to fix the flaws."
+      }
+    ]
+  },
+  {
+    "slug": "penetration-tester",
+    "title": "Penetration Tester",
+    "description": "Specialized, offensive security. Learn how to professionally exploit systems, bypass enterprise defenses, and provide actionable security recommendations to corporate clients.",
+    "difficulty": "advanced",
+    "estimatedTime": "8-10 Months",
+    "nodes": [
+      {
+        "title": "Offensive Python",
+        "description": "Tools will fail you, so you must write your own. Learn how to use Python to write custom port scanners, exploit scripts, and automate interactions with web applications."
+      },
+      {
+        "title": "Active Directory Exploitation",
+        "description": "Active Directory controls 90% of corporate networks. Deep dive into Kerberos, LDAP, and NTLM to learn attacks like Kerberoasting, Pass-the-Hash, and Golden Tickets."
+      },
+      {
+        "title": "Advanced Web Exploitation",
+        "description": "Go beyond basic XSS. Learn Server-Side Request Forgery (SSRF), XML External Entity (XXE) attacks, and bypassing Web Application Firewalls (WAF) to extract sensitive data."
+      },
+      {
+        "title": "Reverse Engineering",
+        "description": "Understand software at the lowest level. Learn how to use tools like Ghidra and IDA Pro to disassemble compiled binaries, analyze malware, and find zero-day memory corruption vulnerabilities."
+      },
+      {
+        "title": "Exploit Development",
+        "description": "Stop using pre-made exploits. Learn how CPU registers work, how to cause buffer overflows, and how to write custom shellcode to bypass modern memory protections like ASLR and DEP."
+      },
+      {
+        "title": "Evasion Techniques",
+        "description": "Antivirus software will catch standard payloads. Learn how to obfuscate your code, use in-memory execution, and bypass Endpoint Detection and Response (EDR) systems to remain undetected."
+      },
+      {
+        "title": "Post-Exploitation & Pivoting",
+        "description": "Once you compromise one machine, how do you get the rest? Learn how to set up SSH tunnels, extract credentials from memory (Mimikatz), and move laterally across a segmented corporate network."
+      }
+    ]
+  },
+  {
+    "slug": "security-analyst",
+    "title": "Security Analyst",
+    "description": "Become the shield. Learn how to monitor networks, detect anomalies, analyze malware, and respond to active cyber attacks as a critical member of a Blue Team.",
+    "difficulty": "intermediate",
+    "estimatedTime": "6-8 Months",
+    "nodes": [
+      {
+        "title": "Security Operations Center (SOC)",
+        "description": "Understand the daily life of a defender. Learn how SOC teams are structured, the triage process for security alerts, and how to distinguish false positives from actual targeted attacks."
+      },
+      {
+        "title": "SIEM Tools & Log Analysis",
+        "description": "Logs are your source of truth. Learn how to aggregate and query massive volumes of log data using tools like Splunk or ELK Stack to identify suspicious patterns across the network."
+      },
+      {
+        "title": "Intrusion Detection Systems (IDS)",
+        "description": "Detect the attackers before they breach. Learn how to configure and write custom rules for tools like Snort and Suricata to catch malicious network traffic in real-time."
+      },
+      {
+        "title": "Incident Response (IR)",
+        "description": "When the alarms go off, you must act fast. Learn the structured IR lifecycle: preparation, identification, containment, eradication, recovery, and post-incident lessons learned."
+      },
+      {
+        "title": "Digital Forensics",
+        "description": "Find out exactly what happened. Learn how to capture volatile memory, analyze disk images, and reconstruct the attacker's timeline to understand the full scope of a data breach."
+      },
+      {
+        "title": "Threat Intelligence",
+        "description": "Know your enemy. Learn how to consume threat feeds, understand attacker tactics, techniques, and procedures (TTPs) using the MITRE ATT&CK framework, and proactively hunt for threats."
+      },
+      {
+        "title": "Vulnerability Management",
+        "description": "Fix the holes before they are exploited. Learn how to run automated vulnerability scans (Nessus), prioritize patches based on risk, and ensure compliance with security standards."
+      }
+    ]
+  },
+  {
+    "slug": "aws-cloud-engineer",
+    "title": "AWS Cloud Engineer",
+    "description": "Master the world's largest cloud provider. Learn how to design, deploy, and manage highly available, fault-tolerant, and secure infrastructure on Amazon Web Services.",
+    "difficulty": "intermediate",
+    "estimatedTime": "5-7 Months",
+    "nodes": [
+      {
+        "title": "Cloud Computing Fundamentals",
+        "description": "Understand the shift from on-premise to cloud. Learn the differences between IaaS, PaaS, and SaaS, and how virtualization allows cloud providers to scale resources on demand."
+      },
+      {
+        "title": "Identity and Access Management (IAM)",
+        "description": "Security is job zero. Learn how to create users, groups, and roles, and write strict JSON policies to ensure services and employees only have access to exactly what they need."
+      },
+      {
+        "title": "Compute Services (EC2)",
+        "description": "The backbone of the cloud. Learn how to provision virtual machines, configure security groups (virtual firewalls), and use auto-scaling groups to handle sudden traffic spikes automatically."
+      },
+      {
+        "title": "Virtual Private Cloud (VPC)",
+        "description": "Build your own private network in the cloud. Master subnets, route tables, internet gateways, and NAT gateways to isolate your databases from the public internet."
+      },
+      {
+        "title": "Storage Solutions (S3 & EBS)",
+        "description": "Never run out of disk space. Learn the difference between block storage for your EC2 instances and object storage (S3) for hosting static websites and storing infinite amounts of files."
+      },
+      {
+        "title": "Managed Databases (RDS & DynamoDB)",
+        "description": "Stop managing database servers manually. Learn how to deploy highly available Postgres clusters with RDS, and highly scalable NoSQL tables with DynamoDB."
+      },
+      {
+        "title": "Serverless Architecture",
+        "description": "Run code without managing servers. Learn how to write AWS Lambda functions that trigger automatically based on events, and expose them to the web using API Gateway."
+      },
+      {
+        "title": "Infrastructure as Code (Terraform)",
+        "description": "Stop clicking through the AWS console. Learn how to write Terraform scripts to programmatically provision, update, and destroy your entire cloud infrastructure in minutes."
+      }
+    ]
+  },
+  {
+    "slug": "azure-engineer",
+    "title": "Azure Engineer",
+    "description": "Master Microsoft's enterprise cloud platform. Learn how to design scalable architectures, manage hybrid clouds, and integrate seamlessly with the Microsoft enterprise ecosystem.",
+    "difficulty": "intermediate",
+    "estimatedTime": "5-7 Months",
+    "nodes": [
+      {
+        "title": "Azure Fundamentals",
+        "description": "Get familiar with the Azure ecosystem. Understand resource groups, regions, and the Azure Resource Manager (ARM) model that organizes all your cloud assets."
+      },
+      {
+        "title": "Azure Active Directory (Entra ID)",
+        "description": "Enterprise identity management. Learn how to manage users, implement Role-Based Access Control (RBAC), and set up conditional access policies for secure sign-ins."
+      },
+      {
+        "title": "Virtual Networks (VNet)",
+        "description": "Design secure network topologies. Learn how to configure VNets, network security groups (NSGs), and establish secure VPN connections back to on-premise corporate data centers."
+      },
+      {
+        "title": "Azure Compute",
+        "description": "Run your workloads. Master Virtual Machines, Virtual Machine Scale Sets, and Azure App Service to host web applications without managing the underlying operating system."
+      },
+      {
+        "title": "Azure Storage",
+        "description": "Manage enterprise data. Learn how to use Blob Storage for unstructured data, Azure Files for shared network drives, and implement lifecycle management to reduce storage costs."
+      },
+      {
+        "title": "Azure SQL & Cosmos DB",
+        "description": "Database management on Azure. Learn how to deploy managed SQL Server databases, and how to use Cosmos DB for globally distributed, multi-model NoSQL applications."
+      },
+      {
+        "title": "ARM Templates & Bicep",
+        "description": "Automate your infrastructure. Learn how to use ARM templates and the newer, cleaner Bicep language to define your Azure resources as version-controlled code."
+      },
+      {
+        "title": "Monitoring & Governance",
+        "description": "Keep costs and performance in check. Learn how to use Azure Monitor to track system health, and Azure Policy to enforce compliance rules across your entire organization."
+      }
+    ]
+  },
+  {
+    "slug": "devops-engineer",
+    "title": "DevOps Engineer",
+    "description": "Bridge the gap between software development and IT operations. Learn how to automate deployments, manage infrastructure as code, and ensure systems are reliable and scalable.",
+    "difficulty": "advanced",
+    "estimatedTime": "8-10 Months",
+    "nodes": [
+      {
+        "title": "Linux Administration",
+        "description": "DevOps runs on Linux. Master the command line, process management, SSH, and basic networking. You must be completely comfortable navigating a server without a graphical interface."
+      },
+      {
+        "title": "Networking & DNS",
+        "description": "Before you can deploy apps, you must understand how traffic reaches them. Deep dive into load balancers, reverse proxies (Nginx), SSL/TLS certificates, and DNS records."
+      },
+      {
+        "title": "Containerization (Docker)",
+        "description": "The foundation of modern DevOps. Learn how to write efficient Dockerfiles, manage multi-container applications with Docker Compose, and understand how containers isolate processes."
+      },
+      {
+        "title": "Continuous Integration (CI)",
+        "description": "Automate testing. Learn how to configure Jenkins or GitHub Actions to automatically pull code, install dependencies, run test suites, and build Docker images on every single commit."
+      },
+      {
+        "title": "Continuous Deployment (CD)",
+        "description": "Automate releases. Learn how to safely deploy your built artifacts to staging and production environments, implementing strategies like Blue/Green or Canary deployments for zero-downtime."
+      },
+      {
+        "title": "Infrastructure as Code (IaC)",
+        "description": "Treat your servers like software. Master Terraform or Ansible to provision cloud resources and configure servers using declarative code, ensuring your environments are perfectly reproducible."
+      },
+      {
+        "title": "Container Orchestration (Kubernetes)",
+        "description": "When Docker isn't enough. Learn how to manage thousands of containers across multiple servers, handling auto-scaling, self-healing, and service discovery using Kubernetes."
+      },
+      {
+        "title": "Observability & Monitoring",
+        "description": "You can't fix what you can't see. Learn how to set up Prometheus for metrics collection, Grafana for beautiful dashboards, and centralized logging to instantly debug production outages."
+      }
+    ]
+  }
+]
