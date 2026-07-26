@@ -2,148 +2,204 @@
   {
     "slug": "python",
     "title": "Python",
-    "description": "Learn Python step-by-step from scratch. Clean, bullet-pointed, practical lessons designed for modern learners.",
+    "description": "Learn Python with crystal-clear daily life examples, simple English, and clean bullet points across 28 step-by-step lessons.",
     "iconName": "Terminal",
     "lessons": [
       {
         "slug": "python-intro",
-        "title": "Python Intro & Setup",
-        "explanationHtml": "\n      <h4>📌 What is Python?</h4>\n      <ul>\n        <li><strong>High-level Language:</strong> Easy to read, write, and maintain.</li>\n        <li><strong>Interpreted:</strong> Code executes line-by-line without pre-compilation.</li>\n        <li><strong>Created by:</strong> Guido van Rossum in 1991.</li>\n      </ul>\n      <h4>💡 Key Advantages</h4>\n      <ul>\n        <li><strong>Simple Syntax:</strong> Looks like plain English sentences.</li>\n        <li><strong>Versatile:</strong> Used for Web, AI, Data Science, Automation, & Robotics.</li>\n        <li><strong>Huge Ecosystem:</strong> Thousands of free libraries available via PIP.</li>\n      </ul>\n      <h4>🎯 Real-World Usage</h4>\n      <ul>\n        <li><strong>YouTube & Instagram:</strong> Powering backend APIs & data processing.</li>\n        <li><strong>OpenAI & ChatGPT:</strong> Built primarily using Python ML frameworks.</li>\n      </ul>\n      <h4>⚠️ Common Mistake</h4>\n      <ul>\n        <li>❌ <strong>Mistake:</strong> Downloading Python without checking \"Add Python to PATH\".</li>\n        <li>✅ <strong>Fix:</strong> Always tick \"Add Python to PATH\" during installation.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Verify Python installation by typing <code>python --version</code> in your terminal.</li>\n      </ul>\n    ",
-        "codeExample": "# Verify Python installation\nimport sys\nprint(\"Python version:\", sys.version)",
-        "tryItDefault": "print(\"Python is ready!\")"
+        "title": "1. What is Python?",
+        "explanationHtml": "\n      <h4>📌 What is Python?</h4>\n      <ul>\n        <li><strong>Simple Language:</strong> Python is a computer language designed to look like normal English.</li>\n        <li><strong>No Translation Delay:</strong> Runs line-by-line so you see results immediately.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Think of Python like talking to a helpful assistant. Instead of giving complicated code, you give plain instructions like \"print this text\" or \"add these numbers\".</li>\n      </ul>\n      <h4>🎯 Where is it Used?</h4>\n      <ul>\n        <li><strong>YouTube & Instagram:</strong> Used to show videos and photos on your screen.</li>\n        <li><strong>AI & Robots:</strong> Used to train smart assistants like ChatGPT.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Think of one app on your phone that might use Python to process data.</li>\n      </ul>\n    ",
+        "codeExample": "# Welcome to Python!\nprint(\"Python is ready to help you!\")",
+        "tryItDefault": "print(\"Python is super easy!\")"
       },
       {
         "slug": "hello-world",
-        "title": "Python Hello World",
-        "explanationHtml": "\n      <h4>📌 Your First Program</h4>\n      <ul>\n        <li><strong>print() Function:</strong> Displays text or output on the screen.</li>\n        <li><strong>Strings:</strong> Text must be wrapped in quotes (single <code>'...'</code> or double <code>\"...\"</code>).</li>\n      </ul>\n      <h4>💡 Key Rules</h4>\n      <ul>\n        <li><strong>Case-Sensitive:</strong> Must be lowercase <code>print()</code> (not <code>Print()</code>).</li>\n        <li><strong>Parentheses Required:</strong> Function arguments go inside <code>()</code>.</li>\n      </ul>\n      <h4>🎯 Real-World Usage</h4>\n      <ul>\n        <li><strong>Debugging:</strong> Printing status messages during code execution.</li>\n        <li><strong>CLI Tools:</strong> Displaying prompts & output to terminal users.</li>\n      </ul>\n      <h4>⚠️ Common Mistake</h4>\n      <ul>\n        <li>❌ <strong>Mistake:</strong> <code>Print(\"Hello\")</code> -> NameError!</li>\n        <li>✅ <strong>Fix:</strong> Always use lowercase <code>print(\"Hello\")</code>.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Print your name and your favorite programming language on separate lines.</li>\n      </ul>\n    ",
-        "codeExample": "print(\"Hello, World!\")\nprint(\"Welcome to Progrys Knowledge Hub!\")",
+        "title": "2. Your First Program (Hello World)",
+        "explanationHtml": "\n      <h4>📌 Hello World</h4>\n      <ul>\n        <li><strong>print():</strong> Tells the computer to display something on the screen.</li>\n        <li><strong>Quotes:</strong> Text goes inside double <code>\"...\"</code> or single <code>'...'</code> quotes.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Using <code>print()</code> is like writing a message on a sticky note and handing it to a friend.</li>\n      </ul>\n      <h4>⚠️ Important Rule</h4>\n      <ul>\n        <li>❌ <strong>Mistake:</strong> <code>Print(\"Hello\")</code> (Capital P will crash!).</li>\n        <li>✅ <strong>Fix:</strong> Always use lowercase <code>print(\"Hello\")</code>.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Print your name and your favorite food on the screen.</li>\n      </ul>\n    ",
+        "codeExample": "print(\"Hello, World!\")\nprint(\"My name is Student!\")",
         "tryItDefault": "print(\"Hello, World!\")"
       },
       {
         "slug": "python-syntax",
-        "title": "Python Syntax & Indentation",
-        "explanationHtml": "\n      <h4>📌 Python Code Structure</h4>\n      <ul>\n        <li><strong>No Curly Braces:</strong> Unlike C++/Java, Python uses whitespace/indentation.</li>\n        <li><strong>Indentation Rule:</strong> 4 spaces (or 1 tab) define a code block.</li>\n      </ul>\n      <h4>💡 Key Concepts</h4>\n      <ul>\n        <li><strong>Block Statements:</strong> Used inside <code>if</code>, <code>for</code>, <code>while</code>, and functions.</li>\n        <li><strong>Line Breaks:</strong> Each new command starts on a new line (no semicolons needed).</li>\n      </ul>\n      <h4>⚠️ Common Mistake</h4>\n      <ul>\n        <li>❌ <strong>Mistake:</strong> Mixing tabs and spaces in the same file.</li>\n        <li>✅ <strong>Fix:</strong> Standardize on 4 spaces per indentation level.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Fix the indentation error in a block to make it execute smoothly.</li>\n      </ul>\n    ",
-        "codeExample": "if 5 > 2:\n    print(\"Five is greater than two!\")\n    print(\"This is inside the block.\")",
-        "tryItDefault": "if True:\n    print(\"Properly indented!\")"
+        "title": "3. Python Syntax & Indentation",
+        "explanationHtml": "\n      <h4>📌 How Python Code is Formatted</h4>\n      <ul>\n        <li><strong>No Curly Braces:</strong> Python uses 4 spaces (indentation) to group code together.</li>\n        <li><strong>Line by Line:</strong> Each line is a new instruction. No semicolons needed!</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Indentation is like writing bullet points in a notebook under a main topic heading.</li>\n      </ul>\n      <h4>⚠️ Common Mistake</h4>\n      <ul>\n        <li>❌ <strong>Mistake:</strong> Forgetting to indent inside a block causes an IndentationError.</li>\n      </ul>\n    ",
+        "codeExample": "if 5 > 2:\n    print(\"5 is bigger than 2!\")\n    print(\"This line is also inside the block.\")",
+        "tryItDefault": "if True:\n    print(\"Properly indented code!\")"
       },
       {
         "slug": "python-comments",
-        "title": "Python Comments",
-        "explanationHtml": "\n      <h4>📌 Why Use Comments?</h4>\n      <ul>\n        <li><strong>Explain Code:</strong> Helps you and others understand logic later.</li>\n        <li><strong>Prevent Execution:</strong> Temporarily disable code lines while testing.</li>\n      </ul>\n      <h4>💡 Comment Types</h4>\n      <ul>\n        <li><strong>Single-Line:</strong> Starts with <code>#</code>.</li>\n        <li><strong>Multi-Line:</strong> Uses triple quotes <code>\"\"\"...\"\"\"</code> or multiple <code>#</code> lines.</li>\n      </ul>\n      <h4>✅ Best Practice</h4>\n      <ul>\n        <li>Write comments explaining <em>WHY</em> code does something, not just <em>WHAT</em> it does.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Add a single-line comment above a print statement explaining what it outputs.</li>\n      </ul>\n    ",
-        "codeExample": "# This is a single-line comment\nprint(\"Hello\") # Inline comment\n\n\"\"\"\nThis is a multi-line\ndocstring comment.\n\"\"\"",
-        "tryItDefault": "# Add your comment here\nprint(\"Comments are ignored by Python\")"
+        "title": "4. Python Comments",
+        "explanationHtml": "\n      <h4>📌 What are Comments?</h4>\n      <ul>\n        <li><strong>Notes for Humans:</strong> Computer ignores these lines completely.</li>\n        <li>Starts with a hash symbol <code>#</code>.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Comments are like sticky note reminders written in the margins of a textbook.</li>\n      </ul>\n    ",
+        "codeExample": "# This is a comment. Computer will ignore this line.\nprint(\"This line will run!\") # Inline comment",
+        "tryItDefault": "# Add your comment here\nprint(\"Comments help explain code!\")"
       },
       {
         "slug": "python-variables",
-        "title": "Python Variables",
-        "explanationHtml": "\n      <h4>📌 What is a Variable?</h4>\n      <ul>\n        <li><strong>Data Containers:</strong> Stores values in computer memory.</li>\n        <li><strong>Dynamic Typing:</strong> No need to declare data types manually.</li>\n      </ul>\n      <h4>💡 Naming Rules</h4>\n      <ul>\n        <li>Must start with a letter or underscore <code>_</code>.</li>\n        <li>Cannot start with a number.</li>\n        <li>Use <strong>snake_case</strong> for multi-word names (e.g., <code>user_age</code>).</li>\n      </ul>\n      <h4>🎯 Real-World Usage</h4>\n      <ul>\n        <li>Storing user session data, cart totals, and database records.</li>\n      </ul>\n      <h4>⚠️ Common Mistake</h4>\n      <ul>\n        <li>❌ <strong>Mistake:</strong> <code>2nd_user = \"Alice\"</code> -> SyntaxError!</li>\n        <li>✅ <strong>Fix:</strong> <code>user_2 = \"Alice\"</code>.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Create two variables: <code>name</code> and <code>age</code>. Print both variables.</li>\n      </ul>\n    ",
-        "codeExample": "x = 5\ny = \"John\"\nprint(x)\nprint(y)\n\n# Multiple Assignment\na, b, c = \"Orange\", \"Banana\", \"Cherry\"\nprint(a, b, c)",
-        "tryItDefault": "name = \"Progrys\"\nlevel = 1\nprint(name, level)"
+        "title": "5. Variables (Labeled Storage Boxes)",
+        "explanationHtml": "\n      <h4>📌 What is a Variable?</h4>\n      <ul>\n        <li><strong>Storage Box:</strong> A named container that holds information in memory.</li>\n        <li>You give it a name, an equals sign <code>=</code>, and put a value inside.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Think of a shoe box labeled \"Winter Shoes\". The label is the variable name, and the shoes inside are the value.</li>\n      </ul>\n    ",
+        "codeExample": "student_name = \"Alex\"\nage = 18\nprint(student_name)\nprint(age)",
+        "tryItDefault": "city = \"New York\"\nprint(city)"
+      },
+      {
+        "slug": "variable-naming-rules",
+        "title": "6. Variable Naming Rules",
+        "explanationHtml": "\n      <h4>📌 Rules for Variable Names</h4>\n      <ul>\n        <li>Must start with a letter or an underscore <code>_</code>.</li>\n        <li>Cannot start with a number (e.g. <code>1st_place</code> is invalid).</li>\n        <li>Use <strong>snake_case</strong> (lowercase words separated by underscores).</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Labeling boxes clearly: <code>user_home_address</code> is easy to read, while <code>a1</code> is confusing.</li>\n      </ul>\n    ",
+        "codeExample": "# Good variable names\nuser_age = 25\ntotal_price = 99.99\n\n# Bad variable names (Avoid these!)\n# 1user = \"John\" -> Error!\n# user-name = \"John\" -> Error!",
+        "tryItDefault": "my_favorite_color = \"Blue\"\nprint(my_favorite_color)"
       },
       {
         "slug": "python-data-types",
-        "title": "Python Data Types",
-        "explanationHtml": "\n      <h4>📌 Built-in Data Types</h4>\n      <ul>\n        <li><strong>Text:</strong> <code>str</code> (\"Hello\")</li>\n        <li><strong>Numeric:</strong> <code>int</code> (10), <code>float</code> (10.5), <code>complex</code> (1j)</li>\n        <li><strong>Sequence:</strong> <code>list</code>, <code>tuple</code>, <code>range</code></li>\n        <li><strong>Mapping:</strong> <code>dict</code> ({ \"name\": \"John\" })</li>\n        <li><strong>Set:</strong> <code>set</code> ({ 1, 2, 3 })</li>\n        <li><strong>Boolean:</strong> <code>bool</code> (True / False)</li>\n      </ul>\n      <h4>💡 Getting Data Type</h4>\n      <ul>\n        <li>Use the <code>type()</code> function to check any variable's data type.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Check the type of <code>x = 3.14</code> using <code>print(type(x))</code>.</li>\n      </ul>\n    ",
-        "codeExample": "x = 5\ny = \"Hello\"\nz = 20.5\nw = True\n\nprint(type(x)) # <class 'int'>\nprint(type(y)) # <class 'str'>\nprint(type(z)) # <class 'float'>\nprint(type(w)) # <class 'bool'>",
-        "tryItDefault": "val = 42\nprint(type(val))"
+        "title": "7. Python Data Types Overview",
+        "explanationHtml": "\n      <h4>📌 Basic Data Types</h4>\n      <ul>\n        <li><strong>Text (str):</strong> Words wrapped in quotes e.g. <code>\"Hello\"</code>.</li>\n        <li><strong>Whole Number (int):</strong> Numbers without decimals e.g. <code>25</code>.</li>\n        <li><strong>Decimal Number (float):</strong> Numbers with decimals e.g. <code>19.99</code>.</li>\n        <li><strong>True/False (bool):</strong> Yes or No values (<code>True</code> / <code>False</code>).</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Text = Your name (\"Rahul\"), Integer = Your age (20), Float = Price of milk ($3.50), Bool = Light switch (ON/OFF).</li>\n      </ul>\n    ",
+        "codeExample": "name = \"Rahul\"\nage = 20\nprice = 3.50\nis_student = True\n\nprint(type(name))\nprint(type(age))",
+        "tryItDefault": "val = 100\nprint(type(val))"
       },
       {
-        "slug": "python-casting",
-        "title": "Python Type Casting",
-        "explanationHtml": "\n      <h4>📌 What is Type Casting?</h4>\n      <ul>\n        <li><strong>Explicit Conversion:</strong> Converting variables from one data type to another.</li>\n      </ul>\n      <h4>💡 Casting Functions</h4>\n      <ul>\n        <li><code>int()</code>: Converts value to integer.</li>\n        <li><code>float()</code>: Converts value to floating-point number.</li>\n        <li><code>str()</code>: Converts value to string.</li>\n      </ul>\n      <h4>🎯 Real-World Usage</h4>\n      <ul>\n        <li>Converting user input from web forms (received as string) into numbers for calculations.</li>\n      </ul>\n      <h4>⚠️ Common Mistake</h4>\n      <ul>\n        <li>❌ <strong>Mistake:</strong> <code>int(\"hello\")</code> -> ValueError!</li>\n        <li>✅ <strong>Fix:</strong> Only cast strings that contain valid digits.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Convert <code>\"100\"</code> to integer, add 50, and print the result.</li>\n      </ul>\n    ",
-        "codeExample": "x = int(1)     # x will be 1\ny = int(2.8)   # y will be 2\nz = int(\"3\")   # z will be 3\n\na = str(10)    # a will be '10'\nb = float(\"4.2\") # b will be 4.2\n\nprint(x, y, z, a, b)",
-        "tryItDefault": "num_str = \"25\"\nnum = int(num_str)\nprint(num + 5)"
+        "slug": "python-numbers",
+        "title": "8. Numbers (Integers & Floats)",
+        "explanationHtml": "\n      <h4>📌 Integers vs Floats</h4>\n      <ul>\n        <li><strong>int:</strong> Positives, negatives, zero (e.g. <code>-5</code>, <code>0</code>, <code>100</code>).</li>\n        <li><strong>float:</strong> Numbers with fractional decimal points (e.g. <code>2.5</code>, <code>-0.01</code>).</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Integers = Counting people in a room (You can't have 2.5 people!). Floats = Measuring weight (e.g. 65.4 kg).</li>\n      </ul>\n    ",
+        "codeExample": "people = 5      # int\nweight = 65.4   # float\n\nprint(people + 2)\nprint(weight * 2)",
+        "tryItDefault": "x = 10\ny = 2.5\nprint(x + y)"
       },
       {
-        "slug": "python-strings",
-        "title": "Python Strings & F-Strings",
-        "explanationHtml": "\n      <h4>📌 String Basics</h4>\n      <ul>\n        <li>Surrounded by single <code>'...'</code> or double <code>\"...\"</code> quotes.</li>\n        <li><strong>Multi-line Strings:</strong> Use triple quotes <code>\"\"\"...\"\"\"</code>.</li>\n        <li><strong>Array-Like:</strong> Characters accessed via zero-based indexing <code>str[0]</code>.</li>\n      </ul>\n      <h4>💡 F-Strings (Modern Formatting)</h4>\n      <ul>\n        <li>Prefix string with <code>f</code> and use curly braces <code>{var}</code> to inject variables.</li>\n      </ul>\n      <h4>🎯 Real-World Usage</h4>\n      <ul>\n        <li>Creating dynamic welcome emails, URL endpoints, and log entries.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Create <code>item = \"Book\"</code> and <code>price = 15</code>. Print an f-string: <code>\"The Book costs $15\"</code>.</li>\n      </ul>\n    ",
-        "codeExample": "name = \"Alice\"\nage = 22\n\n# F-String Formatting\nmessage = f\"My name is {name} and I am {age} years old.\"\nprint(message)\n\n# String Methods\nprint(name.upper()) # ALICE\nprint(name.lower()) # alice",
-        "tryItDefault": "user = \"Alex\"\nprint(f\"Welcome back, {user}!\")"
+        "slug": "python-type-casting",
+        "title": "9. Type Casting (Converting Types)",
+        "explanationHtml": "\n      <h4>📌 What is Type Casting?</h4>\n      <ul>\n        <li>Changing data from one type to another.</li>\n        <li><code>int(\"10\")</code> converts text \"10\" into number 10.</li>\n        <li><code>str(25)</code> converts number 25 into text \"25\".</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Converting written text on a price tag (\"$50\") into a number so you can calculate your change at the counter.</li>\n      </ul>\n    ",
+        "codeExample": "price_text = \"50\"\nprice_number = int(price_text)\n\ntotal = price_number + 10\nprint(total) # 60",
+        "tryItDefault": "score_str = \"100\"\nscore = int(score_str)\nprint(score + 50)"
+      },
+      {
+        "slug": "python-strings-basics",
+        "title": "10. Strings (Working with Text)",
+        "explanationHtml": "\n      <h4>📌 What is a String?</h4>\n      <ul>\n        <li>Sequence of text characters inside quotes.</li>\n        <li>You can combine strings using the <code>+</code> operator (Concatenation).</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Stitching your First Name and Last Name together to create your Full Name.</li>\n      </ul>\n    ",
+        "codeExample": "first_name = \"Rahul\"\nlast_name = \"Sharma\"\n\nfull_name = first_name + \" \" + last_name\nprint(full_name)",
+        "tryItDefault": "greeting = \"Hello \" + \"World!\"\nprint(greeting)"
+      },
+      {
+        "slug": "python-string-methods",
+        "title": "11. String Methods (Upper, Lower, Replace)",
+        "explanationHtml": "\n      <h4>📌 Useful String Tools</h4>\n      <ul>\n        <li><code>.upper()</code>: Converts all letters to CAPITAL.</li>\n        <li><code>.lower()</code>: Converts all letters to small.</li>\n        <li><code>.replace(\"old\", \"new\")</code>: Swaps words in text.</li>\n        <li><code>len(text)</code>: Counts how many letters are in the text.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Auto-correct capitalization on a form submission.</li>\n      </ul>\n    ",
+        "codeExample": "msg = \"hello world\"\nprint(msg.upper())       # \"HELLO WORLD\"\nprint(msg.replace(\"world\", \"python\")) # \"hello python\"\nprint(len(msg))         # 11",
+        "tryItDefault": "text = \"python is fun\"\nprint(text.upper())"
+      },
+      {
+        "slug": "python-f-strings",
+        "title": "12. F-Strings (Smart Text Formatting)",
+        "explanationHtml": "\n      <h4>📌 What is an F-String?</h4>\n      <ul>\n        <li>Easiest way to insert variables straight into text.</li>\n        <li>Put an <code>f</code> in front of quotes: <code>f\"Hello {variable}\"</code>.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Printing an ATM receipt: \"Hello [Name], your balance is $[Balance]\".</li>\n      </ul>\n    ",
+        "codeExample": "name = \"Amit\"\nbalance = 500\n\nreceipt = f\"Hello {name}, your balance is \\${balance}.\"\nprint(receipt)",
+        "tryItDefault": "user = \"Priya\"\npoints = 50\nprint(f\"User {user} has {points} points!\")"
       },
       {
         "slug": "python-booleans",
-        "title": "Python Booleans",
-        "explanationHtml": "\n      <h4>📌 What are Booleans?</h4>\n      <ul>\n        <li>Represents one of two values: <code>True</code> or <code>False</code>.</li>\n        <li>Used for condition evaluation in decision-making logic.</li>\n      </ul>\n      <h4>💡 Truthy vs Falsy</h4>\n      <ul>\n        <li><strong>Falsy Values:</strong> <code>0</code>, <code>\"\"</code> (empty string), <code>None</code>, <code>[]</code>, <code>{}</code>, <code>False</code>.</li>\n        <li><strong>Truthy Values:</strong> Almost everything else!</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Evaluate <code>bool(10 > 5)</code> and print the output.</li>\n      </ul>\n    ",
-        "codeExample": "is_logged_in = True\nhas_permission = False\n\nprint(10 > 9)  # Returns True\nprint(10 == 9) # Returns False\nprint(bool(\"Hello\")) # Returns True\nprint(bool(\"\"))      # Returns False",
-        "tryItDefault": "print(5 > 2)"
+        "title": "13. Booleans (True / False Switches)",
+        "explanationHtml": "\n      <h4>📌 Yes or No Answers</h4>\n      <ul>\n        <li>Booleans hold only two values: <code>True</code> or <code>False</code>.</li>\n        <li>Notice the capital <code>T</code> and <code>F</code>!</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Is the door locked? True or False. Is the battery full? True or False.</li>\n      </ul>\n    ",
+        "codeExample": "is_online = True\nis_admin = False\n\nprint(10 > 5) # Evaluates to True\nprint(3 == 7) # Evaluates to False",
+        "tryItDefault": "print(100 > 20)"
       },
       {
-        "slug": "python-operators",
-        "title": "Python Operators",
-        "explanationHtml": "\n      <h4>📌 Operator Categories</h4>\n      <ul>\n        <li><strong>Arithmetic:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>//</code> (floor), <code>%</code> (modulo), <code>**</code> (exponent)</li>\n        <li><strong>Assignment:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code></li>\n        <li><strong>Comparison:</strong> <code>==</code>, <code>!=</code>, <code>></code>, <code><</code>, <code>>=</code>, <code><=</code></li>\n        <li><strong>Logical:</strong> <code>and</code>, <code>or</code>, <code>not</code></li>\n        <li><strong>Membership:</strong> <code>in</code>, <code>not in</code></li>\n      </ul>\n      <h4>🎯 Real-World Usage</h4>\n      <ul>\n        <li>Modulo <code>% 2 == 0</code> checks if numbers are even or odd.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Check if <code>\"py\" in \"python\"</code> using membership operator.</li>\n      </ul>\n    ",
-        "codeExample": "x = 10\ny = 3\n\nprint(x + y)  # 13\nprint(x // y) # 3 (Floor division)\nprint(x % y)  # 1 (Modulo)\nprint(x ** y) # 1000 (Exponent)\n\nprint(\"py\" in \"python\") # True",
-        "tryItDefault": "print(10 % 3)"
+        "slug": "python-arithmetic-operators",
+        "title": "14. Math Operators (+, -, *, /)",
+        "explanationHtml": "\n      <h4>📌 Calculator Math</h4>\n      <ul>\n        <li><code>+</code> (Add), <code>-</code> (Subtract), <code>*</code> (Multiply), <code>/</code> (Divide)</li>\n        <li><code>%</code> (Remainder / Modulo): Gives what's left over after division.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Using modulo <code>% 2</code> to see if a number of chocolates can be divided evenly between 2 friends.</li>\n      </ul>\n    ",
+        "codeExample": "print(10 + 5) # 15\nprint(10 * 3) # 30\nprint(10 / 2) # 5.0\nprint(10 % 3) # 1 (Remainder)",
+        "tryItDefault": "print(15 % 4)"
       },
       {
-        "slug": "python-lists",
-        "title": "Python Lists",
-        "explanationHtml": "\n      <h4>📌 What is a List?</h4>\n      <ul>\n        <li>Ordered, mutable (changeable), and allows duplicate elements.</li>\n        <li>Created using square brackets <code>[...]</code>.</li>\n      </ul>\n      <h4>💡 Key Methods</h4>\n      <ul>\n        <li><code>append(item)</code>: Add item to the end.</li>\n        <li><code>remove(item)</code>: Remove first occurrence of item.</li>\n        <li><code>pop(index)</code>: Remove item at specific index.</li>\n        <li><code>len(list)</code>: Return list size.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Create a list of 3 fruits. Append a 4th fruit and print the list.</li>\n      </ul>\n    ",
-        "codeExample": "fruits = [\"apple\", \"banana\", \"cherry\"]\nfruits.append(\"orange\")\nprint(fruits)\nprint(fruits[0]) # \"apple\"\nprint(len(fruits)) # 4",
-        "tryItDefault": "items = [1, 2, 3]\nitems.append(4)\nprint(items)"
+        "slug": "python-comparison-operators",
+        "title": "15. Comparing Values (==, !=, >, <)",
+        "explanationHtml": "\n      <h4>📌 Comparing Two Things</h4>\n      <ul>\n        <li><code>==</code> (Is Equal to?)</li>\n        <li><code>!=</code> (Is NOT Equal to?)</li>\n        <li><code>></code> (Greater than), <code><</code> (Less than)</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Checking if your exam score (85) is greater than the passing mark (50).</li>\n      </ul>\n    ",
+        "codeExample": "my_score = 85\npass_mark = 50\n\nprint(my_score >= pass_mark) # True\nprint(my_score == 100)       # False",
+        "tryItDefault": "print(50 > 20)"
+      },
+      {
+        "slug": "python-logical-operators",
+        "title": "16. Logical Operators (and, or, not)",
+        "explanationHtml": "\n      <h4>📌 Combining Decisions</h4>\n      <ul>\n        <li><code>and</code>: BOTH conditions must be True.</li>\n        <li><code>or</code>: AT LEAST ONE condition must be True.</li>\n        <li><code>not</code>: Flips True to False, or False to True.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>To enter a movie theater, you need a Ticket <code>and</code> ID.</li>\n      </ul>\n    ",
+        "codeExample": "has_ticket = True\nhas_id = True\n\ncan_enter = has_ticket and has_id\nprint(can_enter) # True",
+        "tryItDefault": "print(True and False)"
+      },
+      {
+        "slug": "python-lists-basics",
+        "title": "17. Lists (Shopping Lists)",
+        "explanationHtml": "\n      <h4>📌 Storing Multiple Items</h4>\n      <ul>\n        <li>A list holds items in order inside square brackets <code>[...]</code>.</li>\n        <li>Items can be numbers, text, or booleans.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>A grocery shopping list: <code>[\"Milk\", \"Eggs\", \"Bread\"]</code>.</li>\n      </ul>\n    ",
+        "codeExample": "shopping_list = [\"Milk\", \"Eggs\", \"Bread\"]\nprint(shopping_list[0]) # First item: \"Milk\"\nprint(len(shopping_list)) # Total items: 3",
+        "tryItDefault": "fruits = [\"Apple\", \"Banana\"]\nprint(fruits[0])"
+      },
+      {
+        "slug": "python-list-methods",
+        "title": "18. List Operations (Add & Remove)",
+        "explanationHtml": "\n      <h4>📌 Modifying Lists</h4>\n      <ul>\n        <li><code>.append(\"item\")</code>: Adds new item to the end.</li>\n        <li><code>.remove(\"item\")</code>: Removes specific item.</li>\n        <li><code>.pop()</code>: Removes the last item.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Adding a new song to your playlist or deleting a song you don't like.</li>\n      </ul>\n    ",
+        "codeExample": "playlist = [\"Song 1\", \"Song 2\"]\nplaylist.append(\"Song 3\")\nprint(playlist)\n\nplaylist.remove(\"Song 1\")\nprint(playlist)",
+        "tryItDefault": "items = [1, 2]\nitems.append(3)\nprint(items)"
       },
       {
         "slug": "python-tuples",
-        "title": "Python Tuples",
-        "explanationHtml": "\n      <h4>📌 What is a Tuple?</h4>\n      <ul>\n        <li>Ordered and <strong>immutable</strong> (cannot be modified after creation).</li>\n        <li>Created using round brackets <code>(...)</code>.</li>\n      </ul>\n      <h4>💡 Why Use Tuples?</h4>\n      <ul>\n        <li><strong>Faster performance:</strong> Memory-efficient compared to lists.</li>\n        <li><strong>Data Protection:</strong> Prevents accidental alteration of fixed values.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Create a tuple of GPS coordinates <code>(latitude, longitude)</code> and print it.</li>\n      </ul>\n    ",
-        "codeExample": "coordinates = (37.7749, -122.4194)\nprint(coordinates[0]) # 37.7749\n\n# Unpacking Tuple\nlat, lng = coordinates\nprint(f\"Lat: {lat}, Lng: {lng}\")",
-        "tryItDefault": "point = (10, 20)\nprint(point)"
+        "title": "19. Tuples (Locked Lists)",
+        "explanationHtml": "\n      <h4>📌 Fixed Lists</h4>\n      <ul>\n        <li>Tuples store items inside round brackets <code>(...)</code>.</li>\n        <li>Once created, you <strong>CANNOT change or edit</strong> items.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Your Date of Birth (Day, Month, Year) - it will never change for the rest of your life!</li>\n      </ul>\n    ",
+        "codeExample": "dob = (15, \"August\", 1947)\nprint(dob[0])\n# dob[0] = 16 # ERROR! Cannot change tuple items!",
+        "tryItDefault": "coords = (10, 20)\nprint(coords)"
       },
       {
         "slug": "python-dictionaries",
-        "title": "Python Dictionaries",
-        "explanationHtml": "\n      <h4>📌 Key-Value Stores</h4>\n      <ul>\n        <li>Unordered/ordered (Python 3.7+), mutable, mapped by <code>{ key: value }</code>.</li>\n        <li>Keys must be unique and immutable (strings/numbers).</li>\n      </ul>\n      <h4>💡 Common Operations</h4>\n      <ul>\n        <li><code>dict[key]</code>: Retrieve value.</li>\n        <li><code>dict.get(key, default)</code>: Safe retrieval without crashing if key missing.</li>\n        <li><code>dict.keys()</code>, <code>dict.values()</code>, <code>dict.items()</code>.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Create a user dict with <code>name</code> and <code>email</code>. Print the email.</li>\n      </ul>\n    ",
-        "codeExample": "user = {\n  \"name\": \"John Doe\",\n  \"role\": \"Admin\",\n  \"active\": True\n}\n\nprint(user[\"name\"])\nuser[\"role\"] = \"SuperAdmin\"\nprint(user.get(\"email\", \"Not Found\"))",
-        "tryItDefault": "car = {\"brand\": \"Tesla\", \"model\": \"Model 3\"}\nprint(car[\"brand\"])"
+        "title": "20. Dictionaries (Contact Cards)",
+        "explanationHtml": "\n      <h4>📌 Key and Value Pairs</h4>\n      <ul>\n        <li>Stores items in <code>{ \"key\": \"value\" }</code> format inside curly braces.</li>\n        <li>Used to store details about a single person or item.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>A phone contact card: Name = \"Ankit\", Phone = \"9876543210\".</li>\n      </ul>\n    ",
+        "codeExample": "contact = {\n  \"name\": \"Ankit\",\n  \"phone\": \"9876543210\",\n  \"city\": \"Delhi\"\n}\n\nprint(contact[\"name\"])\nprint(contact[\"city\"])",
+        "tryItDefault": "student = {\"name\": \"Sita\", \"marks\": 95}\nprint(student[\"marks\"])"
       },
       {
-        "slug": "python-conditionals",
-        "title": "Python If...Else",
-        "explanationHtml": "\n      <h4>📌 Decision Making</h4>\n      <ul>\n        <li><code>if</code>: Executed if condition is True.</li>\n        <li><code>elif</code>: Tested if previous conditions were False.</li>\n        <li><code>else</code>: Catches anything not caught by preceding conditions.</li>\n      </ul>\n      <h4>💡 Short-Hand Syntax</h4>\n      <ul>\n        <li><strong>Ternary Operator:</strong> <code>x = \"Yes\" if condition else \"No\"</code>.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Write an if statement checking if <code>age >= 18</code> to print \"Adult\".</li>\n      </ul>\n    ",
-        "codeExample": "age = 20\nif age >= 18:\n    print(\"Eligible to vote\")\nelif age >= 16:\n    print(\"Eligible to drive\")\nelse:\n    print(\"Too young\")",
-        "tryItDefault": "score = 85\nif score >= 80:\n    print(\"Passed!\")"
+        "slug": "python-if-else",
+        "title": "21. If...Else (Traffic Signals)",
+        "explanationHtml": "\n      <h4>📌 Making Decisions in Code</h4>\n      <ul>\n        <li><code>if</code>: Runs if condition is True.</li>\n        <li><code>elif</code>: Checks next condition if first was False.</li>\n        <li><code>else</code>: Runs if no conditions were True.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Traffic Signal: IF light is Green -> Go. ELIF light is Yellow -> Slow down. ELSE -> Stop.</li>\n      </ul>\n    ",
+        "codeExample": "signal = \"red\"\n\nif signal == \"green\":\n    print(\"Go!\")\nelif signal == \"yellow\":\n    print(\"Slow down!\")\nelse:\n    print(\"Stop!\")",
+        "tryItDefault": "age = 18\nif age >= 18:\n    print(\"Adult\")"
       },
       {
         "slug": "python-while-loops",
-        "title": "Python While Loops",
-        "explanationHtml": "\n      <h4>📌 Repeat Until Condition Fails</h4>\n      <ul>\n        <li>Executes a set of statements as long as a condition is True.</li>\n      </ul>\n      <h4>💡 Loop Controls</h4>\n      <ul>\n        <li><code>break</code>: Stops the loop immediately.</li>\n        <li><code>continue</code>: Skips current iteration and moves to next.</li>\n      </ul>\n      <h4>⚠️ Caution</h4>\n      <ul>\n        <li>Always update the counter inside the loop to avoid <strong>infinite loops</strong>!</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Print numbers from 1 to 5 using a while loop.</li>\n      </ul>\n    ",
-        "codeExample": "i = 1\nwhile i <= 5:\n    print(i)\n    i += 1",
-        "tryItDefault": "count = 3\nwhile count > 0:\n    print(count)\n    count -= 1"
+        "title": "22. While Loops (Repetition)",
+        "explanationHtml": "\n      <h4>📌 Repeating Code</h4>\n      <ul>\n        <li>Keeps running code as long as a condition remains True.</li>\n        <li>Be careful: Always update counter so loop eventually stops!</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Brushing teeth until 2 minutes are up.</li>\n      </ul>\n    ",
+        "codeExample": "count = 1\nwhile count <= 3:\n    print(f\"Step \\${count}\")\n    count += 1",
+        "tryItDefault": "i = 1\nwhile i <= 3:\n    print(i)\n    i += 1"
       },
       {
         "slug": "python-for-loops",
-        "title": "Python For Loops",
-        "explanationHtml": "\n      <h4>📌 Iterating Over Sequences</h4>\n      <ul>\n        <li>Used for iterating over a list, tuple, dictionary, set, string, or range.</li>\n      </ul>\n      <h4>💡 range() Function</h4>\n      <ul>\n        <li><code>range(start, stop, step)</code> generates sequence of numbers.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Loop through <code>range(1, 6)</code> and print each number squared.</li>\n      </ul>\n    ",
-        "codeExample": "fruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\n    print(fruit)\n\nfor i in range(1, 4):\n    print(f\"Iteration {i}\")",
-        "tryItDefault": "for i in range(3):\n    print(\"Loop step:\", i)"
+        "title": "23. For Loops (Going Through Lists)",
+        "explanationHtml": "\n      <h4>📌 Step Through Each Item</h4>\n      <ul>\n        <li>Loops through every item in a list or sequence one by one.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>A teacher calling roll call out loud for every student in a classroom list.</li>\n      </ul>\n    ",
+        "codeExample": "students = [\"Amit\", \"Pooja\", \"Rohan\"]\nfor name in students:\n    print(f\"Present: \\${name}\")",
+        "tryItDefault": "for num in [1, 2, 3]:\n    print(num)"
       },
       {
         "slug": "python-functions",
-        "title": "Python Functions",
-        "explanationHtml": "\n      <h4>📌 Reusable Code Blocks</h4>\n      <ul>\n        <li>Defined using the <code>def</code> keyword.</li>\n        <li>Called by typing function name followed by parentheses <code>func()</code>.</li>\n      </ul>\n      <h4>💡 Parameters & Arguments</h4>\n      <ul>\n        <li><strong>Parameters:</strong> Variables listed in function definition.</li>\n        <li><strong>Return Value:</strong> Use <code>return</code> keyword to output data back.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Write a function <code>square(n)</code> that returns <code>n * n</code>.</li>\n      </ul>\n    ",
-        "codeExample": "def greet(name=\"User\"):\n    return f\"Hello, {name}!\"\n\nmessage = greet(\"Alice\")\nprint(message)",
-        "tryItDefault": "def add(a, b):\n    return a + b\nprint(add(5, 10))"
-      },
-      {
-        "slug": "python-lambda",
-        "title": "Python Lambda",
-        "explanationHtml": "\n      <h4>📌 Anonymous Functions</h4>\n      <ul>\n        <li>Small, one-line functions without a formal name.</li>\n        <li>Syntax: <code>lambda arguments : expression</code>.</li>\n      </ul>\n      <h4>🎯 Real-World Usage</h4>\n      <ul>\n        <li>Used as inline callbacks inside <code>map()</code>, <code>filter()</code>, and <code>sorted()</code>.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Create a lambda function <code>double = lambda x: x * 2</code> and test it.</li>\n      </ul>\n    ",
-        "codeExample": "double = lambda x: x * 2\nprint(double(5)) # Outputs 10\n\nadd = lambda a, b: a + b\nprint(add(3, 7)) # Outputs 10",
-        "tryItDefault": "multiply = lambda a, b: a * b\nprint(multiply(4, 5))"
-      },
-      {
-        "slug": "python-classes",
-        "title": "Python Classes & OOP",
-        "explanationHtml": "\n      <h4>📌 Object-Oriented Programming</h4>\n      <ul>\n        <li><strong>Class:</strong> Blueprint for creating objects.</li>\n        <li><strong>Object:</strong> Instance of a class containing attributes & methods.</li>\n        <li><code>__init__()</code>: Special constructor method called on instantiation.</li>\n      </ul>\n      <h4>💡 Self Parameter</h4>\n      <ul>\n        <li><code>self</code> represents the instance of the class accessing attributes.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Create a <code>Car</code> class with <code>brand</code> attribute and instantiate it.</li>\n      </ul>\n    ",
-        "codeExample": "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def speak(self):\n        print(f\"Hi, I am {self.name}\")\n\np1 = Person(\"John\", 30)\np1.speak()",
-        "tryItDefault": "class User:\n    def __init__(self, name):\n        self.name = name\nu = User(\"Progrys\")\nprint(u.name)"
+        "title": "24. Functions (Recipe Machines)",
+        "explanationHtml": "\n      <h4>📌 Reusable Commands</h4>\n      <ul>\n        <li>Define a function using <code>def function_name():</code>.</li>\n        <li>Write code once, call it whenever you need!</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>A Juicer Machine: You input fruits (ingredients), press button, and it returns fresh juice!</li>\n      </ul>\n    ",
+        "codeExample": "def make_juice(fruit):\n    return f\"Here is your fresh \\${fruit} juice!\"\n\nglass = make_juice(\"Mango\")\nprint(glass)",
+        "tryItDefault": "def greet(name):\n    return f\"Hello \\${name}!\"\nprint(greet(\"Karan\"))"
       },
       {
         "slug": "python-try-except",
-        "title": "Python Try...Except (Error Handling)",
-        "explanationHtml": "\n      <h4>📌 Handling Runtime Errors</h4>\n      <ul>\n        <li>Prevents app crashes when unexpected errors occur.</li>\n        <li><code>try</code>: Block of code to test for errors.</li>\n        <li><code>except</code>: Handles the specific error.</li>\n        <li><code>finally</code>: Executes regardless of outcome.</li>\n      </ul>\n      <h4>📝 Quick Task</h4>\n      <ul>\n        <li>Wrap division by zero in a <code>try...except ZeroDivisionError</code> block.</li>\n      </ul>\n    ",
-        "codeExample": "try:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero!\")\nfinally:\n    print(\"Execution complete.\")",
-        "tryItDefault": "try:\n    num = int(\"abc\")\nexcept ValueError:\n    print(\"Invalid number format!\")"
+        "title": "25. Try...Except (Safety Nets)",
+        "explanationHtml": "\n      <h4>📌 Preventing Crashes</h4>\n      <ul>\n        <li>Put risky code inside <code>try:</code> block.</li>\n        <li>If an error occurs, <code>except:</code> catches it without crashing app!</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Wearing a seatbelt in a car. It's a safety net in case of unexpected bumps.</li>\n      </ul>\n    ",
+        "codeExample": "try:\n    number = int(\"hello\") # Invalid number!\nexcept:\n    print(\"Oops! That was not a valid number.\")",
+        "tryItDefault": "try:\n    print(10 / 0)\nexcept:\n    print(\"Cannot divide by zero!\")"
+      },
+      {
+        "slug": "python-file-handling",
+        "title": "26. File Handling (Reading & Writing Text)",
+        "explanationHtml": "\n      <h4>📌 Saving Data to Files</h4>\n      <ul>\n        <li><code>open(\"file.txt\", \"w\")</code>: Write new file.</li>\n        <li><code>open(\"file.txt\", \"r\")</code>: Read existing file.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>Saving your notes into a notepad text document on your laptop.</li>\n      </ul>\n    ",
+        "codeExample": "# Write to file\nwith open(\"notes.txt\", \"w\") as f:\n    f.write(\"Python is awesome!\")\n\nprint(\"File saved successfully!\")",
+        "tryItDefault": "print(\"File operations let you store notes on disk!\")"
+      },
+      {
+        "slug": "python-classes",
+        "title": "27. Classes & Objects (Blueprints)",
+        "explanationHtml": "\n      <h4>📌 Blueprints vs Real Objects</h4>\n      <ul>\n        <li><strong>Class:</strong> Architectural blueprint (e.g. Car Design).</li>\n        <li><strong>Object:</strong> The actual car built from the blueprint.</li>\n      </ul>\n      <h4>💡 Daily Life Example</h4>\n      <ul>\n        <li>A cookie cutter is the Class. Every cookie stamped out is an Object!</li>\n      </ul>\n    ",
+        "codeExample": "class Dog:\n    def __init__(self, name):\n        self.name = name\n\nmy_dog = Dog(\"Tommy\")\nprint(my_dog.name) # Tommy",
+        "tryItDefault": "class Phone:\n    def __init__(self, brand):\n        self.brand = brand\np = Phone(\"iPhone\")\nprint(p.brand)"
+      },
+      {
+        "slug": "python-capstone",
+        "title": "28. Capstone Project: Simple Calculator CLI",
+        "explanationHtml": "\n      <h4>📌 Put It All Together!</h4>\n      <ul>\n        <li>You will combine user inputs, math operators, functions, and loops!</li>\n      </ul>\n      <h4>💡 Real-World Project</h4>\n      <ul>\n        <li>Build a functional command-line calculator that adds, subtracts, and multiplies numbers.</li>\n      </ul>\n    ",
+        "codeExample": "def add(a, b):\n    return a + b\n\nnum1 = 10\nnum2 = 20\nresult = add(num1, num2)\nprint(f\"Result: \\${num1} + \\${num2} = \\${result}\")",
+        "tryItDefault": "print(\"Congratulations on reaching the Python Capstone!\")"
       }
     ]
   }
