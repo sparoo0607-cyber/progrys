@@ -204,7 +204,12 @@ export default function DigitalProductsAdminPage() {
       fileFormats: formData.fileFormats.split(",").map((s) => s.trim()),
       coverImage: formData.coverImage || undefined,
       downloadFile: formData.downloadFile
-        ? { name: formData.downloadFile.name, size: formData.downloadFile.size, type: formData.downloadFile.type, dataUrl: currentDataUrl }
+        ? { 
+            name: formData.downloadFile.name, 
+            size: formData.downloadFile.size, 
+            type: formData.downloadFile.type, 
+            dataUrl: currentDataUrl 
+          }
         : undefined,
       images: [formData.coverImage, ...formData.additionalImages].filter(Boolean),
       features: ["Instant access", "Lifetime updates"],
@@ -223,14 +228,14 @@ export default function DigitalProductsAdminPage() {
 
       setUploadProgress(40); // DB update complete
 
-      // Save file to IndexedDB if a new file was picked
-      if (formData.downloadFile?.dataUrl && finalProductId) {
-        // Simulated progress for the UI while storing large file
+      // Save full file data to client-side IndexedDB
+      if (currentDataUrl && finalProductId) {
+        // Simulated progress for the UI while storing file
         const interval = setInterval(() => {
           setUploadProgress((prev) => (prev < 90 ? prev + 15 : prev));
-        }, 150);
+        }, 100);
         
-        await saveFile(finalProductId, formData.downloadFile.dataUrl);
+        await saveFile(finalProductId, currentDataUrl);
         clearInterval(interval);
       }
 
@@ -242,9 +247,9 @@ export default function DigitalProductsAdminPage() {
         setIsModalOpen(false);
         setIsSubmitting(false);
         setUploadProgress(0);
-      }, 600);
-    } catch (error) {
-      toast.error("Failed to save product.");
+      }, 500);
+    } catch (error: any) {
+      toast.error(error?.message || "Failed to save product.");
       setIsSubmitting(false);
       setUploadProgress(0);
     }

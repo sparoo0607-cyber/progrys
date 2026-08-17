@@ -242,13 +242,15 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                     try {
                       // 1. Try IndexedDB (Admin)
                       let dataUrl = await getFile(product.id);
+                      let downloadedFileName = product.downloadFile?.name || "download";
                       
-                      // 2. Fallback to API (Users)
+                      // 2. Fallback to API (Users on other PCs)
                       if (!dataUrl) {
                         const res = await fetch(`/api/products/${product.id}/download`);
                         if (res.ok) {
                           const data = await res.json();
                           dataUrl = data.dataUrl;
+                          if (data.fileName) downloadedFileName = data.fileName;
                         }
                       }
                       
@@ -258,7 +260,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                         return;
                       }
 
-                      // Mobile browsers cannot download raw base64 data URLs. We must convert it to a Blob.
+                      // Mobile & desktop browsers: convert base64 data URL to Blob for reliable downloading
                       const arr = dataUrl.split(',');
                       const mime = arr[0].match(/:(.*?);/)?.[1] || 'application/octet-stream';
                       const bstr = atob(arr[1]);
@@ -274,7 +276,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                       const a = document.createElement("a");
                       a.style.display = "none";
                       a.href = blobUrl;
-                      a.download = product.downloadFile.name || "download";
+                      a.download = downloadedFileName;
                       document.body.appendChild(a);
                       a.click();
                       document.body.removeChild(a);

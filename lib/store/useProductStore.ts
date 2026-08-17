@@ -76,9 +76,10 @@ export const useProductStore = create<ProductStore>((set, get) => ({
         set((state) => ({ products: [createdProduct, ...state.products] }));
         return createdProduct.id;
       } else {
-        throw new Error("Failed to add product");
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(errorData.error || `Failed to add product (${res.status})`);
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
       throw err;
     }
@@ -99,9 +100,10 @@ export const useProductStore = create<ProductStore>((set, get) => ({
           ),
         }));
       } else {
-        throw new Error("Failed to update product");
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(errorData.error || `Failed to update product (${res.status})`);
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
       throw err;
     }
