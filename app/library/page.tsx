@@ -85,6 +85,19 @@ export default function LibraryPage() {
                               
                               const fileName = product.downloadFile?.name || `${product.title.replace(/\s+/g, "_")}.${format.toLowerCase()}`;
                               
+                              if (dataUrl.startsWith("http://") || dataUrl.startsWith("https://") || dataUrl.startsWith("/")) {
+                                const a = document.createElement("a");
+                                a.href = dataUrl;
+                                a.download = fileName;
+                                a.target = "_blank";
+                                a.rel = "noopener noreferrer";
+                                document.body.appendChild(a);
+                                a.click();
+                                document.body.removeChild(a);
+                                toast.success(`Downloading ${fileName}...`);
+                                return;
+                              }
+
                               let blobUrl = dataUrl;
                               let isBlob = false;
                               if (dataUrl.startsWith("data:")) {

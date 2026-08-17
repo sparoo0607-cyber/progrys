@@ -260,6 +260,21 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                         return;
                       }
 
+                      // If direct URL (e.g. /downloads/..., GitHub Releases, Cloudflare R2, Google Drive, AWS S3)
+                      if (dataUrl.startsWith("http://") || dataUrl.startsWith("https://") || dataUrl.startsWith("/")) {
+                        const a = document.createElement("a");
+                        a.href = dataUrl;
+                        a.download = downloadedFileName;
+                        a.target = "_blank";
+                        a.rel = "noopener noreferrer";
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        toast.dismiss(loadingToastId);
+                        toast.success("Download started!");
+                        return;
+                      }
+
                       // Mobile & desktop browsers: convert base64 data URL to Blob for reliable downloading
                       const arr = dataUrl.split(',');
                       const mime = arr[0].match(/:(.*?);/)?.[1] || 'application/octet-stream';
