@@ -1,0 +1,185 @@
+[
+  {
+    "slug": "llm-engineering",
+    "title": "LLM Engineering",
+    "description": "Master Prompt Engineering, RAG, and AI application design step-by-step with simple English and bullet points across 25 lessons.",
+    "iconName": "BrainCircuit",
+    "lessons": [
+      {
+        "slug": "llm-1",
+        "title": "1. What are LLMs?",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding What are LLMs? in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test What are LLMs? using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// What are LLMs? Example\nconsole.log(\"What are LLMs?\");",
+        "tryItDefault": "console.log(\"Learning What are LLMs?!\");"
+      },
+      {
+        "slug": "llm-2",
+        "title": "2. Prompting Basics",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Prompting Basics in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Prompting Basics using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Prompting Basics Example\nconsole.log(\"Prompting Basics\");",
+        "tryItDefault": "console.log(\"Learning Prompting Basics!\");"
+      },
+      {
+        "slug": "llm-3",
+        "title": "3. Zero-Shot vs Few-Shot",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Zero-Shot vs Few-Shot in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Zero-Shot vs Few-Shot using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Zero-Shot vs Few-Shot Example\nconsole.log(\"Zero-Shot vs Few-Shot\");",
+        "tryItDefault": "console.log(\"Learning Zero-Shot vs Few-Shot!\");"
+      },
+      {
+        "slug": "llm-4",
+        "title": "4. Chain of Thought",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Chain of Thought in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Chain of Thought using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Chain of Thought Example\nconsole.log(\"Chain of Thought\");",
+        "tryItDefault": "console.log(\"Learning Chain of Thought!\");"
+      },
+      {
+        "slug": "llm-5",
+        "title": "5. System vs User Prompts",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding System vs User Prompts in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test System vs User Prompts using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// System vs User Prompts Example\nconsole.log(\"System vs User Prompts\");",
+        "tryItDefault": "console.log(\"Learning System vs User Prompts!\");"
+      },
+      {
+        "slug": "llm-6",
+        "title": "6. Output Formatting (JSON)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Output Formatting (JSON) in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Output Formatting (JSON) using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Output Formatting (JSON) Example\nconsole.log(\"Output Formatting (JSON)\");",
+        "tryItDefault": "console.log(\"Learning Output Formatting (JSON)!\");"
+      },
+      {
+        "slug": "llm-7",
+        "title": "7. Temperature & Top-P",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Temperature & Top-P in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Temperature & Top-P using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Temperature & Top-P Example\nconsole.log(\"Temperature & Top-P\");",
+        "tryItDefault": "console.log(\"Learning Temperature & Top-P!\");"
+      },
+      {
+        "slug": "llm-8",
+        "title": "8. Hallucinations & Mitigation",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Hallucinations & Mitigation in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Hallucinations & Mitigation using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Hallucinations & Mitigation Example\nconsole.log(\"Hallucinations & Mitigation\");",
+        "tryItDefault": "console.log(\"Learning Hallucinations & Mitigation!\");"
+      },
+      {
+        "slug": "llm-9",
+        "title": "9. Context Windows & Tokens",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Context Windows & Tokens in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Context Windows & Tokens using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Context Windows & Tokens Example\nconsole.log(\"Context Windows & Tokens\");",
+        "tryItDefault": "console.log(\"Learning Context Windows & Tokens!\");"
+      },
+      {
+        "slug": "llm-10",
+        "title": "10. Vector Embeddings",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Vector Embeddings in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Vector Embeddings using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Vector Embeddings Example\nconsole.log(\"Vector Embeddings\");",
+        "tryItDefault": "console.log(\"Learning Vector Embeddings!\");"
+      },
+      {
+        "slug": "llm-11",
+        "title": "11. Vector Databases Overview",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Vector Databases Overview in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Vector Databases Overview using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Vector Databases Overview Example\nconsole.log(\"Vector Databases Overview\");",
+        "tryItDefault": "console.log(\"Learning Vector Databases Overview!\");"
+      },
+      {
+        "slug": "llm-12",
+        "title": "12. RAG (Retrieval-Augmented Generation)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding RAG (Retrieval-Augmented Generation) in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test RAG (Retrieval-Augmented Generation) using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// RAG (Retrieval-Augmented Generation) Example\nconsole.log(\"RAG (Retrieval-Augmented Generation)\");",
+        "tryItDefault": "console.log(\"Learning RAG (Retrieval-Augmented Generation)!\");"
+      },
+      {
+        "slug": "llm-13",
+        "title": "13. Document Chunking Strategies",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Document Chunking Strategies in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Document Chunking Strategies using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Document Chunking Strategies Example\nconsole.log(\"Document Chunking Strategies\");",
+        "tryItDefault": "console.log(\"Learning Document Chunking Strategies!\");"
+      },
+      {
+        "slug": "llm-14",
+        "title": "14. OpenAI API Integration",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding OpenAI API Integration in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test OpenAI API Integration using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// OpenAI API Integration Example\nconsole.log(\"OpenAI API Integration\");",
+        "tryItDefault": "console.log(\"Learning OpenAI API Integration!\");"
+      },
+      {
+        "slug": "llm-15",
+        "title": "15. Gemini API Integration",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Gemini API Integration in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Gemini API Integration using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Gemini API Integration Example\nconsole.log(\"Gemini API Integration\");",
+        "tryItDefault": "console.log(\"Learning Gemini API Integration!\");"
+      },
+      {
+        "slug": "llm-16",
+        "title": "16. LangChain Basics",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding LangChain Basics in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test LangChain Basics using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// LangChain Basics Example\nconsole.log(\"LangChain Basics\");",
+        "tryItDefault": "console.log(\"Learning LangChain Basics!\");"
+      },
+      {
+        "slug": "llm-17",
+        "title": "17. AI Agents & Function Calling",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding AI Agents & Function Calling in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test AI Agents & Function Calling using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// AI Agents & Function Calling Example\nconsole.log(\"AI Agents & Function Calling\");",
+        "tryItDefault": "console.log(\"Learning AI Agents & Function Calling!\");"
+      },
+      {
+        "slug": "llm-18",
+        "title": "18. Fine-Tuning vs RAG",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Fine-Tuning vs RAG in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Fine-Tuning vs RAG using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Fine-Tuning vs RAG Example\nconsole.log(\"Fine-Tuning vs RAG\");",
+        "tryItDefault": "console.log(\"Learning Fine-Tuning vs RAG!\");"
+      },
+      {
+        "slug": "llm-19",
+        "title": "19. Prompt Injection & Security",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Prompt Injection & Security in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Prompt Injection & Security using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Prompt Injection & Security Example\nconsole.log(\"Prompt Injection & Security\");",
+        "tryItDefault": "console.log(\"Learning Prompt Injection & Security!\");"
+      },
+      {
+        "slug": "llm-20",
+        "title": "20. Evaluating LLM Outputs",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Evaluating LLM Outputs in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Evaluating LLM Outputs using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Evaluating LLM Outputs Example\nconsole.log(\"Evaluating LLM Outputs\");",
+        "tryItDefault": "console.log(\"Learning Evaluating LLM Outputs!\");"
+      },
+      {
+        "slug": "llm-21",
+        "title": "21. Running LLMs Locally (Ollama)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Running LLMs Locally (Ollama) in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Running LLMs Locally (Ollama) using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Running LLMs Locally (Ollama) Example\nconsole.log(\"Running LLMs Locally (Ollama)\");",
+        "tryItDefault": "console.log(\"Learning Running LLMs Locally (Ollama)!\");"
+      },
+      {
+        "slug": "llm-22",
+        "title": "22. Open Source Models (Llama 3)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Open Source Models (Llama 3) in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Open Source Models (Llama 3) using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Open Source Models (Llama 3) Example\nconsole.log(\"Open Source Models (Llama 3)\");",
+        "tryItDefault": "console.log(\"Learning Open Source Models (Llama 3)!\");"
+      },
+      {
+        "slug": "llm-23",
+        "title": "23. Cost Optimization for APIs",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Cost Optimization for APIs in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Cost Optimization for APIs using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Cost Optimization for APIs Example\nconsole.log(\"Cost Optimization for APIs\");",
+        "tryItDefault": "console.log(\"Learning Cost Optimization for APIs!\");"
+      },
+      {
+        "slug": "llm-24",
+        "title": "24. Multimodal Prompts (Vision)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Multimodal Prompts (Vision) in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Multimodal Prompts (Vision) using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Multimodal Prompts (Vision) Example\nconsole.log(\"Multimodal Prompts (Vision)\");",
+        "tryItDefault": "console.log(\"Learning Multimodal Prompts (Vision)!\");"
+      },
+      {
+        "slug": "llm-25",
+        "title": "25. Capstone: Custom AI Assistant",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Understanding Capstone: Custom AI Assistant in Large Language Model applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like training a super-intelligent digital assistant to read, summarize, and answer questions for your team.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building AI chatbots, document Q&A tools, and automated text generators.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Treating LLMs like deterministic databases instead of probabilistic text predictors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Test Capstone: Custom AI Assistant using an AI API or playground environment.</li>\n  </ul>",
+        "codeExample": "// Capstone: Custom AI Assistant Example\nconsole.log(\"Capstone: Custom AI Assistant\");",
+        "tryItDefault": "console.log(\"Learning Capstone: Custom AI Assistant!\");"
+      }
+    ]
+  }
+]

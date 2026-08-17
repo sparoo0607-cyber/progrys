@@ -1,0 +1,248 @@
+[
+  {
+    "slug": "ui-designer",
+    "title": "UI Designer",
+    "description": "Master the visual language of digital products. Learn color theory, typography, spacing, and modern design tools like Figma to create stunning, accessible, and highly engaging user interfaces.",
+    "difficulty": "beginner",
+    "estimatedTime": "4-6 Months",
+    "nodes": [
+      {
+        "title": "Visual Design Principles",
+        "description": "Great design isn't subjective; it's based on rules. Master contrast, repetition, alignment, and proximity to create interfaces that feel balanced and intuitively guide the user's eye."
+      },
+      {
+        "title": "Color Theory & Psychology",
+        "description": "Colors convey emotion and hierarchy. Learn how to build harmonious color palettes, use contrast ratios for accessibility, and apply semantic colors (like red for errors) consistently."
+      },
+      {
+        "title": "Typography Fundamentals",
+        "description": "95% of web design is typography. Learn how to pair fonts, establish a clear typographic hierarchy, and manage line-height and letter-spacing for maximum readability."
+      },
+      {
+        "title": "Figma Mastery",
+        "description": "Figma is the industry standard. Move beyond drawing basic shapes and learn how to use Auto Layout to create responsive components that behave exactly like real HTML/CSS elements."
+      },
+      {
+        "title": "Component Libraries & Design Systems",
+        "description": "Don't design the same button 50 times. Learn how to build scalable UI kits using Figma Variants, Variables, and Master Components so your designs remain consistent across hundreds of screens."
+      },
+      {
+        "title": "Layouts & Grid Systems",
+        "description": "Structure is everything. Understand the 8pt grid system, column grids, and how to design interfaces that gracefully scale from mobile devices to ultra-wide desktop monitors."
+      },
+      {
+        "title": "Micro-interactions & Animation",
+        "description": "Motion provides context. Learn how to use Figma Smart Animate to design loading states, button hovers, and page transitions that make your application feel alive and premium."
+      },
+      {
+        "title": "Developer Handoff",
+        "description": "A beautiful design is useless if it can't be built. Learn how to organize your files, document your design tokens, and communicate effectively with frontend developers to ensure pixel-perfect implementation."
+      }
+    ]
+  },
+  {
+    "slug": "ux-designer",
+    "title": "UX Designer",
+    "description": "Focus on how products feel and function. Learn how to conduct user research, map out complex user journeys, and wireframe solutions that solve real human problems.",
+    "difficulty": "intermediate",
+    "estimatedTime": "5-7 Months",
+    "nodes": [
+      {
+        "title": "Empathy & User Research",
+        "description": "You are not the user. Learn how to conduct user interviews, send effective surveys, and perform ethnographic research to uncover the actual pain points your target audience is facing."
+      },
+      {
+        "title": "User Personas & Journey Mapping",
+        "description": "Turn raw data into actionable insights. Learn how to synthesize your research into realistic user personas, and map out their emotional highs and lows as they interact with your product."
+      },
+      {
+        "title": "Information Architecture (IA)",
+        "description": "If users can't find it, it doesn't exist. Learn card sorting techniques and how to design intuitive navigation structures, site maps, and taxonomies that make sense to the end user."
+      },
+      {
+        "title": "Wireframing & Prototyping",
+        "description": "Stop worrying about colors too early. Learn how to create low-fidelity wireframes in Balsamiq or Figma to test layout and logic before committing to high-fidelity visual design."
+      },
+      {
+        "title": "Usability Testing",
+        "description": "Test your assumptions. Learn how to write unbiased test scripts, moderate testing sessions, and observe users interacting with your prototypes to identify friction points."
+      },
+      {
+        "title": "Interaction Design (IxD)",
+        "description": "Design the conversation between the user and the system. Understand affordances, signifiers, and feedback loops to ensure users always know what action they just took and what they can do next."
+      },
+      {
+        "title": "Accessibility (a11y)",
+        "description": "Design for everyone. Learn the WCAG guidelines to ensure your product can be used by people with visual, auditory, motor, or cognitive disabilities."
+      },
+      {
+        "title": "Metrics & Data-Driven UX",
+        "description": "Prove your design works. Learn how to analyze quantitative data from tools like Google Analytics or Hotjar to complement your qualitative research and measure the success of your redesigns."
+      }
+    ]
+  },
+  {
+    "slug": "product-designer",
+    "title": "Product Designer",
+    "description": "The ultimate hybrid role. Combine the aesthetics of UI, the empathy of UX, and the strategic thinking of business to design digital products that users love and that drive company growth.",
+    "difficulty": "advanced",
+    "estimatedTime": "8-10 Months",
+    "nodes": [
+      {
+        "title": "Product Thinking",
+        "description": "Understand the 'Why' before the 'What'. Learn how to define the core problem, identify the target market, and ensure that the features you are designing actually align with the company's business goals."
+      },
+      {
+        "title": "End-to-End UX/UI",
+        "description": "A product designer must do it all. Master the seamless transition from user research and wireframing (UX) directly into high-fidelity, component-driven visual design (UI)."
+      },
+      {
+        "title": "Business Viability & Strategy",
+        "description": "Great design must make money. Understand business models, pricing strategies, and how to balance user needs with technical constraints and strict project deadlines."
+      },
+      {
+        "title": "Prototyping Complex Flows",
+        "description": "Static screens don't sell ideas. Learn how to build advanced, interactive prototypes in Figma or Protopie that demonstrate complex logic, states, and animations to stakeholders."
+      },
+      {
+        "title": "Growth Design & CRO",
+        "description": "Design for conversion. Learn how to optimize onboarding flows, reduce checkout friction, and use A/B testing to measurably increase user retention and revenue."
+      },
+      {
+        "title": "Design Systems Leadership",
+        "description": "Stop working in silos. Learn how to build, maintain, and govern a comprehensive design system that entire teams of designers and engineers can use to scale the product rapidly."
+      },
+      {
+        "title": "Cross-Functional Collaboration",
+        "description": "You are the glue. Learn how to communicate effectively with Product Managers to define scopes, and with Engineers to compromise on technical limitations without sacrificing the user experience."
+      }
+    ]
+  },
+  {
+    "slug": "python-developer",
+    "title": "Python Developer",
+    "description": "Master one of the world's most versatile programming languages. From writing simple automation scripts to building complex backend APIs and data pipelines, this roadmap covers everything Python.",
+    "difficulty": "beginner",
+    "estimatedTime": "5-7 Months",
+    "nodes": [
+      {
+        "title": "Python Basics & Syntax",
+        "description": "Start with the fundamentals. Master variables, data types, loops, conditionals, and functions. Python's clean syntax is easy to learn but requires discipline to write 'Pythonic' code."
+      },
+      {
+        "title": "Data Structures",
+        "description": "Understand how to store and manipulate data efficiently. Deep dive into lists, dictionaries, sets, and tuples, and learn the time complexity (Big O) of common operations on these structures."
+      },
+      {
+        "title": "Object-Oriented Programming (OOP)",
+        "description": "Structure your code like a professional. Learn how to create classes, instantiate objects, and utilize inheritance, polymorphism, and encapsulation to build reusable software architectures."
+      },
+      {
+        "title": "Advanced Python Concepts",
+        "description": "Separate yourself from the beginners. Master decorators, generators, list comprehensions, and context managers (the 'with' statement) to write highly optimized and elegant code."
+      },
+      {
+        "title": "File Handling & Automation",
+        "description": "Make your computer do the boring work. Learn how to read and write CSVs, parse JSON, interact with the OS module, and use libraries like openpyxl to automate spreadsheet tasks."
+      },
+      {
+        "title": "Web Scraping",
+        "description": "Extract data from the internet. Learn how to use requests and BeautifulSoup to parse HTML, and Selenium to automate browser interactions for dynamic, JavaScript-heavy websites."
+      },
+      {
+        "title": "Web Frameworks (FastAPI / Flask)",
+        "description": "Build your own backend servers. Learn how to create REST APIs using Flask for simplicity or FastAPI for high-performance, asynchronous endpoints with automatic Swagger documentation."
+      },
+      {
+        "title": "Testing in Python",
+        "description": "Ensure your code works before shipping it. Learn how to use the 'pytest' framework to write unit tests, mock external API calls, and measure code coverage."
+      }
+    ]
+  },
+  {
+    "slug": "java-developer",
+    "title": "Java Developer",
+    "description": "Enter the enterprise world. Learn the strict, object-oriented principles of Java, JVM internals, and the Spring Boot framework used by the world's largest financial and tech institutions.",
+    "difficulty": "intermediate",
+    "estimatedTime": "7-9 Months",
+    "nodes": [
+      {
+        "title": "Java Syntax & Core Concepts",
+        "description": "Master the strict typing system of Java. Learn about primitive types, wrappers, arrays, and control flow. Understand the compilation process and how the Java Virtual Machine (JVM) achieves platform independence."
+      },
+      {
+        "title": "Deep Dive Object-Oriented Programming",
+        "description": "Java enforces OOP. Deeply understand interfaces, abstract classes, method overloading vs overriding, and the four pillars of OOP. This is the foundation of all Java enterprise architecture."
+      },
+      {
+        "title": "Java Collections Framework",
+        "description": "Stop using raw arrays. Master ArrayLists, HashMaps, HashSets, and LinkedLists. Understand exactly which collection to use based on the performance requirements of your specific use case."
+      },
+      {
+        "title": "Exception Handling & IO",
+        "description": "Enterprise apps shouldn't crash silently. Learn how to handle checked and unchecked exceptions properly, and how to read/write files and streams using the modern java.nio package."
+      },
+      {
+        "title": "Multithreading & Concurrency",
+        "description": "Do multiple things at once. Learn how to create threads, use the ExecutorService, and avoid catastrophic race conditions and deadlocks using synchronized blocks and concurrent collections."
+      },
+      {
+        "title": "Modern Java (Streams & Lambdas)",
+        "description": "Write cleaner code. Master the features introduced in Java 8+, utilizing lambda expressions and the Stream API to process massive collections of data using a functional programming style."
+      },
+      {
+        "title": "Build Tools (Maven & Gradle)",
+        "description": "Manage your project lifecycle. Learn how to define dependencies, configure build plugins, and package your application into executable JAR or WAR files for deployment."
+      },
+      {
+        "title": "Spring Boot Framework",
+        "description": "The industry standard for Java web apps. Learn Dependency Injection, Inversion of Control, and how to rapidly build robust REST APIs using Spring Web and Spring Data JPA."
+      },
+      {
+        "title": "Testing (JUnit & Mockito)",
+        "description": "Enterprise code demands high test coverage. Learn how to write unit tests with JUnit 5 and isolate your classes by mocking database connections and external services with Mockito."
+      }
+    ]
+  },
+  {
+    "slug": "cpp-developer",
+    "title": "C++ Developer",
+    "description": "Master the language of performance. Learn manual memory management, pointers, and modern C++ features to build high-frequency trading systems, game engines, and embedded software.",
+    "difficulty": "advanced",
+    "estimatedTime": "8-12 Months",
+    "nodes": [
+      {
+        "title": "Syntax & Control Flow",
+        "description": "Start with the basics of C++. Learn strict variable typing, loops, conditionals, and the compilation process using GCC or Clang."
+      },
+      {
+        "title": "Pointers & Memory Management",
+        "description": "The defining feature of C++. Understand the stack vs the heap, how to use pointers and references, and how to manually allocate and free memory using new and delete without causing memory leaks."
+      },
+      {
+        "title": "Object-Oriented C++",
+        "description": "Structure complex systems. Learn how to define classes, use constructors and destructors, and implement multiple inheritance and virtual functions for runtime polymorphism."
+      },
+      {
+        "title": "Modern C++ (Smart Pointers)",
+        "description": "Stop using raw pointers. Learn C++11/14/17 features like unique_ptr and shared_ptr to automate memory management and write safer, more modern code."
+      },
+      {
+        "title": "Standard Template Library (STL)",
+        "description": "Don't reinvent the wheel. Master STL containers (vector, map, unordered_map) and algorithms (sort, find) to handle data efficiently without writing complex data structures from scratch."
+      },
+      {
+        "title": "Templates & Metaprogramming",
+        "description": "Write code that writes code. Learn how to use function and class templates to create highly reusable, type-safe generic functions that are resolved at compile time for maximum performance."
+      },
+      {
+        "title": "Multithreading",
+        "description": "Maximize CPU utilization. Learn how to use std::thread, mutexes, and condition variables to write concurrent programs that execute tasks in parallel safely."
+      },
+      {
+        "title": "Build Systems (CMake)",
+        "description": "Manage complex compilation. Learn how to write CMakeLists to configure builds, link external libraries, and generate cross-platform Makefiles or Visual Studio solutions."
+      }
+    ]
+  }
+]

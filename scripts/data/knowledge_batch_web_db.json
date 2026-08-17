@@ -1,0 +1,755 @@
+[
+  {
+    "slug": "html5",
+    "title": "HTML5 Foundations",
+    "description": "Master HTML5 step-by-step with clean bullet points, simple English, and daily life examples across 25 lessons.",
+    "iconName": "FileCode",
+    "lessons": [
+      {
+        "slug": "html-1",
+        "title": "1. What is HTML?",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>HTML (HyperText Markup Language) builds the skeleton of every website.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like the wooden or steel frame of a house before adding bricks or paint.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Creating headings, text, images, and buttons on web pages.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Confusing HTML with a programming language. It is a markup language!</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create your first .html file in VS Code.</li>\n  </ul>",
+        "codeExample": "/* What is HTML? Example */\nconsole.log(\"What is HTML?\");",
+        "tryItDefault": "console.log(\"Learning What is HTML?!\");"
+      },
+      {
+        "slug": "html-2",
+        "title": "2. HTML Page Structure",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Every HTML page requires <!DOCTYPE html>, <html>, <head>, and <body>.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Like a human body: Head holds hidden information (brain), Body holds visible content.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Standard web page setup.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Placing visible buttons or text inside <head> instead of <body>.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Write the basic HTML boilerplate structure.</li>\n  </ul>",
+        "codeExample": "/* HTML Page Structure Example */\nconsole.log(\"HTML Page Structure\");",
+        "tryItDefault": "console.log(\"Learning HTML Page Structure!\");"
+      },
+      {
+        "slug": "html-3",
+        "title": "3. Headings (h1 to h6)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>HTML provides 6 levels of headings, <h1> being largest and <h6> smallest.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Newspaper headlines: Main Frontpage Title (H1) vs Sub-section Headers (H2-H6).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Structuring titles for readability and Google SEO.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using multiple <h1> tags on a single web page.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Write an <h1> tag with your name and an <h2> tag with your hobby.</li>\n  </ul>",
+        "codeExample": "/* Headings (h1 to h6) Example */\nconsole.log(\"Headings (h1 to h6)\");",
+        "tryItDefault": "console.log(\"Learning Headings (h1 to h6)!\");"
+      },
+      {
+        "slug": "html-4",
+        "title": "4. Paragraphs & Text Formatting",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li><p> creates paragraphs. <strong> makes text bold, <em> makes text italic.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Highlighting important lines in a textbook with a yellow marker.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Formatting blog posts, news articles, and product descriptions.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using <p> inside another <p> tag.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Write a short bio about yourself using <p> and <strong> tags.</li>\n  </ul>",
+        "codeExample": "/* Paragraphs & Text Formatting Example */\nconsole.log(\"Paragraphs & Text Formatting\");",
+        "tryItDefault": "console.log(\"Learning Paragraphs & Text Formatting!\");"
+      },
+      {
+        "slug": "html-5",
+        "title": "5. Links (Anchor Tags <a>)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>href attribute links users to another webpage or website.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A signpost on a highway pointing to the next city.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Clickable navigation buttons and external links.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting target='_blank' when linking to external sites.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a link pointing to google.com.</li>\n  </ul>",
+        "codeExample": "/* Links (Anchor Tags <a>) Example */\nconsole.log(\"Links (Anchor Tags <a>)\");",
+        "tryItDefault": "console.log(\"Learning Links (Anchor Tags <a>)!\");"
+      },
+      {
+        "slug": "html-6",
+        "title": "6. Images (<img> Tag)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Displays pictures using src (source) and alt (description) attributes.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Hanging a picture frame on a wall.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Product photos, banners, and user profile avatars.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting alt text, which breaks accessibility for screen readers.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Add an image tag displaying a sample logo.</li>\n  </ul>",
+        "codeExample": "/* Images (<img> Tag) Example */\nconsole.log(\"Images (<img> Tag)\");",
+        "tryItDefault": "console.log(\"Learning Images (<img> Tag)!\");"
+      },
+      {
+        "slug": "html-7",
+        "title": "7. Unordered Lists (<ul>)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Displays bullet-pointed lists without numbers.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A grocery shopping list where item order doesn't matter.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Navigation menus, feature lists, and bullet points.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Placing raw text inside <ul> without <li> tags.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a bulleted list of 3 favorite foods.</li>\n  </ul>",
+        "codeExample": "/* Unordered Lists (<ul>) Example */\nconsole.log(\"Unordered Lists (<ul>)\");",
+        "tryItDefault": "console.log(\"Learning Unordered Lists (<ul>)!\");"
+      },
+      {
+        "slug": "html-8",
+        "title": "8. Ordered Lists (<ol>)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Displays numbered step-by-step lists.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A cooking recipe with numbered Step 1, Step 2, Step 3.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Tutorial steps, top 10 rankings, and instructions.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Manually typing numbers instead of letting <ol> count automatically.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a numbered list of your top 3 favorite movies.</li>\n  </ul>",
+        "codeExample": "/* Ordered Lists (<ol>) Example */\nconsole.log(\"Ordered Lists (<ol>)\");",
+        "tryItDefault": "console.log(\"Learning Ordered Lists (<ol>)!\");"
+      },
+      {
+        "slug": "html-9",
+        "title": "9. Tables (<table>, <tr>, <td>)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Organizes data into rows and columns.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>An Excel spreadsheet or a school timetable.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Displaying pricing plans, sports scores, and user schedules.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting <tr> tags for table rows.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a table displaying 2 student names and their marks.</li>\n  </ul>",
+        "codeExample": "/* Tables (<table>, <tr>, <td>) Example */\nconsole.log(\"Tables (<table>, <tr>, <td>)\");",
+        "tryItDefault": "console.log(\"Learning Tables (<table>, <tr>, <td>)!\");"
+      },
+      {
+        "slug": "html-10",
+        "title": "10. Divs (<div>) & Spans (<span>)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li><div> is a block container; <span> is an inline text container.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li><div> is a big cardboard box; <span> is a clear label sticker.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Grouping elements for CSS styling and layout alignment.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Overusing <div> tags when semantic HTML tags fit better.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Wrap two paragraphs inside a single <div>.</li>\n  </ul>",
+        "codeExample": "/* Divs (<div>) & Spans (<span>) Example */\nconsole.log(\"Divs (<div>) & Spans (<span>)\");",
+        "tryItDefault": "console.log(\"Learning Divs (<div>) & Spans (<span>)!\");"
+      },
+      {
+        "slug": "html-11",
+        "title": "11. Semantic HTML (<header>, <nav>, <main>)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Uses meaningful tags so browsers and search engines understand page parts.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Labeled cabinets in a kitchen (Spices, Plates, Utensils).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Improving website accessibility and SEO ranking.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using <div> for everything instead of <header> and <footer>.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Replace top <div> with a <header> tag.</li>\n  </ul>",
+        "codeExample": "/* Semantic HTML (<header>, <nav>, <main>) Example */\nconsole.log(\"Semantic HTML (<header>, <nav>, <main>)\");",
+        "tryItDefault": "console.log(\"Learning Semantic HTML (<header>, <nav>, <main>)!\");"
+      },
+      {
+        "slug": "html-12",
+        "title": "12. Forms Overview (<form>)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Collects user input and sends it to a server.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Filling out a physical paper application at a bank counter.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>User registration, login pages, and search bars.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting action or method attributes on forms.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create an empty <form> element.</li>\n  </ul>",
+        "codeExample": "/* Forms Overview (<form>) Example */\nconsole.log(\"Forms Overview (<form>)\");",
+        "tryItDefault": "console.log(\"Learning Forms Overview (<form>)!\");"
+      },
+      {
+        "slug": "html-13",
+        "title": "13. Text Inputs (<input type='text'>)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Accepts single-line text input from users.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A blank line on a name tag saying 'Hello my name is ___'.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Username fields, search boxes, and street addresses.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Omitting placeholder text to guide the user.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Add a text input for 'First Name'.</li>\n  </ul>",
+        "codeExample": "/* Text Inputs (<input type='text'>) Example */\nconsole.log(\"Text Inputs (<input type='text'>)\");",
+        "tryItDefault": "console.log(\"Learning Text Inputs (<input type='text'>)!\");"
+      },
+      {
+        "slug": "html-14",
+        "title": "14. Passwords & Email Inputs",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Masks characters (●●●) for security or validates email format.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Entering a PIN code on an ATM screen.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Secure login forms.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using plain text type for password fields.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a password input field.</li>\n  </ul>",
+        "codeExample": "/* Passwords & Email Inputs Example */\nconsole.log(\"Passwords & Email Inputs\");",
+        "tryItDefault": "console.log(\"Learning Passwords & Email Inputs!\");"
+      },
+      {
+        "slug": "html-15",
+        "title": "15. Checkboxes & Radio Buttons",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Checkboxes allow multiple choices; Radio buttons allow only ONE choice.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Checkboxes = Pizza toppings (Select many); Radio = Quiz question (Select one).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Filtering products, selecting preferences, and surveys.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Giving radio buttons different name attributes, allowing multiple selections.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create 2 radio buttons for Gender selection.</li>\n  </ul>",
+        "codeExample": "/* Checkboxes & Radio Buttons Example */\nconsole.log(\"Checkboxes & Radio Buttons\");",
+        "tryItDefault": "console.log(\"Learning Checkboxes & Radio Buttons!\");"
+      },
+      {
+        "slug": "html-16",
+        "title": "16. Dropdown Lists (<select>)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Creates a collapsible dropdown menu of options.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A pull-down window shade showing available choices.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Selecting country, state, or birth year.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting <option> tags inside <select>.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a dropdown list of 3 countries.</li>\n  </ul>",
+        "codeExample": "/* Dropdown Lists (<select>) Example */\nconsole.log(\"Dropdown Lists (<select>)\");",
+        "tryItDefault": "console.log(\"Learning Dropdown Lists (<select>)!\");"
+      },
+      {
+        "slug": "html-17",
+        "title": "17. Buttons (<button>)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Clickable element that triggers form submission or JavaScript action.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A doorbell button mounted on a wall.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Submit form, Add to Cart, and Open Modal.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using <a> link styled as a button without href.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a 'Submit Application' button.</li>\n  </ul>",
+        "codeExample": "/* Buttons (<button>) Example */\nconsole.log(\"Buttons (<button>)\");",
+        "tryItDefault": "console.log(\"Learning Buttons (<button>)!\");"
+      },
+      {
+        "slug": "html-18",
+        "title": "18. HTML5 Audio & Video",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li><audio> and <video> embed media directly into web pages.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A portable DVD player embedded in the wall.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Playing podcast episodes or video previews.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Omitting controls attribute, hiding play/pause buttons from users.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Add a <video> tag with controls enabled.</li>\n  </ul>",
+        "codeExample": "/* HTML5 Audio & Video Example */\nconsole.log(\"HTML5 Audio & Video\");",
+        "tryItDefault": "console.log(\"Learning HTML5 Audio & Video!\");"
+      },
+      {
+        "slug": "html-19",
+        "title": "19. HTML5 Form Validation",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Attributes like required, min, max, and pattern enforce input rules.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A bouncer checking IDs at a club entrance.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Ensuring users don't submit empty fields.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Relying ONLY on HTML validation for sensitive backend security.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Add required attribute to an input field.</li>\n  </ul>",
+        "codeExample": "/* HTML5 Form Validation Example */\nconsole.log(\"HTML5 Form Validation\");",
+        "tryItDefault": "console.log(\"Learning HTML5 Form Validation!\");"
+      },
+      {
+        "slug": "html-20",
+        "title": "20. Meta Tags & Head Section",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li><meta> tags supply hidden metadata to browsers and search engines.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>The nutrition facts label printed on the back of a cereal box.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>SEO page titles, responsive viewports, and social share previews.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Missing viewport meta tag, causing mobile site rendering bugs.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Add responsive viewport meta tag.</li>\n  </ul>",
+        "codeExample": "/* Meta Tags & Head Section Example */\nconsole.log(\"Meta Tags & Head Section\");",
+        "tryItDefault": "console.log(\"Learning Meta Tags & Head Section!\");"
+      },
+      {
+        "slug": "html-21",
+        "title": "21. Iframes (<iframe>)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Embeds another website inside your web page.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A picture window looking into another room.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Embedding Google Maps, YouTube videos, and payment gateways.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Embedding untrusted external sites without sandbox security attributes.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Embed a YouTube video using <iframe>.</li>\n  </ul>",
+        "codeExample": "/* Iframes (<iframe>) Example */\nconsole.log(\"Iframes (<iframe>)\");",
+        "tryItDefault": "console.log(\"Learning Iframes (<iframe>)!\");"
+      },
+      {
+        "slug": "html-22",
+        "title": "22. Attributes (id & class)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>id is unique to 1 element; class groups multiple elements together.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>id = Passport Number (Unique); class = School Grade (Shared by many students).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Targeting elements with CSS styles and JavaScript code.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using the same id on multiple elements on the same page.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Give a heading a class of 'main-title'.</li>\n  </ul>",
+        "codeExample": "/* Attributes (id & class) Example */\nconsole.log(\"Attributes (id & class)\");",
+        "tryItDefault": "console.log(\"Learning Attributes (id & class)!\");"
+      },
+      {
+        "slug": "html-23",
+        "title": "23. Entities & Special Characters",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Renders special characters like &lt; (&lt;), &gt; (&gt;), &amp; (&amp;).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Using emoji shortcuts on your keyboard.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Displaying code snippets or copyright symbols (&copy;).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Typing raw < or > inside paragraph text.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Write &copy; 2026 Progrys in HTML.</li>\n  </ul>",
+        "codeExample": "/* Entities & Special Characters Example */\nconsole.log(\"Entities & Special Characters\");",
+        "tryItDefault": "console.log(\"Learning Entities & Special Characters!\");"
+      },
+      {
+        "slug": "html-24",
+        "title": "24. Accessibility (a11y) Basics",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Ensures people with disabilities can use web pages using screen readers.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Building wheelchair ramps next to staircases.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>ARIA labels, alt text, and keyboard navigation.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Removing outline focus rings without providing custom focus styles.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Add aria-label to an icon button.</li>\n  </ul>",
+        "codeExample": "/* Accessibility (a11y) Basics Example */\nconsole.log(\"Accessibility (a11y) Basics\");",
+        "tryItDefault": "console.log(\"Learning Accessibility (a11y) Basics!\");"
+      },
+      {
+        "slug": "html-25",
+        "title": "25. Capstone: Semantic Portfolio Page",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Build a complete, accessible, semantic personal portfolio page!</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Building your professional digital resume house.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Showcasing your skills, projects, and contact details.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Rushing without testing on mobile screens.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Combine header, nav, section, article, and form into one complete HTML page!</li>\n  </ul>",
+        "codeExample": "/* Capstone: Semantic Portfolio Page Example */\nconsole.log(\"Capstone: Semantic Portfolio Page\");",
+        "tryItDefault": "console.log(\"Learning Capstone: Semantic Portfolio Page!\");"
+      }
+    ]
+  },
+  {
+    "slug": "modern-css",
+    "title": "Modern CSS & Layouts",
+    "description": "Master CSS3, Flexbox, Grid, and Animations with simple English, daily life examples, and bullet points across 28 lessons.",
+    "iconName": "Palette",
+    "lessons": [
+      {
+        "slug": "css-1",
+        "title": "1. What is CSS?",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>CSS (Cascading Style Sheets) styles and formats HTML elements.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>HTML is the naked mannequin; CSS is the clothing, haircut, and shoes.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Adding colors, fonts, layouts, and animations to websites.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Typing CSS styles inside HTML file without <style> or linking.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a style.css file and link it to your HTML.</li>\n  </ul>",
+        "codeExample": "/* What is CSS? Example */\nconsole.log(\"What is CSS?\");",
+        "tryItDefault": "console.log(\"Learning What is CSS?!\");"
+      },
+      {
+        "slug": "css-2",
+        "title": "2. Linking CSS to HTML",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>External CSS is linked using <link rel='stylesheet' href='style.css'>.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Plugging headphones into your phone to listen to music.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Keeping HTML content separate from styling rules.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting rel='stylesheet' attribute.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Add the <link> tag inside the <head> of your HTML file.</li>\n  </ul>",
+        "codeExample": "/* Linking CSS to HTML Example */\nconsole.log(\"Linking CSS to HTML\");",
+        "tryItDefault": "console.log(\"Learning Linking CSS to HTML!\");"
+      },
+      {
+        "slug": "css-3",
+        "title": "3. Selectors (Element, Class, ID)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Selectors target HTML elements to apply styles.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Element = 'All People', Class = 'Students', ID = 'Aadhaar/Social Security Number'.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Styling specific buttons or text blocks.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Overusing ID selectors for styling instead of classes.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Target a class .btn and change its background color to blue.</li>\n  </ul>",
+        "codeExample": "/* Selectors (Element, Class, ID) Example */\nconsole.log(\"Selectors (Element, Class, ID)\");",
+        "tryItDefault": "console.log(\"Learning Selectors (Element, Class, ID)!\");"
+      },
+      {
+        "slug": "css-4",
+        "title": "4. Colors & Hex Codes",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Styles text and backgrounds using names ('red'), RGB, or Hex codes ('#FF0000').</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Mixing paints on an artist's palette.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Creating branded color schemes for websites.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting the # symbol in Hex colors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Set color: #3b82f6 on heading text.</li>\n  </ul>",
+        "codeExample": "/* Colors & Hex Codes Example */\nconsole.log(\"Colors & Hex Codes\");",
+        "tryItDefault": "console.log(\"Learning Colors & Hex Codes!\");"
+      },
+      {
+        "slug": "css-5",
+        "title": "5. Fonts & Typography",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Controls font-family, font-size, font-weight, and line-height.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Choosing handwriting style in a birthday card.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Making body text easy and pleasant to read.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using pixel font sizes for body text instead of relative rem units.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Import Google Font 'Inter' and apply it to body.</li>\n  </ul>",
+        "codeExample": "/* Fonts & Typography Example */\nconsole.log(\"Fonts & Typography\");",
+        "tryItDefault": "console.log(\"Learning Fonts & Typography!\");"
+      },
+      {
+        "slug": "css-6",
+        "title": "6. The Box Model (Padding & Margin)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Every element is a box with Content, Padding, Border, and Margin.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Padding = Bubble wrap inside a package; Margin = Space between two packages on a shelf.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Spacing out text and buttons on a web page.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Confusing padding (inside box) with margin (outside box).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Add padding: 16px and margin: 20px to a div.</li>\n  </ul>",
+        "codeExample": "/* The Box Model (Padding & Margin) Example */\nconsole.log(\"The Box Model (Padding & Margin)\");",
+        "tryItDefault": "console.log(\"Learning The Box Model (Padding & Margin)!\");"
+      },
+      {
+        "slug": "css-7",
+        "title": "7. Box Sizing (border-box)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>box-sizing: border-box includes padding and border in element's total width.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Packing a suitcase so the total size doesn't swell past airport baggage limits.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Preventing layout overflow bugs globally.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting to set * { box-sizing: border-box; } globally.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Apply box-sizing: border-box to all elements using * selector.</li>\n  </ul>",
+        "codeExample": "/* Box Sizing (border-box) Example */\nconsole.log(\"Box Sizing (border-box)\");",
+        "tryItDefault": "console.log(\"Learning Box Sizing (border-box)!\");"
+      },
+      {
+        "slug": "css-8",
+        "title": "8. Display Property (block vs inline)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>block starts on new line; inline sits next to text.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Block = Bricks stacked on top; Inline = Words in a sentence.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Controlling layout flow of elements.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Trying to set width/height on an inline element like <span>.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Change a span display to inline-block.</li>\n  </ul>",
+        "codeExample": "/* Display Property (block vs inline) Example */\nconsole.log(\"Display Property (block vs inline)\");",
+        "tryItDefault": "console.log(\"Learning Display Property (block vs inline)!\");"
+      },
+      {
+        "slug": "css-9",
+        "title": "9. Flexbox Basics (display: flex)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>1D layout system for aligning items in rows or columns.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Arranging books neatly on a single bookshelf.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building navbars, centering cards, and aligning buttons.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Applying flex properties to items instead of the container parent.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Set display: flex on a wrapper div.</li>\n  </ul>",
+        "codeExample": "/* Flexbox Basics (display: flex) Example */\nconsole.log(\"Flexbox Basics (display: flex)\");",
+        "tryItDefault": "console.log(\"Learning Flexbox Basics (display: flex)!\");"
+      },
+      {
+        "slug": "css-10",
+        "title": "10. Flex Justify & Align Items",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>justify-content aligns along main axis; align-items aligns along cross axis.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Centering a picture frame vertically and horizontally on a wall.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Centering content perfectly.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Confusing justify-content (horizontal) with align-items (vertical).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Center a card using justify-content: center and align-items: center.</li>\n  </ul>",
+        "codeExample": "/* Flex Justify & Align Items Example */\nconsole.log(\"Flex Justify & Align Items\");",
+        "tryItDefault": "console.log(\"Learning Flex Justify & Align Items!\");"
+      },
+      {
+        "slug": "css-11",
+        "title": "11. Flex Gap & Direction",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>gap adds spacing between items; flex-direction changes row/column orientation.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Adding equal empty seats between audience members.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Creating card grids and vertical mobile menus.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using margin on items instead of container gap.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Add gap: 20px to a flex container.</li>\n  </ul>",
+        "codeExample": "/* Flex Gap & Direction Example */\nconsole.log(\"Flex Gap & Direction\");",
+        "tryItDefault": "console.log(\"Learning Flex Gap & Direction!\");"
+      },
+      {
+        "slug": "css-12",
+        "title": "12. CSS Grid Basics (display: grid)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>2D layout system for rows AND columns simultaneously.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A chessboard or an Excel grid layout.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building complex magazine layouts and photo galleries.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using Flexbox when a 2D Grid is cleaner.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a grid container with display: grid.</li>\n  </ul>",
+        "codeExample": "/* CSS Grid Basics (display: grid) Example */\nconsole.log(\"CSS Grid Basics (display: grid)\");",
+        "tryItDefault": "console.log(\"Learning CSS Grid Basics (display: grid)!\");"
+      },
+      {
+        "slug": "css-13",
+        "title": "13. Grid Template Columns (fr unit)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Defines column tracks using fractional (fr) units.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Cutting a pizza into equal slices (1fr each).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Creating 3-column website layouts.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Hardcoding pixel column widths instead of responsive 1fr.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Set grid-template-columns: repeat(3, 1fr).</li>\n  </ul>",
+        "codeExample": "/* Grid Template Columns (fr unit) Example */\nconsole.log(\"Grid Template Columns (fr unit)\");",
+        "tryItDefault": "console.log(\"Learning Grid Template Columns (fr unit)!\");"
+      },
+      {
+        "slug": "css-14",
+        "title": "14. Positioning (Relative vs Absolute)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>relative positions element relative to normal spot; absolute positions relative to parent.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Absolute = Pinning a sticky note at exact coordinates on a bulletin board.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Creating badge overlays on icons and image popups.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting position: relative on the parent container.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Position a badge absolute at top-0 right-0 of a relative card.</li>\n  </ul>",
+        "codeExample": "/* Positioning (Relative vs Absolute) Example */\nconsole.log(\"Positioning (Relative vs Absolute)\");",
+        "tryItDefault": "console.log(\"Learning Positioning (Relative vs Absolute)!\");"
+      },
+      {
+        "slug": "css-15",
+        "title": "15. Fixed & Sticky Positioning",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>fixed locks item to viewport; sticky sticks when scrolling past.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Fixed = Car dashboard speedometer (always visible); Sticky = Bookmark following your page.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Sticky header navbars and back-to-top buttons.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting top: 0 property on sticky elements.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Make navbar position: sticky with top: 0.</li>\n  </ul>",
+        "codeExample": "/* Fixed & Sticky Positioning Example */\nconsole.log(\"Fixed & Sticky Positioning\");",
+        "tryItDefault": "console.log(\"Learning Fixed & Sticky Positioning!\");"
+      },
+      {
+        "slug": "css-16",
+        "title": "16. Z-Index & Stacking",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Controls overlapping stack order of elements.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Stacking playing cards on a table (higher number = on top).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Modal popups, dropdown menus, and toast notifications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using z-index without setting a position property.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Set z-index: 50 on a modal popup overlay.</li>\n  </ul>",
+        "codeExample": "/* Z-Index & Stacking Example */\nconsole.log(\"Z-Index & Stacking\");",
+        "tryItDefault": "console.log(\"Learning Z-Index & Stacking!\");"
+      },
+      {
+        "slug": "css-17",
+        "title": "17. Media Queries (Responsive Design)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Applies CSS rules based on screen size e.g. @media (max-width: 768px).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Folding a broad table into a compact tray when traveling.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Making websites look gorgeous on mobile phones.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Designing for desktop first without testing on mobile screens.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Write a media query changing font size on screens smaller than 768px.</li>\n  </ul>",
+        "codeExample": "/* Media Queries (Responsive Design) Example */\nconsole.log(\"Media Queries (Responsive Design)\");",
+        "tryItDefault": "console.log(\"Learning Media Queries (Responsive Design)!\");"
+      },
+      {
+        "slug": "css-18",
+        "title": "18. CSS Variables (--variable)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Stores reusable style values e.g. --primary-color: #3b82f6.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Preset color palette swatches in a paint store.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Implementing Dark Mode themes across entire apps.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting var() wrapper when using variable.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Define --accent: red on :root and use var(--accent) on button.</li>\n  </ul>",
+        "codeExample": "/* CSS Variables (--variable) Example */\nconsole.log(\"CSS Variables (--variable)\");",
+        "tryItDefault": "console.log(\"Learning CSS Variables (--variable)!\");"
+      },
+      {
+        "slug": "css-19",
+        "title": "19. Borders, Border Radius & Shadows",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Rounds corners with border-radius and adds elevation with box-shadow.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Sanding sharp wooden edges smooth and shining a light to cast soft shadows.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Modern card UI designs and floating buttons.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using harsh black box-shadows instead of soft opacity shadows.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Add border-radius: 12px and a subtle box-shadow to a div.</li>\n  </ul>",
+        "codeExample": "/* Borders, Border Radius & Shadows Example */\nconsole.log(\"Borders, Border Radius & Shadows\");",
+        "tryItDefault": "console.log(\"Learning Borders, Border Radius & Shadows!\");"
+      },
+      {
+        "slug": "css-20",
+        "title": "20. Hover States & Pseudo-classes",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>:hover, :focus, and :active style elements on user interaction.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A lightbulb glowing brighter when you place your hand near it.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Interactive button animations and link highlights.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting keyboard :focus states for accessibility.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Add background color change on button :hover.</li>\n  </ul>",
+        "codeExample": "/* Hover States & Pseudo-classes Example */\nconsole.log(\"Hover States & Pseudo-classes\");",
+        "tryItDefault": "console.log(\"Learning Hover States & Pseudo-classes!\");"
+      },
+      {
+        "slug": "css-21",
+        "title": "21. CSS Transitions",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Smoothly animates state changes over duration.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A dimmer switch smoothly fading room lights instead of flipping instantly.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Smooth hover effects and sliding menus.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Animating heavy properties like width instead of transform/opacity.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Set transition: all 0.3s ease to a button.</li>\n  </ul>",
+        "codeExample": "/* CSS Transitions Example */\nconsole.log(\"CSS Transitions\");",
+        "tryItDefault": "console.log(\"Learning CSS Transitions!\");"
+      },
+      {
+        "slug": "css-22",
+        "title": "22. CSS Transforms (Scale, Rotate, Translate)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Modifies element shape and position without breaking layout flow.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Tilting or zooming a photo in an image viewer.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Zooming card images on hover.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Over-rotating elements making text unreadable.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Set transform: scale(1.05) on card hover.</li>\n  </ul>",
+        "codeExample": "/* CSS Transforms (Scale, Rotate, Translate) Example */\nconsole.log(\"CSS Transforms (Scale, Rotate, Translate)\");",
+        "tryItDefault": "console.log(\"Learning CSS Transforms (Scale, Rotate, Translate)!\");"
+      },
+      {
+        "slug": "css-23",
+        "title": "23. CSS Animations (@keyframes)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Creates multi-step custom keyframe animations.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A flipbook drawing coming to life when flipping pages.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Loading spinners and subtle pulse effects.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Running infinite heavy animations causing CPU lag.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a rotating @keyframes spin animation.</li>\n  </ul>",
+        "codeExample": "/* CSS Animations (@keyframes) Example */\nconsole.log(\"CSS Animations (@keyframes)\");",
+        "tryItDefault": "console.log(\"Learning CSS Animations (@keyframes)!\");"
+      },
+      {
+        "slug": "css-24",
+        "title": "24. Glassmorphism & Backdrop Filters",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Creates frosted glass translucent effects using backdrop-filter: blur().</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Looking through a frosted bathroom glass window.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Modern sleek dark mode headers and modal cards.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting fallback background color for older browsers.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Apply backdrop-filter: blur(10px) to a semi-transparent header.</li>\n  </ul>",
+        "codeExample": "/* Glassmorphism & Backdrop Filters Example */\nconsole.log(\"Glassmorphism & Backdrop Filters\");",
+        "tryItDefault": "console.log(\"Learning Glassmorphism & Backdrop Filters!\");"
+      },
+      {
+        "slug": "css-25",
+        "title": "25. Overflow (scroll, hidden, auto)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Controls how content bigger than container behaves.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Water overflowing out of a glass cup.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Creating scrollable sidebar menus.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Accidental overflow-x causing unwanted horizontal page scrolling.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Set overflow-y: auto on a fixed-height chat window.</li>\n  </ul>",
+        "codeExample": "/* Overflow (scroll, hidden, auto) Example */\nconsole.log(\"Overflow (scroll, hidden, auto)\");",
+        "tryItDefault": "console.log(\"Learning Overflow (scroll, hidden, auto)!\");"
+      },
+      {
+        "slug": "css-26",
+        "title": "26. CSS Normalizing & Resets",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Clears inconsistent default browser margins and paddings.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Wiping a whiteboard completely clean before starting a lesson.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Ensuring your website looks identical across Chrome, Safari, and Firefox.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting CSS reset, causing mysterious 8px body margins.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Set body { margin: 0; padding: 0; } in your CSS.</li>\n  </ul>",
+        "codeExample": "/* CSS Normalizing & Resets Example */\nconsole.log(\"CSS Normalizing & Resets\");",
+        "tryItDefault": "console.log(\"Learning CSS Normalizing & Resets!\");"
+      },
+      {
+        "slug": "css-27",
+        "title": "27. Dark Mode with CSS Variables",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Swaps CSS variable values when .dark class is active on <html>.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Flipping night mode on an e-reader tablet.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Allowing users to toggle theme preference.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Hardcoding color hex values in individual classes.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create dark mode theme color overrides.</li>\n  </ul>",
+        "codeExample": "/* Dark Mode with CSS Variables Example */\nconsole.log(\"Dark Mode with CSS Variables\");",
+        "tryItDefault": "console.log(\"Learning Dark Mode with CSS Variables!\");"
+      },
+      {
+        "slug": "css-28",
+        "title": "28. Capstone: Responsive Card Grid",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Build a responsive grid of modern card UI components!</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Building a digital showroom gallery.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Product showcase pages and blog feeds.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Not testing layout responsiveness across mobile, tablet, and desktop.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Combine Flexbox, Grid, CSS Variables, and Hover effects into a responsive gallery!</li>\n  </ul>",
+        "codeExample": "/* Capstone: Responsive Card Grid Example */\nconsole.log(\"Capstone: Responsive Card Grid\");",
+        "tryItDefault": "console.log(\"Learning Capstone: Responsive Card Grid!\");"
+      }
+    ]
+  },
+  {
+    "slug": "react",
+    "title": "React Fundamentals",
+    "description": "Master React step-by-step with simple English, daily life examples, and bullet points across 25 lessons.",
+    "iconName": "Atom",
+    "lessons": [
+      {
+        "slug": "react-1",
+        "title": "1. What is React?",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>React is a JavaScript library for building component-based user interfaces.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Building a castle using reusable LEGO bricks instead of carving one giant rock.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Powering Facebook, Netflix, Airbnb, and Instagram.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Thinking React is a full framework (It is a UI library!).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create your first React component using Vite.</li>\n  </ul>",
+        "codeExample": "// What is React? Example\nconsole.log(\"What is React?\");",
+        "tryItDefault": "console.log(\"Learning What is React?!\");"
+      },
+      {
+        "slug": "react-2",
+        "title": "2. JSX (JavaScript XML)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>JSX allows you to write HTML-like tags directly inside JavaScript files.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Mixing fruit slices directly into yogurt to make a fruit parfait.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Defining component structures with embedded dynamic variables.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using class instead of className attribute in JSX.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Render a <h1> with dynamic variable {name} in JSX.</li>\n  </ul>",
+        "codeExample": "// JSX (JavaScript XML) Example\nconsole.log(\"JSX (JavaScript XML)\");",
+        "tryItDefault": "console.log(\"Learning JSX (JavaScript XML)!\");"
+      },
+      {
+        "slug": "react-3",
+        "title": "3. Components (Functional)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Components are reusable functions returning JSX UI elements.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Stamping out cookies using a custom cookie cutter.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building Navbars, Product Cards, and Buttons.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Component names MUST start with a Capital letter (e.g. Card, not card).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a functional component named WelcomeMessage.</li>\n  </ul>",
+        "codeExample": "// Components (Functional) Example\nconsole.log(\"Components (Functional)\");",
+        "tryItDefault": "console.log(\"Learning Components (Functional)!\");"
+      },
+      {
+        "slug": "react-4",
+        "title": "4. Props (Passing Data)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Props pass data down from parent component to child component.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Passing a wrapped gift box to your friend.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Customizing buttons, user profiles, and cards with dynamic data.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Trying to mutate/modify props inside child component (Props are read-only!).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Pass a title prop to a Header component.</li>\n  </ul>",
+        "codeExample": "// Props (Passing Data) Example\nconsole.log(\"Props (Passing Data)\");",
+        "tryItDefault": "console.log(\"Learning Props (Passing Data)!\");"
+      },
+      {
+        "slug": "react-5",
+        "title": "5. State (useState Hook)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>State holds dynamic component memory that triggers re-renders when updated.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A digital scoreboard updating when a team scores a goal.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Form inputs, shopping cart counts, and toggle switches.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Mutating state directly e.g. state = 5 instead of setState(5).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a counter component using useState.</li>\n  </ul>",
+        "codeExample": "// State (useState Hook) Example\nconsole.log(\"State (useState Hook)\");",
+        "tryItDefault": "console.log(\"Learning State (useState Hook)!\");"
+      },
+      {
+        "slug": "react-6",
+        "title": "6. Handling Events",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Attaches event handlers like onClick={() => handleClick()}.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Pressing the electric horn button on a bicycle handlebar.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Handling button clicks and form submits in React.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Calling function immediately: onClick={handleClick()} instead of onClick={handleClick}.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Add an onClick handler to a button that alerts a message.</li>\n  </ul>",
+        "codeExample": "// Handling Events Example\nconsole.log(\"Handling Events\");",
+        "tryItDefault": "console.log(\"Learning Handling Events!\");"
+      },
+      {
+        "slug": "react-7",
+        "title": "7. Conditional Rendering",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Displays different UI elements based on boolean conditions using && or ternary ? :.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A sign showing 'OPEN' when store is open, or 'CLOSED' when shut.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Showing loading spinners, login buttons, or error banners.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Returning undefined or null accidentally.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Render a message if isLoggedIn is true.</li>\n  </ul>",
+        "codeExample": "// Conditional Rendering Example\nconsole.log(\"Conditional Rendering\");",
+        "tryItDefault": "console.log(\"Learning Conditional Rendering!\");"
+      },
+      {
+        "slug": "react-8",
+        "title": "8. Rendering Lists & Keys",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Renders array lists using .map() with unique key props.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Assigning coat check tags (keys) to every coat in a closet.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Displaying product catalogs and comment sections.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting key prop on list items, causing re-render performance issues.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Map over an array of items and render <li> tags with unique keys.</li>\n  </ul>",
+        "codeExample": "// Rendering Lists & Keys Example\nconsole.log(\"Rendering Lists & Keys\");",
+        "tryItDefault": "console.log(\"Learning Rendering Lists & Keys!\");"
+      },
+      {
+        "slug": "react-9",
+        "title": "9. Form Handling in React",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Binds form inputs to React state (Controlled Components).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Steering a car where your hands on the wheel (state) dictate direction.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Login forms, search filters, and checkout fields.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting e.preventDefault() on form submit.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a controlled text input storing value in useState.</li>\n  </ul>",
+        "codeExample": "// Form Handling in React Example\nconsole.log(\"Form Handling in React\");",
+        "tryItDefault": "console.log(\"Learning Form Handling in React!\");"
+      },
+      {
+        "slug": "react-10",
+        "title": "10. Effects (useEffect Hook)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Runs side effects like data fetching, subscriptions, or DOM updates.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>An alarm clock ringing when a timer reaches zero.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Fetching API data on component mount.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting dependency array [], causing infinite fetch loops!</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Add useEffect running once on mount with [] dependency array.</li>\n  </ul>",
+        "codeExample": "// Effects (useEffect Hook) Example\nconsole.log(\"Effects (useEffect Hook)\");",
+        "tryItDefault": "console.log(\"Learning Effects (useEffect Hook)!\");"
+      },
+      {
+        "slug": "react-11",
+        "title": "11. Data Fetching with useEffect",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Fetches live data inside useEffect and saves it into useState.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A waiter fetching your dish from the kitchen and bringing it to your table.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Loading user profile, posts, and notifications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Not handling loading or error states during fetch.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Fetch sample JSON data inside useEffect.</li>\n  </ul>",
+        "codeExample": "// Data Fetching with useEffect Example\nconsole.log(\"Data Fetching with useEffect\");",
+        "tryItDefault": "console.log(\"Learning Data Fetching with useEffect!\");"
+      },
+      {
+        "slug": "react-12",
+        "title": "12. Custom Hooks",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Extracts reusable stateful logic into custom use... functions.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Packaging a custom universal charging cable for all your devices.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>useFetch, useLocalStorage, useWindowSize.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Custom hook names MUST start with 'use' prefix.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a custom hook useCounter.</li>\n  </ul>",
+        "codeExample": "// Custom Hooks Example\nconsole.log(\"Custom Hooks\");",
+        "tryItDefault": "console.log(\"Learning Custom Hooks!\");"
+      },
+      {
+        "slug": "react-13",
+        "title": "13. Component Lifecycle",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Mounting (birth), Updating (life), and Unmounting (death) stages.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Planting a seed, watering it as it grows, and clearing it when withered.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Cleaning up timers and event listeners when components unmount.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Memory leaks caused by not clearing setInterval on unmount.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Return a cleanup function from useEffect to clear an interval.</li>\n  </ul>",
+        "codeExample": "// Component Lifecycle Example\nconsole.log(\"Component Lifecycle\");",
+        "tryItDefault": "console.log(\"Learning Component Lifecycle!\");"
+      },
+      {
+        "slug": "react-14",
+        "title": "14. Refs (useRef Hook)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Persists mutable values across renders without triggering a re-render.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Writing a secret note on a paper in your pocket.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Focusing text inputs manually or measuring DOM elements.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Overusing useRef for state that should trigger UI updates.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Focus an input field using useRef when a button is clicked.</li>\n  </ul>",
+        "codeExample": "// Refs (useRef Hook) Example\nconsole.log(\"Refs (useRef Hook)\");",
+        "tryItDefault": "console.log(\"Learning Refs (useRef Hook)!\");"
+      },
+      {
+        "slug": "react-15",
+        "title": "15. Context API (Global State)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Shares state across entire component tree without prop drilling.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A radio broadcast station sending audio to all cars in the city simultaneously.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>User authentication state, dark mode theme, and shopping cart.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Wrapping everything in Context, causing unnecessary re-renders.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a ThemeContext providing 'dark' or 'light' theme.</li>\n  </ul>",
+        "codeExample": "// Context API (Global State) Example\nconsole.log(\"Context API (Global State)\");",
+        "tryItDefault": "console.log(\"Learning Context API (Global State)!\");"
+      },
+      {
+        "slug": "react-16",
+        "title": "16. useReducer Hook",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Manages complex state logic via dispatching actions to a reducer function.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A bank manager processing deposit/withdraw slips at a desk counter.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Complex forms and multi-step cart checkouts.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Mutating state directly inside reducer instead of returning new state.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Write a simple reducer handling 'INCREMENT' and 'DECREMENT' actions.</li>\n  </ul>",
+        "codeExample": "// useReducer Hook Example\nconsole.log(\"useReducer Hook\");",
+        "tryItDefault": "console.log(\"Learning useReducer Hook!\");"
+      },
+      {
+        "slug": "react-17",
+        "title": "17. React Router (Client Navigation)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Navigates between pages without full browser page reloads.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Switching channels on your TV instant screen refresh.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Single Page Application (SPA) routing.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using <a> tags instead of <Link> component from react-router-dom.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Add a <Link to='/about'> button.</li>\n  </ul>",
+        "codeExample": "// React Router (Client Navigation) Example\nconsole.log(\"React Router (Client Navigation)\");",
+        "tryItDefault": "console.log(\"Learning React Router (Client Navigation)!\");"
+      },
+      {
+        "slug": "react-18",
+        "title": "18. Performance Memoization (useMemo)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Caches expensive calculation results between renders.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Writing down the answer to a hard math problem on a sticky note to re-read later.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Filtering 10,000 table rows efficiently.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Over-optimizing cheap inline math operations with useMemo.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Memoize a list sorting calculation.</li>\n  </ul>",
+        "codeExample": "// Performance Memoization (useMemo) Example\nconsole.log(\"Performance Memoization (useMemo)\");",
+        "tryItDefault": "console.log(\"Learning Performance Memoization (useMemo)!\");"
+      },
+      {
+        "slug": "react-19",
+        "title": "19. useCallback Hook",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Caches function definitions between re-renders.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Saving a speed-dial contact on your phone.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Preventing child component re-renders when passing callbacks.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting dependency array in useCallback.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Wrap an inline callback function with useCallback.</li>\n  </ul>",
+        "codeExample": "// useCallback Hook Example\nconsole.log(\"useCallback Hook\");",
+        "tryItDefault": "console.log(\"Learning useCallback Hook!\");"
+      },
+      {
+        "slug": "react-20",
+        "title": "20. React Fragments (<>...</>)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Groups child elements without adding extra <div> tags to the DOM.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Bundling flowers with a rubber band instead of placing each in a separate vase.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Keeping DOM tree clean and preventing CSS layout breaks.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Adding unnecessary wrapper <div> elements.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Wrap sibling elements inside <>...</>.</li>\n  </ul>",
+        "codeExample": "// React Fragments (<>...</>) Example\nconsole.log(\"React Fragments (<>...</>)\");",
+        "tryItDefault": "console.log(\"Learning React Fragments (<>...</>)!\");"
+      },
+      {
+        "slug": "react-21",
+        "title": "21. CSS Modules in React",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Scopes CSS classes locally to prevent class name collisions.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Assigning private house numbers on private streets.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Component-level isolated styling.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Mixing up global CSS and scoped modules.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Import styles from Header.module.css.</li>\n  </ul>",
+        "codeExample": "// CSS Modules in React Example\nconsole.log(\"CSS Modules in React\");",
+        "tryItDefault": "console.log(\"Learning CSS Modules in React!\");"
+      },
+      {
+        "slug": "react-22",
+        "title": "22. Tailwind CSS with React",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Utility-first CSS framework for rapid component styling.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Using pre-cut sticker badges to label your luggage.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building responsive modern UI components fast.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Duplicate class clutter in JSX.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Style a button with Tailwind classes 'bg-blue-500 text-white p-4 rounded-xl'.</li>\n  </ul>",
+        "codeExample": "// Tailwind CSS with React Example\nconsole.log(\"Tailwind CSS with React\");",
+        "tryItDefault": "console.log(\"Learning Tailwind CSS with React!\");"
+      },
+      {
+        "slug": "react-23",
+        "title": "23. Error Boundaries",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Catches JavaScript errors in child component tree to display fallback UI.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>An airbag deploying in a car crash to protect passengers.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Preventing total white screen app crashes.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Error boundaries only catch rendering errors, not async fetch errors.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Wrap a component in an ErrorBoundary.</li>\n  </ul>",
+        "codeExample": "// Error Boundaries Example\nconsole.log(\"Error Boundaries\");",
+        "tryItDefault": "console.log(\"Learning Error Boundaries!\");"
+      },
+      {
+        "slug": "react-24",
+        "title": "24. Portals (createPortal)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Renders children into a DOM node outside the parent hierarchy.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Projecting a movie onto a billboard outside the building.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Modal dialogs, tooltips, and popups.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Styling portal container without fixed positioning.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Render a modal using ReactDOM.createPortal.</li>\n  </ul>",
+        "codeExample": "// Portals (createPortal) Example\nconsole.log(\"Portals (createPortal)\");",
+        "tryItDefault": "console.log(\"Learning Portals (createPortal)!\");"
+      },
+      {
+        "slug": "react-25",
+        "title": "25. Capstone: E-Commerce Storefront",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Build a complete interactive E-Commerce Storefront with Cart State!</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Building a fully functional online shopping store.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Production web applications.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Rushing state management without planning data flow.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Combine React components, useState, useEffect, and Context into a Storefront!</li>\n  </ul>",
+        "codeExample": "// Capstone: E-Commerce Storefront Example\nconsole.log(\"Capstone: E-Commerce Storefront\");",
+        "tryItDefault": "console.log(\"Learning Capstone: E-Commerce Storefront!\");"
+      }
+    ]
+  },
+  {
+    "slug": "sql",
+    "title": "SQL Fundamentals",
+    "description": "Master SQL databases step-by-step with simple English, daily life examples, and bullet points across 25 lessons.",
+    "iconName": "Database",
+    "lessons": [
+      {
+        "slug": "sql-1",
+        "title": "1. What is SQL?",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>SQL (Structured Query Language) is the language used to communicate with Relational Databases.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Asking a librarian to find a specific book in a organized library.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Managing data in PostgreSQL, MySQL, SQLite, and SQL Server.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Thinking SQL is a database (SQL is the language; Postgres/SQLite is the database system!).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Write SELECT 'Hello SQL!';</li>\n  </ul>",
+        "codeExample": "// What is SQL? Example\nconsole.log(\"What is SQL?\");",
+        "tryItDefault": "console.log(\"Learning What is SQL?!\");"
+      },
+      {
+        "slug": "sql-2",
+        "title": "2. Databases & Tables",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Databases store tables; Tables organize data into Rows and Columns.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Database = A filing cabinet; Table = A single spreadsheet folder inside.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Storing Users, Products, Orders, and Payments.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Storing unrelated data together in a single mega-table.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Identify table names in a database schema.</li>\n  </ul>",
+        "codeExample": "// Databases & Tables Example\nconsole.log(\"Databases & Tables\");",
+        "tryItDefault": "console.log(\"Learning Databases & Tables!\");"
+      },
+      {
+        "slug": "sql-3",
+        "title": "3. Creating Tables (CREATE TABLE)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Defines table structure, columns, and data types.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Setting up column headers (Name, Age, Email) in a brand new Excel sheet.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Database schema design.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting data types for columns.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Write a CREATE TABLE query for a Users table.</li>\n  </ul>",
+        "codeExample": "// Creating Tables (CREATE TABLE) Example\nconsole.log(\"Creating Tables (CREATE TABLE)\");",
+        "tryItDefault": "console.log(\"Learning Creating Tables (CREATE TABLE)!\");"
+      },
+      {
+        "slug": "sql-4",
+        "title": "4. Data Types in SQL",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Defines what type of data each column holds (VARCHAR, INT, FLOAT, BOOLEAN, TIMESTAMP).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Setting input rules: Phone number field only accepts digits.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Ensuring database data integrity.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using VARCHAR string type for numbers used in math calculations.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Choose appropriate data types for a Products table.</li>\n  </ul>",
+        "codeExample": "// Data Types in SQL Example\nconsole.log(\"Data Types in SQL\");",
+        "tryItDefault": "console.log(\"Learning Data Types in SQL!\");"
+      },
+      {
+        "slug": "sql-5",
+        "title": "5. Inserting Data (INSERT INTO)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Adds new rows of data into a table.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Filing a new paper form into a drawer folder.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>User registration, creating new orders, adding blog posts.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Mismatching value count with column count in INSERT statement.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Insert a new row into Users table.</li>\n  </ul>",
+        "codeExample": "// Inserting Data (INSERT INTO) Example\nconsole.log(\"Inserting Data (INSERT INTO)\");",
+        "tryItDefault": "console.log(\"Learning Inserting Data (INSERT INTO)!\");"
+      },
+      {
+        "slug": "sql-6",
+        "title": "6. Selecting Data (SELECT)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Retrieves data columns from a table.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Opening a folder and pulling out specific sheets of paper.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Displaying data on website dashboards.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Overusing SELECT * in production when you only need 2 columns.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Select name and email from Users table.</li>\n  </ul>",
+        "codeExample": "// Selecting Data (SELECT) Example\nconsole.log(\"Selecting Data (SELECT)\");",
+        "tryItDefault": "console.log(\"Learning Selecting Data (SELECT)!\");"
+      },
+      {
+        "slug": "sql-7",
+        "title": "7. Filtering Data (WHERE Clause)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Filters query results based on conditions.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Searching a contacts list for people living in 'Mumbai'.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Filtering products by price, searching users by email.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting quotes around string values in WHERE clause e.g. WHERE city = Mumbai.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Select users WHERE age >= 18.</li>\n  </ul>",
+        "codeExample": "// Filtering Data (WHERE Clause) Example\nconsole.log(\"Filtering Data (WHERE Clause)\");",
+        "tryItDefault": "console.log(\"Learning Filtering Data (WHERE Clause)!\");"
+      },
+      {
+        "slug": "sql-8",
+        "title": "8. AND, OR, NOT Operators",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Combines multiple search conditions in WHERE clause.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Finding a car that is 'Red' AND 'Under $10,000'.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Complex catalog filtering on e-commerce sites.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Confusing AND (both true) with OR (either true).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Select products WHERE price < 500 AND category = 'Electronics'.</li>\n  </ul>",
+        "codeExample": "// AND, OR, NOT Operators Example\nconsole.log(\"AND, OR, NOT Operators\");",
+        "tryItDefault": "console.log(\"Learning AND, OR, NOT Operators!\");"
+      },
+      {
+        "slug": "sql-9",
+        "title": "9. Updating Data (UPDATE)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Modifies existing records in a table.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Using white-out to correct an address on an existing paper form.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Updating user profile, changing password, updating inventory count.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li>️ CRITICAL: Forgetting WHERE clause in UPDATE changes EVERY row in the database!</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Update user email WHERE id = 1.</li>\n  </ul>",
+        "codeExample": "// Updating Data (UPDATE) Example\nconsole.log(\"Updating Data (UPDATE)\");",
+        "tryItDefault": "console.log(\"Learning Updating Data (UPDATE)!\");"
+      },
+      {
+        "slug": "sql-10",
+        "title": "10. Deleting Data (DELETE FROM)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Removes specific rows from a table.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Shredding an outdated document from your files.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Deleting cancelled accounts or old log entries.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li>️ CRITICAL: Forgetting WHERE clause in DELETE wipes the entire table!</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Delete user WHERE id = 5.</li>\n  </ul>",
+        "codeExample": "// Deleting Data (DELETE FROM) Example\nconsole.log(\"Deleting Data (DELETE FROM)\");",
+        "tryItDefault": "console.log(\"Learning Deleting Data (DELETE FROM)!\");"
+      },
+      {
+        "slug": "sql-11",
+        "title": "11. Primary Keys (PRIMARY KEY)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Unique identifier column for every single row in a table.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Your Aadhaar / Social Security / Passport ID number.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Uniquely identifying users, orders, and products.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Creating a table without a Primary Key.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Define id INT PRIMARY KEY AUTO_INCREMENT in table creation.</li>\n  </ul>",
+        "codeExample": "// Primary Keys (PRIMARY KEY) Example\nconsole.log(\"Primary Keys (PRIMARY KEY)\");",
+        "tryItDefault": "console.log(\"Learning Primary Keys (PRIMARY KEY)!\");"
+      },
+      {
+        "slug": "sql-12",
+        "title": "12. Sorting Results (ORDER BY)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Sorts query output in ASCending or DESCending order.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Sorting exam papers alphabetically by student name or by highest score.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Displaying latest blog posts (ORDER BY created_at DESC).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Default sorting without specifying ASC or DESC.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Select products ORDER BY price DESC.</li>\n  </ul>",
+        "codeExample": "// Sorting Results (ORDER BY) Example\nconsole.log(\"Sorting Results (ORDER BY)\");",
+        "tryItDefault": "console.log(\"Learning Sorting Results (ORDER BY)!\");"
+      },
+      {
+        "slug": "sql-13",
+        "title": "13. Limiting Results (LIMIT & OFFSET)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>LIMIT caps number of rows returned; OFFSET skips rows.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Reading page 2 of a book (10 lines per page).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Implementing website pagination (Page 1, Page 2).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Fetching 1,000,000 rows without a LIMIT.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Select top 5 cheapest items using LIMIT 5.</li>\n  </ul>",
+        "codeExample": "// Limiting Results (LIMIT & OFFSET) Example\nconsole.log(\"Limiting Results (LIMIT & OFFSET)\");",
+        "tryItDefault": "console.log(\"Learning Limiting Results (LIMIT & OFFSET)!\");"
+      },
+      {
+        "slug": "sql-14",
+        "title": "14. Aggregate Functions (COUNT, SUM, AVG)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Calculates total counts, sums, or averages across rows.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Using a calculator to total up monthly grocery receipts.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Calculating total sales revenue or average product rating.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Trying to select non-aggregate columns without GROUP BY.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Calculate COUNT(*) of registered users.</li>\n  </ul>",
+        "codeExample": "// Aggregate Functions (COUNT, SUM, AVG) Example\nconsole.log(\"Aggregate Functions (COUNT, SUM, AVG)\");",
+        "tryItDefault": "console.log(\"Learning Aggregate Functions (COUNT, SUM, AVG)!\");"
+      },
+      {
+        "slug": "sql-15",
+        "title": "15. Grouping Data (GROUP BY)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Groups rows sharing values into summary rows.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Sorting coins into stacks of pennies, nickels, and dimes before counting.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Calculating sales per category, users per country.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using WHERE instead of HAVING to filter grouped data.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Group sales by country and SUM total revenue.</li>\n  </ul>",
+        "codeExample": "// Grouping Data (GROUP BY) Example\nconsole.log(\"Grouping Data (GROUP BY)\");",
+        "tryItDefault": "console.log(\"Learning Grouping Data (GROUP BY)!\");"
+      },
+      {
+        "slug": "sql-16",
+        "title": "16. HAVING Clause",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Filters grouped rows after aggregation.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Only keeping coin stacks that total more than $5.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Finding categories with average price > $100.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using WHERE for aggregate functions (Use HAVING!).</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Group by category HAVING COUNT(*) > 10.</li>\n  </ul>",
+        "codeExample": "// HAVING Clause Example\nconsole.log(\"HAVING Clause\");",
+        "tryItDefault": "console.log(\"Learning HAVING Clause!\");"
+      },
+      {
+        "slug": "sql-17",
+        "title": "17. Normalization Basics (1NF, 2NF, 3NF)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Organizing database structure to reduce redundant duplicate data.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Filing receipts by store category instead of dumping all in one bag.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Building efficient, scalable database architectures.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Storing comma-separated lists of tags inside a single column.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Split duplicate user address fields into a separate Addresses table.</li>\n  </ul>",
+        "codeExample": "// Normalization Basics (1NF, 2NF, 3NF) Example\nconsole.log(\"Normalization Basics (1NF, 2NF, 3NF)\");",
+        "tryItDefault": "console.log(\"Learning Normalization Basics (1NF, 2NF, 3NF)!\");"
+      },
+      {
+        "slug": "sql-18",
+        "title": "18. Foreign Keys & Relationships",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Links two tables together via a reference column.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A library book receipt linking a student's ID number to a book's ID number.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Connecting Orders to Users, Comments to Posts.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Inserting foreign keys pointing to non-existent primary keys.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Define user_id REFERENCES users(id) in Orders table.</li>\n  </ul>",
+        "codeExample": "// Foreign Keys & Relationships Example\nconsole.log(\"Foreign Keys & Relationships\");",
+        "tryItDefault": "console.log(\"Learning Foreign Keys & Relationships!\");"
+      },
+      {
+        "slug": "sql-19",
+        "title": "19. Inner Joins (INNER JOIN)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Combines rows from two tables where foreign keys match.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Matching people's names with their reservation ticket numbers at a event gate.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Displaying Order details alongside Customer Name.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Missing ON clause condition in JOIN statement.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Write an INNER JOIN query connecting Users and Orders tables.</li>\n  </ul>",
+        "codeExample": "// Inner Joins (INNER JOIN) Example\nconsole.log(\"Inner Joins (INNER JOIN)\");",
+        "tryItDefault": "console.log(\"Learning Inner Joins (INNER JOIN)!\");"
+      },
+      {
+        "slug": "sql-20",
+        "title": "20. Left Outer Join (LEFT JOIN)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Returns ALL rows from left table, even if no match in right table.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>A school attendance list showing all students, including those absent.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Finding users who have placed zero orders.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Confusing LEFT JOIN with INNER JOIN.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Write a LEFT JOIN query finding users without orders.</li>\n  </ul>",
+        "codeExample": "// Left Outer Join (LEFT JOIN) Example\nconsole.log(\"Left Outer Join (LEFT JOIN)\");",
+        "tryItDefault": "console.log(\"Learning Left Outer Join (LEFT JOIN)!\");"
+      },
+      {
+        "slug": "sql-21",
+        "title": "21. Subqueries",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>A query nested inside another query statement.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Asking: 'Find all students whose score is higher than the average score'.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Complex analytical reporting.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Using slow subqueries when a JOIN performs faster.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Write a subquery selecting items priced above average price.</li>\n  </ul>",
+        "codeExample": "// Subqueries Example\nconsole.log(\"Subqueries\");",
+        "tryItDefault": "console.log(\"Learning Subqueries!\");"
+      },
+      {
+        "slug": "sql-22",
+        "title": "22. Indexes (CREATE INDEX)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Data structure that speeds up database query searches dramatically.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>The alphabetical index at the back of a textbook to find topics fast.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Speeding up searches on email or username columns.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li>️ Adding indexes on every column slows down INSERT/UPDATE operations!</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create an index on users(email).</li>\n  </ul>",
+        "codeExample": "// Indexes (CREATE INDEX) Example\nconsole.log(\"Indexes (CREATE INDEX)\");",
+        "tryItDefault": "console.log(\"Learning Indexes (CREATE INDEX)!\");"
+      },
+      {
+        "slug": "sql-23",
+        "title": "23. Transactions (BEGIN, COMMIT, ROLLBACK)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Groups multiple queries into an atomic All-or-Nothing operation.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>An ATM transfer: Deduct $100 from Account A AND Add $100 to Account B. If power dies mid-way, cancel everything!</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Financial transactions, inventory updates.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Forgetting to COMMIT or ROLLBACK open transactions.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Write a transaction block with COMMIT.</li>\n  </ul>",
+        "codeExample": "// Transactions (BEGIN, COMMIT, ROLLBACK) Example\nconsole.log(\"Transactions (BEGIN, COMMIT, ROLLBACK)\");",
+        "tryItDefault": "console.log(\"Learning Transactions (BEGIN, COMMIT, ROLLBACK)!\");"
+      },
+      {
+        "slug": "sql-24",
+        "title": "24. SQL Views (CREATE VIEW)",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Saved SQL query stored as a virtual table.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Creating a speed-dial shortcut for a complex phone number.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Simplifying complex JOIN queries for frontend developers.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Trying to INSERT directly into complex multi-table views.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create a VIEW showing active users.</li>\n  </ul>",
+        "codeExample": "// SQL Views (CREATE VIEW) Example\nconsole.log(\"SQL Views (CREATE VIEW)\");",
+        "tryItDefault": "console.log(\"Learning SQL Views (CREATE VIEW)!\");"
+      },
+      {
+        "slug": "sql-25",
+        "title": "25. Capstone: E-Commerce Schema Design",
+        "explanationHtml": "<h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Concept Overview</h4>\n  <ul>\n    <li>Design and query a complete Relational Database for an E-Commerce app!</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Real-World Analogy</h4>\n  <ul>\n    <li>Building the digital brain of Amazon.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Industry Application</h4>\n  <ul>\n    <li>Production database engineering.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Common Pitfalls & Fixes</h4>\n  <ul>\n    <li> Skipping foreign key constraints.</li>\n  </ul>\n  <h4 class=\"text-base font-bold text-[var(--foreground)] mt-4 mb-2\">Practice Exercise</h4>\n  <ul>\n    <li>Create tables for Users, Products, Orders, and Order_Items with Joins!</li>\n  </ul>",
+        "codeExample": "// Capstone: E-Commerce Schema Design Example\nconsole.log(\"Capstone: E-Commerce Schema Design\");",
+        "tryItDefault": "console.log(\"Learning Capstone: E-Commerce Schema Design!\");"
+      }
+    ]
+  }
+]

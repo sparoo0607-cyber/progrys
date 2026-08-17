@@ -1,0 +1,219 @@
+[
+  {
+    "slug": "ai-engineer",
+    "title": "AI Engineer",
+    "description": "Learn to integrate intelligent systems into modern applications. This roadmap teaches you how to leverage pre-trained large language models (LLMs), build vector databases for RAG, and deploy AI-driven features into production software.",
+    "difficulty": "advanced",
+    "estimatedTime": "6-8 Months",
+    "nodes": [
+      {
+        "title": "Python & Software Engineering",
+        "description": "Before you can build AI, you must know how to build software. Master Python, focusing heavily on object-oriented programming, REST APIs, and writing clean, testable code that can scale."
+      },
+      {
+        "title": "Understanding Neural Networks & LLMs",
+        "description": "You don't need to build them from scratch, but you must understand how they work. Learn the fundamentals of deep learning, transformer architectures, and what parameters, tokens, and context windows actually mean."
+      },
+      {
+        "title": "Working with LLM APIs",
+        "description": "Stop using ChatGPT in the browser and start using it in code. Learn how to securely integrate OpenAI, Anthropic, or open-source models using APIs, handling streaming responses, token limits, and rate throttling."
+      },
+      {
+        "title": "Prompt Engineering for Systems",
+        "description": "Writing prompts for a human is different than writing prompts for an automated pipeline. Learn how to structure system prompts, use few-shot learning, and force models to output strict JSON schemas for predictable data parsing."
+      },
+      {
+        "title": "Vector Embeddings & Databases",
+        "description": "Models don't understand words; they understand numbers. Learn how to generate embeddings to represent semantic meaning, and store them in vector databases like Pinecone or Weaviate for lightning-fast similarity search."
+      },
+      {
+        "title": "Retrieval-Augmented Generation (RAG)",
+        "description": "Stop models from hallucinating by giving them facts. Learn how to combine vector search with LLMs to build chatbots that can accurately answer questions based on your company's private documents."
+      },
+      {
+        "title": "AI Frameworks (LangChain & LlamaIndex)",
+        "description": "Don't reinvent the wheel. Learn how to use industry-standard frameworks to orchestrate complex AI workflows, chain multiple prompts together, and connect models to external tools and APIs."
+      },
+      {
+        "title": "Agents & Autonomous Systems",
+        "description": "Move beyond simple question-answering. Learn how to build AI agents that can reason, plan, use web search, execute code, and iteratively solve complex problems with minimal human intervention."
+      },
+      {
+        "title": "Deploying & Monitoring AI",
+        "description": "An AI feature is useless if it's too slow. Learn how to deploy AI applications to the cloud, monitor latency, track token costs, and implement guardrails to prevent your model from generating inappropriate content."
+      }
+    ]
+  },
+  {
+    "slug": "machine-learning-engineer",
+    "title": "Machine Learning Engineer",
+    "description": "Go beyond using APIs and learn how to build, train, and optimize custom models from scratch. This roadmap covers the math, algorithms, and infrastructure needed to bring powerful machine learning solutions into production.",
+    "difficulty": "advanced",
+    "estimatedTime": "10-14 Months",
+    "nodes": [
+      {
+        "title": "Linear Algebra & Calculus",
+        "description": "You cannot optimize a neural network if you don't understand the math behind it. Master vectors, matrices, derivatives, and the chain rule, which form the absolute foundation of gradient descent."
+      },
+      {
+        "title": "Probability & Statistics",
+        "description": "Machine learning is just applied statistics. Learn how to analyze distributions, calculate variance, and use hypothesis testing to confidently determine if your model is actually learning or just getting lucky."
+      },
+      {
+        "title": "Data Preprocessing (Pandas & NumPy)",
+        "description": "Your model is only as good as your data. Learn how to clean messy datasets, handle missing values, and normalize features using the industry's most powerful Python data manipulation libraries."
+      },
+      {
+        "title": "Classical Machine Learning (Scikit-Learn)",
+        "description": "Don't use a neural network when a simple algorithm will do. Master regressions, decision trees, random forests, and clustering to solve standard prediction and classification problems efficiently."
+      },
+      {
+        "title": "Deep Learning Fundamentals",
+        "description": "Enter the world of neural networks. Learn how forward propagation, backpropagation, and activation functions work to let models learn complex, non-linear relationships in your data."
+      },
+      {
+        "title": "Frameworks (PyTorch or TensorFlow)",
+        "description": "Stop writing math from scratch. Learn how to build, train, and evaluate deep learning architectures using PyTorch, the industry standard for both research and production environments."
+      },
+      {
+        "title": "Computer Vision (CNNs)",
+        "description": "Teach computers how to see. Learn how Convolutional Neural Networks process image pixels to detect objects, recognize faces, and segment medical imagery."
+      },
+      {
+        "title": "Natural Language Processing (RNNs & Transformers)",
+        "description": "Teach computers how to read. Understand how to process sequential text data for sentiment analysis, translation, and text generation using modern transformer architectures."
+      },
+      {
+        "title": "Model Evaluation & Hyperparameter Tuning",
+        "description": "A model that memorizes training data is useless in the real world. Learn how to use cross-validation, precision/recall curves, and grid search to ensure your model generalizes to unseen data."
+      },
+      {
+        "title": "MLOps & Model Deployment",
+        "description": "A model on your laptop doesn't make money. Learn how to containerize models, deploy them via REST APIs, and use tools like MLflow to track experiments and manage model versions in production."
+      }
+    ]
+  },
+  {
+    "slug": "data-scientist",
+    "title": "Data Scientist",
+    "description": "Transform raw data into actionable business insights. Learn how to extract data, perform rigorous statistical analysis, build predictive models, and communicate your findings to stakeholders.",
+    "difficulty": "intermediate",
+    "estimatedTime": "8-10 Months",
+    "nodes": [
+      {
+        "title": "Python for Data Science",
+        "description": "Python is the lingua franca of data. Master the core language, focusing on functional programming patterns, list comprehensions, and handling large data structures efficiently."
+      },
+      {
+        "title": "Advanced SQL & Database Querying",
+        "description": "You can't analyze data if you can't extract it. Deep dive into complex SQL queries, window functions, CTEs (Common Table Expressions), and performance optimization for querying massive databases."
+      },
+      {
+        "title": "Exploratory Data Analysis (EDA)",
+        "description": "Before modeling, you must understand the shape of your data. Learn how to use Pandas to summarize datasets, identify outliers, spot correlations, and formulate hypotheses."
+      },
+      {
+        "title": "Statistical Foundations",
+        "description": "Don't be fooled by random variance. Master probability distributions, A/B testing, p-values, and statistical significance to ensure your business recommendations are scientifically sound."
+      },
+      {
+        "title": "Data Visualization (Matplotlib & Seaborn)",
+        "description": "Numbers in a spreadsheet don't convince executives; charts do. Learn how to create compelling, clear, and statistically accurate visualizations that tell a story with your data."
+      },
+      {
+        "title": "Feature Engineering",
+        "description": "The secret to great models is great features. Learn how to transform raw dates, text, and categories into numerical formats that machine learning algorithms can easily interpret."
+      },
+      {
+        "title": "Predictive Modeling",
+        "description": "Build models that forecast the future. Learn how to implement logistic regression for classification and random forests for predicting continuous numerical values."
+      },
+      {
+        "title": "Unsupervised Learning",
+        "description": "Sometimes you don't know what you're looking for. Learn clustering techniques like K-Means and dimensionality reduction (PCA) to discover hidden segments in your customer data."
+      },
+      {
+        "title": "Storytelling & Communication",
+        "description": "The most underrated skill in data science. Learn how to translate complex statistical metrics into plain English, build slide decks, and present your findings to non-technical stakeholders."
+      }
+    ]
+  },
+  {
+    "slug": "data-analyst",
+    "title": "Data Analyst",
+    "description": "Become the bridge between raw data and business strategy. Learn how to query databases, clean messy information, and build interactive dashboards that drive decision-making.",
+    "difficulty": "beginner",
+    "estimatedTime": "4-6 Months",
+    "nodes": [
+      {
+        "title": "Excel & Spreadsheets Mastery",
+        "description": "Excel is still the engine of global business. Master VLOOKUP, XLOOKUP, Pivot Tables, and advanced conditional logic to quickly clean and analyze datasets before reaching for heavier tools."
+      },
+      {
+        "title": "SQL Fundamentals",
+        "description": "Stop waiting for engineers to pull data for you. Learn how to write SELECT statements, filter with WHERE clauses, use aggregate functions like COUNT and SUM, and perform basic JOINs."
+      },
+      {
+        "title": "Advanced SQL for Analysis",
+        "description": "Level up your querying. Learn how to use Window Functions to calculate rolling averages, CTEs to organize complex logic, and string manipulation functions to clean messy database entries."
+      },
+      {
+        "title": "Business Intelligence (BI) Tools",
+        "description": "Learn how to turn static tables into interactive experiences. Master Tableau or PowerBI to connect directly to databases, create calculated fields, and build visually stunning dashboards."
+      },
+      {
+        "title": "Data Cleaning & Transformation",
+        "description": "Real-world data is disastrously messy. Learn techniques for dealing with duplicate records, handling inconsistent formatting, and dealing with missing data without skewing your results."
+      },
+      {
+        "title": "Basic Python for Analysts",
+        "description": "When Excel crashes, Python survives. Learn just enough Python (Pandas) to automate repetitive data cleaning tasks, merge massive CSV files, and perform aggregations that are too large for spreadsheets."
+      },
+      {
+        "title": "Business Metrics & KPIs",
+        "description": "You need to know what you are measuring. Understand standard business metrics like Customer Acquisition Cost (CAC), Churn Rate, Lifetime Value (LTV), and how they impact company profitability."
+      },
+      {
+        "title": "Presenting Data",
+        "description": "Your analysis is only as good as your ability to explain it. Learn how to design dashboards that are easy to read at a glance, and how to present actionable insights rather than just raw facts."
+      }
+    ]
+  },
+  {
+    "slug": "prompt-engineer",
+    "title": "Prompt Engineer",
+    "description": "Master the skill of communicating with AI. Learn how to structure inputs, use advanced reasoning techniques, and systematically evaluate LLM outputs to automate workflows and solve complex problems.",
+    "difficulty": "beginner",
+    "estimatedTime": "2-3 Months",
+    "nodes": [
+      {
+        "title": "How LLMs Actually Work",
+        "description": "You can't steer a car if you don't know it has wheels. Understand next-token prediction, the limits of context windows, and why models hallucinate, so you can anticipate and avoid failures."
+      },
+      {
+        "title": "Zero-Shot & Few-Shot Prompting",
+        "description": "Learn the fundamentals of instructing AI. Understand how providing a few high-quality examples (few-shot) drastically improves the model's accuracy compared to just asking a direct question (zero-shot)."
+      },
+      {
+        "title": "Chain of Thought Reasoning",
+        "description": "Force the AI to think before it speaks. Learn how appending 'Let's think step by step' or breaking down complex logic in your prompt massively reduces logical errors in the output."
+      },
+      {
+        "title": "System Prompts & Personas",
+        "description": "Set the boundaries. Learn how to use System Prompts to give the AI a specific role, restrict its knowledge base, define its tone of voice, and prevent users from jailbreaking it."
+      },
+      {
+        "title": "Structured Output Formatting",
+        "description": "If you are integrating AI into software, you need predictable data. Learn how to force models to output strict JSON, Markdown, or CSV formats by providing templates and constraints."
+      },
+      {
+        "title": "Iterative Refinement",
+        "description": "Your first prompt will rarely be perfect. Learn a systematic approach to debugging prompts: analyzing failures, tweaking constraints, and testing edge cases until the output is consistently perfect."
+      },
+      {
+        "title": "Automating Workflows",
+        "description": "Take prompt engineering beyond the chat interface. Learn how to use tools like Zapier, Make, or simple Python scripts to connect your perfected prompts to emails, databases, and spreadsheets."
+      }
+    ]
+  }
+]
